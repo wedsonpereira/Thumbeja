@@ -1,0 +1,37 @@
+@media (max-width: 800px) {
+    .tp-career-main {
+        width: 100%;
+        /*border: 1px solid red;*/
+        height: auto;
+
+        .tp-career0{
+            width: 100%;
+            span:nth-of-type(2) {
+                /*border:1px solid red;*/
+                font-size: 1.8rem;
+            }
+        }
+
+        .tp-career1{
+            width: 93%;
+            span:nth-of-type(2) {
+                /*border:1px solid red;*/
+                font-size: 1.8rem;
+            }
+        }
+
+        .tp-career2{
+            div:nth-of-type(1) {
+                gap: 0.3rem;
+                button{
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+
+
+}
+
+
+

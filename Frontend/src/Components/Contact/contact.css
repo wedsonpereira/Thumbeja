@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+}
+
+.tp-contact-card {
+    background: white;
+    box-shadow: rgba(60, 64, 67, 0.3) 0 1px 2px 0, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.tp-contact-sc-hover-effect {
+    cursor: pointer;
+    transition: 200ms;
+
+    * {
+        aspect-ratio: 2/3;
+    }
+}
+
+.tp-contact-sc-hover-effect:hover {
+    transform: scale(1.2);
+}
+
+.tp-form-text-fields *:not(button, input[type="checkbox"]) {
+    width: 100%;
+    padding: .6em;
+}
+
+.tp-contact-input-box{
+    width: 100%;
+    height: 70%;
+
+    input[type="text"],input[type="tel"],input[type='email'] {
+        line-height: 3;
+        font-family: Poppins, sans-serif;
+        outline: none;
+    }
+
+    .tp-contact-textarea{
+        font-family: Poppins, sans-serif;
+        outline: none;
+    }
+
+    input[type="text"]:focus{
+        border-color: rgba(23, 61, 123, 0.62);
+    }
+
+    .tp-contact-textarea:focus{
+        border-color: rgba(23, 61, 123, 0.62);
+    }
+}
+
+.tp-contact-input-box2{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.tp-contact-agreement{
+    align-items: center;
+}
+
+@media (max-width: 800px) {
+    .tp-contact-main{
+        height: auto ;
+        padding-top: 3rem ;
+    }
+
+    .tp-contact-header{
+        margin:0;
+        .tp-contact-lbl{
+            /*border: 1px solid red;*/
+            font-size: 1.8rem;
+        }
+    }
+
+    .tp-contact-card{
+        width: 90%;
+        height: 16rem;
+        border:1px solid rgb(194, 199, 208);
+        background: whitesmoke;;
+    }
+
+    .tp-contact-container{
+        flex-direction: column;
+        div,form{
+            width: 100%;
+        }
+
+        form{
+            .tp-submit-btn{
+                width: 100%;
+                button{
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .tp-animation-side-scroll{
+        span{
+            font-size: 1.3rem;
+        }
+    }
+
+    .tp-contact-dtl>div{
+        span{
+            font-size: 0.8rem;
+            /*border:1px solid red;*/
+        }
+    }
+
+    .tp-contact-dtl{
+       padding: .4em;
+    }
+
+    .tp-horizontal-line{
+        margin: 0.2rem;
+    }
+
+    .tp-contact-sc-lk{
+        a{
+            font-size: 0.8rem;
+        }
+    }
+
+
+}
+
+

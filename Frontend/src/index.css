@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+
+*{
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body{
+    margin: 0;
+    max-width: 2000px;
+    margin-inline: auto;
+}

@@ -1,0 +1,174 @@
+.services-card-container {
+    position: relative;
+    z-index: 1;
+}
+
+.service-card-bg-wave {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.services-card-container-inner {
+    transition: 300ms ease-in-out;
+    background:#5D47AC;
+    overflow: hidden;
+}
+
+.services-svg-shape {
+    position: absolute;
+    opacity: 30%;
+    animation: float 900ms infinite linear both alternate;
+}
+
+
+@keyframes float {
+    from {
+        top:11% ;
+            }
+    to{
+        top:20% ;
+    }
+
+}
+
+.services-card-header{
+    transition: transform 0.45s ease;
+}
+
+.services-card-header:hover {
+    color: #ffa966;
+}
+
+/*the p tag which needs to be hide*/
+/*.services-card-desc{*/
+/*    display: block;*/
+/*    transition: 1s ease-in-out;*/
+/*}*/
+
+
+/*code by chatgpt*/
+.services-card-desc{
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    opacity: 0;
+    pointer-events: none;
+    /* transition should always be present */
+    transition: max-height 0.5s ease-in-out,
+    padding 0.45s ease-in-out,
+    opacity 0.35s ease-in-out;
+}
+
+
+
+/*Inner shape*/
+.services-svg-shape{
+    transition: 300s ease-in-out;
+
+}
+
+.services-card-container:hover{
+    .services-card-container-inner{
+        opacity: 1;
+        background: rgb(22, 5, 94)
+    }
+
+    .services-card-desc{
+        max-height: 10rem;           /* adjust to fit your content */
+        overflow: hidden;
+        padding: 0.5rem 0.5rem;     /* preserve spacing initially */
+        opacity: 1;
+        transition: max-height 0.5s ease-in-out, padding 0.45s ease-in-out, opacity 0.35s ease-in-out;
+    }
+}
+
+
+
+@media(max-width:800px){
+    .text-800px{
+        span{
+            font-size: 1.8rem;
+        }
+
+        p{
+            font-size: 1rem;
+            width: 100%;
+        }
+    }
+    .service-container{
+        width: 100%;
+        gap: 0.5rem;
+
+    }
+
+    .services-card-container{
+        width: 12rem;
+        height: 18rem;
+    }
+
+    .services-card-header{
+        font-size: 1rem;
+        width: 100%;
+    }
+
+    .services-card-desc{
+        font-size: 0.6rem;
+        width: 100%;
+
+    }
+
+    .services-card-container-inner{
+
+        div:nth-of-type(1){
+            .service-container-inner-img{
+                width: 50%;
+            }
+        }
+
+        div:nth-of-type(2){
+            span{
+                border: 1px solid rgb(22, 5, 94);
+                width: 45%;
+                height: 50%;
+            }
+
+
+        }
+
+        div:nth-of-type(3){
+            /*border: 1px solid red;*/
+            padding: 0.2rem;
+        }
+    }
+
+    .tp-get-in-touch{
+        width: 93%;
+        height: 9rem;
+
+        div:nth-of-type(2){
+            gap: 0.5rem;
+            span:nth-of-type(1){
+                font-size: 1.2rem;
+                margin: 0;
+                padding: 0;
+                height: max-content;
+                /*border: 1px solid rgb(22, 5, 94);*/
+            }
+
+            span:nth-of-type(2){
+                height:max-content;
+                width: max-content;
+                padding: 0.7rem;
+                span{
+                    font-size: 1rem;
+                }
+                font-size: 1rem;
+            }
+        }
+    }
+
+
+}

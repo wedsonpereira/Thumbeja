@@ -1,0 +1,31 @@
+@media (max-width: 800px) {
+    .tp-footer-content{
+        flex-direction: column;
+        width: 100%;
+
+
+        .tp-footer-content0{
+            width: 100%;
+
+        }
+
+        .tp-footer-content1{
+            width: 100%;
+        }
+        .tp-max800-text{
+            p{
+                font-size: 0.8rem;
+            }
+            span{
+                font-size: 1rem;
+            }
+
+        }
+
+    }
+
+    .tp-copyright{
+        font-size: 0.8rem;
+    }
+
+}

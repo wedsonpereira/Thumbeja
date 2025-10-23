@@ -1,0 +1,207 @@
+/* Your existing styles (kept as-is, with premium enhancements like smoother transitions) */
+div {
+    /* Your div styles - enhanced with premium touch */
+    transition: all 0.3s ease;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 0 2px 10px rgba(215, 204, 200, 0.1); /* Lighter muddy shadow for depth */
+}
+
+Link {
+    /* Your Link styles - now with earthy hover */
+}
+
+a:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(193, 154, 107, 0.2); /* Lighter red-brown glow */
+}
+
+/* Add more of your existing styles here... */
+
+/* PREMIUM GLOBAL STYLES: Earthy, genuine palette - lightened for brightness */
+:root {
+    --pantone-19-3936: #4C4E77; /* Pantone 19-3936 TPX (Skipper Blue) for all texts */
+    --white: #FFFFFF;
+    --red-brown: #C19A6B; /* Lightened soft golden brown */
+    --muddy: #D7CCC8; /* Lightened pale taupe */
+    --off-white: #FAF9F6; /* Subtle cream for body */
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    background-color: var(--off-white);
+    color: var(--pantone-19-3936); /* All texts use Pantone 19-3936 TPX */
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+/* Premium header: Fully transparent top bar, with button top-left */
+.header {
+    display: flex;
+    justify-content: flex-start; /* Button top-left */
+    align-items: center;
+    padding: 1rem;
+    background: transparent; /* Fully transparent background */
+    color: var(--pantone-19-3936); /* Header text color */
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+    width: 100%;
+    /* No box-shadow or border for maximum transparency */
+}
+
+/* Hamburger button: Refined with earthy bars (lighter color) */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 2rem;
+    height: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.hamburger:hover {
+    background-color: rgba(193, 154, 107, 0.1); /* Lighter red-brown hover tint */
+}
+
+.hamburger span {
+    width: 2rem;
+    height: 0.25rem;
+    background-color: var(--pantone-19-3936); /* Bars use Pantone color for consistency */
+    border-radius: 0.125rem;
+    transition: 0.3s;
+}
+
+/* Menu: Left vertical edge - cloud color from bottom, gradient to white on top */
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background: linear-gradient(to top, var(--pantone-19-3936), var(--white)); /* Darker pantone at bottom, gradient to white at top (vertical) */
+
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+    padding: 5rem 1rem 1rem;
+    box-shadow: 2px 0 15px rgba(215, 204, 200, 0.2); /* Lighter muddy outer glow */
+    border-right: 1px solid var(--pantone-19-3936); /* Pantone color accent on right edge */
+    transform: translateX(0); /* Visible by default */
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu.open {
+    transform: translateX(0);
+}
+.menu:not(.open) {
+    transform: translateX(-100%); /* Hidden only when closed */
+}
+
+/* Premium menu list: Spaced, with icons */
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    margin-bottom: 1.5rem; /* More breathing room */
+}
+
+.menu a {
+    color: var(--pantone-19-3936); /* Menu links use Pantone color */
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.6); /* Subtle white overlay for depth on light gradient */
+}
+
+.menu a:hover {
+    background: rgba(76, 78, 119, 0.5); /* Pantone tint on hover (RGB of #4C4E77) */
+    transform: translateX(5px); /* Subtle slide for premium feel */
+    box-shadow: 0 4px 12px rgba(193, 154, 107, 0.3); /* Lighter red-brown shadow */
+}
+
+.menu-icon {
+    margin-right: 0.75rem;
+    font-size: 1.25rem; /* Icons use Pantone color via inheritance */
+    color: var(--pantone-19-3936); /* Explicit for FontAwesome icons */
+}
+
+/* Overlay: Softer, earthy dim (lighter muddy) */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(215, 204, 200, 0.4); /* Lighter muddy semi-transparent */
+    z-index: 999;
+}
+
+.menu.open ~ .overlay {
+    display: block;
+}
+
+/* Main content: Clean, premium canvas */
+.main-content {
+    position: relative;
+    z-index: 1;
+    padding: 4rem 2rem 2rem; /* Generous spacing */
+    min-height: 100vh;
+}
+
+.premium-welcome {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2rem;
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(215, 204, 200, 0.1); /* Lighter muddy shadow */
+    border-left: 4px solid var(--pantone-19-3936); /* Pantone accent edge */
+}
+
+.premium-welcome h1 {
+    color: var(--pantone-19-3936); /* Welcome title uses Pantone color */
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 300; /* Light for elegance */
+}
+
+.premium-welcome p {
+    color: var(--pantone-19-3936); /* Subtitle uses Pantone color */
+    font-size: 1.1rem;
+}
+
+/* Mobile: Responsive edges scale gracefully */
+@media (max-width: 768px) {
+    .menu {
+        width: 80%;
+        background: linear-gradient(to top, var(--pantone-19-3936), var(--white)); /* Maintains the gradient on mobile */
+    }
+
+    .header {
+        padding: 0.75rem;
+    }
+
+    .premium-welcome h1 {
+        font-size: 2rem;
+    }
+}
