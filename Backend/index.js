@@ -27,30 +27,29 @@ const transporter = nodemailer.createTransport({
 
 // POST route
 app.post("/contactform", async (req, res) => {
-    const { name, email } = req.body;
-    console.log(name, email);
-    const htmlPath = path.join(__dirname, 'email.html');
-    let htmlContent = fs.readFileSync(htmlPath, 'utf8');
-    htmlContent = htmlContent.replace("{{name}}", name);
-
-    try {
-        await transporter.sendMail({
-            from: process.env.GMAIL_USERNAME,
-            to: email,
-            subject: `Contact submission form ${process.env.COMPANY}`,
-            html: htmlContent
-        });
-
-        const timestamp = new Date().toLocaleTimeString();
-        res.status(200).json({
-            status: "success",
-            message: "The message has been sent",
-            time: timestamp
-        });
-    } catch (err) {
-        res.status(400).json({ message: err.message });
-        console.log(err);
-    }
+    console.log(req.body);
+    // const htmlPath = path.join(__dirname, 'email.html');
+    // let htmlContent = fs.readFileSync(htmlPath, 'utf8');
+    // htmlContent = htmlContent.replace("{{name}}", name);
+    //
+    // try {
+    //     await transporter.sendMail({
+    //         from: process.env.GMAIL_USERNAME,
+    //         to: email,
+    //         subject: `Contact submission form ${process.env.COMPANY}`,
+    //         html: htmlContent
+    //     });
+    //
+    //     const timestamp = new Date().toLocaleTimeString();
+    //     res.status(200).json({
+    //         status: "success",
+    //         message: "The message has been sent",
+    //         time: timestamp
+    //     });
+    // } catch (err) {
+    //     res.status(400).json({ message: err.message });
+    //     console.log(err);
+    // }
 });
 
 app.listen(port, () => {
