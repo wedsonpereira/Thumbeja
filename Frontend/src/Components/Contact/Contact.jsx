@@ -39,30 +39,15 @@ const Contact = () => {
     const onSubmit = async (event) => {
         event.preventDefault();
         toast("Sending....");
-        const formData = new FormData(event.target);
-        formData.append("access_key", "0108879f-25a4-4d75-b4cb-f4162a4c384e");
-
+        const formData =event.target;
         try{
-            const response = await fetch("https://api.web3forms.com/submit", {
-                method: 'POST',
-                body: formData
-            });
-
-            const data = await response.json();
-            const {name,email } = data.data;
-
-            axios.post("http://localhost:8000/contactform", {name,email}).then((response) => {
-                console.log(response)
-            }).catch((error) => {
-                console.log(error);
+            axios.post("http://localhost:8000/contactform",formData).then((response) =>{
+                if(response.status === 200){
+                    toast("Form sent successfully.");
+                }
+            }).catch((err) =>{
+                toast("Some Error occurred", err.message)
             })
-
-            if (data.success) {
-                toast("Form Submitted Successfully");
-                event.target.reset();
-            } else {
-                toast("Error");
-            }
         }catch(e){
             toast("Error",e.message);
         }
@@ -174,8 +159,8 @@ const Contact = () => {
                                       className="tp-contact-textarea border-1 rounded-2xl tp-contact-scroll-animation-1" placeholder="Message"/>
                         </div>
                         <div className="tp-contact-input-box2 h-max">
-                            <div className="tp-contact-agreement rounded flex items-start">
-                                <input type="checkbox" required={true}/>
+                            <div className="tp-contact-agreement rounded flex items-start gap-5">
+                                <input type="checkbox" required={true} className={"scale-125 tp-contact-scroll-animation-1"}/>
                                 <Link to={"/info"} className={"hover:text-[blue] tp-contact-scroll-animation-1"}> All agree to the terms &
                                     conditions.</Link>
                             </div>
