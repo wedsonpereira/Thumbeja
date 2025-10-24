@@ -12,7 +12,6 @@ import NotFound from "./Components/NotFound/NotFound.jsx";
 import {snowflakeCursor} from "./Components/MouseHover/SnowFlake.js";
 
 
-
 function App() {
     snowflakeCursor(document.body);
 

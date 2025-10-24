@@ -10,9 +10,6 @@ import  svg9 from  "../Svgs/svg9.svg"
 import  svg10 from  "../Svgs/svg10.svg"
 
 
-
-
-
 const servicesData = [
     {
         id: 1,

@@ -136,7 +136,7 @@ const Contact = () => {
                     <div className={"tp-contact-dtl pt-9 tp-contact-scroll-animation-1"}>
                         <div className={"flex items-center gap-3 p-2"}>
                             <FontAwesomeIcon icon={faLocationDot}/>
-                            <span className={"w-[70%] hover:text-blue-300 transition-shadow"}>4th floor, Sahakari Sadana, Rao & rao Circle, 410, Mission St, Bhavathi, Bunder, Mangaluru, Karnataka 575001</span>
+                            <span className={"w-[70%] hover:text-blue-300 transition-shadow"}>410, 4th floor, Sahakari Sadana,Near Rao & rao Circle, Mission Street, Bunder, Mangaluru, Karnataka 575001</span>
                         </div>
                         <div className={"flex items-center gap-3 p-2 tp-contact-scroll-animation-1"}>
                             <FontAwesomeIcon icon={faPhone}/>
