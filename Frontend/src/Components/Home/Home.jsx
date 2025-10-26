@@ -6,9 +6,9 @@ import {faCheck} from "@fortawesome/free-solid-svg-icons";
 import Footer from "../Footer/Footer.jsx";
 import {homepageData2, homePageData, homepageData3, homepageData4,homeherodata} from "../../assets/JsonData/HomePageData.js";
 import featureImg from '/src/assets/Images/features.png'
-import processImg1 from '/src/assets/Images/processImg1.jpg'
-import processImg2 from '/src/assets/Images/processImg2.jpg'
-import processImg3 from '/src/assets/Images/processImg3.jpg'
+import processImg1 from '../../assets/Images/planning-with-client.jpg'
+import processImg2 from '../../assets/Images/celebrating-the-success.jpg'
+import processImg3 from '../../assets/Images/execution-of-the-project.jpg'
 import {useEffect} from "react";
 import gsap from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
@@ -52,16 +52,6 @@ const Home = () => {
 
 
     useGSAP(() => {
-
-        // gsap.from(".home-animation-2", {
-        //     scrollTrigger: {
-        //         trigger: ".home-animation-2",
-        //         toggleActions:'restart none none reverse',
-        //         start: 'bottom 90%'
-        //
-        //
-        //     }, stagger: 0.2, duration: 1, x: -100, opacity: 0
-        // })
 
         gsap.from(".home-animation-3", {
             scrollTrigger: {
@@ -134,8 +124,8 @@ const Home = () => {
                                             className="w-[100%] h-[100%] object-cover brightness-60"
                                         />
                                         <div className="absolute inset-0 flex items-center justify-center flex-col bg-black/40 gap-4">
-                                            <h1 className="text-white text-6xl text-center font-bold w-[100%] ">{item.text}</h1>
-                                            <p className={"w-[60%] text-center text-2xl text-white"}>{item.description}</p>
+                                            <h1 className="text-white text-5xl text-center font-bold w-[93%] p-2">{item.text}</h1>
+                                            <p className={"w-[80%] text-center text-2xl text-white"}>{item.description}</p>
                                         </div>
                                         <div className={"absolute w-[100%] bottom-[5rem] flex items-center justify-center "}>
                                             <a href={"#container-services"} className={"p-7 rounded-full flex flex-col items-center justify-center cursor-pointer tp-hero-drag-animation"}>
@@ -169,12 +159,11 @@ const Home = () => {
                     </div>
                 </div>
                 {/*container starting*/}
-                <div className="w-[85%] h-max tp-content-header-3 home-animation-3 pt-3 pb-3">
-                    <div
-                        className="tp-home-serv-sect1 w-full h-max flex items-center justify-center rounded-4xl bg-[#0a071f]">
+                <div className="w-[85%] min-h-[30rem] tp-content-header-3 home-animation-3 ">
+                    <div className="tp-home-serv-sect1 w-full h-max flex items-center justify-center rounded-4xl bg-[#0a071f]">
                         {/* Left Buttons */}
                         <div
-                            className="tp-home-serv-sect1-fc flex items-center justify-evenly flex-col w-[25rem] h-[35rem] home-animation-3">
+                            className="tp-home-serv-sect1-fc flex items-center justify-evenly flex-col w-[25rem] h-[35rem] home-animation-3 p-4">
                             {homePageData.map((item, index) => (
                                 <button
                                     key={item.id}
@@ -244,8 +233,7 @@ const Home = () => {
 
             {/*Process container*/}
             <div className={"tp-content-process min-h-[25rem] w-[85%] m-auto mt-[7rem] flex flex-col gap-6 "}>
-                <div
-                    className={"flex flex-col gap-1 w-full h-[11rem] items-center justify-evenly tp-content-process0 text-center home-animation-5"}>
+                <div className={"flex flex-col gap-1 w-full h-[11rem] items-center justify-evenly tp-content-process0 text-center home-animation-5"}>
                     <span>------Process-----</span>
                     <span className={"text-5xl font-semibold"}>A systematic approach to<span
                         className={"text-[#5e3bab]"}><br/>digital marketing</span></span>
@@ -286,11 +274,11 @@ const Home = () => {
                             homepageData4.map((item, index) => {
                                 return (
                                     <div key={index} className={"gap-4 flex flex-col w-[100%] h-max"}>
-                                        <div className={"flex items-center  gap-6"}>
+                                        <div className={"flex items-center gap-6"}>
                                             <span className={""}>
                                                 <FontAwesomeIcon icon={item.icon} size="4x"/>
                                             </span>
-                                            <span className={"text-2xl font-semibold"}>{item.title}</span>
+                                            <span className={"text-2xl font-semibold text-center"}>{item.title}</span>
                                         </div>
                                         <div className={" ml-30"}>{item.description}</div>
                                     </div>
@@ -320,13 +308,9 @@ const Home = () => {
                             {
                                 homepageData3.map((item, index) => {
                                     return (
-                                        <div key={index}
-                                             className={"w-[100%] border-b-[.01px] border-b-neutral-200 flex flex-col gap-2 tp-content-whychooseus1-left-head h-full home-animation-6"}>
-                                            <div className={"flex w-full"}>
-                                                <span
-                                                    className={"h-[100%] w-[10%] bg-[white] text-red-800 flex items-center justify-start text-4xl"}>0{item.id}</span>
-                                                <span
-                                                    className={"h-[100%] w-[80%] bg-[white] text-black flex items-center justify-start text-4xl hover:text-orange-400 transition-discrete"}
+                                        <div key={index} className={"w-[100%] border-b-[.01px] border-b-neutral-200 flex flex-col gap-2 tp-content-whychooseus1-left-head h-full home-animation-6"}>
+                                            <div className={"flex w-full border-1"}>
+                                                <span className={"h-[100%] w-[80%] bg-[white] text-black flex items-center justify-start text-4xl hover:text-orange-400 transition-discrete"}
                                                     onClick={() => handleMouseEnter(index)}>{item.title}</span>
                                             </div>
                                             <div className={"flex justify-start w-full"}>

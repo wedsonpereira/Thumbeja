@@ -1,15 +1,15 @@
-import Business1 from "../Images/BusinessImages/Business1.jpg"
-import Business2 from "../Images/BusinessImages/Business2.jpg"
-import Business3 from "../Images/BusinessImages/Business3.jpg"
-import Business4 from "../Images/BusinessImages/Business4.jpg"
-import Business5 from "../Images/BusinessImages/Business5.jpg"
-import img1 from "../CarousalImages/img1.png"
-import img2 from "../CarousalImages/img2.png"
-import img3 from "../CarousalImages/img3.png"
-import img4 from "../CarousalImages/img4.png"
-import img5 from "../CarousalImages/img5.png"
-import img6 from "../CarousalImages/img6.png"
-import img7 from "../CarousalImages/img7.png"
+import Business1 from "../Images/BusinessImages/girl-providing-assistance-to-client.jpg"
+import Business2 from "../Images/BusinessImages/man-working-in-a-laptop.jpg"
+import Business3 from "../Images/BusinessImages/two-women-working-together.jpg"
+import Business4 from "../Images/BusinessImages/man-working-on-multiple-computers.jpg"
+import Business5 from "../Images/BusinessImages/man-holding-a-laptop.jpg"
+import img1 from "../CarousalImages/machine-printing-images.png"
+import img2 from "../CarousalImages/web-development.png"
+import img3 from "../CarousalImages/Social-Media-Marketing.png"
+import img4 from "../CarousalImages/best-customer-service.png"
+import img5 from "../CarousalImages/digital-marketing.png"
+import img6 from "../CarousalImages/outdoor-banner-advertising.png"
+import img7 from "../CarousalImages/event-management.png"
 import {faDiceOne,faDiceTwo,faDiceThree} from "@fortawesome/free-solid-svg-icons";
 
 const homePageData=[
@@ -38,8 +38,6 @@ const homePageData=[
             "Lead generation",
         ]
     },
-
-
 
     {
         id: 3,
@@ -169,7 +167,7 @@ const homeherodata = [
     },
     {
         id: 2,
-        text: 'Website and Software Development(SEO)',
+        text: 'Website and Software Development (SEO)',
         description:'Full-stack web and software development with integrated SEO optimization to build responsive sites that rank high and drive organic traffic.',
         src:img2
     },

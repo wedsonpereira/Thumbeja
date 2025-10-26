@@ -161,7 +161,7 @@
  }
 
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
     /*first container*/
     .tp-home {
         display: flex;
@@ -451,13 +451,13 @@
 
 
     .tp-process-1{
-        width: 8rem ;
-        height: 8rem;
+        width: 10rem;
+        height: 10rem;
     }
 
     .tp-process-2{
-        width: 8rem;
-        height: 8rem;
+        width: 10rem;
+        height: 10rem;
     }
 
     .tp-process-3{

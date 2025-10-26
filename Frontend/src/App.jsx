@@ -13,7 +13,7 @@ import {snowflakeCursor} from "./Components/MouseHover/SnowFlake.js";
 
 
 function App() {
-    snowflakeCursor(document.body);
+    // snowflakeCursor(document.body);
 
     return (
         <>
