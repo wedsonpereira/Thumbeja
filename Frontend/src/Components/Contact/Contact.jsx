@@ -24,7 +24,7 @@ const Contact = () => {
 
     useGSAP(() => {
 
-        gsap.from('.tp-contact-lbl', {x: -300, duration: 1, stagger: {from: "start", each: 0.2}});
+        gsap.from('.tp-contact-lbl', {x: -300, duration: 1,ease:'power2.inOut',stagger: {from: "start", each: 0.2},opacity:0});
 
         gsap.from('.tp-contact-card', {
             duration: 1,
