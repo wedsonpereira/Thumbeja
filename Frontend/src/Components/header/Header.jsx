@@ -1,7 +1,7 @@
 import React from 'react';
 import "./header.css"
 import {Link, useNavigate} from "react-router-dom";
-import thumbeja from "/src/assets/Images/thunbejalogo.png";
+import thumbeja from "/Users/keerthantauro/WebstormProjects/Thumbeja Website/src/assets/Images/thunbejalogo.png";
 
 const Header = () => {
 

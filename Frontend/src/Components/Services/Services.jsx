@@ -4,7 +4,7 @@ import Footer from "../Footer/Footer.jsx";
 import "./Services.css";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faArrowRight, faArrowUp} from "@fortawesome/free-solid-svg-icons";
-import mountain from "/src/assets/Images/Gemini_Generated_Image_su9pixsu9pixsu9p.png"
+import mountain from "/Users/keerthantauro/WebstormProjects/Thumbeja Website/src/assets/Images/Gemini_Generated_Image_su9pixsu9pixsu9p.png"
 import servicesData from "../../assets/JsonData/ServicesData.js";
 import {Link, useNavigate} from "react-router-dom";
 import gsap from "gsap";

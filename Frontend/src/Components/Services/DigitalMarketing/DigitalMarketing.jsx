@@ -19,7 +19,7 @@ const DigitalMarketing = () => {
                     <p className="paragraph1 leading-8 pl-[2.5rem] " style={{textAlign: 'left'}}>Digital marketing
                         encompasses a dynamic array of strategies designed to connect businesses with their audiences in
                         the digital realm.</p>
-                    <p className="paragraph2 leading-8 pl-[2.5rem] pt-[0.9rem] " style={{textAlign: 'left'}}>1Beyond
+                    <p className="paragraph2 leading-8 pl-[2.5rem] pt-[0.9rem] " style={{textAlign: 'left'}}>Beyond
                         promotion, digital marketing fosters authentic relationships by emphasizing storytelling and
                         value creation, turning passive viewers into loyal advocates through personalized experiences
                         and interactive content.</p>
@@ -29,7 +29,7 @@ const DigitalMarketing = () => {
                          alt="Digital Marketing"/>
                 </div>
                 <div>
-                    <p className="paragraph1 leading-8 pl-[2.5rem] max-w-300  m-auto pt-8" style={{textAlign: 'left'}}>2Beyond
+                    <p className="paragraph1 leading-8 pl-[2.5rem] max-w-300  m-auto pt-8" style={{textAlign: 'left'}}>Beyond
                         promotion, digital marketing fosters authentic relationships by emphasizing storytelling and value
                         creation, turning passive viewers into loyal advocates through personalized experiences and
                         interactive content.
@@ -109,12 +109,12 @@ const DigitalMarketing = () => {
 
                 </div>
                 <div className="bg w-[55%] min-h-[20rem] bg-black m-auto mt-5 h-[18rem] rounded-2xl mb-8">
-                    <div className="Box font-extralight  ">
-                        <div className="apostrophe flex w-[100%] text-white h-[5rem] items-center justify-center" >
+                    <div className="Box font-extralight flex-wrap ">
+                        <div className="apostrophe flex w-[100%] text-white h-[6rem] items-center justify-center" >
                            <span className="h-[100%] w-[100%] text-center  mt-24" style={{fontFamily:"Passion One", fontSize: "10rem",transform: "rotate(180deg)"}}>"</span>
                         </div>
                     </div>
-                            <div className="text flex  w-[90%] m-auto text-white items-center justify-center text-center" style={{ fontSize: "1.1em"}}>
+                            <div className="text flex  w-[90%] m-auto text-white items-center justify-center text-center mt-5" style={{ fontSize: "1.1em"}}>
                                 "This platform has not only simplified our accounting processes but also given us valuable insights into our financial health. The intuitive interface and robust reporting tools have made a significant difference in our decision-making."
                             </div>
                 </div>

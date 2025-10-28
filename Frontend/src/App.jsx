@@ -10,6 +10,11 @@ import DigitalMarketing from "./Components/Services/DigitalMarketing/DigitalMark
 import Printing from "./Components/Services/Printing/Printing.jsx";
 import NotFound from "./Components/NotFound/NotFound.jsx";
 import {snowflakeCursor} from "./Components/MouseHover/SnowFlake.js";
+import GraphicDesign from "./Components/Services/GraphicDesign/GraphicDesign.jsx";
+import CustomerRelationshipManagement
+    from "./Components/Services/CustomerRelationshipManagement/CustomerRelationshipManagement.jsx";
+import OutdoorAdvertising from "./Components/Services/OutdoorAdvertising/OutdoorAdvertising.jsx";
+import SocialMediaHandling from "./Components/Services/SocialMediaHandling/SocialMediaHandling.jsx";
 
 
 function App() {
@@ -25,7 +30,13 @@ function App() {
                 <Route path="/career" element={<Career/>}/>
                 <Route path="/info" element={<TermsConditions/>}/>
                 <Route path="/services/digitalmarketing" element={<DigitalMarketing/>}/>
+                <Route path="/services/graphicdesign" element={<GraphicDesign/>}/>
+                <Route path="/services/customerrelationshipmanagement" element={<CustomerRelationshipManagement/>}/>
+                <Route path="/services/socialmediahandling" element={<SocialMediaHandling/>}/>
                 <Route path="/services/printing" element={<Printing/>}/>
+                <Route path="/services/outdooradvertising" element={<OutdoorAdvertising/>}/>
+
+
                 <Route path={"*"} element={<NotFound/>}/>
             </Routes>
         </>

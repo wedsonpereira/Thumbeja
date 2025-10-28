@@ -2,12 +2,17 @@ import React from 'react';  // Add this at the top
 import './OutdoorAdvertising.css';
 import Header from '../../header/Header.jsx';
 import '../../../index.css'
-import OutdoorAdvertisingImg from '../../../assets/Images/OutdoorAdvertising.png';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCheck} from "@fortawesome/free-solid-svg-icons";
 import {services1, services2,services3} from "../../../assets/JsonData/Servicesdata/DigitalMarketing.js";
 import Footer from "../../Footer/Footer.jsx";
 import {GetInTouch} from "../Services.jsx";
+import OutdoorAdvertisingImg from "../../../assets/Images/OutdoorAdvertisement.png";
+import VideoMarketing1Img from "../../../assets/Images/VideoMarketing1.png";
+import SEO1Img from "../../../assets/Images/SEO1.png";
+import OutdoorAdvertisementPic1Img from "../../../assets/Images/OutdoorAdvertisementPic1.png";
+import OutdoorAdvertisementPic3Img from "../../../assets/Images/OutdoorAdvertisementPic3.png";
+import OutdoorAdvertisementPic2Img from "../../../assets/Images/OutdoorAdvertisementPic2.png";
 const OutdoorAdvertising = () => {
 
     return (
@@ -16,39 +21,39 @@ const OutdoorAdvertising = () => {
             <div className="DigitalMarketingbox1 max-w-300  m-auto ">
                 <h1 className="heading pt-[4rem] pl-[2.5rem] "
                     style={{textAlign: 'left', fontWeight: 'bold', fontSize: "2.3rem"}}> Outdoor Advertising</h1>
-                <p className="paragraph1 leading-8 pl-[2.5rem] " style={{textAlign: 'left'}}>Digital marketing
-                    encompasses a dynamic array of strategies designed to connect businesses with their audiences in
-                    the digital realm.</p>
-                <p className="paragraph2 leading-8 pl-[2.5rem] pt-[0.9rem] " style={{textAlign: 'left'}}>1Beyond
-                    promotion, digital marketing fosters authentic relationships by emphasizing storytelling and
-                    value creation, turning passive viewers into loyal advocates through personalized experiences
-                    and interactive content.</p>
+                <p className="paragraph1 leading-8 pl-[2.5rem] " style={{textAlign: 'left'}}>Outdoor advertising
+                    leverages high-visibility public spaces to deliver compelling messages to diverse audiences, creating
+                    immediate and lasting impressions through strategic placement and creative design.</p>
+                <p className="paragraph2 leading-8 pl-[2.5rem] pt-[0.9rem] " style={{textAlign: 'left'}}>Beyond
+                    static displays, outdoor advertising builds brand momentum by integrating dynamic elements like digital screens and experiential activations, transforming everyday environments into powerful engagement zones.</p>
             </div>
             <div className="ImageSection pt-10 max-width-[2000px] min-h-[14rem] ">
-                <img src={OutdoorAdvertisingImg} className="DigitalMarketingImg w-[90%] rounded-2xl mt-0 mb-0 m-auto"
-                     alt="Digital Marketing"/>
+                <img src={OutdoorAdvertisingImg} className="CustomerRelationshipManagementImg w-[65%] rounded-2xl mt-0 mb-0 m-auto transition-transform duration-300 hover:scale-105"
+                     alt="Customer Relationship Management"/>
             </div>
             <div>
-                <p className="paragraph1 leading-8 pl-[2.5rem] max-w-300  m-auto pt-8" style={{textAlign: 'left'}}>2Beyond
-                    promotion, digital marketing fosters authentic relationships by emphasizing storytelling and value
-                    creation, turning passive viewers into loyal advocates through personalized experiences and
-                    interactive content.
+                <p className="paragraph1 leading-8 pl-[2.5rem] max-w-300  m-auto pt-8" style={{textAlign: 'left'}}>From
+                    billboards and transit wraps to street posters and digital out-of-home networks, outdoor advertising fosters
+                    authentic connections by capturing attention in real-world contexts, turning commuters and passersby into engaged brand enthusiasts through bold visuals and targeted messaging.
                 </p>
             </div>
             <div className="Subheadingmain max-w-300  m-auto">
                 <h1 className="subheading pt-[1.5rem] pl-[2.5rem]"
-                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}>What do our branding &
-                    marketing services include
+                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}>What do our outdoor advertising
+                    services include
                 </h1>
-                <h2 className="subheading pt-[1.5rem] pl-[2.5rem]"
-                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.4rem"}}>Brand & Marketing
+                <h2 className="subheading  pl-[2.5rem] mb-[1.5rem]"
+                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.4rem"}}>Outdoor Advertising
                     Evaluations
                 </h2>
-                <p className="paragraph1 leading-8 pl-[2.5rem] pt-6" style={{textAlign: 'left'}}>Beyond promotion,
-                    digital marketing fosters authentic relationships by emphasizing storytelling and value
-                    creation, turning passive viewers into loyal advocates through personalized experiences and
-                    interactive content.
-                </p>
+                <p className="paragraph1 leading-8 pl-[2.5rem] pt-6" style={{textAlign: 'left'}}>Our evaluations assess site visibility, audience demographics, and campaign performance metrics to optimize outdoor placements, ensuring every ad dollar maximizes reach and impact in high-traffic areas.</p>
+                <div className="Subheadingmain  max-w-275 m-auto ">
+                    <div className="image-gallery flex justify-around mt-4 max-w-275 mx-auto gap-4 ">  {/* Added gap-4 for even spacing */}
+                        <img src={SEO1Img} alt="Poster 1" className="w-1/2 rounded-lg object-cover transition-transform duration-300 hover:scale-105" />  {/* Added object-cover for better fit */}
+                        <img src={VideoMarketing1Img} alt="Poster 2" className="w-1/2 rounded-lg object-cover transition-transform duration-300 hover:scale-105" />  {/* Import & use a second image */}
+
+                    </div>
+                </div>
                 <div className="points max-w-450 pl-14 m-auto  pt-6 leading-6" >
                     <ul className="services-list" >
                         {services1.map((service, index) => (
@@ -62,8 +67,14 @@ const OutdoorAdvertising = () => {
             </div>
             <div className="DigitalMarketingbox2 max-w-300  m-auto ">
                 <h1 className="heading pt-[2rem] pl-[2.5rem] "
-                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}> Branding & marketing</h1>
-                <p className="paragraph1 leading-8 pl-[2.5rem] " style={{textAlign: 'left'}}>Branding and marketing at Thumbeja Publicity represent a seamless fusion of creative storytelling, strategic innovation, and measurable impact, designed to elevate your business from visibility to unforgettable presence. We craft comprehensive branding solutions—from corporate stationery, marketing collaterals, and merchandise printing to event and personal branding with custom ID cards, badges, and signage—that embody your identity with professional precision.</p>
+                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}> Outdoor Advertising</h1>
+                <p className="paragraph1 leading-8 pl-[2.5rem] " style={{textAlign: 'left'}}>Outdoor advertising at Thumbeja Publicity blends innovative design, prime location scouting, and data-driven execution to amplify your brand's presence in the physical world. We handle everything from traditional billboards and vehicle wraps to cutting-edge LED displays and guerrilla installations, delivering campaigns that stop traffic—literally—and spark conversations wherever your audience roams.</p>
+            </div>
+            <div className="Subheadingmain  max-w-275 m-auto ">
+                <div className="image-gallery flex justify-around mt-4 max-w-275 mx-auto gap-4 ">  {/* Added gap-4 for even spacing */}
+                    <img src={OutdoorAdvertisementPic2Img} alt="Poster 2" className=" rounded-lg object-cover transition-transform duration-300 hover:scale-105" />  {/* Import & use a second image */}
+
+                </div>
             </div>
             <div className="points max-w-300 pl-14 m-auto  pt-6 leading-6" >
                 <ul className="services-list" >
@@ -77,15 +88,18 @@ const OutdoorAdvertising = () => {
             </div>
             <div className="Subheadingmain max-w-300  m-auto">
                 <h1 className="subheading pt-[1.5rem] pl-[2.5rem]"
-                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}>What do our branding &
-                    marketing services include
+                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}>What do our outdoor advertising
+                    services include
                 </h1>
 
-                <p className="paragraph1 leading-8 pl-[2.5rem] pt-6" style={{textAlign: 'left'}}>Beyond promotion,
-                    digital marketing fosters authentic relationships by emphasizing storytelling and value
-                    creation, turning passive viewers into loyal advocates through personalized experiences and
-                    interactive content.
-                </p>
+                <p className="paragraph1 leading-8 pl-[2.5rem] pt-6" style={{textAlign: 'left'}}>We specialize in creating immersive outdoor experiences that blend seamlessly with urban landscapes, using weather-resistant materials and interactive tech to ensure durability and engagement in any environment.</p>
+                <div className="Subheadingmain  max-w-275 m-auto ">
+                    <div className="image-gallery flex justify-around mt-4 max-w-275 mx-auto gap-4 ">  {/* Added gap-4 for even spacing */}
+                        <img src={OutdoorAdvertisementPic1Img} alt="Poster 1" className="w-1/2 rounded-lg object-cover transition-transform duration-300 hover:scale-105" />  {/* Added object-cover for better fit */}
+                        <img src={OutdoorAdvertisementPic3Img} alt="Poster 2" className="w-1/2 rounded-lg object-cover transition-transform duration-300 hover:scale-105" />  {/* Import & use a second image */}
+
+                    </div>
+                </div>
                 <div className="points max-w-450 pl-14 m-auto  pt-6 leading-6" >
                     <ul className="services-list" >
                         {services3.map((service, index) => (
@@ -99,36 +113,21 @@ const OutdoorAdvertising = () => {
             </div>
             <div className="4th para max-w-300  m-auto">
                 <h1 className="subheading pt-[1.5rem] pl-[2.5rem]"
-                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}>What we have offer
+                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}>What we have to offer
                 </h1>
 
-                <p className="paragraph1 leading-8 pl-[2.5rem] pt-3" style={{textAlign: 'left'}}>Thumbeja Publicity offers comprehensive branding and marketing services to businesses of all sizes and industries, enhancing online visibility, generating leads, and driving sales through innovative digital and traditional strategies. From search engine marketing with Google Ads and SEO to social media campaigns, video production, WhatsApp automation, CRM management, website development, corporate stationery, marketing collaterals, event branding, signage, merchandise printing, and outdoor advertising like banners and LED displays, we leverage cutting-edge tools and creativity to keep you ahead of the competition and achieve your growth goals. We love to bring designs to life as developers, and we aim to do this using whatever front-end tools are necessary.
-                </p>
-                <p className="paragraph2 leading-8 pl-[2.5rem] pt-3" style={{textAlign: 'left'}}>Our preferred tools are more modern JavaScript libraries like React.js but we like to use whatever is best for the website's needs. There are several reasons why a business would consider a rebrand and it doesn’t necessarily mean the business has been unsuccessful.   </p>
+                <p className="paragraph1 leading-8 pl-[2.5rem] pt-3" style={{textAlign: 'left'}}>Thumbeja Publicity delivers end-to-end outdoor advertising solutions tailored for businesses seeking bold, unmissable visibility. Our portfolio spans highway billboards, mall kiosks, bus shelters, and digital signage networks, combined with creative services like custom graphics and AR-enhanced displays to captivate on-the-go audiences and boost foot traffic or inquiries.</p>
+                <p className="paragraph2 leading-8 pl-[2.5rem] pt-3" style={{textAlign: 'left'}}>We collaborate closely with local authorities for compliant installations and track real-time metrics via geofencing and footfall counters. Whether launching a seasonal promo or a long-term awareness drive, our expertise ensures your message dominates the skyline. Businesses often refresh outdoor strategies to align with evolving markets, proving that evolution keeps brands fresh and relevant.</p>
 
 
             </div>
-            <div className="bg w-[80%] bg-black m-auto mt-5 h-[20rem] rounded-2xl mb-8">
-                <div className="Box font-extralight">
-                    <div className="apostrophe flex w-[100%] text-white h-[5rem] items-center justify-center" >
-                        <span className="h-[100%] w-[100%] text-center  mt-24" style={{fontFamily:"Passion One", fontSize: "10rem",transform: "rotate(180deg)"}}>"</span>
-                    </div>
-                    <div className={" flex flex-1 "}>
-                    </div>
-                    <div className="apostrophe flex w-[80%] m-auto mt-1 text-white items-center justify-center text-center" style={{fontFamily:"Passion One", fontSize: "1.5rem"}}>
-                        "This platform has not only simplified our accounting processes but also given us valuable insights into our financial health. The intuitive interface and robust reporting tools have made a significant difference in our decision-making. Plus, their customer support is top-notch."
-                    </div>
-                </div>
 
-            </div>
             <div className="DigitalMarketingboxN max-w-300  m-auto ">
                 <h1 className="heading pl-[2.5rem] "
-                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "2.3rem"}}> Branding & marketing optimizations and ongoing support
+                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "2.3rem"}}> Outdoor advertising optimizations and ongoing support
                 </h1>
-                <p className="paragraph1 leading-8 mt-4 pl-[2.5rem] " style={{textAlign: 'left'}}>At Thumbeja Publicity, we specialize in crafting unique brand identities that resonate with target audiences, driving meaningful connections and long-term growth. Our branding and marketing optimization services leverage cutting-edge strategies to enhance online visibility, refine messaging, and amplify engagement across digital channels, ensuring businesses stand out in competitive markets.
-                </p>
-                <p className="paragraph2 leading-8 pl-[2.5rem] pt-[0.9rem] " style={{textAlign: 'left'}}>We provide comprehensive ongoing support, from continuous performance audits and adaptive campaign tweaks to dedicated relationship management, helping clients evolve their brands without disruption. Whether refreshing an established identity or scaling new initiatives, our tailored approach empowers businesses to thrive, proving that strategic rebrands are about innovation, not just recovery.
-                </p>
+                <p className="paragraph1 leading-8 mt-4 pl-[2.5rem] " style={{textAlign: 'left'}}>At Thumbeja Publicity, our outdoor advertising optimizations fine-tune campaigns with A/B testing on creatives, audience flow analysis, and eco-friendly upgrades, maximizing ROI in prime locations while minimizing environmental impact.</p>
+                <p className="paragraph2 leading-8 pl-[2.5rem] pt-[0.9rem] " style={{textAlign: 'left'}}>We offer seamless ongoing support, including routine maintenance, performance reporting, and adaptive adjustments to traffic patterns or regulations, empowering your brand to maintain dominance in the out-of-home space without missing a beat.</p>
             </div>
             <GetInTouch />
             <Footer/>

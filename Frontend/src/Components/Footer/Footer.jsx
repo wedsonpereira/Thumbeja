@@ -1,5 +1,5 @@
 import React from 'react';
-import thumbejalogo from '/src/assets/Images/thunbejalogo.png'
+import thumbejalogo from '/Users/keerthantauro/WebstormProjects/Thumbeja Website/src/assets/Images/thunbejalogo.png'
 import {faFacebook, faInstagram, faLinkedin, faWhatsapp} from "@fortawesome/free-brands-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {Link} from "react-router-dom";

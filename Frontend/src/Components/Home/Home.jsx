@@ -5,10 +5,10 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCheck} from "@fortawesome/free-solid-svg-icons";
 import Footer from "../Footer/Footer.jsx";
 import {homepageData2, homePageData, homepageData3, homepageData4,homeherodata} from "../../assets/JsonData/HomePageData.js";
-import featureImg from '/src/assets/Images/features.png'
-import processImg1 from '/src/assets/Images/processImg1.jpg'
-import processImg2 from '/src/assets/Images/processImg2.jpg'
-import processImg3 from '/src/assets/Images/processImg3.jpg'
+import featureImg from '/Users/keerthantauro/WebstormProjects/Thumbeja Website/src/assets/Images/features.png'
+import processImg1 from '/Users/keerthantauro/WebstormProjects/Thumbeja Website/src/assets/Images/processImg1.jpg'
+import processImg2 from '/Users/keerthantauro/WebstormProjects/Thumbeja Website/src/assets/Images/processImg2.jpg'
+import processImg3 from '/Users/keerthantauro/WebstormProjects/Thumbeja Website/src/assets/Images/processImg3.jpg'
 import {useEffect} from "react";
 import gsap from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
