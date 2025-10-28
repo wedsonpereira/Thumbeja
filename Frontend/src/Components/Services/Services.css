@@ -19,19 +19,18 @@
 
 .services-svg-shape {
     position: absolute;
+    top: 11%;
     opacity: 30%;
-    animation: float 900ms infinite linear both alternate;
+    animation: float 990ms ease-in-out infinite alternate;
 }
-
 
 @keyframes float {
     from {
-        top:11% ;
-            }
-    to{
-        top:20% ;
+        transform: translateY(0);
     }
-
+    to {
+        transform: translateY(10%); /* Roughly equivalent to moving from 11% to 17% */
+    }
 }
 
 .services-card-header{
@@ -87,7 +86,7 @@
 
 
 
-@media(max-width:800px){
+@media(max-width:900px){
     .text-800px{
         span{
             font-size: 1.8rem;

@@ -94,7 +94,6 @@ const Services = () => {
                             }
                         )
                     }
-
                 </div>
             </div>
             <GetInTouch onPressGetIntouch={()=>handleGetinTouch()}/>

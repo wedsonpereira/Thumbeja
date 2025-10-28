@@ -17,7 +17,7 @@ const ContactDetails = [
     {
         icon:faLocation,
         text:"Our Address ",
-        contact:"4th floor, Sahakari Sadana, Rao & rao Circle, 410, Mission St, Bhavathi, Bunder, Mangaluru,     Karnataka 575001",
+        contact:"410, 4th floor, Sahakari Sadana,Near Rao & rao Circle, Mission Street, Bunder, Mangaluru, Karnataka 575001",
         url:"https://maps.app.goo.gl/WmjmVMURvhLSWVSx6"
     }
 ]

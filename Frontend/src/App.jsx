@@ -18,7 +18,7 @@ import SocialMediaHandling from "./Components/Services/SocialMediaHandling/Socia
 
 
 function App() {
-    snowflakeCursor(document.body);
+    // snowflakeCursor(document.body);
 
     return (
         <>

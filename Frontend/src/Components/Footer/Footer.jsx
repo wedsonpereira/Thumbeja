@@ -82,7 +82,7 @@ const Footer = () => {
             <div className={"h-max w-full flex flex-center justify-center items-center"}>
                 <hr/>
                 <div className={"h-[5rem] flex flex-center justify-center items-center text-center"}>
-                    <a href={"tel:+917483713076"} alt={"Developed by Wedson"} className={"text-lg tp-copyright"}>© 2025 Thumbeja Publicity. All rights reserved.</a>
+                    <span className={"text-lg tp-copyright"}>© 2025 Thumbeja Publicity. All rights reserved.</span>
                 </div>
             </div>
         </div>

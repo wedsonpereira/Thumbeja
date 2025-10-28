@@ -24,12 +24,12 @@ const Contact = () => {
 
     useGSAP(() => {
 
-        gsap.from('.tp-contact-lbl', {y: -300, duration: 1, stagger: {from: "end", each: 0.2}});
+        gsap.from('.tp-contact-lbl', {x: -300, duration: 1,ease:'power2.inOut',stagger: {from: "start", each: 0.2},opacity:0});
 
         gsap.from('.tp-contact-card', {
             duration: 1,
             stagger: {
-                from: "center", each: 0.3}, yoyo: true, opacity: 0, ease: 'expo.in'
+                from: "start", each: 0.3}, yoyo: true, opacity: 0, ease: 'expo.in'
         });
 
 
@@ -39,30 +39,15 @@ const Contact = () => {
     const onSubmit = async (event) => {
         event.preventDefault();
         toast("Sending....");
-        const formData = new FormData(event.target);
-        formData.append("access_key", "0108879f-25a4-4d75-b4cb-f4162a4c384e");
-
+        const formData =event.target;
         try{
-            const response = await fetch("https://api.web3forms.com/submit", {
-                method: 'POST',
-                body: formData
-            });
-
-            const data = await response.json();
-            const {name,email } = data.data;
-
-            axios.post("http://localhost:8000/contactform", {name,email}).then((response) => {
-                console.log(response)
-            }).catch((error) => {
-                console.log(error);
+            axios.post("http://localhost:8000/contactform",formData).then((response) =>{
+                if(response.status === 200){
+                    toast("Form sent successfully.");
+                }
+            }).catch((err) =>{
+                toast("Some Error occurred", err.message)
             })
-
-            if (data.success) {
-                toast("Form Submitted Successfully");
-                event.target.reset();
-            } else {
-                toast("Error");
-            }
         }catch(e){
             toast("Error",e.message);
         }
@@ -103,11 +88,11 @@ const Contact = () => {
                     </div>
                 </div>
                 {/*contact card*/}
-                <div className={"w-[100%] h-max flex flex-wrap items-center justify-center pt-2 gap-5"}>
+                <div className={"w-[100%] h-max flex flex-wrap items-center justify-center pt-2 gap-5 "}>
                     {
                         contactdetails.map((item, index) => {
                             return (
-                                <div key={index} className="bg-amber-50 tp-contact-card w-[90%] sm:w-2/3 md:w-1/2 lg:w-[25%] h-[22rem] rounded-2xl p-4 flex items-center justify-evenly flex-col tp-contact-lbl">
+                                <div key={index} className="bg-amber-50 tp-contact-card w-[30rem] h-[24rem] rounded-2xl p-4 flex items-center justify-evenly flex-col tp-contact-lbl">
                                     <div className={"flex items-center justify-center h-[40%]"}>
                                         <span
                                             className={"w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-purple-700 rounded-full flex items-center justify-center"}
@@ -174,13 +159,13 @@ const Contact = () => {
                                       className="tp-contact-textarea border-1 rounded-2xl tp-contact-scroll-animation-1" placeholder="Message"/>
                         </div>
                         <div className="tp-contact-input-box2 h-max">
-                            <div className="tp-contact-agreement rounded flex items-start">
-                                <input type="checkbox" required={true}/>
+                            <div className="tp-contact-agreement rounded flex items-start gap-5">
+                                <input type="checkbox" required={true} className={"scale-125 tp-contact-scroll-animation-1"}/>
                                 <Link to={"/info"} className={"hover:text-[blue] tp-contact-scroll-animation-1"}> All agree to the terms &
                                     conditions.</Link>
                             </div>
                             <div className="rounded text-white tp-submit-btn tp-contact-scroll-animation-1">
-                                <button type="submit" className="rounded-4xl w-[30%] bg-[#091e42] p-5 h-[100%] hover:bg-[#4169E1] transition ">
+                                <button type="submit" className="rounded-4xl w-[13rem] bg-[#091e42] p-5 h-[100%] hover:bg-[#4169E1] transition ">
                                     Send Message
                                 </button>
                             </div>
