@@ -1,139 +1,101 @@
-import React from 'react';  // Add this at the top
 import './WebsiteSoftwareDevelopment.css';
 import Header from '../../header/Header.jsx';
-import '../../../index.css'
-import WebsiteSoftwareDevelopmentImg from '../../../assets/Images/WebsiteSoftwareDevelopment.png';
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faCheck} from "@fortawesome/free-solid-svg-icons";
-import {services1, services2,services3} from "../../../assets/JsonData/Servicesdata/DigitalMarketing.js";
 import Footer from "../../Footer/Footer.jsx";
 import {GetInTouch} from "../Services.jsx";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faCheck, faCode, faMobile, faShoppingCart} from "@fortawesome/free-solid-svg-icons";
+import SEO from "../../SEO/SEO.jsx";
 
 const WebsiteSoftwareDevelopment = () => {
+    const services = [
+        "Responsive Website Design - Mobile-first approach",
+        "E-commerce Platforms - Secure online stores with payment gateways",
+        "Mobile App Development - iOS and Android applications",
+        "Custom Software Solutions - Tailored business applications",
+        "SEO-Friendly Development - Built for search engine visibility",
+        "Workflow Automation - Streamline business processes",
+        "CMS Integration - Easy content management systems",
+        "API Development - Seamless third-party integrations"
+    ];
+
     return (
-        <div className="DigitalMarketing max-width-[2000px] min-h-[60rem]">
+        <div className="website-development-page bg-[#fefdf7] min-h-screen">
+            <SEO 
+                title="Website & Software Development - Custom Web Solutions & E-commerce"
+                description="Professional website and software development services including responsive design, e-commerce platforms, mobile apps, SEO-friendly websites, and custom business applications."
+                keywords="website development, web design, e-commerce development, mobile app development, custom software, SEO-friendly websites, web development Mangalore"
+                url="https://thumbejapublicity.com/services/website-development-mangalore"
+            />
             <Header/>
-            <div className="DigitalMarketingbox1 max-w-300  m-auto ">
-                <h1 className="heading pt-[4rem] pl-[2.5rem] "
-                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "2.3rem"}}> Website & Software Development</h1>
-                <p className="paragraph1 leading-8 pl-[2.5rem] " style={{textAlign: 'left'}}>Digital marketing
-                    encompasses a dynamic array of strategies designed to connect businesses with their audiences in
-                    the digital realm.</p>
-                <p className="paragraph2 leading-8 pl-[2.5rem] pt-[0.9rem] " style={{textAlign: 'left'}}>1Beyond
-                    promotion, digital marketing fosters authentic relationships by emphasizing storytelling and
-                    value creation, turning passive viewers into loyal advocates through personalized experiences
-                    and interactive content.</p>
-            </div>
-            <div className="ImageSection pt-10 max-width-[2000px] min-h-[14rem] ">
-                <img src={WebsiteSoftwareDevelopmentImg} className="DigitalMarketingImg w-[90%] rounded-2xl mt-0 mb-0 m-auto"
-                     alt="Digital Marketing"/>
-            </div>
-            <div>
-                <p className="paragraph1 leading-8 pl-[2.5rem] max-w-300  m-auto pt-8" style={{textAlign: 'left'}}>2Beyond
-                    promotion, digital marketing fosters authentic relationships by emphasizing storytelling and value
-                    creation, turning passive viewers into loyal advocates through personalized experiences and
-                    interactive content.
+            
+            {/* Hero Section */}
+            <div className="max-w-[1200px] m-auto px-8 py-16">
+                <h1 className="text-5xl font-bold text-[#091e42] mb-6">Website & Software Development</h1>
+                <p className="text-xl text-gray-600 leading-8 mb-4">
+                    Custom websites and software solutions including responsive, SEO-friendly sites, desktop/mobile apps, 
+                    e-commerce platforms, workflow automation, and specialized business applications designed for scalability, 
+                    security, performance, efficiency, and growth.
+                </p>
+                <p className="text-lg text-gray-600 leading-8">
+                    Transform your digital presence with cutting-edge web and software solutions.
                 </p>
             </div>
-            <div className="Subheadingmain max-w-300  m-auto">
-                <h1 className="subheading pt-[1.5rem] pl-[2.5rem]"
-                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}>What do our branding &
-                    marketing services include
-                </h1>
-                <h2 className="subheading pt-[1.5rem] pl-[2.5rem]"
-                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.4rem"}}>Brand & Marketing
-                    Evaluations
-                </h2>
-                <p className="paragraph1 leading-8 pl-[2.5rem] pt-6" style={{textAlign: 'left'}}>Beyond promotion,
-                    digital marketing fosters authentic relationships by emphasizing storytelling and value
-                    creation, turning passive viewers into loyal advocates through personalized experiences and
-                    interactive content.
-                </p>
-                <div className="points max-w-450 pl-14 m-auto  pt-6 leading-6" >
-                    <ul className="services-list" >
-                        {services1.map((service, index) => (
-                            <li key={index} style={{marginBottom: '10px', fontSize: '1rem'}}>
-                                <FontAwesomeIcon icon={faCheck} size="xl"/>
-                                {service}
-                            </li>
-                        ))}
-                    </ul>
+
+            {/* Feature Cards */}
+            <div className="max-w-[1200px] m-auto px-8 mb-16">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="bg-[#091e42] p-8 rounded-2xl hover:scale-105 transition-transform shadow-lg" style={{color: 'white'}}>
+                        <FontAwesomeIcon icon={faCode} size="3x" className="mb-4" style={{color: 'white'}}/>
+                        <h3 className="text-2xl font-semibold mb-3" style={{color: 'white'}}>Custom Development</h3>
+                        <p style={{color: 'white'}}>Tailored solutions built with modern technologies and best practices</p>
+                    </div>
+                    <div className="bg-[#5D47AC] p-8 rounded-2xl hover:scale-105 transition-transform shadow-lg" style={{color: 'white'}}>
+                        <FontAwesomeIcon icon={faMobile} size="3x" className="mb-4" style={{color: 'white'}}/>
+                        <h3 className="text-2xl font-semibold mb-3" style={{color: 'white'}}>Mobile-First</h3>
+                        <p style={{color: 'white'}}>Responsive designs that work perfectly on all devices</p>
+                    </div>
+                    <div className="bg-[#091e42] p-8 rounded-2xl hover:scale-105 transition-transform shadow-lg" style={{color: 'white'}}>
+                        <FontAwesomeIcon icon={faShoppingCart} size="3x" className="mb-4" style={{color: 'white'}}/>
+                        <h3 className="text-2xl font-semibold mb-3" style={{color: 'white'}}>E-commerce</h3>
+                        <p style={{color: 'white'}}>Powerful online stores with secure payment integration</p>
+                    </div>
                 </div>
             </div>
-            <div className="DigitalMarketingbox2 max-w-300  m-auto ">
-                <h1 className="heading pt-[2rem] pl-[2.5rem] "
-                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}> Branding & marketing</h1>
-                <p className="paragraph1 leading-8 pl-[2.5rem] " style={{textAlign: 'left'}}>Branding and marketing at Thumbeja Publicity represent a seamless fusion of creative storytelling, strategic innovation, and measurable impact, designed to elevate your business from visibility to unforgettable presence. We craft comprehensive branding solutions—from corporate stationery, marketing collaterals, and merchandise printing to event and personal branding with custom ID cards, badges, and signage—that embody your identity with professional precision.</p>
-            </div>
-            <div className="points max-w-300 pl-14 m-auto  pt-6 leading-6" >
-                <ul className="services-list" >
-                    {services2.map((service, index) => (
-                        <li key={index} style={{marginBottom: '10px', fontSize: '1rem'}}>
-                            <FontAwesomeIcon icon={faCheck} size="xl"/>
-                            {service}
+
+            {/* Services List */}
+            <div className="max-w-[1200px] m-auto px-8 mb-16">
+                <h2 className="text-4xl font-bold text-[#091e42] mb-6">Our Development Services</h2>
+                <p className="text-lg text-gray-700 leading-8 mb-8">
+                    Comprehensive web and software development solutions for modern businesses.
+                </p>
+                <ul className="space-y-4">
+                    {services.map((service, index) => (
+                        <li key={index} className="flex items-start bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                            <FontAwesomeIcon icon={faCheck} className="text-[#5D47AC] mr-4 mt-1" size="lg"/>
+                            <span className="text-lg text-gray-800">{service}</span>
                         </li>
                     ))}
                 </ul>
             </div>
-            <div className="Subheadingmain max-w-300  m-auto">
-                <h1 className="subheading pt-[1.5rem] pl-[2.5rem]"
-                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}>What do our branding &
-                    marketing services include
-                </h1>
 
-                <p className="paragraph1 leading-8 pl-[2.5rem] pt-6" style={{textAlign: 'left'}}>Beyond promotion,
-                    digital marketing fosters authentic relationships by emphasizing storytelling and value
-                    creation, turning passive viewers into loyal advocates through personalized experiences and
-                    interactive content.
-                </p>
-                <div className="points max-w-450 pl-14 m-auto  pt-6 leading-6" >
-                    <ul className="services-list" >
-                        {services3.map((service, index) => (
-                            <li key={index} style={{marginBottom: '10px', fontSize: '1rem'}}>
-                                <FontAwesomeIcon icon={faCheck} size="xl"/>
-                                {service}
-                            </li>
-                        ))}
-                    </ul>
+            {/* Why Choose Us */}
+            <div className="bg-gradient-to-r from-[#091e42] to-[#5D47AC] py-16 mb-16" style={{color: 'white'}}>
+                <div className="max-w-[1200px] m-auto px-8">
+                    <h2 className="text-4xl font-bold mb-6" style={{color: 'white'}}>Why Choose Our Development Services?</h2>
+                    <p className="text-lg leading-8 mb-4" style={{color: 'white'}}>
+                        We build scalable, secure, and high-performance web and software solutions that drive business growth. 
+                        From simple websites to complex enterprise applications, our development team delivers quality code and 
+                        exceptional user experiences using the latest technologies.
+                    </p>
+                    <p className="text-lg leading-8" style={{color: 'white'}}>
+                        Partner with us to bring your digital vision to life with professional, reliable, and innovative solutions.
+                    </p>
                 </div>
             </div>
-            <div className="4th para max-w-300  m-auto">
-                <h1 className="subheading pt-[1.5rem] pl-[2.5rem]"
-                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}>What we have offer
-                </h1>
 
-                <p className="paragraph1 leading-8 pl-[2.5rem] pt-3" style={{textAlign: 'left'}}>Thumbeja Publicity offers comprehensive branding and marketing services to businesses of all sizes and industries, enhancing online visibility, generating leads, and driving sales through innovative digital and traditional strategies. From search engine marketing with Google Ads and SEO to social media campaigns, video production, WhatsApp automation, CRM management, website development, corporate stationery, marketing collaterals, event branding, signage, merchandise printing, and outdoor advertising like banners and LED displays, we leverage cutting-edge tools and creativity to keep you ahead of the competition and achieve your growth goals. We love to bring designs to life as developers, and we aim to do this using whatever front-end tools are necessary.
-                </p>
-                <p className="paragraph2 leading-8 pl-[2.5rem] pt-3" style={{textAlign: 'left'}}>Our preferred tools are more modern JavaScript libraries like React.js but we like to use whatever is best for the website's needs. There are several reasons why a business would consider a rebrand and it doesn’t necessarily mean the business has been unsuccessful.   </p>
-
-
-            </div>
-            <div className="bg w-[80%] bg-black m-auto mt-5 h-[20rem] rounded-2xl mb-8">
-                <div className="Box font-extralight">
-                    <div className="apostrophe flex w-[100%] text-white h-[5rem] items-center justify-center" >
-                        <span className="h-[100%] w-[100%] text-center  mt-24" style={{fontFamily:"Passion One", fontSize: "10rem",transform: "rotate(180deg)"}}>"</span>
-                    </div>
-                    <div className={" flex flex-1 "}>
-                    </div>
-                    <div className="apostrophe flex w-[80%] m-auto mt-1 text-white items-center justify-center text-center" style={{fontFamily:"Passion One", fontSize: "1.5rem"}}>
-                        "This platform has not only simplified our accounting processes but also given us valuable insights into our financial health. The intuitive interface and robust reporting tools have made a significant difference in our decision-making. Plus, their customer support is top-notch."
-                    </div>
-                </div>
-
-            </div>
-            <div className="DigitalMarketingboxN max-w-300  m-auto ">
-                <h1 className="heading pl-[2.5rem] "
-                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "2.3rem"}}> Branding & marketing optimizations and ongoing support
-                </h1>
-                <p className="paragraph1 leading-8 mt-4 pl-[2.5rem] " style={{textAlign: 'left'}}>At Thumbeja Publicity, we specialize in crafting unique brand identities that resonate with target audiences, driving meaningful connections and long-term growth. Our branding and marketing optimization services leverage cutting-edge strategies to enhance online visibility, refine messaging, and amplify engagement across digital channels, ensuring businesses stand out in competitive markets.
-                </p>
-                <p className="paragraph2 leading-8 pl-[2.5rem] pt-[0.9rem] " style={{textAlign: 'left'}}>We provide comprehensive ongoing support, from continuous performance audits and adaptive campaign tweaks to dedicated relationship management, helping clients evolve their brands without disruption. Whether refreshing an established identity or scaling new initiatives, our tailored approach empowers businesses to thrive, proving that strategic rebrands are about innovation, not just recovery.
-                </p>
-            </div>
             <GetInTouch />
             <Footer/>
         </div>
-
     );
 };
 

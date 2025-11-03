@@ -15,26 +15,34 @@ import CustomerRelationshipManagement
     from "./Components/Services/CustomerRelationshipManagement/CustomerRelationshipManagement.jsx";
 import OutdoorAdvertising from "./Components/Services/OutdoorAdvertising/OutdoorAdvertising.jsx";
 import SocialMediaHandling from "./Components/Services/SocialMediaHandling/SocialMediaHandling.jsx";
+import SocialMediaMarketing from "./Components/Services/SocialMediaMarketing/SocialMediaMarketing.jsx";
+import VideoMarketing from "./Components/Services/VideoMarketing/VideoMarketing.jsx";
+import WhatsappChatbot from "./Components/Services/Whatsapp & Chatbot/WhatsappChatbot.jsx";
+import WebsiteSoftwareDevelopment from "./Components/Services/Website Software Development/WebsiteSoftwareDevelopment.jsx";
 
 
 function App() {
-    // snowflakeCursor(document.body);
+    snowflakeCursor(document.body);
 
     return (
         <>
             <ScrollToTop/>
             <Routes>
                 <Route path="/" element={<Home/>}/>
-                <Route path="/contact" element={<Contact/>}/>
-                <Route path="/services" element={<Services/>}/>
-                <Route path="/career" element={<Career/>}/>
-                <Route path="/info" element={<TermsConditions/>}/>
-                <Route path="/services/digitalmarketing" element={<DigitalMarketing/>}/>
-                <Route path="/services/graphicdesign" element={<GraphicDesign/>}/>
-                <Route path="/services/customerrelationshipmanagement" element={<CustomerRelationshipManagement/>}/>
-                <Route path="/services/socialmediahandling" element={<SocialMediaHandling/>}/>
-                <Route path="/services/printing" element={<Printing/>}/>
-                <Route path="/services/outdooradvertising" element={<OutdoorAdvertising/>}/>
+                <Route path="/contact-thumbeja-publicity" element={<Contact/>}/>
+                <Route path="/services-thumbeja-publicity" element={<Services/>}/>
+                <Route path="/career-thumbeja-publicity" element={<Career/>}/>
+                <Route path="/terms-conditions-thumbeja-publicity" element={<TermsConditions/>}/>
+                <Route path="/services/digital-marketing-mangalore" element={<DigitalMarketing/>}/>
+                <Route path="/services/printing-services-mangalore" element={<Printing/>}/>
+                <Route path="/services/social-media-marketing-mangalore" element={<SocialMediaMarketing/>}/>
+                <Route path="/services/video-marketing-mangalore" element={<VideoMarketing/>}/>
+                <Route path="/services/whatsapp-chatbot-services" element={<WhatsappChatbot/>}/>
+                <Route path="/services/website-development-mangalore" element={<WebsiteSoftwareDevelopment/>}/>
+                <Route path="/services/crm-solutions-mangalore" element={<CustomerRelationshipManagement/>}/>
+                <Route path="/services/outdoor-advertising-mangalore" element={<OutdoorAdvertising/>}/>
+                <Route path="/services/social-media-handling-mangalore" element={<SocialMediaHandling/>}/>
+                <Route path="/services/graphic-design-mangalore" element={<GraphicDesign/>}/>
 
 
                 <Route path={"*"} element={<NotFound/>}/>

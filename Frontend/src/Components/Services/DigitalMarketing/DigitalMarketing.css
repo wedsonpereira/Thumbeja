@@ -1,55 +1,45 @@
-@import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Hegarty&family=Bitcount+Single+Ink:slnt,wght@-3,100..900&family=Carlito:ital,wght@0,400;0,700;1,400;1,700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Passion+One:wght@400;700;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
-.DigitalMarketing {
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); /* Ethereal hero gradient */
-    font-family: inherit; /* Preserve existing fonts */
+.digital-marketing-page {
+    background-color: #fefdf7;
+    min-height: 100vh;
 }
 
-.DigitalMarketingbox1, .DigitalMarketingbox2, .DigitalMarketingboxN, .Subheadingmain, .ImageSection {
-    background: rgba(255, 255, 255, 0.95); /* Glassmorphism effect */
-    border-radius: 20px; /* Softer rounds */
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Multi-layer shadow for depth */
-    margin-bottom: 3rem;
-    padding: 3rem;
-    backdrop-filter: blur(10px); /* Subtle blur for premium overlay */
+/* Default text colors */
+.digital-marketing-page h1,
+.digital-marketing-page h2 {
+    color: #091e42;
 }
 
-.paragraph1, .paragraph2 {
-    line-height: 1.9; /* Luxurious readability */
+.digital-marketing-page p {
     color: #4a5568;
 }
 
-.heading, .subheading {
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Gentle emphasis */
-    letter-spacing: 0.02em;
+/* Force white text on colored backgrounds */
+.digital-marketing-page .bg-gradient-to-r,
+.digital-marketing-page .bg-gradient-to-r *,
+.digital-marketing-page .bg-gradient-to-br,
+.digital-marketing-page .bg-gradient-to-br * {
+    color: white !important;
 }
 
-.services-list li {
-    background: white;
-    padding: 1rem;
-    border-left: 4px solid #d4af37; /* Gold accent */
-    border-radius: 0 10px 10px 0;
-    margin-bottom: 1rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
+/* Force white text in purple and navy cards */
+.digital-marketing-page [class*="bg-[#5D47AC]"],
+.digital-marketing-page [class*="bg-[#5D47AC]"] *,
+.digital-marketing-page [class*="bg-[#091e42]"],
+.digital-marketing-page [class*="bg-[#091e42]"] * {
+    color: white !important;
 }
 
-.services-list li:hover {
-    transform: translateX(8px); /* Elegant slide */
-    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.2); /* Gold-tinted shadow */
+/* Ensure dark text on white backgrounds */
+.digital-marketing-page .bg-white,
+.digital-marketing-page .bg-white * {
+    color: #2d3748 !important;
 }
 
-/* Quote box enhancement */
-.bg {
-    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%); /* Dark, moody gradient */
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+/* Override for checkmarks */
+.digital-marketing-page .bg-white .text-\[\#5D47AC\] {
+    color: #5D47AC !important;
 }
 
-.text {
-    font-style: italic;
-    color: #e2e8f0;
+.text-gray-800 {
+    color: #2d3748 !important;
 }
-
-
-
-
-

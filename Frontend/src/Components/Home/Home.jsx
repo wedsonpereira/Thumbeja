@@ -4,13 +4,7 @@ import Header from "../header/Header.jsx";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCheck} from "@fortawesome/free-solid-svg-icons";
 import Footer from "../Footer/Footer.jsx";
-<<<<<<< HEAD
-import {homepageData2, homePageData, homepageData3, homepageData4,homeherodata} from "../../assets/JsonData/HomePageData.js";
-import featureImg from '/Users/keerthantauro/WebstormProjects/Thumbeja Website/src/assets/Images/features.png'
-import processImg1 from '/Users/keerthantauro/WebstormProjects/Thumbeja Website/src/assets/Images/processImg1.jpg'
-import processImg2 from '/Users/keerthantauro/WebstormProjects/Thumbeja Website/src/assets/Images/processImg2.jpg'
-import processImg3 from '/Users/keerthantauro/WebstormProjects/Thumbeja Website/src/assets/Images/processImg3.jpg'
-=======
+import SEO from "../SEO/SEO.jsx";
 import {
     homepageData2,
     homePageData,
@@ -22,7 +16,6 @@ import featureImg from '/src/assets/Images/features.png'
 import processImg1 from '../../assets/Images/planning-with-client.jpg'
 import processImg2 from '../../assets/Images/celebrating-the-success.jpg'
 import processImg3 from '../../assets/Images/execution-of-the-project.jpg'
->>>>>>> 02945d5a966e0d8f2255097f546fc54d63f82442
 import {useEffect} from "react";
 import gsap from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
@@ -116,6 +109,12 @@ const Home = () => {
 
     return (
         <>
+            <SEO 
+                title="Thumbeja Publicity - Digital Marketing & Branding Agency in Mangalore"
+                description="Transform your business with Thumbeja Publicity's comprehensive digital marketing services including SEO, social media marketing, web development, printing, branding, and outdoor advertising in Mangalore."
+                keywords="digital marketing Mangalore, SEO services, social media marketing, web development Mangalore, printing services, branding agency, outdoor advertising, graphic design, video marketing"
+                url="https://thumbejapublicity.com"
+            />
             <Header/>
             <div className="tp-home w-full flex flex-col">
                 <div className="relative w-[100%] h-[53rem]">

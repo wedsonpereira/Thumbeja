@@ -1,5 +1,5 @@
 import React from 'react';
-import thumbejalogo from '/Users/keerthantauro/WebstormProjects/Thumbeja Website/src/assets/Images/thunbejalogo.png'
+import thumbejalogo from '/src/assets/Images/thunbejalogo.png'
 import {faFacebook, faInstagram, faLinkedin, faWhatsapp} from "@fortawesome/free-brands-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {Link} from "react-router-dom";
@@ -17,63 +17,64 @@ const Footer = () => {
                             <img src={thumbejalogo} alt="" className={"w-full h-full object-contain scale-200"}/>
                         </div>
                         <div className={"tp-max800-text h-[100%] w-full flex p-2 "}>
-                            <p>
-                                To empower businesses of all sizes with innovative technology, creative marketing, and reliable customer solutions that drive success and long-term growth.                            </p>
+                            <p style={{color: 'white'}}>
+                                To empower businesses of all sizes with innovative technology, creative marketing, and reliable customer solutions that drive success and long-term growth.
+                            </p>
                         </div>
                     </div>
                     <hr className={"w-[100%]"}/>
                     <div className={"flex gap-3 flex-col p-3 justify-center items-center w-full"}>
                         <div className={"tp-max800-text"}>
-                            <span className={"text-4xl"}>Reach us @</span>
+                            <span className={"text-4xl"} style={{color: 'white'}}>Reach us @</span>
                         </div>
                         <div className={"flex gap-3 border-1 w-max p-2 rounded"}>
-                            <a href="https://www.facebook.com/share/17UorZadV3/?mibextid=wwXIfr" target={"_blank"}><FontAwesomeIcon icon={faFacebook} size="lg"/></a>
-                            <a href="https://www.instagram.com/thumbeja_publicity?igsh=NGF3OTc1bTM1czds" target={"_blank"}><FontAwesomeIcon icon={faInstagram} size="lg"/></a>
-                            <a href="https://wa.me/916366983700" target={"_blank"}><FontAwesomeIcon icon={faWhatsapp} size="lg"/></a>
-                            <a href="https://linkedin.com/in/thumbeja-publicity-267636387" target={"_blank"}><FontAwesomeIcon icon={faLinkedin} size="lg"/></a>
+                            <a href="https://www.facebook.com/share/17UorZadV3/?mibextid=wwXIfr" target={"_blank"} style={{color: 'white'}}><FontAwesomeIcon icon={faFacebook} size="lg"/></a>
+                            <a href="https://www.instagram.com/thumbeja_publicity?igsh=NGF3OTc1bTM1czds" target={"_blank"} style={{color: 'white'}}><FontAwesomeIcon icon={faInstagram} size="lg"/></a>
+                            <a href="https://wa.me/916366983700" target={"_blank"} style={{color: 'white'}}><FontAwesomeIcon icon={faWhatsapp} size="lg"/></a>
+                            <a href="https://linkedin.com/in/thumbeja-publicity-267636387" target={"_blank"} style={{color: 'white'}}><FontAwesomeIcon icon={faLinkedin} size="lg"/></a>
                         </div>
                     </div>
                 </div>
                 <div className={"tp-footer-content1 w-[50%] h-[100%] flex justify-evenly p-2"}>
                     <div className={"flex flex-col gap-6"}>
                         <div className={"flex flex-col items-start gap-3 tp-max800-text"}>
-                            <span className={"text-2xl"}>Pages</span>
+                            <span className={"text-2xl"} style={{color: 'white'}}>Pages</span>
                         </div>
                         <div className={"flex flex-col items-start gap-3 tp-max800-text"}>
-                            <Link className={"text-sm"} to={"/services"}>
-                                <span className={""}>Services</span>
-                                <FontAwesomeIcon icon={faArrowUp} size="lg" style={{"transform":"rotate(45deg)"}} />
+                            <Link className={"text-sm"} to={"/services-thumbeja-publicity"} style={{color: 'white'}}>
+                                <span style={{color: 'white'}}>Services</span>
+                                <FontAwesomeIcon icon={faArrowUp} size="lg" style={{"transform":"rotate(45deg)", "color": "white"}} />
                             </Link>
-                            <Link className={"text-sm"} to={"/contact"}>
-                                <span className={""}>Contact</span>
-                                <FontAwesomeIcon icon={faArrowUp} size="lg" style={{"transform":"rotate(45deg)"}} />
+                            <Link className={"text-sm"} to={"/contact-thumbeja-publicity"} style={{color: 'white'}}>
+                                <span style={{color: 'white'}}>Contact</span>
+                                <FontAwesomeIcon icon={faArrowUp} size="lg" style={{"transform":"rotate(45deg)", "color": "white"}} />
                             </Link>
-                            <Link className={"text-sm"} to={"/career"}>
-                                <span className={""}>Career</span>
-                                <FontAwesomeIcon icon={faArrowUp} size="lg" style={{"transform":"rotate(45deg)"}} />
+                            <Link className={"text-sm"} to={"/career-thumbeja-publicity"} style={{color: 'white'}}>
+                                <span style={{color: 'white'}}>Career</span>
+                                <FontAwesomeIcon icon={faArrowUp} size="lg" style={{"transform":"rotate(45deg)", "color": "white"}} />
                             </Link>
-                            <Link className={"text-sm"} to={"#about"}>
-                                <span className={""}>About</span>
-                                <FontAwesomeIcon icon={faArrowUp} size="lg" style={{"transform":"rotate(45deg)"}} />
+                            <Link className={"text-sm"} to={"#about"} style={{color: 'white'}}>
+                                <span style={{color: 'white'}}>About</span>
+                                <FontAwesomeIcon icon={faArrowUp} size="lg" style={{"transform":"rotate(45deg)", "color": "white"}} />
                             </Link>
-                            <Link className={"text-sm"} to={"/"}>
-                                <span className={""}>Home</span>
-                                <FontAwesomeIcon icon={faArrowUp} size="lg" style={{"transform":"rotate(45deg)"}} />
+                            <Link className={"text-sm"} to={"/"} style={{color: 'white'}}>
+                                <span style={{color: 'white'}}>Home</span>
+                                <FontAwesomeIcon icon={faArrowUp} size="lg" style={{"transform":"rotate(45deg)", "color": "white"}} />
                             </Link>
                         </div>
                     </div>
                     <div className={"flex flex-col gap-6"}>
                         <div className={"flex flex-col items-start  tp-max800-text"}>
-                            <span className={"text-2xl"}>Organization information</span>
+                            <span className={"text-2xl"} style={{color: 'white'}}>Organization information</span>
                         </div>
                         <div className={"flex flex-col items-start gap-3"}>
-                            <Link className={"text-sm"} to={"/info"}>
-                                <span className={""}>Terms & Conditions </span>
-                                <FontAwesomeIcon icon={faArrowUp} size="lg" style={{"transform":"rotate(45deg)"}} />
+                            <Link className={"text-sm"} to={"/terms-conditions-thumbeja-publicity"} style={{color: 'white'}}>
+                                <span style={{color: 'white'}}>Terms & Conditions </span>
+                                <FontAwesomeIcon icon={faArrowUp} size="lg" style={{"transform":"rotate(45deg)", "color": "white"}} />
                             </Link>
-                            <Link className={"text-sm"} to={"/info"}>
-                                <span className={""}>Privacy Policy</span>
-                                <FontAwesomeIcon icon={faArrowUp} size="lg" style={{"transform":"rotate(45deg)"}} />
+                            <Link className={"text-sm"} to={"/terms-conditions-thumbeja-publicity"} style={{color: 'white'}}>
+                                <span style={{color: 'white'}}>Privacy Policy</span>
+                                <FontAwesomeIcon icon={faArrowUp} size="lg" style={{"transform":"rotate(45deg)", "color": "white"}} />
                             </Link>
                         </div>
                     </div>
@@ -82,7 +83,7 @@ const Footer = () => {
             <div className={"h-max w-full flex flex-center justify-center items-center"}>
                 <hr/>
                 <div className={"h-[5rem] flex flex-center justify-center items-center text-center"}>
-                    <span className={"text-lg tp-copyright"}>© 2025 Thumbeja Publicity. All rights reserved.</span>
+                    <span className={"text-lg tp-copyright"} style={{color: 'white'}}>© 2025 Thumbeja Publicity. All rights reserved.</span>
                 </div>
             </div>
         </div>
