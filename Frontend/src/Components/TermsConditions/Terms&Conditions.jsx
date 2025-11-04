@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from "../header/Header.jsx";
 import Footer from "../Footer/Footer.jsx";
-import privacy from "/src/assets/JsonData/privacy.jsx";
+import privacy from "../../assets/JsonData/privacy.jsx";
 import "./terms.css"
 
 const TermsConditions = () => {

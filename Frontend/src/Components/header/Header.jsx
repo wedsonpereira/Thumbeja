@@ -35,10 +35,10 @@ const Header = () => {
                         <Link className={"text-center pr-2 pl-2"} to={"/"}>Home</Link>
                     </div>
                     <div className="tp-underline relative flex items-center justify-center">
-                        <Link className={"text-center pr-2 pl-2"} to={"/career"}>Career</Link>
+                        <Link className={"text-center pr-2 pl-2"} to={"/career-thumbeja-publicity"}>Career</Link>
                     </div>
                     <div className="tp-underline relative flex items-center justify-center">
-                        <Link className={"text-center pr-2 pl-2"} to={"/services"}>Services</Link>
+                        <Link className={"text-center pr-2 pl-2"} to={"/services-thumbeja-publicity"}>Services</Link>
                     </div>
                 </div>
 
@@ -51,7 +51,7 @@ const Header = () => {
 
                 {/*the component is hidden*/}
                 <div className={"tp-header-nav tp-header-right "}>
-                    <Link to="/contact">
+                    <Link to="/contact-thumbeja-publicity">
                         <button
                             className={"p-4 font-bold border-2 bg-[#091e42] cursor-pointer text-white rounded-full  border-none outline-none hover:bg-[#091e78] transition"}>
                             Contact Us
@@ -62,10 +62,10 @@ const Header = () => {
             <div className={"hidden w-full h-[100dvh] border-1 z-[100] nav"}>
                 <ul className={"w-[100%] flex nav-links flex-col items-center justify-center h-[40rem] gap-10 text-2xl"}>
                     <Link className={'w-[70%] border-b-2 text-center leading-13 border-blue-600'} to={'/'}><li >Home</li></Link>
-                    <Link className={'w-[70%] border-b-2 text-center leading-13 border-blue-600'} to={'/services'}><li>Services</li></Link>
-                    <Link className={'w-[70%] border-b-2 text-center leading-13 border-blue-600'} to={'/career'}><li>career</li></Link>
+                    <Link className={'w-[70%] border-b-2 text-center leading-13 border-blue-600'} to={'/services-thumbeja-publicity'}><li>Services</li></Link>
+                    <Link className={'w-[70%] border-b-2 text-center leading-13 border-blue-600'} to={'/career-thumbeja-publicity'}><li>career</li></Link>
                 </ul>
-                <Link to={"/contact"} className={"w-[100%] text-white p-5 bg-blue-900 flex items-center"}>
+                <Link to={"/contact-thumbeja-publicity"} className={"w-[100%] text-white p-5 bg-blue-900 flex items-center"}>
                     <h2 className={"p-1"}>Contact</h2>
                     <FontAwesomeIcon className={"p-1"} icon={faArrowRight} size="lg" />
                 </Link>

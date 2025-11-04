@@ -5,34 +5,49 @@ import '../../../index.css'
 import OutdoorAdvertisingImg from '../../../assets/Images/Printing.png';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCheck} from "@fortawesome/free-solid-svg-icons";
-import {services1, services2,services3} from "../../../assets/JsonData/Servicesdata/DigitalMarketing.js";
 import Footer from "../../Footer/Footer.jsx";
 import {GetInTouch} from "../Services.jsx";
+import {services5} from "../../../assets/JsonData/Servicesdata/Printing.js";
+import cardAnimations from "../../../assets/JsonData/CardAnimations/CardAnimations.js";
+
+
+
+
 const Printing = () => {
 
     return (
         <div className="DigitalMarketing max-width-[2000px] min-h-[60rem]">
             <Header/>
-            <div className="DigitalMarketingbox1 max-w-300  m-auto ">
-                <h1 className="heading pt-[4rem] pl-[2.5rem] "
-                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "2.3rem"}}> Printing</h1>
-                <p className="paragraph1 leading-8 pl-[2.5rem] " style={{textAlign: 'left'}}>Digital marketing
-                    encompasses a dynamic array of strategies designed to connect businesses with their audiences in
-                    the digital realm.</p>
-                <p className="paragraph2 leading-8 pl-[2.5rem] pt-[0.9rem] " style={{textAlign: 'left'}}>1Beyond
-                    promotion, digital marketing fosters authentic relationships by emphasizing storytelling and
-                    value creation, turning passive viewers into loyal advocates through personalized experiences
-                    and interactive content.</p>
+            <div className="DigitalMarketingbox1 max-w-300 m-auto">
+                <h1 className="heading pt-[4rem] pl-[2.5rem]"
+                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "2.3rem"}}>Printing</h1>
+                <p className="paragraph1 leading-8 pl-[2.5rem]" style={{textAlign: 'left'}}>
+                    At Thumbeja Publicity, our printing services deliver high-quality, custom solutions to bring your
+                    brand to life in tangible ways. From corporate stationery and marketing collaterals like brochures
+                    and flyers to eye-catching merchandise such as branded apparel and promotional items, we utilize
+                    state-of-the-art digital and offset printing techniques to ensure vibrant colors, sharp details, and
+                    durable finishes that align with your vision.
+                </p>
+                <p className="paragraph2 leading-8 pl-[2.5rem] pt-[0.9rem]" style={{textAlign: 'left'}}>
+                    We extend our expertise to outdoor advertising with large-format prints including banners, posters,
+                    and LED displays, designed for maximum impact and weather resistance. Beyond production, our team at
+                    Thumbeja Publicity offers design consultation and quick turnaround times, empowering businesses to
+                    create cohesive branding materials that captivate audiences and reinforce professional identities
+                    across all touchpoints.
+                </p>
             </div>
             <div className="ImageSection pt-10 max-width-[2000px] min-h-[14rem] ">
-                <img src={OutdoorAdvertisingImg} className="DigitalMarketingImg w-[90%] rounded-2xl mt-0 mb-0 m-auto"
+                <img src={OutdoorAdvertisingImg} className="DigitalMarketingImg w-[65%] rounded-2xl mt-0 mb-0 m-auto"
                      alt="Digital Marketing"/>
             </div>
             <div>
-                <p className="paragraph1 leading-8 pl-[2.5rem] max-w-300  m-auto pt-8" style={{textAlign: 'left'}}>2Beyond
-                    promotion, digital marketing fosters authentic relationships by emphasizing storytelling and value
-                    creation, turning passive viewers into loyal advocates through personalized experiences and
-                    interactive content.
+                <p className="paragraph3 leading-8 pl-[2.5rem] pt-[0.9rem] max-w-300 m-auto "
+                   style={{textAlign: 'left'}}>
+                    Committed to sustainability, Thumbeja Publicity incorporates eco-friendly inks and recycled
+                    materials in our printing processes, minimizing environmental impact while maintaining premium
+                    quality. Our end-to-end service—from concept ideation to final delivery—ensures seamless execution,
+                    helping clients distribute impactful print materials that complement digital efforts and build
+                    lasting brand loyalty.
                 </p>
             </div>
             <div className="Subheadingmain max-w-300  m-auto">
@@ -40,18 +55,11 @@ const Printing = () => {
                     style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}>What do our branding &
                     marketing services include
                 </h1>
-                <h2 className="subheading pt-[1.5rem] pl-[2.5rem]"
-                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.4rem"}}>Brand & Marketing
-                    Evaluations
-                </h2>
-                <p className="paragraph1 leading-8 pl-[2.5rem] pt-6" style={{textAlign: 'left'}}>Beyond promotion,
-                    digital marketing fosters authentic relationships by emphasizing storytelling and value
-                    creation, turning passive viewers into loyal advocates through personalized experiences and
-                    interactive content.
-                </p>
-                <div className="points max-w-450 pl-14 m-auto  pt-6 leading-6" >
-                    <ul className="services-list" >
-                        {services1.map((service, index) => (
+
+
+                <div className="points max-w-450 pl-14 m-auto  pt-6 leading-6">
+                    <ul className="services-list">
+                        {services5.map((service, index) => (
                             <li key={index} style={{marginBottom: '10px', fontSize: '1rem'}}>
                                 <FontAwesomeIcon icon={faCheck} size="xl"/>
                                 {service}
@@ -60,77 +68,82 @@ const Printing = () => {
                     </ul>
                 </div>
             </div>
-            <div className="DigitalMarketingbox2 max-w-300  m-auto ">
-                <h1 className="heading pt-[2rem] pl-[2.5rem] "
-                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}> Branding & marketing</h1>
-                <p className="paragraph1 leading-8 pl-[2.5rem] " style={{textAlign: 'left'}}>Branding and marketing at Thumbeja Publicity represent a seamless fusion of creative storytelling, strategic innovation, and measurable impact, designed to elevate your business from visibility to unforgettable presence. We craft comprehensive branding solutions—from corporate stationery, marketing collaterals, and merchandise printing to event and personal branding with custom ID cards, badges, and signage—that embody your identity with professional precision.</p>
-            </div>
-            <div className="points max-w-300 pl-14 m-auto  pt-6 leading-6" >
-                <ul className="services-list" >
-                    {services2.map((service, index) => (
-                        <li key={index} style={{marginBottom: '10px', fontSize: '1rem'}}>
-                            <FontAwesomeIcon icon={faCheck} size="xl"/>
-                            {service}
-                        </li>
-                    ))}
-                </ul>
-            </div>
-            <div className="Subheadingmain max-w-300  m-auto">
-                <h1 className="subheading pt-[1.5rem] pl-[2.5rem]"
-                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}>What do our branding &
-                    marketing services include
-                </h1>
 
-                <p className="paragraph1 leading-8 pl-[2.5rem] pt-6" style={{textAlign: 'left'}}>Beyond promotion,
-                    digital marketing fosters authentic relationships by emphasizing storytelling and value
-                    creation, turning passive viewers into loyal advocates through personalized experiences and
-                    interactive content.
-                </p>
-                <div className="points max-w-450 pl-14 m-auto  pt-6 leading-6" >
-                    <ul className="services-list" >
-                        {services3.map((service, index) => (
-                            <li key={index} style={{marginBottom: '10px', fontSize: '1rem'}}>
-                                <FontAwesomeIcon icon={faCheck} size="xl"/>
-                                {service}
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </div>
-            <div className="4th para max-w-300  m-auto">
-                <h1 className="subheading pt-[1.5rem] pl-[2.5rem]"
-                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}>What we have offer
-                </h1>
-
-                <p className="paragraph1 leading-8 pl-[2.5rem] pt-3" style={{textAlign: 'left'}}>Thumbeja Publicity offers comprehensive branding and marketing services to businesses of all sizes and industries, enhancing online visibility, generating leads, and driving sales through innovative digital and traditional strategies. From search engine marketing with Google Ads and SEO to social media campaigns, video production, WhatsApp automation, CRM management, website development, corporate stationery, marketing collaterals, event branding, signage, merchandise printing, and outdoor advertising like banners and LED displays, we leverage cutting-edge tools and creativity to keep you ahead of the competition and achieve your growth goals. We love to bring designs to life as developers, and we aim to do this using whatever front-end tools are necessary.
-                </p>
-                <p className="paragraph2 leading-8 pl-[2.5rem] pt-3" style={{textAlign: 'left'}}>Our preferred tools are more modern JavaScript libraries like React.js but we like to use whatever is best for the website's needs. There are several reasons why a business would consider a rebrand and it doesn’t necessarily mean the business has been unsuccessful.   </p>
-
-
-            </div>
-            <div className="bg w-[80%] bg-black m-auto mt-5 h-[20rem] rounded-2xl mb-8">
-                <div className="Box font-extralight">
-                    <div className="apostrophe flex w-[100%] text-white h-[5rem] items-center justify-center" >
-                        <span className="h-[100%] w-[100%] text-center  mt-24" style={{fontFamily:"Passion One", fontSize: "10rem",transform: "rotate(180deg)"}}>"</span>
-                    </div>
-                    <div className={" flex flex-1 "}>
-                    </div>
-                    <div className="apostrophe flex w-[80%] m-auto mt-1 text-white items-center justify-center text-center" style={{fontFamily:"Passion One", fontSize: "1.5rem"}}>
-                        "This platform has not only simplified our accounting processes but also given us valuable insights into our financial health. The intuitive interface and robust reporting tools have made a significant difference in our decision-making. Plus, their customer support is top-notch."
-                    </div>
+            <div className="relative min-h-[30rem] w-full flex justify-center items-center flex-col p-1">
+                {/*Box 1*/}
+                <div className={"w-[93%] flex items-center justify-center"}>
+                    <h1 className="subheading h-full p-2 font-bold text-2xl">Our Works</h1>
                 </div>
 
+                {/*box 2*/}
+                <div className=" w-full flex items-center justify-center min-h-[50rem] relative flex-wrap gap-6">
+                    {cardAnimations.map((item, index) => {
+                        return (
+                            <div className={`p-3 ${item.type==="poster"? "container2" : "container1"}`} key={index}>
+                                <div className="card1 border-amber-900">
+                                    <div className="front">
+                                        <img
+                                            src={item.frontImage}
+                                            alt={item.altFront || `Front side of card ${index + 1}`}
+                                            className=" w-full h-full rounded-[2rem]"
+                                        />
+                                    </div>
+                                    <div className="back">
+                                        <img
+                                            src={item.backImage}
+                                            alt={item.altBack || `Back side of card ${index + 1}`}
+                                            className=" w-full h-full rounded-[2rem]"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        );
+                    })}
+                </div>
             </div>
-            <div className="DigitalMarketingboxN max-w-300  m-auto ">
-                <h1 className="heading pl-[2.5rem] "
-                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "2.3rem"}}> Branding & marketing optimizations and ongoing support
-                </h1>
-                <p className="paragraph1 leading-8 mt-4 pl-[2.5rem] " style={{textAlign: 'left'}}>At Thumbeja Publicity, we specialize in crafting unique brand identities that resonate with target audiences, driving meaningful connections and long-term growth. Our branding and marketing optimization services leverage cutting-edge strategies to enhance online visibility, refine messaging, and amplify engagement across digital channels, ensuring businesses stand out in competitive markets.
+
+            <div className="4th para max-w-300 m-auto">
+                <h1 className="subheading pt-[1.5rem] pl-[2.5rem]"
+                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}>What we have offer</h1>
+                <p className="paragraph1 leading-8 pl-[2.5rem] pt-3" style={{textAlign: 'left'}}>
+                    Thumbeja Publicity offers comprehensive branding and marketing services to businesses of all sizes
+                    and industries, enhancing online visibility, generating leads, and driving sales through innovative
+                    digital and traditional strategies. From search engine marketing with Google Ads and SEO to social
+                    media campaigns, video production, WhatsApp automation, CRM management, website development,
+                    corporate stationery, marketing collaterals, event branding, signage, merchandise printing, and
+                    outdoor advertising like banners and LED displays, we leverage cutting-edge tools and creativity to
+                    keep you ahead of the competition and achieve your growth goals. We love to bring designs to life as
+                    developers, and we aim to do this using whatever front-end tools are necessary.
                 </p>
-                <p className="paragraph2 leading-8 pl-[2.5rem] pt-[0.9rem] " style={{textAlign: 'left'}}>We provide comprehensive ongoing support, from continuous performance audits and adaptive campaign tweaks to dedicated relationship management, helping clients evolve their brands without disruption. Whether refreshing an established identity or scaling new initiatives, our tailored approach empowers businesses to thrive, proving that strategic rebrands are about innovation, not just recovery.
+                <p className="paragraph2 leading-8 pl-[2.5rem] pt-3" style={{textAlign: 'left'}}>
+                    Our preferred tools are more modern JavaScript libraries like React.js but we like to use whatever
+                    is best for the website's needs. There are several reasons why a business would consider a rebrand
+                    and it doesn’t necessarily mean the business has been unsuccessful.
                 </p>
             </div>
-            <GetInTouch />
+
+            <div className="DigitalMarketingboxN max-w-300 m-auto">
+                <h1 className="heading pl-[2.5rem]"
+                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "2.3rem"}}>Printing Services and Custom
+                    Solutions</h1>
+                <p className="paragraph1 leading-8 mt-4 pl-[2.5rem]" style={{textAlign: 'left'}}>
+                    At Thumbeja Publicity, our printing services provide high-quality, bespoke solutions that transform
+                    your creative concepts into tangible assets, strengthening your brand's physical presence. We
+                    specialize in everything from corporate stationery and marketing collaterals like brochures, flyers,
+                    and business cards to custom merchandise such as branded apparel, mugs, and promotional giveaways,
+                    all produced with precision using advanced digital and offset printing technologies for superior
+                    color accuracy and durability.
+                </p>
+                <p className="paragraph2 leading-8 pl-[2.5rem] pt-[0.9rem]" style={{textAlign: 'left'}}>
+                    Extending to large-scale projects, we handle signage, event branding, and outdoor advertising
+                    including weather-resistant banners, posters, and LED displays that capture attention and convey
+                    your message effectively. With expert design consultation, eco-friendly material options, and
+                    efficient turnaround times, Thumbeja Publicity ensures your print materials seamlessly complement
+                    digital efforts, fostering memorable customer experiences and elevating your overall marketing
+                    impact.
+                </p>
+            </div>
+            <GetInTouch/>
             <Footer/>
         </div>
 

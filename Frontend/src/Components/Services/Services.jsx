@@ -4,12 +4,13 @@ import Footer from "../Footer/Footer.jsx";
 import "./Services.css";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faArrowRight, faArrowUp} from "@fortawesome/free-solid-svg-icons";
-import mountain from "/src/assets/Images/Gemini_Generated_Image_su9pixsu9pixsu9p.png"
+import mountain from "../../assets/Images/Gemini_Generated_Image_su9pixsu9pixsu9p.png"
 import servicesData from "../../assets/JsonData/ServicesData.js";
 import {Link, useNavigate} from "react-router-dom";
 import gsap from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import {useGSAP} from "@gsap/react";
+import SEO from "../SEO/SEO.jsx";
 
 gsap.registerPlugin(ScrollTrigger)
 const Services = () => {
@@ -17,7 +18,7 @@ const Services = () => {
     const navigate = useNavigate();
 
     const handleGetinTouch=()=>{
-        navigate("/contact");
+        navigate("/contact-thumbeja-publicity");
     }
 
     useGSAP(()=>{
@@ -37,6 +38,12 @@ const Services = () => {
 
     return (
         <>
+            <SEO 
+                title="Our Services - Digital Marketing, Web Development & Branding"
+                description="Explore our comprehensive digital services: SEO, social media marketing, web development, printing, video marketing, WhatsApp automation, CRM, outdoor advertising, software development and graphic design."
+                keywords="digital marketing services, web development, SEO services, social media marketing, printing services, video marketing, WhatsApp marketing, CRM solutions, outdoor advertising, software development"
+                url="https://thumbejapublicity.com/services-thumbeja-publicity"
+            />
             <Header />
             <div className={" h-max pb-8 pt-15 flex flex-col items-center bg-[#fefdf7] w-full"}>
                 {/*services header */}
@@ -63,30 +70,29 @@ const Services = () => {
                         servicesData.map((service, index) => {
                             return (
                                 <div key={index} className={"services-card-container w-[23rem] h-[28rem] tp-service-animation-2"}>
+                                    {/*bg image*/}
+                                    <div className={"service-card-bg-wave"}>
+                                        <svg className={"services-svg-shape"} viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill="#03045e" d="M29.3,-42.6C40.6,-44.3,54,-41.6,58.3,-33.8C62.6,-26,57.8,-13,57.1,-0.4C56.4,12.2,59.9,24.4,52.6,27C45.3,29.6,27.2,22.6,16.6,29.4C6,36.1,3,56.6,-4,63.5C-11,70.5,-22,63.9,-32,56.8C-41.9,49.7,-50.8,42.1,-52.8,32.5C-54.8,23,-49.9,11.5,-47.6,1.4C-45.2,-8.8,-45.4,-17.5,-42,-24.7C-38.6,-31.8,-31.7,-37.3,-24.1,-37.7C-16.5,-38.2,-8.2,-33.5,0.4,-34.2C9,-34.9,18.1,-40.9,29.3,-42.6Z" transform="translate(100 100)" />
+                                        </svg>
+                                    </div>
                                     <div className={"services-card-container-inner tp-serv-card grid grid-cols-2 grid-rows-[30%_70%] h-[100%] rounded-2xl"}>
-                                        <div className="flex items-center h-full justify-center">
+                                        <div className="flex items-center h-full justify-center relative z-20">
                                             <img src={service.svg} alt="Service Image" className={"service-container-inner-img"} />
                                         </div>
-                                        <div className="flex items-center h-full justify-center">
-                                            <Link className={"w-[30%] h-[42%] bg-[#ffffff]  rounded-full flex items-center justify-center"} to={""}>
+                                        <div className="flex items-center h-full justify-center relative z-20">
+                                            <Link className={"w-[30%] h-[42%] bg-[#ffffff] rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors"} to={service.path || "/services"}>
                                                 <FontAwesomeIcon
                                                     icon={faArrowRight}
-                                                    // size="2xl"
                                                     className={""}
                                                     style={{ transform: "rotate(-45deg)", color: "black" }}
                                                 />
                                             </Link>
                                         </div>
-                                        <div className="col-span-2 text-white w-[100%] p-6 flex flex-col items-start justify-end relative z-10">
+                                        <div className="col-span-2 text-white w-[100%] p-6 flex flex-col items-start justify-end relative z-20">
                                             <span className={"services-card-header text-3xl w-[100%] p-2"}>{service.contentH}</span>
                                             <p className={"services-card-desc p-2 text-[0.8rem]"}>{service.contentDesc}</p>
                                         </div>
-                                    </div>
-                                    {/*bg image*/}
-                                    <div className={"service-card-bg-wave h-full"}>
-                                        <svg className={"services-svg-shape"} viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill="#03045e" d="M29.3,-42.6C40.6,-44.3,54,-41.6,58.3,-33.8C62.6,-26,57.8,-13,57.1,-0.4C56.4,12.2,59.9,24.4,52.6,27C45.3,29.6,27.2,22.6,16.6,29.4C6,36.1,3,56.6,-4,63.5C-11,70.5,-22,63.9,-32,56.8C-41.9,49.7,-50.8,42.1,-52.8,32.5C-54.8,23,-49.9,11.5,-47.6,1.4C-45.2,-8.8,-45.4,-17.5,-42,-24.7C-38.6,-31.8,-31.7,-37.3,-24.1,-37.7C-16.5,-38.2,-8.2,-33.5,0.4,-34.2C9,-34.9,18.1,-40.9,29.3,-42.6Z" transform="translate(100 100)" />
-                                        </svg>
                                     </div>
                                 </div>
                             )

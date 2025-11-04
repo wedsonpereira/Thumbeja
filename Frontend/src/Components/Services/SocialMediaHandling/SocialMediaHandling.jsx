@@ -2,12 +2,19 @@ import React from 'react';  // Add this at the top
 import './SocialMediaHandling.css';
 import Header from '../../header/Header.jsx';
 import '../../../index.css'
-import SocialMediaHandlingImg from '../../../assets/Images/SocialMediaHandling.png';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCheck} from "@fortawesome/free-solid-svg-icons";
 import {services1, services2,services3} from "../../../assets/JsonData/Servicesdata/DigitalMarketing.js";
 import Footer from "../../Footer/Footer.jsx";
 import {GetInTouch} from "../Services.jsx";
+import SocialMedia1Img from "../../../assets/Images/SocialMedia1.jpg";
+import SocialMedia2Img from "../../../assets/Images/SocialMedia2.png";
+import SocialMedia3Img from "../../../assets/Images/SocialMedia3.png";
+import SocialMedia4Img from "../../../assets/Images/SocialMedia4.png";
+import SocialMedia5Img from "../../../assets/Images/SocialMedia5.png";
+import SocialMedia6Img from "../../../assets/Images/SocialMedia6.png";
+import SocialMedia7Img from "../../../assets/Images/SocialMedia7.jpg";
+
 const SocialMediaHandling = () => {
 
     return (
@@ -16,39 +23,30 @@ const SocialMediaHandling = () => {
             <div className="DigitalMarketingbox1 max-w-300  m-auto ">
                 <h1 className="heading pt-[4rem] pl-[2.5rem] "
                     style={{textAlign: 'left', fontWeight: 'bold', fontSize: "2.3rem"}}> Social Media Handling</h1>
-                <p className="paragraph1 leading-8 pl-[2.5rem] " style={{textAlign: 'left'}}>Digital marketing
-                    encompasses a dynamic array of strategies designed to connect businesses with their audiences in
-                    the digital realm.</p>
-                <p className="paragraph2 leading-8 pl-[2.5rem] pt-[0.9rem] " style={{textAlign: 'left'}}>1Beyond
-                    promotion, digital marketing fosters authentic relationships by emphasizing storytelling and
-                    value creation, turning passive viewers into loyal advocates through personalized experiences
-                    and interactive content.</p>
+                <p className="paragraph1 leading-8 pl-[2.5rem] " style={{textAlign: 'left'}}>Social media handling involves expertly managing your brand's presence across platforms like Instagram, Facebook, Twitter, and LinkedIn to engage audiences, build communities, and drive conversions.</p>
+                <p className="paragraph2 leading-8 pl-[2.5rem] pt-[0.9rem] " style={{textAlign: 'left'}}>Beyond mere posting, our social media handling creates meaningful interactions through targeted content, timely responses, and data-driven strategies, transforming followers into brand advocates and boosting overall visibility.</p>
             </div>
-            <div className="ImageSection pt-10 max-width-[2000px] min-h-[14rem] ">
-                <img src={SocialMediaHandlingImg} className="DigitalMarketingImg w-[90%] rounded-2xl mt-0 mb-0 m-auto"
-                     alt="Digital Marketing"/>
+            <div className="image-gallery flex justify-around mt-4 w-175 mx-auto gap-4 ">  {/* Added gap-4 for even spacing */}
+                <img src={SocialMedia1Img} alt="Poster 1" className="w-1/2 rounded-lg object-cover" />  {/* Added object-cover for better fit */}
+                <img src={SocialMedia2Img} alt="Poster 2" className="w-1/2 rounded-lg object-cover " />  {/* Import & use a second image */}
             </div>
             <div>
-                <p className="paragraph1 leading-8 pl-[2.5rem] max-w-300  m-auto pt-8" style={{textAlign: 'left'}}>2Beyond
-                    promotion, digital marketing fosters authentic relationships by emphasizing storytelling and value
-                    creation, turning passive viewers into loyal advocates through personalized experiences and
-                    interactive content.
-                </p>
+                <p className="paragraph1 leading-8 pl-[2.5rem] max-w-300  m-auto pt-8" style={{textAlign: 'left'}}>Our approach ensures consistent branding, trend-aligned campaigns, and performance analytics to refine strategies, helping businesses stay relevant and connected in the fast-paced social landscape.</p>
             </div>
             <div className="Subheadingmain max-w-300  m-auto">
                 <h1 className="subheading pt-[1.5rem] pl-[2.5rem]"
-                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}>What do our branding &
-                    marketing services include
+                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}>What do our social media
+                    handling services include
                 </h1>
                 <h2 className="subheading pt-[1.5rem] pl-[2.5rem]"
-                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.4rem"}}>Brand & Marketing
-                    Evaluations
+                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.4rem"}}>Social Media
+                    Strategy & Planning
                 </h2>
-                <p className="paragraph1 leading-8 pl-[2.5rem] pt-6" style={{textAlign: 'left'}}>Beyond promotion,
-                    digital marketing fosters authentic relationships by emphasizing storytelling and value
-                    creation, turning passive viewers into loyal advocates through personalized experiences and
-                    interactive content.
-                </p>
+
+                <div className="image-gallery flex justify-around mt-4 w-175  mx-auto gap-4 ">  {/* Added gap-4 for even spacing */}
+                    <img src={SocialMedia3Img} alt="Poster 1" className=" rounded-lg object-cover" />  {/* Added object-cover for better fit */}
+                </div>
+                <p className="paragraph1 leading-8 pl-[2.5rem] pt-6" style={{textAlign: 'left'}}>We develop tailored social media strategies that align with your business goals, audience preferences, and platform best practices to maximize reach and engagement.</p>
                 <div className="points max-w-450 pl-14 m-auto  pt-6 leading-6" >
                     <ul className="services-list" >
                         {services1.map((service, index) => (
@@ -62,8 +60,11 @@ const SocialMediaHandling = () => {
             </div>
             <div className="DigitalMarketingbox2 max-w-300  m-auto ">
                 <h1 className="heading pt-[2rem] pl-[2.5rem] "
-                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}> Branding & marketing</h1>
-                <p className="paragraph1 leading-8 pl-[2.5rem] " style={{textAlign: 'left'}}>Branding and marketing at Thumbeja Publicity represent a seamless fusion of creative storytelling, strategic innovation, and measurable impact, designed to elevate your business from visibility to unforgettable presence. We craft comprehensive branding solutions—from corporate stationery, marketing collaterals, and merchandise printing to event and personal branding with custom ID cards, badges, and signage—that embody your identity with professional precision.</p>
+                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}> Social media management</h1>
+                <p className="paragraph1 leading-8 pl-[2.5rem] " style={{textAlign: 'left'}}>At Thumbeja Publicity, social media management combines creative content curation, community engagement, and analytics to foster growth and loyalty. From daily posting schedules and visual storytelling to influencer collaborations and paid ad campaigns, we handle every aspect to ensure your social channels thrive.</p>
+            </div>
+            <div className="image-gallery flex justify-around mt-4 w-175 mx-auto gap-4 ">  {/* Added gap-4 for even spacing */}
+             <img src={SocialMedia7Img} alt="Poster 2" className=" rounded-lg object-cover " />  {/* Import & use a second image */}
             </div>
             <div className="points max-w-300 pl-14 m-auto  pt-6 leading-6" >
                 <ul className="services-list" >
@@ -77,15 +78,13 @@ const SocialMediaHandling = () => {
             </div>
             <div className="Subheadingmain max-w-300  m-auto">
                 <h1 className="subheading pt-[1.5rem] pl-[2.5rem]"
-                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}>What do our branding &
-                    marketing services include
+                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}>What do our social media
+                    handling services include
                 </h1>
-
-                <p className="paragraph1 leading-8 pl-[2.5rem] pt-6" style={{textAlign: 'left'}}>Beyond promotion,
-                    digital marketing fosters authentic relationships by emphasizing storytelling and value
-                    creation, turning passive viewers into loyal advocates through personalized experiences and
-                    interactive content.
-                </p>
+                <p className="paragraph1 leading-8 pl-[2.5rem] pt-6" style={{textAlign: 'left'}}>Our services extend to crisis management, trend monitoring, and cross-platform integration, ensuring your brand remains agile and responsive in the ever-evolving social media ecosystem.</p>
+                <div className="image-gallery flex justify-around mt-4 w-175  mx-auto gap-4 ">  {/* Added gap-4 for even spacing */}
+                    <img src={SocialMedia5Img} alt="Poster 1" className=" rounded-lg object-cover" />  {/* Added object-cover for better fit */}
+                </div>
                 <div className="points max-w-450 pl-14 m-auto  pt-6 leading-6" >
                     <ul className="services-list" >
                         {services3.map((service, index) => (
@@ -99,36 +98,21 @@ const SocialMediaHandling = () => {
             </div>
             <div className="4th para max-w-300  m-auto">
                 <h1 className="subheading pt-[1.5rem] pl-[2.5rem]"
-                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}>What we have offer
+                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}>What we have to offer
                 </h1>
 
-                <p className="paragraph1 leading-8 pl-[2.5rem] pt-3" style={{textAlign: 'left'}}>Thumbeja Publicity offers comprehensive branding and marketing services to businesses of all sizes and industries, enhancing online visibility, generating leads, and driving sales through innovative digital and traditional strategies. From search engine marketing with Google Ads and SEO to social media campaigns, video production, WhatsApp automation, CRM management, website development, corporate stationery, marketing collaterals, event branding, signage, merchandise printing, and outdoor advertising like banners and LED displays, we leverage cutting-edge tools and creativity to keep you ahead of the competition and achieve your growth goals. We love to bring designs to life as developers, and we aim to do this using whatever front-end tools are necessary.
-                </p>
-                <p className="paragraph2 leading-8 pl-[2.5rem] pt-3" style={{textAlign: 'left'}}>Our preferred tools are more modern JavaScript libraries like React.js but we like to use whatever is best for the website's needs. There are several reasons why a business would consider a rebrand and it doesn’t necessarily mean the business has been unsuccessful.   </p>
+                <p className="paragraph1 leading-8 pl-[2.5rem] pt-3" style={{textAlign: 'left'}}>Thumbeja Publicity delivers end-to-end social media handling for brands across industries, amplifying your voice through organic growth, targeted advertising, content creation, and performance tracking. We specialize in platform-specific tactics, from Instagram Reels and TikTok challenges to LinkedIn thought leadership and Twitter conversations, all while integrating with broader digital efforts to drive traffic, leads, and sales.</p>
+                <p className="paragraph2 leading-8 pl-[2.5rem] pt-3" style={{textAlign: 'left'}}>Businesses often refresh their social media presence to adapt to new algorithms, audience shifts, or market trends—it's an opportunity for evolution, not a sign of failure. We use modern tools like scheduling software and AI analytics to keep your strategy fresh and effective.</p>
 
 
             </div>
-            <div className="bg w-[80%] bg-black m-auto mt-5 h-[20rem] rounded-2xl mb-8">
-                <div className="Box font-extralight">
-                    <div className="apostrophe flex w-[100%] text-white h-[5rem] items-center justify-center" >
-                        <span className="h-[100%] w-[100%] text-center  mt-24" style={{fontFamily:"Passion One", fontSize: "10rem",transform: "rotate(180deg)"}}>"</span>
-                    </div>
-                    <div className={" flex flex-1 "}>
-                    </div>
-                    <div className="apostrophe flex w-[80%] m-auto mt-1 text-white items-center justify-center text-center" style={{fontFamily:"Passion One", fontSize: "1.5rem"}}>
-                        "This platform has not only simplified our accounting processes but also given us valuable insights into our financial health. The intuitive interface and robust reporting tools have made a significant difference in our decision-making. Plus, their customer support is top-notch."
-                    </div>
-                </div>
 
-            </div>
             <div className="DigitalMarketingboxN max-w-300  m-auto ">
                 <h1 className="heading pl-[2.5rem] "
-                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "2.3rem"}}> Branding & marketing optimizations and ongoing support
+                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "2.3rem"}}> Social media optimizations and ongoing support
                 </h1>
-                <p className="paragraph1 leading-8 mt-4 pl-[2.5rem] " style={{textAlign: 'left'}}>At Thumbeja Publicity, we specialize in crafting unique brand identities that resonate with target audiences, driving meaningful connections and long-term growth. Our branding and marketing optimization services leverage cutting-edge strategies to enhance online visibility, refine messaging, and amplify engagement across digital channels, ensuring businesses stand out in competitive markets.
-                </p>
-                <p className="paragraph2 leading-8 pl-[2.5rem] pt-[0.9rem] " style={{textAlign: 'left'}}>We provide comprehensive ongoing support, from continuous performance audits and adaptive campaign tweaks to dedicated relationship management, helping clients evolve their brands without disruption. Whether refreshing an established identity or scaling new initiatives, our tailored approach empowers businesses to thrive, proving that strategic rebrands are about innovation, not just recovery.
-                </p>
+                <p className="paragraph1 leading-8 mt-4 pl-[2.5rem] " style={{textAlign: 'left'}}>We optimize social media performance through A/B testing, algorithm updates, and ROI-focused adjustments, ensuring your content cuts through the noise and delivers results. Our ongoing support includes monthly audits, trend forecasting, and dedicated account management to keep your social presence dynamic and aligned with business objectives.</p>
+                <p className="paragraph2 leading-8 pl-[2.5rem] pt-[0.9rem] " style={{textAlign: 'left'}}>Whether launching a new campaign or sustaining momentum, our proactive approach helps brands navigate challenges, capitalize on opportunities, and build lasting digital communities that drive sustained growth.</p>
             </div>
             <GetInTouch />
             <Footer/>

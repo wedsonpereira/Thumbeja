@@ -4,6 +4,7 @@ import Header from "../header/Header.jsx";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCheck} from "@fortawesome/free-solid-svg-icons";
 import Footer from "../Footer/Footer.jsx";
+import SEO from "../SEO/SEO.jsx";
 import {
     homepageData2,
     homePageData,
@@ -108,6 +109,12 @@ const Home = () => {
 
     return (
         <>
+            <SEO 
+                title="Thumbeja Publicity - Digital Marketing & Branding Agency in Mangalore"
+                description="Transform your business with Thumbeja Publicity's comprehensive digital marketing services including SEO, social media marketing, web development, printing, branding, and outdoor advertising in Mangalore."
+                keywords="digital marketing Mangalore, SEO services, social media marketing, web development Mangalore, printing services, branding agency, outdoor advertising, graphic design, video marketing"
+                url="https://thumbejapublicity.com"
+            />
             <Header/>
             <div className="tp-home w-full flex flex-col">
                 <div className="relative w-[100%] h-[53rem]">

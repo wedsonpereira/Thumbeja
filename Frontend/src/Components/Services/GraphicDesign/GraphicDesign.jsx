@@ -5,10 +5,13 @@ import '../../../index.css'
 import GraphicDesignImg from '../../../assets/Images/GraphicDesign.png';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCheck} from "@fortawesome/free-solid-svg-icons";
-import {services1, services2,services3} from "../../../assets/JsonData/Servicesdata/DigitalMarketing.js";
 import Footer from "../../Footer/Footer.jsx";
 import {GetInTouch} from "../Services.jsx";
+import {galleries, services4,logoGallery} from "../../../assets/JsonData/Servicesdata/GraphicDesign.js";
+
+
 const GraphicDesign = () => {
+
 
     return (
         <div className="DigitalMarketing max-width-[2000px] min-h-[60rem]">
@@ -16,119 +19,106 @@ const GraphicDesign = () => {
             <div className="DigitalMarketingbox1 max-w-300  m-auto ">
                 <h1 className="heading pt-[4rem] pl-[2.5rem] "
                     style={{textAlign: 'left', fontWeight: 'bold', fontSize: "2.3rem"}}> Graphic Design</h1>
-                <p className="paragraph1 leading-8 pl-[2.5rem] " style={{textAlign: 'left'}}>Digital marketing
-                    encompasses a dynamic array of strategies designed to connect businesses with their audiences in
-                    the digital realm.</p>
-                <p className="paragraph2 leading-8 pl-[2.5rem] pt-[0.9rem] " style={{textAlign: 'left'}}>1Beyond
-                    promotion, digital marketing fosters authentic relationships by emphasizing storytelling and
-                    value creation, turning passive viewers into loyal advocates through personalized experiences
-                    and interactive content.
+                <p className="paragraph1 leading-8 pl-[2.5rem] " style={{textAlign: 'left'}}>Graphic design is a creative discipline that blends art, technology, and communication to visually convey ideas, messages, and brands. At its core, it involves the strategic use of elements like color, typography, imagery, and layout to craft compelling visuals that resonate with audiences. </p>
+                <p className="paragraph2 leading-8 pl-[2.5rem] pt-[0.9rem] " style={{textAlign: 'left'}}>In today's fast-paced digital landscape, graphic design plays a pivotal role in brand identity and marketing success. Effective designs can differentiate a business in crowded markets, fostering trust and loyalty among consumers. For instance, a well-designed logo becomes synonymous with quality, while infographics make data digestible and shareable on platforms like Instagram or LinkedIn.
                 </p>
             </div>
             <div className="ImageSection pt-10 max-width-[2000px] min-h-[14rem] ">
-                <img src={GraphicDesignImg} className="DigitalMarketingImg w-[90%] rounded-2xl mt-0 mb-0 m-auto"
+                <img src={GraphicDesignImg} className="DigitalMarketingImg w-[65%] rounded-2xl mt-0 mb-0 m-auto"
                      alt="Digital Marketing"/>
             </div>
-            <div>
-                <p className="paragraph1 leading-8 pl-[2.5rem] max-w-300  m-auto pt-8" style={{textAlign: 'left'}}>2Beyond
-                    promotion, digital marketing fosters authentic relationships by emphasizing storytelling and value
-                    creation, turning passive viewers into loyal advocates through personalized experiences and
-                    interactive content.
-                </p>
-            </div>
-            <div className="Subheadingmain max-w-300  m-auto">
-                <h1 className="subheading pt-[1.5rem] pl-[2.5rem]"
-                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}>What do our branding &
-                    marketing services include
-                </h1>
-                <h2 className="subheading pt-[1.5rem] pl-[2.5rem]"
-                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.4rem"}}>Brand & Marketing
-                    Evaluations
-                </h2>
-                <p className="paragraph1 leading-8 pl-[2.5rem] pt-6" style={{textAlign: 'left'}}>Beyond promotion,
-                    digital marketing fosters authentic relationships by emphasizing storytelling and value
-                    creation, turning passive viewers into loyal advocates through personalized experiences and
-                    interactive content.
-                </p>
-                <div className="points max-w-450 pl-14 m-auto  pt-6 leading-6" >
-                    <ul className="services-list" >
-                        {services1.map((service, index) => (
-                            <li key={index} style={{marginBottom: '10px', fontSize: '1rem'}}>
-                                <FontAwesomeIcon icon={faCheck} size="xl"/>
-                                {service}
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </div>
+
+
             <div className="DigitalMarketingbox2 max-w-300  m-auto ">
                 <h1 className="heading pt-[2rem] pl-[2.5rem] "
-                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}> Branding & marketing</h1>
-                <p className="paragraph1 leading-8 pl-[2.5rem] " style={{textAlign: 'left'}}>Branding and marketing at Thumbeja Publicity represent a seamless fusion of creative storytelling, strategic innovation, and measurable impact, designed to elevate your business from visibility to unforgettable presence. We craft comprehensive branding solutions—from corporate stationery, marketing collaterals, and merchandise printing to event and personal branding with custom ID cards, badges, and signage—that embody your identity with professional precision.</p>
+                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}> What types of services of do we provide?</h1>
             </div>
             <div className="points max-w-300 pl-14 m-auto  pt-6 leading-6" >
                 <ul className="services-list" >
-                    {services2.map((service, index) => (
+                    {services4.map((service, index) => (
                         <li key={index} style={{marginBottom: '10px', fontSize: '1rem'}}>
                             <FontAwesomeIcon icon={faCheck} size="xl"/>
-                            {service}
+                            {service}x
                         </li>
                     ))}
                 </ul>
             </div>
-            <div className="Subheadingmain max-w-300  m-auto">
+            <div className="Subheadingmain max-w-300  m-auto ">
                 <h1 className="subheading pt-[1.5rem] pl-[2.5rem]"
-                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}>What do our branding &
-                    marketing services include
+                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}>Our Works :
                 </h1>
-
-                <p className="paragraph1 leading-8 pl-[2.5rem] pt-6" style={{textAlign: 'left'}}>Beyond promotion,
-                    digital marketing fosters authentic relationships by emphasizing storytelling and value
-                    creation, turning passive viewers into loyal advocates through personalized experiences and
-                    interactive content.
-                </p>
-                <div className="points max-w-450 pl-14 m-auto  pt-6 leading-6" >
-                    <ul className="services-list" >
-                        {services3.map((service, index) => (
-                            <li key={index} style={{marginBottom: '10px', fontSize: '1rem'}}>
-                                <FontAwesomeIcon icon={faCheck} size="xl"/>
-                                {service}
-                            </li>
+                <h2 className="subheading pt-[1.5rem] pl-[2.5rem] "
+                    style={{textAlign: 'center', fontWeight: 'bold', fontSize: "1.6rem"}}>Posters
+                </h2>
+                <div className="Subheadingmain max-w-270  m-auto ">
+                    <div className="Subheadingmain max-w-270 m-auto">
+                        {galleries.map((gallery, galleryIndex) => (
+                            <div
+                                key={galleryIndex}
+                                className="image-gallery flex justify-around mt-4 max-w-450 mx-auto gap-4 transition-transform duration-300 hover:scale-105"
+                            >
+                                {gallery.map((item, index) => (
+                                    <img
+                                        key={index}
+                                        src={item.src}
+                                        alt={item.alt}
+                                        className="w-1/4 rounded-lg object-cover transition-transform duration-300 hover:scale-115"
+                                    />
+                                ))}
+                            </div>
                         ))}
-                    </ul>
+                    </div>
+
+
                 </div>
+                <h2 className="subheading pt-[1.5rem] pl-[2.5rem] mt-5  "
+                    style={{textAlign: 'center', fontWeight: 'bold', fontSize: "1.6rem" }}>Logos
+                </h2>
+                <div className="Subheadingmain max-w-270  m-auto ">
+                    <div className="Subheadingmain max-w-270 m-auto">
+                        {logoGallery.map((gallery, galleryIndex) => (
+                            <div
+                                key={galleryIndex}
+                                className="image-gallery flex justify-around mt-4 max-w-450 mx-auto gap-4 transition-transform duration-300 hover:scale-105"
+                            >
+                                {gallery.map((item, index) => (
+                                    <img
+                                        key={index}
+                                        src={item.src}
+                                        alt={item.alt}
+                                        className="w-1/3  rounded-lg object-cover transition-transform duration-300 hover:scale-115"
+                                    />
+                                ))}
+                            </div>
+                        ))}
+                    </div>
+
+
+                </div>
+
             </div>
             <div className="4th para max-w-300  m-auto">
                 <h1 className="subheading pt-[1.5rem] pl-[2.5rem]"
-                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}>What we have offer
+                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}>What we offer
                 </h1>
 
-                <p className="paragraph1 leading-8 pl-[2.5rem] pt-3" style={{textAlign: 'left'}}>Thumbeja Publicity offers comprehensive branding and marketing services to businesses of all sizes and industries, enhancing online visibility, generating leads, and driving sales through innovative digital and traditional strategies. From search engine marketing with Google Ads and SEO to social media campaigns, video production, WhatsApp automation, CRM management, website development, corporate stationery, marketing collaterals, event branding, signage, merchandise printing, and outdoor advertising like banners and LED displays, we leverage cutting-edge tools and creativity to keep you ahead of the competition and achieve your growth goals. We love to bring designs to life as developers, and we aim to do this using whatever front-end tools are necessary.
+                <p className="paragraph1 leading-8 pl-[2.5rem] pt-3" style={{textAlign: 'left'}}>
+                    At Thumbeja Publicity, we deliver innovative digital marketing to boost your brand's visibility and growth. Our services include SEO and Google Ads for top search rankings and targeted traffic, plus engaging social media campaigns on Instagram, Facebook, and LinkedIn with influencer partnerships. We create compelling videos and implement WhatsApp automation to personalize interactions, driving engagement and leads through every channel.
                 </p>
-                <p className="paragraph2 leading-8 pl-[2.5rem] pt-3" style={{textAlign: 'left'}}>Our preferred tools are more modern JavaScript libraries like React.js but we like to use whatever is best for the website's needs. There are several reasons why a business would consider a rebrand and it doesn’t necessarily mean the business has been unsuccessful.   </p>
+                <p className="paragraph2 leading-8 pl-[2.5rem] pt-3" style={{textAlign: 'left'}}>
+                    We integrate CRM tools like HubSpot for streamlined customer management and build responsive websites using React.js, optimized for SEO and conversions. With data analytics and A/B testing, we refine strategies for real-time results, helping businesses achieve higher ROI and online dominance. Partner with Thumbeja for a complete digital ecosystem tailored to your success.
+                </p>
 
 
             </div>
-            <div className="bg w-[80%] bg-black m-auto mt-5 h-[20rem] rounded-2xl mb-8">
-                <div className="Box font-extralight">
-                    <div className="apostrophe flex w-[100%] text-white h-[5rem] items-center justify-center" >
-                        <span className="h-[100%] w-[100%] text-center  mt-24" style={{fontFamily:"Passion One", fontSize: "10rem",transform: "rotate(180deg)"}}>"</span>
-                    </div>
-                    <div className={" flex flex-1 "}>
-                    </div>
-                    <div className="apostrophe flex w-[80%] m-auto mt-1 text-white items-center justify-center text-center" style={{fontFamily:"Passion One", fontSize: "1.5rem"}}>
-                        "This platform has not only simplified our accounting processes but also given us valuable insights into our financial health. The intuitive interface and robust reporting tools have made a significant difference in our decision-making. Plus, their customer support is top-notch."
-                    </div>
-                </div>
 
-            </div>
-            <div className="DigitalMarketingboxN max-w-300  m-auto ">
-                <h1 className="heading pl-[2.5rem] "
-                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "2.3rem"}}> Branding & marketing optimizations and ongoing support
-                </h1>
-                <p className="paragraph1 leading-8 mt-4 pl-[2.5rem] " style={{textAlign: 'left'}}>At Thumbeja Publicity, we specialize in crafting unique brand identities that resonate with target audiences, driving meaningful connections and long-term growth. Our branding and marketing optimization services leverage cutting-edge strategies to enhance online visibility, refine messaging, and amplify engagement across digital channels, ensuring businesses stand out in competitive markets.
+            <div className="DigitalMarketingboxN max-w-300 m-auto mt-10">
+                <h1 className="heading pl-[2.5rem]" style={{textAlign: 'left', fontWeight: 'bold', fontSize: "2.3rem"}}>Digital Marketing Optimizations and Ongoing Support</h1>
+                <p className="paragraph1 leading-8 mt-4 pl-[2.5rem]" style={{textAlign: 'left'}}>
+                    At Thumbeja Publicity, we excel in optimizing digital marketing strategies to elevate your online presence and accelerate growth. Our services focus on refining SEO, PPC campaigns, and social media tactics with data-driven insights, ensuring targeted reach, higher conversion rates, and seamless integration across platforms like Google, Facebook, and Instagram.
                 </p>
-                <p className="paragraph2 leading-8 pl-[2.5rem] pt-[0.9rem] " style={{textAlign: 'left'}}>We provide comprehensive ongoing support, from continuous performance audits and adaptive campaign tweaks to dedicated relationship management, helping clients evolve their brands without disruption. Whether refreshing an established identity or scaling new initiatives, our tailored approach empowers businesses to thrive, proving that strategic rebrands are about innovation, not just recovery.
+                <p className="paragraph2 leading-8 pl-[2.5rem] pt-[0.9rem]" style={{textAlign: 'left'}}>
+                    We deliver unwavering ongoing support through regular analytics reviews, real-time campaign adjustments, and personalized consulting, empowering your digital efforts to adapt and scale effortlessly. From fine-tuning ad performance to enhancing content strategies, our dedicated team at Thumbeja Publicity keeps your digital marketing innovative and effective, driving sustained ROI without interruptions.
                 </p>
             </div>
             <GetInTouch />
@@ -139,3 +129,4 @@ const GraphicDesign = () => {
 };
 
 export default GraphicDesign;
+

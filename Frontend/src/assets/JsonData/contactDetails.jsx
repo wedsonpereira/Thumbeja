@@ -10,8 +10,8 @@ const ContactDetails = [
     {
         icon:faPhone,
         text:"Contact us",
-        contact:"+91 6366983700",
-        url:"tel:+916366983700"
+        contact:"+91 6366983708",
+        url:"tel:+916366983708"
     }
     ,
     {
