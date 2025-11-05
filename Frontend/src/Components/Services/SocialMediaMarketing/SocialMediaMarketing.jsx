@@ -13,20 +13,20 @@ const SocialMediaMarketing = () => {
     return (
         <div className="DigitalMarketing max-width-[2000px] min-h-[60rem]">
             <Header/>
-            <div className="DigitalMarketingbox1 max-w-300  m-auto ">
+            <div className="DigitalMarketingbox1 max-w-300  m-auto mb-12">
                 <h1 className="heading pt-[4rem] pl-[2.5rem] "
                     style={{textAlign: 'left', fontWeight: 'bold', fontSize: "2.3rem"}}> Social Media Handling</h1>
                 <p className="paragraph1 leading-8 pl-[2.5rem] " style={{textAlign: 'left'}}>Digital marketing
                     encompasses a dynamic array of strategies designed to connect businesses with their audiences in
                     the digital realm.</p>
-                <p className="paragraph2 leading-8 pl-[2.5rem] pt-[0.9rem] " style={{textAlign: 'left'}}>1Beyond
+                <p className="paragraph2 leading-8 pl-[2.5rem] pt-[0.9rem] pb-8" style={{textAlign: 'left'}}>Beyond
                     promotion, digital marketing fosters authentic relationships by emphasizing storytelling and
                     value creation, turning passive viewers into loyal advocates through personalized experiences
                     and interactive content.</p>
             </div>
-            <div className="ImageSection pt-10 max-width-[2000px] min-h-[14rem] ">
-                <img src={SocialMediaMarketingImg} className="DigitalMarketingImg w-[90%] rounded-2xl mt-0 mb-0 m-auto"
-                     alt="Digital Marketing"/>
+            <div className="max-w-[1200px] m-auto px-8 mb-8">
+                <img src={SocialMediaMarketingImg} className="w-full rounded-2xl shadow-2xl" style={{display: 'block', maxHeight: '450px', objectFit: 'cover'}}
+                     alt="Social Media Marketing"/>
             </div>
             <div>
                 <p className="paragraph1 leading-8 pl-[2.5rem] max-w-300  m-auto pt-8" style={{textAlign: 'left'}}>2Beyond
@@ -108,10 +108,10 @@ const SocialMediaMarketing = () => {
 
 
             </div>
-            <div className="bg w-[80%] bg-black m-auto mt-5 h-[20rem] rounded-2xl mb-8">
+            <div className="bg w-[65%] bg-gradient-to-r from-[#5D47AC] to-[#091e42] m-auto mt-5 h-[20rem] rounded-2xl mb-8">
                 <div className="Box font-extralight">
                     <div className="apostrophe flex w-[100%] text-white h-[5rem] items-center justify-center" >
-                        <span className="h-[100%] w-[100%] text-center  mt-24" style={{fontFamily:"Passion One", fontSize: "10rem",transform: "rotate(180deg)"}}>"</span>
+                        <span className="h-[100%] w-[100%] text-center  mt-24" style={{fontFamily:"Passion One", fontSize: "6rem",transform: "rotate(180deg)"}}>"</span>
                     </div>
                     <div className={" flex flex-1 "}>
                     </div>

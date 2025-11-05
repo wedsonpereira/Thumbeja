@@ -53,7 +53,7 @@ const DigitalMarketing = () => {
 
             {/* Main Image */}
             <div className="max-w-[1200px] m-auto px-8 mb-16">
-                <img src={DigitalMarketingImg} className="w-full rounded-2xl shadow-2xl" alt="Digital Marketing Services"/>
+                <img src={DigitalMarketingImg} className="w-full rounded-2xl shadow-2xl" style={{display: 'block'}} alt="Digital Marketing Services"/>
             </div>
 
             {/* Services Section 1 */}

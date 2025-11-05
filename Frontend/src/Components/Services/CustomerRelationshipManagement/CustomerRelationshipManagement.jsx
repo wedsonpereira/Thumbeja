@@ -21,8 +21,8 @@ const CustomerRelationshipManagement = () => {
                 <p className="paragraph1 leading-8 pl-[2.5rem] " style={{textAlign: 'left'}}>Customer Relationship Management (CRM) at Thumbeja Publicity is a comprehensive approach to managing a company's interactions with current and potential customers, leveraging data-driven strategies to enhance customer satisfaction and loyalty.</p>
                 <p className="paragraph2 leading-8 pl-[2.5rem] pt-[0.9rem] " style={{textAlign: 'left'}}>Our CRM solutions go beyond basic data tracking, fostering long-term relationships through personalized communication, automated workflows, and insightful analytics that turn customer insights into actionable growth opportunities.</p>
             </div>
-            <div className="ImageSection pt-10 max-width-[2000px] min-h-[14rem] ">
-                <img src={CustomerRelationshipManagementImg} className="CustomerRelationshipManagementImg w-[65%] rounded-2xl mt-0 mb-0 m-auto"
+            <div className="max-w-[1200px] m-auto px-8 mb-16">
+                <img src={CustomerRelationshipManagementImg} className="w-full rounded-2xl shadow-2xl" style={{display: 'block'}}
                      alt="Customer Relationship Management"/>
             </div>
             <div>
@@ -36,9 +36,9 @@ const CustomerRelationshipManagement = () => {
                     style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.4rem"}}>CRM System Evaluations
                 </h2>
                 <p className="paragraph1 leading-8 pl-[2.5rem] pt-6" style={{textAlign: 'left'}}>We assess your existing customer data infrastructure to identify gaps and opportunities, ensuring seamless integration of CRM tools that align with your business objectives and enhance overall efficiency.</p>
-                <div className="ImageSection pt-10 max-width-[2000px] min-h-[14rem] ">
-                    <img src={CRMSystemEvaluationsImg} className="CustomerRelationshipManagementImg w-[65%] rounded-2xl mt-0 mb-0 m-auto"
-                         alt="Customer Relationship Management"/>
+                <div className="max-w-[1200px] m-auto px-8 mb-16">
+                    <img src={CRMSystemEvaluationsImg} className="w-full rounded-2xl shadow-2xl" style={{display: 'block'}}
+                         alt="CRM System Evaluations"/>
                 </div>
                 <div className="points max-w-450 pl-14 m-auto  pt-6 leading-6" >
                     <ul className="services-list" >
@@ -73,9 +73,9 @@ const CustomerRelationshipManagement = () => {
                 </h1>
 
                 <p className="paragraph1 leading-8 pl-[2.5rem] pt-6" style={{textAlign: 'left'}}>Our tailored CRM strategies include everything from lead nurturing and customer segmentation to performance tracking and feedback loops, all designed to maximize customer lifetime value and drive sustainable revenue growth.</p>
-                <div className="ImageSection pt-10 max-width-[2000px] min-h-[14rem] ">
-                    <img src={CRMImage2Img} className="CustomerRelationshipManagementImg w-[65%] rounded-2xl mt-0 mb-0 m-auto"
-                         alt="Customer Relationship Management"/>
+                <div className="max-w-[1200px] m-auto px-8 mb-16">
+                    <img src={CRMImage2Img} className="w-full rounded-2xl shadow-2xl" style={{display: 'block'}}
+                         alt="CRM Solutions"/>
                 </div>
                 <div className="points max-w-450 pl-14 m-auto  pt-6 leading-6" >
                     <ul className="services-list" >
