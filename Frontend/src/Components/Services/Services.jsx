@@ -111,6 +111,16 @@ const Services = () => {
 
 
 export function GetInTouch({onPressGetIntouch}) {
+    const navigate = useNavigate();
+    
+    const handleClick = () => {
+        if (onPressGetIntouch) {
+            onPressGetIntouch();
+        } else {
+            navigate("/contact-thumbeja-publicity");
+        }
+    };
+
     return (
 
     <div className={"tp-get-in-touch h-[20em] m-auto w-[80%] rounded-3xl mb-20 mt-20 relative bg-[#5D47ACCF] overflow-hidden tp-service-animation-3"}>
@@ -121,7 +131,7 @@ export function GetInTouch({onPressGetIntouch}) {
                     <span className={"text-5xl font-semibold top-1 z-30 p-8 flex flex-col items-center justify-center text-white"}>
                         You have a project. We can take it to another level
                     </span>
-            <span className={"w-[10em] h-[3em] rounded-2xl cursor-pointer bg-[#000000c9] text-white gap-2 flex items-center justify-center text-2xl"} onClick={onPressGetIntouch}>
+            <span className={"w-[10em] h-[3em] rounded-2xl cursor-pointer bg-[#000000c9] text-white gap-2 flex items-center justify-center text-2xl"} onClick={handleClick}>
                         <span>Get In Touch</span>
                         <FontAwesomeIcon icon={faArrowUp} size="sm" style={{"transform":"rotate(45deg)"}} />
                     </span>

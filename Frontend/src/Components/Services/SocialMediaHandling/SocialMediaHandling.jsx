@@ -43,7 +43,7 @@ const SocialMediaHandling = () => {
                     Strategy & Planning
                 </h2>
 
-                <div className="image-gallery flex justify-around mt-4 w-175  mx-auto gap-4 ">  {/* Added gap-4 for even spacing */}
+                <div className="image-gallery flex justify-around my-6 w-175  mx-auto gap-4 ">  {/* Added gap-4 for even spacing */}
                     <img src={SocialMedia3Img} alt="Poster 1" className=" rounded-lg object-cover" />  {/* Added object-cover for better fit */}
                 </div>
                 <p className="paragraph1 leading-8 pl-[2.5rem] pt-6" style={{textAlign: 'left'}}>We develop tailored social media strategies that align with your business goals, audience preferences, and platform best practices to maximize reach and engagement.</p>
@@ -63,7 +63,7 @@ const SocialMediaHandling = () => {
                     style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}> Social media management</h1>
                 <p className="paragraph1 leading-8 pl-[2.5rem] " style={{textAlign: 'left'}}>At Thumbeja Publicity, social media management combines creative content curation, community engagement, and analytics to foster growth and loyalty. From daily posting schedules and visual storytelling to influencer collaborations and paid ad campaigns, we handle every aspect to ensure your social channels thrive.</p>
             </div>
-            <div className="image-gallery flex justify-around mt-4 w-175 mx-auto gap-4 ">  {/* Added gap-4 for even spacing */}
+            <div className="image-gallery flex justify-around my-4 w-175 mx-auto gap-4 ">  {/* Added gap-4 for even spacing */}
              <img src={SocialMedia7Img} alt="Poster 2" className=" rounded-lg object-cover " />  {/* Import & use a second image */}
             </div>
             <div className="points max-w-300 pl-14 m-auto  pt-6 leading-6" >

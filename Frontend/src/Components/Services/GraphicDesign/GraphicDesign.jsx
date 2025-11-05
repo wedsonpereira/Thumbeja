@@ -23,7 +23,7 @@ const GraphicDesign = () => {
                 <p className="paragraph2 leading-8 pl-[2.5rem] pt-[0.9rem] " style={{textAlign: 'left'}}>In today's fast-paced digital landscape, graphic design plays a pivotal role in brand identity and marketing success. Effective designs can differentiate a business in crowded markets, fostering trust and loyalty among consumers. For instance, a well-designed logo becomes synonymous with quality, while infographics make data digestible and shareable on platforms like Instagram or LinkedIn.
                 </p>
             </div>
-            <div className="max-w-[1200px] m-auto px-8 mb-16">
+            <div className="max-w-[1200px] m-auto px-8 pt-4 mb-16">
                 <img src={GraphicDesignImg} className="w-full rounded-2xl shadow-2xl" style={{display: 'block'}}
                      alt="Graphic Design"/>
             </div>
@@ -47,7 +47,7 @@ const GraphicDesign = () => {
                 <h1 className="subheading pt-[1.5rem] pl-[2.5rem]"
                     style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}>Our Works :
                 </h1>
-                <h2 className="subheading pt-[1.5rem] pl-[2.5rem] "
+                <h2 className="subheading py-[1.5rem] px-[2.5rem] "
                     style={{textAlign: 'center', fontWeight: 'bold', fontSize: "1.6rem"}}>Posters
                 </h2>
                 <div className="Subheadingmain max-w-270  m-auto ">
@@ -71,7 +71,7 @@ const GraphicDesign = () => {
 
 
                 </div>
-                <h2 className="subheading pt-[1.5rem] pl-[2.5rem] mt-5  "
+                <h2 className="subheading py-[1.5rem] px-[2.5rem] mt-5  "
                     style={{textAlign: 'center', fontWeight: 'bold', fontSize: "1.6rem" }}>Logos
                 </h2>
                 <div className="Subheadingmain max-w-270  m-auto ">

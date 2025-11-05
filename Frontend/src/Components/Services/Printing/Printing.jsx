@@ -36,7 +36,7 @@ const Printing = () => {
                     across all touchpoints.
                 </p>
             </div>
-            <div className="max-w-[1200px] m-auto px-8 mb-16">
+            <div className="max-w-[1200px] m-auto px-8 py-5 mb-10">
                 <img src={OutdoorAdvertisingImg} className="w-full rounded-2xl shadow-2xl" style={{display: 'block'}}
                      alt="Printing Services"/>
             </div>
@@ -122,7 +122,7 @@ const Printing = () => {
                 </p>
             </div>
 
-            <div className="DigitalMarketingboxN max-w-300 m-auto">
+            <div className="DigitalMarketingboxN py-3 max-w-300 m-auto">
                 <h1 className="heading pl-[2.5rem]"
                     style={{textAlign: 'left', fontWeight: 'bold', fontSize: "2.3rem"}}>Printing Services and Custom
                     Solutions</h1>

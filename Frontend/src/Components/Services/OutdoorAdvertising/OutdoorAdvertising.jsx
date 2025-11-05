@@ -27,7 +27,7 @@ const OutdoorAdvertising = () => {
                 <p className="paragraph2 leading-8 pl-[2.5rem] pt-[0.9rem] " style={{textAlign: 'left'}}>Beyond
                     static displays, outdoor advertising builds brand momentum by integrating dynamic elements like digital screens and experiential activations, transforming everyday environments into powerful engagement zones.</p>
             </div>
-            <div className="max-w-[1200px] m-auto px-8 mb-16">
+            <div className="max-w-[1200px] m-auto px-8 py-5 mb-16">
                 <img src={OutdoorAdvertisingImg} className="w-full rounded-2xl shadow-2xl transition-transform duration-300 hover:scale-105" style={{display: 'block'}}
                      alt="Outdoor Advertising"/>
             </div>
