@@ -133,7 +133,7 @@ const CustomerRelationshipManagement = () => {
                 <h2 className="subheading pt-[1.5rem] pl-[2.5rem]"
                     style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.4rem"}}>CRM System Evaluations
                 </h2>
-                <p className="paragraph1 leading-8 pl-[2.5rem] pt-6" style={{textAlign: 'left'}}>We assess your existing customer data infrastructure to identify gaps and opportunities, ensuring seamless integration of CRM tools that align with your business objectives and enhance overall efficiency.</p>
+                <p className="paragraph1 leading-8 pl-[2.5rem] pt-2" style={{textAlign: 'left'}}>We assess your existing customer data infrastructure to identify gaps and opportunities, ensuring seamless integration of CRM tools that align with your business objectives and enhance overall efficiency.</p>
                 <div className="max-w-[1200px] m-auto px-8 py-6 mb-8">
                     <img src={CRMSystemEvaluationsImg} className="w-full rounded-2xl shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-3xl cursor-pointer" style={{display: 'block'}}
                          alt="CRM System Evaluations"/>
@@ -170,7 +170,7 @@ const CustomerRelationshipManagement = () => {
                     style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}>What do our CRM services include
                 </h1>
 
-                <p className="paragraph1 leading-8 pl-[2.5rem] pt-6" style={{textAlign: 'left'}}>Our tailored CRM strategies include everything from lead nurturing and customer segmentation to performance tracking and feedback loops, all designed to maximize customer lifetime value and drive sustainable revenue growth.</p>
+                <p className="paragraph1 leading-8 pl-[2.5rem] pt-2" style={{textAlign: 'left'}}>Our tailored CRM strategies include everything from lead nurturing and customer segmentation to performance tracking and feedback loops, all designed to maximize customer lifetime value and drive sustainable revenue growth.</p>
                 <div className="max-w-[1200px] m-auto px-8 py-6 mb-8">
                     <img src={CRMImage2Img} className="w-full rounded-2xl shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-3xl cursor-pointer" style={{display: 'block'}}
                          alt="CRM Solutions"/>

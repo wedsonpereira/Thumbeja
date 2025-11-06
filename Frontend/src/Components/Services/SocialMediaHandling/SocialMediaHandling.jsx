@@ -98,10 +98,11 @@ const SocialMediaHandling = () => {
                 <p className="paragraph1 leading-8 pl-[2.5rem] " style={{textAlign: 'left'}}>Social media handling involves expertly managing your brand's presence across platforms like Instagram, Facebook, Twitter, and LinkedIn to engage audiences, build communities, and drive conversions.</p>
                 <p className="paragraph2 leading-8 pl-[2.5rem] pt-[0.9rem] " style={{textAlign: 'left'}}>Beyond mere posting, our social media handling creates meaningful interactions through targeted content, timely responses, and data-driven strategies, transforming followers into brand advocates and boosting overall visibility.</p>
             </div>
-            <div className="image-gallery flex justify-around mt-4 w-175 mx-auto gap-4 ">  {/* Added gap-4 for even spacing */}
-                <img src={SocialMedia1Img} alt="Poster 1" className="w-1/2 rounded-lg object-cover" />  {/* Added object-cover for better fit */}
-                <img src={SocialMedia2Img} alt="Poster 2" className="w-1/2 rounded-lg object-cover " />  {/* Import & use a second image */}
+            <div className="image-gallery flex justify-around mt-4 w-175 mx-auto gap-4 ">  {/* Added gap-4 for even spacing */}    
+                   <img src={SocialMedia1Img} alt="Poster 1" className="w-1/2 rounded-lg object-cover transition-all duration-300 hover:scale-105 hover:shadow-3xl cursor-pointer" />  {/* Added object-cover for better fit */}
+                <img src={SocialMedia2Img} alt="Poster 2" className="w-1/2 rounded-lg object-cover transition-all duration-300 hover:scale-105 hover:shadow-3xl cursor-pointer" />  {/* Import & use a second image */}
             </div>
+         
             <div>
                 <p className="paragraph1 leading-8 pl-[2.5rem] max-w-300  m-auto pt-8" style={{textAlign: 'left'}}>Our approach ensures consistent branding, trend-aligned campaigns, and performance analytics to refine strategies, helping businesses stay relevant and connected in the fast-paced social landscape.</p>
             </div>
@@ -116,7 +117,7 @@ const SocialMediaHandling = () => {
                 </h2>
 
                 <div className="image-gallery flex justify-around my-6 w-175  mx-auto gap-4 ">  {/* Added gap-4 for even spacing */}
-                    <img src={SocialMedia3Img} alt="Poster 1" className=" rounded-lg object-cover" />  {/* Added object-cover for better fit */}
+                    <img src={SocialMedia3Img} alt="Poster 1" className="rounded-lg object-cover transition-all duration-300 hover:scale-105 hover:shadow-3xl cursor-pointer" />  {/* Added object-cover for better fit */}
                 </div>
                 <p className="paragraph1 leading-8 pl-[2.5rem] pt-6" style={{textAlign: 'left'}}>We develop tailored social media strategies that align with your business goals, audience preferences, and platform best practices to maximize reach and engagement.</p>
                 <div className="points max-w-450 pl-14 m-auto  pt-6 leading-6" >
@@ -136,7 +137,7 @@ const SocialMediaHandling = () => {
                 <p className="paragraph1 leading-8 pl-[2.5rem] " style={{textAlign: 'left'}}>At Thumbeja Publicity, social media management combines creative content curation, community engagement, and analytics to foster growth and loyalty. From daily posting schedules and visual storytelling to influencer collaborations and paid ad campaigns, we handle every aspect to ensure your social channels thrive.</p>
             </div>
             <div className="image-gallery flex justify-around my-4 w-175 mx-auto gap-4 ">  {/* Added gap-4 for even spacing */}
-             <img src={SocialMedia7Img} alt="Poster 2" className=" rounded-lg object-cover " />  {/* Import & use a second image */}
+             <img src={SocialMedia7Img} alt="Poster 2" className="rounded-lg object-cover transition-all duration-300 hover:scale-105 hover:shadow-3xl cursor-pointer" />  {/* Import & use a second image */}
             </div>
             <div className="points max-w-300 pl-14 m-auto  pt-6 leading-6" >
                 <ul className="services-list" >
@@ -155,7 +156,7 @@ const SocialMediaHandling = () => {
                 </h1>
                 <p className="paragraph1 leading-8 pl-[2.5rem] pt-6" style={{textAlign: 'left'}}>Our services extend to crisis management, trend monitoring, and cross-platform integration, ensuring your brand remains agile and responsive in the ever-evolving social media ecosystem.</p>
                 <div className="image-gallery flex justify-around mt-4 w-175  mx-auto gap-4 ">  {/* Added gap-4 for even spacing */}
-                    <img src={SocialMedia5Img} alt="Poster 1" className=" rounded-lg object-cover" />  {/* Added object-cover for better fit */}
+                    <img src={SocialMedia5Img} alt="Poster 1" className="rounded-lg object-cover transition-all duration-300 hover:scale-105 hover:shadow-3xl cursor-pointer" />  {/* Added object-cover for better fit */}
                 </div>
                 <div className="points max-w-450 pl-14 m-auto  pt-6 leading-6" >
                     <ul className="services-list" >

@@ -291,7 +291,7 @@ const SocialMediaMarketing = () => {
                     style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.4rem"}}>Brand & Marketing
                     Evaluations
                 </h2>
-                <p className="paragraph1 leading-8 pl-[2.5rem] pt-6 social-animation-branding" style={{textAlign: 'left'}}>Branding and marketing services include a thorough evaluation of your brand and marketing efforts to understand your strengths and areas for improvement. This helps create strategies that enhance your brand’s visibility and impact.
+                <p className="paragraph1 leading-8 pl-[2.5rem] pt-2 social-animation-branding" style={{textAlign: 'left'}}>Branding and marketing services include a thorough evaluation of your brand and marketing efforts to understand your strengths and areas for improvement. This helps create strategies that enhance your brand’s visibility and impact.
                 </p>
                 <div className="image-gallery flex justify-between mt-4 w-250 mx-auto px-4 social-animation-branding">
                     <img src={BrandmarketImg1} alt="Brand Marketing Poster 1" className="w-[45%] h-[300px] rounded-lg object-cover transition-all duration-300 hover:scale-105 hover:shadow-3xl cursor-pointer" style={{minHeight: '300px'}} />
@@ -329,12 +329,12 @@ const SocialMediaMarketing = () => {
                 </ul>
             </div>
             <div className="Subheadingmain max-w-300  m-auto social-animation-branding2">
-                <h1 className="subheading pt-[1.5rem] pl-[2.5rem] social-animation-branding2"
+                <h1 className="subheading pt-[0.5rem] pl-[2.5rem] social-animation-branding2"
                     style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}>What do our branding &
                     marketing services include
                 </h1>
 
-                <p className="paragraph1 leading-8 pl-[2.5rem] pt-6 social-animation-branding2" style={{textAlign: 'left'}}>Branding and marketing services include creative and strategic solutions that define and enhance a brand’s identity. These services cover logo design, brand strategy, marketing materials, digital campaigns, and social media management. The goal is to create consistent, impactful communication that leaves a lasting impression across all platforms.
+                <p className="paragraph1 leading-8 pl-[2.5rem] pt-2 social-animation-branding2" style={{textAlign: 'left'}}>Branding and marketing services include creative and strategic solutions that define and enhance a brand’s identity. These services cover logo design, brand strategy, marketing materials, digital campaigns, and social media management. The goal is to create consistent, impactful communication that leaves a lasting impression across all platforms.
 
                 </p>
                

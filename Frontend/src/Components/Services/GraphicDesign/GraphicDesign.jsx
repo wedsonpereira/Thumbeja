@@ -95,14 +95,14 @@ const GraphicDesign = () => {
                 <p className="paragraph2 leading-8 pl-[2.5rem] pt-[0.9rem] " style={{textAlign: 'left'}}>In today's fast-paced digital landscape, graphic design plays a pivotal role in brand identity and marketing success. Effective designs can differentiate a business in crowded markets, fostering trust and loyalty among consumers. For instance, a well-designed logo becomes synonymous with quality, while infographics make data digestible and shareable on platforms like Instagram or LinkedIn.
                 </p>
             </div>
-            <div className="max-w-[1200px] m-auto px-8 pt-4 mb-16">
-                <img src={GraphicDesignImg} className="w-full rounded-2xl shadow-2xl" style={{display: 'block'}}
+            <div className="max-w-[1200px] m-auto px-8 pt-8 mb-16">
+                <img src={GraphicDesignImg} className="w-full rounded-2xl shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-3xl cursor-pointer" style={{display: 'block'}}
                      alt="Graphic Design"/>
             </div>
 
 
             <div className="DigitalMarketingbox2 max-w-300  m-auto ">
-                <h1 className="heading pt-[2rem] pl-[2.5rem] "
+                <h1 className="heading pt-[1rem] pl-[2.5rem] "
                     style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}> What types of services of do we provide?</h1>
             </div>
             <div className="points max-w-300 pl-14 m-auto  pt-6 leading-6" >
