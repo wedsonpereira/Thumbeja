@@ -22,7 +22,7 @@ const Header = () => {
 
     return (
         <>
-            <div className="tp-header sticky z-50 w-[100%] flex items-center justify-center border-1">
+            <div className="tp-header sticky z-50 w-[100%] flex items-center justify-center">
                 <div className="tp-header-left">
                     <div className={"tp-image"}>
                         <img src={thumbeja} className={"tp-logo"} alt="text" onClick={imageClickHandler}/>
