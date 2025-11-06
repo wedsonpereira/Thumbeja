@@ -1,14 +1,179 @@
 import './DigitalMarketing.css';
 import Header from '../../header/Header.jsx';
 import DigitalMarketingImg from '../../../assets/Images/DigitalMarketing.png';
+import mountainBg from '../../../assets/Images/Gemini_Generated_Image_su9pixsu9pixsu9p.png';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCheck, faChartLine, faSearch, faBullhorn} from "@fortawesome/free-solid-svg-icons";
 import {services1, services2,services3} from "../../../assets/JsonData/Servicesdata/DigitalMarketing.js";
 import Footer from "../../Footer/Footer.jsx";
-import {GetInTouch} from "../Services.jsx";
+import {GetInTouch} from "../../GetInTouch/GetInTouch.jsx";
 import SEO from "../../SEO/SEO.jsx";
+import gsap from "gsap";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+import {useGSAP} from "@gsap/react";
+
+
+gsap.registerPlugin(ScrollTrigger);
 
 const DigitalMarketing = () => {
+    useGSAP(() => {
+        gsap.from(".digital-animation-1", {
+            scrollTrigger: {
+                trigger: ".digital-animation-1",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".digital-animation-2", {
+            scrollTrigger: {
+                trigger: ".digital-animation-2",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".digital-animation-3", {
+            scrollTrigger: {
+                trigger: ".digital-animation-3",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',    
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".digital-animation-4", {
+            scrollTrigger: {
+                trigger: ".digital-animation-4",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".digital-animation-5", {
+            scrollTrigger: {
+                trigger: ".digital-animation-5",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".digital-animation-6", {
+            scrollTrigger: {
+                trigger: ".digital-animation-6",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".digital-animation-7", {
+            scrollTrigger: {
+                trigger: ".digital-animation-7",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".digital-animation-8", {
+            scrollTrigger: {
+                trigger: ".digital-animation-8",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".digital-animation-9", {
+            scrollTrigger: {
+                trigger: ".digital-animation-9",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".digital-animation-10", {
+            scrollTrigger: {
+                trigger: ".digital-animation-10",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".digital-animation-testimonial", {
+            scrollTrigger: {
+                trigger: ".digital-animation-testimonial",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".digital-animation-support", {
+            scrollTrigger: {
+                trigger: ".digital-animation-support",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+    }, []);
+
     return (
         <div className="digital-marketing-page bg-[#fefdf7] min-h-screen">
             <SEO 
@@ -20,7 +185,7 @@ const DigitalMarketing = () => {
             <Header/>
             
             {/* Hero Section */}
-            <div className="max-w-[1200px] m-auto px-8 py-16">
+            <div className="max-w-[1200px] m-auto px-8 py-16 digital-animation-1">
                 <h1 className="text-5xl font-bold text-[#091e42] mb-6">Digital Marketing</h1>
                 <p className="text-xl text-gray-600 leading-8 mb-4">
                     Digital marketing encompasses a dynamic array of strategies designed to connect businesses with their audiences in the digital realm.
@@ -31,7 +196,7 @@ const DigitalMarketing = () => {
             </div>
 
             {/* Feature Cards */}
-            <div className="max-w-[1200px] m-auto px-8 mb-16">
+            <div className="max-w-[1200px] m-auto px-8 mb-16 digital-animation-2">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div className="bg-[#5D47AC] p-8 rounded-2xl hover:scale-105 transition-transform shadow-lg" style={{color: 'white'}}>
                         <FontAwesomeIcon icon={faSearch} size="3x" className="mb-4" style={{color: 'white'}}/>
@@ -52,12 +217,12 @@ const DigitalMarketing = () => {
             </div>
 
             {/* Main Image */}
-            <div className="max-w-[1200px] m-auto px-8 mb-16">
-                <img src={DigitalMarketingImg} className="w-full rounded-2xl shadow-2xl" alt="Digital Marketing Services"/>
+            <div className="max-w-[1200px] m-auto px-8 mb-16 digital-animation-3">
+                <img src={DigitalMarketingImg} className="w-full rounded-2xl shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-3xl cursor-pointer" style={{display: 'block'}} alt="Digital Marketing Services"/>
             </div>
 
             {/* Services Section 1 */}
-            <div className="max-w-[1200px] m-auto px-8 mb-16">
+            <div className="max-w-[1200px] m-auto px-8 mb-16 digital-animation-4">
                 <h2 className="text-4xl font-bold text-[#091e42] mb-6">Brand & Marketing Evaluations</h2>
                 <p className="text-lg text-gray-700 leading-8 mb-8">
                     Beyond promotion, digital marketing fosters authentic relationships by emphasizing storytelling and value creation, turning passive viewers into loyal advocates through personalized experiences and interactive content.
@@ -73,7 +238,7 @@ const DigitalMarketing = () => {
             </div>
 
             {/* Branding & Marketing Section */}
-            <div className="bg-gradient-to-r from-[#5D47AC] to-[#091e42] py-16 mb-16" style={{color: 'white'}}>
+            <div className="bg-gradient-to-r from-[#5D47AC] to-[#091e42] py-16 mb-16 digital-animation-5" style={{color: 'white'}}>
                 <div className="max-w-[1200px] m-auto px-8">
                     <h2 className="text-4xl font-bold mb-6" style={{color: 'white'}}>Branding & Marketing</h2>
                     <p className="text-lg leading-8 mb-8" style={{color: 'white'}}>
@@ -91,7 +256,7 @@ const DigitalMarketing = () => {
             </div>
 
             {/* Services Section 3 */}
-            <div className="max-w-[1200px] m-auto px-8 mb-16">
+            <div className="max-w-[1200px] m-auto px-8 mb-16 digital-animation-6">
                 <h2 className="text-4xl font-bold text-[#091e42] mb-6">What Our Services Include</h2>
                 <p className="text-lg text-gray-700 leading-8 mb-8">
                     Comprehensive digital marketing solutions tailored to your business needs.
@@ -107,7 +272,7 @@ const DigitalMarketing = () => {
             </div>
 
             {/* What We Offer */}
-            <div className="max-w-[1200px] m-auto px-8 mb-16">
+            <div className="max-w-[1200px] m-auto px-8 mb-16 digital-animation-7">
                 <h2 className="text-4xl font-bold text-[#091e42] mb-6">What We Offer</h2>
                 <p className="text-lg text-gray-700 leading-8 mb-4">
                     Thumbeja Publicity offers comprehensive branding and marketing services to businesses of all sizes and industries, enhancing online visibility, generating leads, and driving sales through innovative digital and traditional strategies.
@@ -118,7 +283,7 @@ const DigitalMarketing = () => {
             </div>
 
             {/* Testimonial */}
-            <div className="max-w-[1200px] m-auto px-8 mb-16">
+            <div className="max-w-[1200px] m-auto px-8 mb-16 digital-animation-testimonial">
                 <div className="bg-gradient-to-br from-[#091e42] to-[#1a2744] p-12 rounded-2xl shadow-2xl" style={{color: 'white'}}>
                     <div className="text-center">
                         <span className="text-8xl font-bold opacity-30" style={{color: 'white'}}>"</span>
@@ -130,7 +295,7 @@ const DigitalMarketing = () => {
             </div>
 
             {/* Ongoing Support */}
-            <div className="max-w-[1200px] m-auto px-8 mb-16">
+            <div className="max-w-[1200px] m-auto px-8 mb-16 digital-animation-support">
                 <h2 className="text-4xl font-bold text-[#091e42] mb-6">Ongoing Support & Optimization</h2>
                 <p className="text-lg text-gray-700 leading-8 mb-4">
                     At Thumbeja Publicity, we specialize in crafting unique brand identities that resonate with target audiences, driving meaningful connections and long-term growth.
@@ -140,7 +305,7 @@ const DigitalMarketing = () => {
                 </p>
             </div>
 
-            <GetInTouch />
+            <GetInTouch mountainImage={mountainBg} />
             <Footer/>
         </div>
     );

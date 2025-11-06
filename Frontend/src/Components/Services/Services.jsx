@@ -3,10 +3,12 @@ import Header from "../header/Header.jsx";
 import Footer from "../Footer/Footer.jsx";
 import "./Services.css";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faArrowRight, faArrowUp} from "@fortawesome/free-solid-svg-icons";
-import mountain from "../../assets/Images/Gemini_Generated_Image_su9pixsu9pixsu9p.png"
+import {faArrowRight} from "@fortawesome/free-solid-svg-icons";
+import mountain from "../../assets/Images/Gemini_Generated_Image_su9pixsu9pixsu9p.png";
+
 import servicesData from "../../assets/JsonData/ServicesData.js";
 import {Link, useNavigate} from "react-router-dom";
+import {GetInTouch} from "../GetInTouch/GetInTouch.jsx";
 import gsap from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import {useGSAP} from "@gsap/react";
@@ -102,7 +104,7 @@ const Services = () => {
                     }
                 </div>
             </div>
-            <GetInTouch onPressGetIntouch={()=>handleGetinTouch()}/>
+            <GetInTouch onPressGetIntouch={()=>handleGetinTouch()} mountainImage={mountain}/>
 
             <Footer/>
         </>
@@ -110,24 +112,6 @@ const Services = () => {
 };
 
 
-export function GetInTouch({onPressGetIntouch}) {
-    return (
 
-    <div className={"tp-get-in-touch h-[20em] m-auto w-[80%] rounded-3xl mb-20 mt-20 relative bg-[#5D47ACCF] overflow-hidden tp-service-animation-3"}>
-        <div className={""}>
-            <img className={"w-full h-full object-cover absolute -z-10"} src={mountain} alt=""/>
-        </div>
-        <div className={" w-[100%] h-[100%] z-10 flex flex-col items-center justify-center text-800px text-center tp-service-animation-3"}>
-                    <span className={"text-5xl font-semibold top-1 z-30 p-8 flex flex-col items-center justify-center text-white"}>
-                        You have a project. We can take it to another level
-                    </span>
-            <span className={"w-[10em] h-[3em] rounded-2xl cursor-pointer bg-[#000000c9] text-white gap-2 flex items-center justify-center text-2xl"} onClick={onPressGetIntouch}>
-                        <span>Get In Touch</span>
-                        <FontAwesomeIcon icon={faArrowUp} size="sm" style={{"transform":"rotate(45deg)"}} />
-                    </span>
-        </div>
-    </div>
-    )
-}
 
 export default Services;

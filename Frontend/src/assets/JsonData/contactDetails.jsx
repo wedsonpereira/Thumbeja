@@ -4,14 +4,14 @@ const ContactDetails = [
     {
         icon:faEnvelope,
         text:"Email us",
-        contact:"thumbeja.publicity@gmail.com",
-        url:"mailto:thumbeja.publicity@gmail.com"
+        contact:"info@thumbeja.com",
+        url:"mailto:info@thumbeja.com"
     },
     {
         icon:faPhone,
         text:"Contact us",
-        contact:"+91 6366983708",
-        url:"tel:+916366983708"
+        contact:"+91 6366983700",
+        url:"tel:+916366983700"
     }
     ,
     {

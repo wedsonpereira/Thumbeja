@@ -1,4 +1,4 @@
-import React from 'react';  // Add this at the top
+import React from 'react';
 import './GraphicDesign.css';
 import Header from '../../header/Header.jsx';
 import '../../../index.css'
@@ -6,12 +6,84 @@ import GraphicDesignImg from '../../../assets/Images/GraphicDesign.png';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCheck} from "@fortawesome/free-solid-svg-icons";
 import Footer from "../../Footer/Footer.jsx";
-import {GetInTouch} from "../Services.jsx";
+import {GetInTouch} from "../../GetInTouch/GetInTouch.jsx";
+import mountain from "../../../assets/Images/Gemini_Generated_Image_su9pixsu9pixsu9p.png";
 import {galleries, services4,logoGallery} from "../../../assets/JsonData/Servicesdata/GraphicDesign.js";
+import gsap from "gsap";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+import {useGSAP} from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 
 const GraphicDesign = () => {
+    useGSAP(() => {
+        gsap.from(".graphic-animation-1", {
+            scrollTrigger: {
+                trigger: ".graphic-animation-1",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
 
+        gsap.from(".graphic-animation-2", {
+            scrollTrigger: {
+                trigger: ".graphic-animation-2",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".graphic-animation-3", {
+            scrollTrigger: {
+                trigger: ".graphic-animation-3",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',    
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".graphic-animation-gallery", {
+            scrollTrigger: {
+                trigger: ".graphic-animation-gallery",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            stagger: 0.2, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".graphic-animation-final", {
+            scrollTrigger: {
+                trigger: ".graphic-animation-final",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+    }, []);
 
     return (
         <div className="DigitalMarketing max-width-[2000px] min-h-[60rem]">
@@ -23,14 +95,14 @@ const GraphicDesign = () => {
                 <p className="paragraph2 leading-8 pl-[2.5rem] pt-[0.9rem] " style={{textAlign: 'left'}}>In today's fast-paced digital landscape, graphic design plays a pivotal role in brand identity and marketing success. Effective designs can differentiate a business in crowded markets, fostering trust and loyalty among consumers. For instance, a well-designed logo becomes synonymous with quality, while infographics make data digestible and shareable on platforms like Instagram or LinkedIn.
                 </p>
             </div>
-            <div className="ImageSection pt-10 max-width-[2000px] min-h-[14rem] ">
-                <img src={GraphicDesignImg} className="DigitalMarketingImg w-[65%] rounded-2xl mt-0 mb-0 m-auto"
-                     alt="Digital Marketing"/>
+            <div className="max-w-[1200px] m-auto px-8 pt-8 mb-16">
+                <img src={GraphicDesignImg} className="w-full rounded-2xl shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-3xl cursor-pointer" style={{display: 'block'}}
+                     alt="Graphic Design"/>
             </div>
 
 
             <div className="DigitalMarketingbox2 max-w-300  m-auto ">
-                <h1 className="heading pt-[2rem] pl-[2.5rem] "
+                <h1 className="heading pt-[1rem] pl-[2.5rem] "
                     style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}> What types of services of do we provide?</h1>
             </div>
             <div className="points max-w-300 pl-14 m-auto  pt-6 leading-6" >
@@ -47,7 +119,7 @@ const GraphicDesign = () => {
                 <h1 className="subheading pt-[1.5rem] pl-[2.5rem]"
                     style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}>Our Works :
                 </h1>
-                <h2 className="subheading pt-[1.5rem] pl-[2.5rem] "
+                <h2 className="subheading py-[1.5rem] px-[2.5rem] "
                     style={{textAlign: 'center', fontWeight: 'bold', fontSize: "1.6rem"}}>Posters
                 </h2>
                 <div className="Subheadingmain max-w-270  m-auto ">
@@ -71,7 +143,7 @@ const GraphicDesign = () => {
 
 
                 </div>
-                <h2 className="subheading pt-[1.5rem] pl-[2.5rem] mt-5  "
+                <h2 className="subheading py-[1.5rem] px-[2.5rem] mt-5  "
                     style={{textAlign: 'center', fontWeight: 'bold', fontSize: "1.6rem" }}>Logos
                 </h2>
                 <div className="Subheadingmain max-w-270  m-auto ">
@@ -121,7 +193,7 @@ const GraphicDesign = () => {
                     We deliver unwavering ongoing support through regular analytics reviews, real-time campaign adjustments, and personalized consulting, empowering your digital efforts to adapt and scale effortlessly. From fine-tuning ad performance to enhancing content strategies, our dedicated team at Thumbeja Publicity keeps your digital marketing innovative and effective, driving sustained ROI without interruptions.
                 </p>
             </div>
-            <GetInTouch />
+            <GetInTouch mountainImage={mountain} />
             <Footer/>
         </div>
 

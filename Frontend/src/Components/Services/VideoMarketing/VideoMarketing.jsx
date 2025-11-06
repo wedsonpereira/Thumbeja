@@ -1,12 +1,99 @@
 import './VideoMarketing.css';
 import Header from '../../header/Header.jsx';
 import Footer from "../../Footer/Footer.jsx";
-import {GetInTouch} from "../Services.jsx";
+import {GetInTouch} from "../../GetInTouch/GetInTouch.jsx";
+import mountain from "../../../assets/Images/Gemini_Generated_Image_su9pixsu9pixsu9p.png";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCheck, faVideo, faFilm, faPlay} from "@fortawesome/free-solid-svg-icons";
 import SEO from "../../SEO/SEO.jsx";
+import gsap from "gsap";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+import {useGSAP} from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const VideoMarketing = () => {
+    useGSAP(() => {
+        gsap.from(".video-animation-1", {
+            scrollTrigger: {
+                trigger: ".video-animation-1",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".video-animation-2", {
+            scrollTrigger: {
+                trigger: ".video-animation-2",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".video-animation-3", {
+            scrollTrigger: {
+                trigger: ".video-animation-3",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',    
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".video-animation-4", {
+            scrollTrigger: {
+                trigger: ".video-animation-4",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".video-animation-services", {
+            scrollTrigger: {
+                trigger: ".video-animation-services",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            stagger: 0.2, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".video-animation-why", {
+            scrollTrigger: {
+                trigger: ".video-animation-why",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+    }, []);
+
     const services = [
         "Explainer Videos - Simplify complex concepts",
         "Product Demonstrations - Showcase features effectively",
@@ -27,7 +114,7 @@ const VideoMarketing = () => {
             <Header/>
             
             {/* Hero Section */}
-            <div className="max-w-[1200px] m-auto px-8 py-16">
+            <div className="max-w-[1200px] m-auto px-8 py-16 video-animation-1">
                 <h1 className="text-5xl font-bold text-[#091e42] mb-6">Video Marketing</h1>
                 <p className="text-xl text-gray-600 leading-8 mb-4">
                     Create compelling videos including explainers, events, product demos, and reels that capture attention, 
@@ -39,7 +126,7 @@ const VideoMarketing = () => {
             </div>
 
             {/* Feature Cards */}
-            <div className="max-w-[1200px] m-auto px-8 mb-16">
+            <div className="max-w-[1200px] m-auto px-8 mb-16 video-animation-2">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div className="bg-[#5D47AC] p-8 rounded-2xl hover:scale-105 transition-transform shadow-lg" style={{color: 'white'}}>
                         <FontAwesomeIcon icon={faVideo} size="3x" className="mb-4" style={{color: 'white'}}/>
@@ -60,7 +147,7 @@ const VideoMarketing = () => {
             </div>
 
             {/* Services List */}
-            <div className="max-w-[1200px] m-auto px-8 mb-16">
+            <div className="max-w-[1200px] m-auto px-8 mb-16 video-animation-services">
                 <h2 className="text-4xl font-bold text-[#091e42] mb-6">Our Video Services</h2>
                 <p className="text-lg text-gray-700 leading-8 mb-8">
                     Comprehensive video production services tailored to your marketing needs.
@@ -76,7 +163,7 @@ const VideoMarketing = () => {
             </div>
 
             {/* Why Choose Us */}
-            <div className="bg-gradient-to-r from-[#5D47AC] to-[#091e42] py-16 mb-16" style={{color: 'white'}}>
+            <div className="bg-gradient-to-r from-[#5D47AC] to-[#091e42] py-16 mb-16 video-animation-why" style={{color: 'white'}}>
                 <div className="max-w-[1200px] m-auto px-8">
                     <h2 className="text-4xl font-bold mb-6" style={{color: 'white'}}>Why Video Marketing?</h2>
                     <p className="text-lg leading-8 mb-4" style={{color: 'white'}}>
@@ -88,7 +175,7 @@ const VideoMarketing = () => {
                 </div>
             </div>
 
-            <GetInTouch />
+            <GetInTouch mountainImage={mountain} />
             <Footer/>
         </div>
     );

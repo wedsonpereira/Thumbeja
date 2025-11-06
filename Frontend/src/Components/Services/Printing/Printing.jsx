@@ -1,4 +1,4 @@
-import React from 'react';  // Add this at the top
+import React from 'react';
 import './Printing.css';
 import Header from '../../header/Header.jsx';
 import '../../../index.css'
@@ -6,19 +6,265 @@ import OutdoorAdvertisingImg from '../../../assets/Images/Printing.png';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCheck} from "@fortawesome/free-solid-svg-icons";
 import Footer from "../../Footer/Footer.jsx";
-import {GetInTouch} from "../Services.jsx";
+import {GetInTouch} from "../../GetInTouch/GetInTouch.jsx";
+import mountain from "../../../assets/Images/Gemini_Generated_Image_su9pixsu9pixsu9p.png";
 import {services5} from "../../../assets/JsonData/Servicesdata/Printing.js";
 import cardAnimations from "../../../assets/JsonData/CardAnimations/CardAnimations.js";
+import gsap from "gsap";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+import {useGSAP} from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 
 
 
 const Printing = () => {
+    useGSAP(() => {
+        gsap.from(".social-animation-1", {
+            scrollTrigger: {
+                trigger: ".social-animation-1",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+        
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".social-animation-2", {
+            scrollTrigger: {
+                trigger: ".social-animation-2",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".social-animation-3", {
+            scrollTrigger: {
+                trigger: ".social-animation-3",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',    
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".social-animation-4", {
+            scrollTrigger: {
+                trigger: ".social-animation-4",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".social-animation-5", {
+            scrollTrigger: {
+                trigger: ".social-animation-5",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".social-animation-6", {
+            scrollTrigger: {
+                trigger: ".social-animation-6",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".social-animation-7", {
+            scrollTrigger: {
+                trigger: ".social-animation-7",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".social-animation-8", {
+            scrollTrigger: {
+                trigger: ".social-animation-8",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        // Additional animations for all sections
+        gsap.from(".social-animation-9", {
+            scrollTrigger: {
+                trigger: ".social-animation-9",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".social-animation-10", {
+            scrollTrigger: {
+                trigger: ".social-animation-10",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".social-animation-11", {
+            scrollTrigger: {
+                trigger: ".social-animation-11",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            stagger: 0.2, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".social-animation-12", {
+            scrollTrigger: {
+                trigger: ".social-animation-12",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            stagger: 0.2, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".social-animation-13", {
+            scrollTrigger: {
+                trigger: ".social-animation-13",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".social-animation-14", {
+            scrollTrigger: {
+                trigger: ".social-animation-14",
+                start: "top 80%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".social-animation-branding", {
+            scrollTrigger: {
+                trigger: ".social-animation-branding",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".social-animation-branding2", {
+            scrollTrigger: {
+                trigger: ".social-animation-branding2",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".social-animation-offer", {
+            scrollTrigger: {
+                trigger: ".social-animation-offer",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".social-animation-final", {
+            scrollTrigger: {
+                trigger: ".social-animation-final",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            stagger: 0.3, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+    }, []);
 
     return (
         <div className="DigitalMarketing max-width-[2000px] min-h-[60rem]">
             <Header/>
-            <div className="DigitalMarketingbox1 max-w-300 m-auto">
+            <div className="DigitalMarketingbox1 max-w-300 m-auto mb-8 social-animation-1">
                 <h1 className="heading pt-[4rem] pl-[2.5rem]"
                     style={{textAlign: 'left', fontWeight: 'bold', fontSize: "2.3rem"}}>Printing</h1>
                 <p className="paragraph1 leading-8 pl-[2.5rem]" style={{textAlign: 'left'}}>
@@ -36,11 +282,11 @@ const Printing = () => {
                     across all touchpoints.
                 </p>
             </div>
-            <div className="ImageSection pt-10 max-width-[2000px] min-h-[14rem] ">
-                <img src={OutdoorAdvertisingImg} className="DigitalMarketingImg w-[65%] rounded-2xl mt-0 mb-0 m-auto"
-                     alt="Digital Marketing"/>
+            <div className="max-w-[1200px] m-auto px-8 social-animation-2">
+                <img src={OutdoorAdvertisingImg} className="w-full rounded-2xl shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-3xl cursor-pointer" style={{display: 'block'}}
+                     alt="Printing Services"/>
             </div>
-            <div>
+            <div className="social-animation-3">
                 <p className="paragraph3 leading-8 pl-[2.5rem] pt-[0.9rem] max-w-300 m-auto "
                    style={{textAlign: 'left'}}>
                     Committed to sustainability, Thumbeja Publicity incorporates eco-friendly inks and recycled
@@ -50,7 +296,7 @@ const Printing = () => {
                     lasting brand loyalty.
                 </p>
             </div>
-            <div className="Subheadingmain max-w-300  m-auto">
+            <div className="Subheadingmain max-w-300  m-auto social-animation-branding">
                 <h1 className="subheading pt-[1.5rem] pl-[2.5rem]"
                     style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}>What do our branding &
                     marketing services include
@@ -69,7 +315,7 @@ const Printing = () => {
                 </div>
             </div>
 
-            <div className="relative min-h-[30rem] w-full flex justify-center items-center flex-col p-1">
+            <div className="relative min-h-[30rem] w-full flex justify-center items-center flex-col p-1 social-animation-10">
                 {/*Box 1*/}
                 <div className={"w-[93%] flex items-center justify-center"}>
                     <h1 className="subheading h-full p-2 font-bold text-2xl">Our Works</h1>
@@ -102,7 +348,7 @@ const Printing = () => {
                 </div>
             </div>
 
-            <div className="4th para max-w-300 m-auto">
+            <div className="4th para max-w-300 m-auto social-animation-offer">
                 <h1 className="subheading pt-[1.5rem] pl-[2.5rem]"
                     style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}>What we have offer</h1>
                 <p className="paragraph1 leading-8 pl-[2.5rem] pt-3" style={{textAlign: 'left'}}>
@@ -122,7 +368,7 @@ const Printing = () => {
                 </p>
             </div>
 
-            <div className="DigitalMarketingboxN max-w-300 m-auto">
+            <div className="DigitalMarketingboxN py-3 max-w-300 m-auto social-animation-final">
                 <h1 className="heading pl-[2.5rem]"
                     style={{textAlign: 'left', fontWeight: 'bold', fontSize: "2.3rem"}}>Printing Services and Custom
                     Solutions</h1>
@@ -143,7 +389,7 @@ const Printing = () => {
                     impact.
                 </p>
             </div>
-            <GetInTouch/>
+            <GetInTouch mountainImage={mountain}/>
             <Footer/>
         </div>
 
