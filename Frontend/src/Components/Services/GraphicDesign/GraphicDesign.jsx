@@ -1,4 +1,4 @@
-import React from 'react';  // Add this at the top
+import React from 'react';
 import './GraphicDesign.css';
 import Header from '../../header/Header.jsx';
 import '../../../index.css'
@@ -6,12 +6,84 @@ import GraphicDesignImg from '../../../assets/Images/GraphicDesign.png';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCheck} from "@fortawesome/free-solid-svg-icons";
 import Footer from "../../Footer/Footer.jsx";
-import {GetInTouch} from "../Services.jsx";
+import {GetInTouch} from "../../GetInTouch/GetInTouch.jsx";
+import mountain from "../../../assets/Images/Gemini_Generated_Image_su9pixsu9pixsu9p.png";
 import {galleries, services4,logoGallery} from "../../../assets/JsonData/Servicesdata/GraphicDesign.js";
+import gsap from "gsap";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+import {useGSAP} from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 
 const GraphicDesign = () => {
+    useGSAP(() => {
+        gsap.from(".graphic-animation-1", {
+            scrollTrigger: {
+                trigger: ".graphic-animation-1",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
 
+        gsap.from(".graphic-animation-2", {
+            scrollTrigger: {
+                trigger: ".graphic-animation-2",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".graphic-animation-3", {
+            scrollTrigger: {
+                trigger: ".graphic-animation-3",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',    
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".graphic-animation-gallery", {
+            scrollTrigger: {
+                trigger: ".graphic-animation-gallery",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            stagger: 0.2, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".graphic-animation-final", {
+            scrollTrigger: {
+                trigger: ".graphic-animation-final",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+    }, []);
 
     return (
         <div className="DigitalMarketing max-width-[2000px] min-h-[60rem]">
@@ -121,7 +193,7 @@ const GraphicDesign = () => {
                     We deliver unwavering ongoing support through regular analytics reviews, real-time campaign adjustments, and personalized consulting, empowering your digital efforts to adapt and scale effortlessly. From fine-tuning ad performance to enhancing content strategies, our dedicated team at Thumbeja Publicity keeps your digital marketing innovative and effective, driving sustained ROI without interruptions.
                 </p>
             </div>
-            <GetInTouch />
+            <GetInTouch mountainImage={mountain} />
             <Footer/>
         </div>
 

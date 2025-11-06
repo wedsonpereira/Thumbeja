@@ -1,4 +1,4 @@
-import React from 'react';  // Add this at the top
+import React from 'react';
 import './OutdoorAdvertising.css';
 import Header from '../../header/Header.jsx';
 import '../../../index.css'
@@ -6,14 +6,99 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCheck} from "@fortawesome/free-solid-svg-icons";
 import {services1, services2,services3} from "../../../assets/JsonData/Servicesdata/DigitalMarketing.js";
 import Footer from "../../Footer/Footer.jsx";
-import {GetInTouch} from "../Services.jsx";
+import {GetInTouch} from "../../GetInTouch/GetInTouch.jsx";
+import mountain from "../../../assets/Images/Gemini_Generated_Image_su9pixsu9pixsu9p.png";
 import OutdoorAdvertisingImg from "../../../assets/Images/OutdoorAdvertisement.png";
 import VideoMarketing1Img from "../../../assets/Images/VideoMarketing1.png";
 import SEO1Img from "../../../assets/Images/SEO1.png";
 import OutdoorAdvertisementPic1Img from "../../../assets/Images/OutdoorAdvertisementPic1.png";
 import OutdoorAdvertisementPic3Img from "../../../assets/Images/OutdoorAdvertisementPic3.png";
 import OutdoorAdvertisementPic2Img from "../../../assets/Images/OutdoorAdvertisementPic2.png";
+import gsap from "gsap";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+import {useGSAP} from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
 const OutdoorAdvertising = () => {
+    useGSAP(() => {
+        gsap.from(".outdoor-animation-1", {
+            scrollTrigger: {
+                trigger: ".outdoor-animation-1",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".outdoor-animation-2", {
+            scrollTrigger: {
+                trigger: ".outdoor-animation-2",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".outdoor-animation-3", {
+            scrollTrigger: {
+                trigger: ".outdoor-animation-3",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',    
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".outdoor-animation-4", {
+            scrollTrigger: {
+                trigger: ".outdoor-animation-4",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".outdoor-animation-5", {
+            scrollTrigger: {
+                trigger: ".outdoor-animation-5",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".outdoor-animation-final", {
+            scrollTrigger: {
+                trigger: ".outdoor-animation-final",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+    }, []);
 
     return (
         <div className="DigitalMarketing max-width-[2000px] min-h-[60rem]">
@@ -129,7 +214,7 @@ const OutdoorAdvertising = () => {
                 <p className="paragraph1 leading-8 mt-4 pl-[2.5rem] " style={{textAlign: 'left'}}>At Thumbeja Publicity, our outdoor advertising optimizations fine-tune campaigns with A/B testing on creatives, audience flow analysis, and eco-friendly upgrades, maximizing ROI in prime locations while minimizing environmental impact.</p>
                 <p className="paragraph2 leading-8 pl-[2.5rem] pt-[0.9rem] " style={{textAlign: 'left'}}>We offer seamless ongoing support, including routine maintenance, performance reporting, and adaptive adjustments to traffic patterns or regulations, empowering your brand to maintain dominance in the out-of-home space without missing a beat.</p>
             </div>
-            <GetInTouch />
+            <GetInTouch mountainImage={mountain} />
             <Footer/>
         </div>
 

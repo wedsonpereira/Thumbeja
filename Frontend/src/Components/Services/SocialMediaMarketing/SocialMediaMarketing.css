@@ -1,1 +1,170 @@
 @import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Hegarty&family=Bitcount+Single+Ink:slnt,wght@-3,100..900&family=Carlito:ital,wght@0,400;0,700;1,400;1,700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Passion+One:wght@400;700;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Slide In Left Animation */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Enhanced Social Media Card Styles */
+.social-icon:hover {
+    transform: translateY(-8px) !important;
+}
+
+/* Card Container Styles */
+.social-icon > div {
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.social-icon > div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.social-icon:hover > div::before {
+    opacity: 1;
+}
+
+/* Card Text Styles */
+.social-icon h3 {
+    font-weight: 700;
+    letter-spacing: -0.025em;
+}
+
+.social-icon p {
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+/* Card Hover Effects */
+.social-icon:hover > div {
+    transform: translateY(-2px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+}
+
+/* Smooth transitions for all animated elements */
+.brand-image-1, .brand-image-2, .social-icon {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+}
+
+/* Grid Layout Enhancements */
+.social-icons-container .grid {
+    place-items: stretch;
+    max-width: 100%;
+}
+
+/* Container constraints */
+.social-icons-container {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/* Enhanced Image Hover Effects */
+.brand-image-1:hover {
+    filter: brightness(1.1) contrast(1.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1) !important;
+}
+
+.brand-image-2:hover {
+    filter: brightness(1.1) saturate(1.2);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1) !important;
+}
+
+/* Continuous Animation Base Styles */
+.brand-image-1, .brand-image-2 {
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+.social-icon {
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+/* Additional Card Enhancements */
+.social-icon > div {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-icon:hover > div {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Icon positioning within cards */
+.social-icon svg {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* GSAP handles all looping animations */
+
+/* Responsive Animation Adjustments */
+@media (max-width: 768px) {
+    .animate-slide-in-left {
+        animation-duration: 0.6s;
+    }
+    
+    /* Responsive adjustments for social media cards */
+    .social-icon > div {
+        height: 240px !important;
+        padding: 1.5rem !important;
+    }
+    
+    .social-icon h3 {
+        font-size: 1.125rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .social-icon p {
+        font-size: 0.875rem !important;
+    }
+    
+    /* Ensure cards stay within container */
+    .social-icons-container {
+        overflow: hidden;
+    }
+    
+    .brand-image-1, .brand-image-2 {
+        height: 200px !important;
+    }
+}
+
+@media (max-width: 640px) {
+    /* Single column layout on small screens */
+    .social-icons-container .grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+    
+    .social-icon > div {
+        height: 200px !important;
+        padding: 1.25rem !important;
+    }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .animate-slide-in-left {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}

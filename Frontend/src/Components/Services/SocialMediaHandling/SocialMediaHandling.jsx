@@ -1,4 +1,4 @@
-import React from 'react';  // Add this at the top
+import React from 'react';
 import './SocialMediaHandling.css';
 import Header from '../../header/Header.jsx';
 import '../../../index.css'
@@ -6,7 +6,13 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCheck} from "@fortawesome/free-solid-svg-icons";
 import {services1, services2,services3} from "../../../assets/JsonData/Servicesdata/DigitalMarketing.js";
 import Footer from "../../Footer/Footer.jsx";
-import {GetInTouch} from "../Services.jsx";
+import {GetInTouch} from "../../GetInTouch/GetInTouch.jsx";
+import mountain from "../../../assets/Images/Gemini_Generated_Image_su9pixsu9pixsu9p.png";
+import gsap from "gsap";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+import {useGSAP} from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
 import SocialMedia1Img from "../../../assets/Images/SocialMedia1.jpg";
 import SocialMedia2Img from "../../../assets/Images/SocialMedia2.png";
 import SocialMedia3Img from "../../../assets/Images/SocialMedia3.png";
@@ -16,6 +22,72 @@ import SocialMedia6Img from "../../../assets/Images/SocialMedia6.png";
 import SocialMedia7Img from "../../../assets/Images/SocialMedia7.jpg";
 
 const SocialMediaHandling = () => {
+    useGSAP(() => {
+        gsap.from(".social-handling-animation-1", {
+            scrollTrigger: {
+                trigger: ".social-handling-animation-1",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".social-handling-animation-2", {
+            scrollTrigger: {
+                trigger: ".social-handling-animation-2",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".social-handling-animation-3", {
+            scrollTrigger: {
+                trigger: ".social-handling-animation-3",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',    
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".social-handling-animation-4", {
+            scrollTrigger: {
+                trigger: ".social-handling-animation-4",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+
+        gsap.from(".social-handling-animation-final", {
+            scrollTrigger: {
+                trigger: ".social-handling-animation-final",
+                start: "top 90%",
+                end: "bottom 20%",
+                toggleActions: 'play none none reverse',
+            }, 
+            duration: 1.2, 
+            x: -150, 
+            opacity: 0,
+            ease: "power2.out"
+        });
+    }, []);
 
     return (
         <div className="DigitalMarketing max-width-[2000px] min-h-[60rem]">
@@ -114,7 +186,7 @@ const SocialMediaHandling = () => {
                 <p className="paragraph1 leading-8 mt-4 pl-[2.5rem] " style={{textAlign: 'left'}}>We optimize social media performance through A/B testing, algorithm updates, and ROI-focused adjustments, ensuring your content cuts through the noise and delivers results. Our ongoing support includes monthly audits, trend forecasting, and dedicated account management to keep your social presence dynamic and aligned with business objectives.</p>
                 <p className="paragraph2 leading-8 pl-[2.5rem] pt-[0.9rem] " style={{textAlign: 'left'}}>Whether launching a new campaign or sustaining momentum, our proactive approach helps brands navigate challenges, capitalize on opportunities, and build lasting digital communities that drive sustained growth.</p>
             </div>
-            <GetInTouch />
+            <GetInTouch mountainImage={mountain} />
             <Footer/>
         </div>
 
