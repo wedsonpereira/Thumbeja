@@ -17,6 +17,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 const DigitalMarketing = () => {
     useGSAP(() => {
+        // Use smaller slide distance on mobile
+        const isMobile = window.innerWidth < 768;
+        const slideDistance = isMobile ? -50 : -150;
+        
         gsap.from(".digital-animation-1", {
             scrollTrigger: {
                 trigger: ".digital-animation-1",
@@ -25,7 +29,7 @@ const DigitalMarketing = () => {
                 toggleActions: 'play none none reverse',
             }, 
             duration: 1.2, 
-            x: -150, 
+            x: slideDistance, 
             opacity: 0,
             ease: "power2.out"
         });
@@ -175,7 +179,7 @@ const DigitalMarketing = () => {
     }, []);
 
     return (
-        <div className="digital-marketing-page bg-[#fefdf7] min-h-screen">
+        <div className="digital-marketing-page bg-[#fefdf7] min-h-screen pt-24">
             <SEO 
                 title="Digital Marketing Services - SEO, Google Ads & Social Media"
                 description="Comprehensive digital marketing services including SEO, Google Ads, social media marketing, and content strategy to boost your online presence and drive conversions."
@@ -217,7 +221,7 @@ const DigitalMarketing = () => {
             </div>
 
             {/* Main Image */}
-            <div className="max-w-[1200px] m-auto px-8 mb-16 digital-animation-3">
+            <div className="max-w-[900px] m-auto px-8 mb-16 digital-animation-3">
                 <img src={DigitalMarketingImg} className="w-full rounded-2xl shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-3xl cursor-pointer" style={{display: 'block'}} alt="Digital Marketing Services"/>
             </div>
 

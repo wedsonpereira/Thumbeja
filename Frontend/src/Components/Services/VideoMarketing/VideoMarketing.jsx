@@ -14,6 +14,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 const VideoMarketing = () => {
     useGSAP(() => {
+        // Use smaller slide distance on mobile
+        const isMobile = window.innerWidth < 768;
+        const slideDistance = isMobile ? -50 : -150;
+        
         gsap.from(".video-animation-1", {
             scrollTrigger: {
                 trigger: ".video-animation-1",
@@ -22,7 +26,7 @@ const VideoMarketing = () => {
                 toggleActions: 'play none none reverse',
             }, 
             duration: 1.2, 
-            x: -150, 
+            x: slideDistance, 
             opacity: 0,
             ease: "power2.out"
         });
@@ -104,7 +108,7 @@ const VideoMarketing = () => {
     ];
 
     return (
-        <div className="video-marketing-page bg-[#fefdf7] min-h-screen">
+        <div className="video-marketing-page bg-[#fefdf7] min-h-screen pt-24">
             <SEO 
                 title="Video Marketing Services - Explainer Videos, Reels & Product Demos"
                 description="Professional video marketing services including explainer videos, product demonstrations, event coverage, social media reels, and corporate videos for engaging storytelling."
