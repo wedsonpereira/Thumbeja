@@ -23,6 +23,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 const SocialMediaMarketing = () => {
     useGSAP(() => {
+        // Use smaller slide distance on mobile
+        const isMobile = window.innerWidth < 768;
+        const slideDistance = isMobile ? -50 : -150;
+        
         gsap.from(".social-animation-1", {
             scrollTrigger: {
                 trigger: ".social-animation-1",
@@ -32,7 +36,7 @@ const SocialMediaMarketing = () => {
         
             }, 
             duration: 1.2, 
-            x: -150, 
+            x: slideDistance, 
             opacity: 0,
             ease: "power2.out"
         });
@@ -264,43 +268,39 @@ const SocialMediaMarketing = () => {
     }, []);
 
     return (
-        <div className="DigitalMarketing max-width-[2000px] min-h-[60rem]">
+        <div className="DigitalMarketing w-full overflow-x-hidden pt-24">
             <Header/>
-            <div className="DigitalMarketingbox1 max-w-300  m-auto mb-8 social-animation-1">
-                <h1 className="heading pt-[4rem] pl-[2.5rem]"
-                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "2.3rem"}}> Social Media Marketing</h1>
-                <p className="paragraph1 leading-8 pl-[2.5rem]" style={{textAlign: 'left'}}>Social media marketing is about using platforms like Facebook, Instagram, and Twitter to reach people and share your brand. It focuses on creating interesting posts, videos, and stories that people enjoy and interact with. By connecting with your audience regularly, it helps build trust, loyalty, and turns followers into customers.
+            <div className="DigitalMarketingbox1 max-w-[1200px] mx-auto mb-8 px-4 md:px-8 social-animation-1">
+                <h1 className="heading pt-8 md:pt-16 px-4 md:pl-1 text-2xl md:text-3xl lg:text-4xl font-bold text-left"> Social Media Marketing</h1>
+                <p className="paragraph1 leading-7 md:leading-8 px-4 md:pl-1 text-base md:text-lg text-left">Social media marketing is about using platforms like Facebook, Instagram, and Twitter to reach people and share your brand. It focuses on creating interesting posts, videos, and stories that people enjoy and interact with. By connecting with your audience regularly, it helps build trust, loyalty, and turns followers into customers.
                 </p>
                 
             </div>
-            <div className="max-w-[1000px] m-auto px-8 social-animation-2">
-                <img src={SocialMediaMarketingImg} className="w-full rounded-2xl shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-3xl cursor-pointer" style={{display: 'block', maxHeight: '450px', objectFit: 'cover'}}
+            <div className="max-w-[900px] mx-auto px-4 md:px-8 social-animation-2">
+                <img src={SocialMediaMarketingImg} className="w-full rounded-2xl shadow-2xl transition-all duration-300 hover:scale-105 hover:shadow-3xl cursor-pointer" style={{display: 'block', maxHeight: '28.125rem', objectFit: 'cover'}}
                      alt="Social Media Marketing"/>
             </div>
             <div className="social-animation-3">
-                <p className="paragraph1 leading-8 pl-[2.5rem] max-w-300  m-auto pt-8" style={{textAlign: 'left'}}>Additionally, social media marketing can be cost-effective compared to traditional advertising, while offering opportunities for targeted campaigns that reach the right people at the right time. Overall, it’s a powerful way to grow a brand, strengthen relationships, and drive sales.
+                <p className="paragraph1 leading-8 px-7  md:pl-10 max-w-[1200px] mx-auto pt-6 md:pt-8" style={{textAlign: 'left'}}>Additionally, social media marketing can be cost-effective compared to traditional advertising, while offering opportunities for targeted campaigns that reach the right people at the right time. Overall, it’s a powerful way to grow a brand, strengthen relationships, and drive sales.
                 </p>
             </div>
-            <div className="Subheadingmain max-w-300  m-auto social-animation-branding">
-                <h1 className="subheading pt-[1.5rem] pl-[2.5rem] social-animation-branding"
-                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}>What do our branding &
-                    marketing services include
-                </h1>
+            <div className="Subheadingmain max-w-[1200px] mx-auto px-4 md:px-8 social-animation-branding">
                 
-                <h2 className="subheading pt-[1.5rem] pl-[2.5rem] social-animation-branding"
+                
+                <h2 className="subheading pt-[1.5rem] pl-[0.7rem] social-animation-branding"
                     style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.4rem"}}>Brand & Marketing
                     Evaluations
                 </h2>
-                <p className="paragraph1 leading-8 pl-[2.5rem] pt-2 social-animation-branding" style={{textAlign: 'left'}}>Branding and marketing services include a thorough evaluation of your brand and marketing efforts to understand your strengths and areas for improvement. This helps create strategies that enhance your brand’s visibility and impact.
+                <p className="paragraph1 leading-8 pl-[0.7rem] pt-2 social-animation-branding" style={{textAlign: 'left'}}>Branding and marketing services include a thorough evaluation of your brand and marketing efforts to understand your strengths and areas for improvement. This helps create strategies that enhance your brand’s visibility and impact.
                 </p>
-                <div className="image-gallery flex justify-between mt-4 w-250 mx-auto px-4 social-animation-branding">
-                    <img src={BrandmarketImg1} alt="Brand Marketing Poster 1" className="w-[45%] h-[300px] rounded-lg object-cover transition-all duration-300 hover:scale-105 hover:shadow-3xl cursor-pointer" style={{minHeight: '300px'}} />
-                    <img src={BrandMarketImg2} alt="Brand Marketing Poster 2" className="w-[45%] h-[300px] rounded-lg object-cover transition-all duration-300 hover:scale-105 hover:shadow-3xl cursor-pointer" style={{minHeight: '300px'}} />
+                <div className="image-gallery flex flex-col md:flex-row justify-between gap-4 mt-4 w-full max-w-[1200px] mx-auto px-4 social-animation-branding">
+                    <img src={BrandmarketImg1} alt="Brand Marketing Poster 1" className="w-full md:w-[48%] h-[250px] md:h-[300px] rounded-lg object-cover transition-all duration-300 hover:scale-105 hover:shadow-3xl cursor-pointer" />
+                    <img src={BrandMarketImg2} alt="Brand Marketing Poster 2" className="w-full md:w-[48%] h-[250px] md:h-[300px] rounded-lg object-cover transition-all duration-300 hover:scale-105 hover:shadow-3xl cursor-pointer" />
                 </div>
-                <div className="points max-w-450 pl-14 m-auto  pt-6 leading-6 social-animation-branding" >
+                <div className="points w-full max-w-[1200px] px-4 md:px-4 mx-auto pt-6 leading-6 social-animation-branding" >
                     <ul className="services-list" >
                         {services1.map((service, index) => (
-                            <li key={index} style={{marginBottom: '10px', fontSize: '1rem'}}>
+                            <li key={index} style={{marginBottom: '0.625rem', fontSize: '1rem'}}>
                                 <FontAwesomeIcon icon={faCheck} size="xl"/>
                                 {service}
                             </li>
@@ -308,40 +308,38 @@ const SocialMediaMarketing = () => {
                     </ul>
                 </div>
             </div>
-            <div className="DigitalMarketingbox2 max-w-300  m-auto social-animation-9">
-                <h1 className="heading pt-[2rem] pl-[2.5rem] "
-                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}> Branding & marketing</h1>
-                <p className="paragraph1 leading-8 pl-[2.5rem] " style={{textAlign: 'left'}}>Branding and marketing services focus on building a strong, memorable identity that connects with your audience. We combine creativity and strategy to deliver impactful solutions, including logo design, marketing materials, merchandise, and event branding. Our goal is to help your business stand out, communicate its values effectively, and leave a lasting impression in every interaction.</p>
+            <div className="DigitalMarketingbox2 w-full max-w-[1200px] mx-auto px-4 md:px-8 social-animation-9">
+                <h1 className="heading pt-6 md:pt-8  px-4 md:pl-2 text-xl md:text-2xl lg:text-3xl font-bold text-left mb-4"> Branding & marketing</h1>
+                <p className="paragraph1 leading-7 md:leading-8 px-4 md:pl-2 text-base md:text-lg text-left">Branding and marketing services focus on building a strong, memorable identity that connects with your audience. We combine creativity and strategy to deliver impactful solutions, including logo design, marketing materials, merchandise, and event branding. Our goal is to help your business stand out, communicate its values effectively, and leave a lasting impression in every interaction.</p>
             </div>
-          <div className="image-gallery flex justify-center mt-4 max-w-[1200px] mx-auto px-4 gap-6 social-animation-10">
-                    <img src={BrankMarketImg3} alt="Poster 1" className="w-[30%] rounded-lg object-cover transition-all duration-300 hover:scale-105 hover:shadow-3xl cursor-pointer" />
-                    <img src={BrankMarketImg4} alt="Poster 2" className="w-[30%] rounded-lg object-cover transition-all duration-300 hover:scale-105 hover:shadow-3xl cursor-pointer" />
-                    <img src={BrandMarketImg5} alt="Poster 3" className="w-[30%] rounded-lg object-cover transition-all duration-300 hover:scale-105 hover:shadow-3xl cursor-pointer" />
+          <div className="image-gallery flex flex-col md:flex-row justify-center mt-4 w-full max-w-[1200px] mx-auto px-4 gap-4 md:gap-6 social-animation-10">
+                    <img src={BrankMarketImg3} alt="Poster 1" className="w-full md:w-[30%] h-[250px] md:h-auto rounded-lg object-cover transition-all duration-300 hover:scale-105 hover:shadow-3xl cursor-pointer" />
+                    <img src={BrankMarketImg4} alt="Poster 2" className="w-full md:w-[30%] h-[250px] md:h-auto rounded-lg object-cover transition-all duration-300 hover:scale-105 hover:shadow-3xl cursor-pointer" />
+                    <img src={BrandMarketImg5} alt="Poster 3" className="w-full md:w-[30%] h-[250px] md:h-auto rounded-lg object-cover transition-all duration-300 hover:scale-105 hover:shadow-3xl cursor-pointer" />
                 </div>
-            <div className="points max-w-300 pl-14 m-auto  pt-6 leading-6 social-animation-6">
+            <div className="points w-full max-w-[1200px] px-6 md:px-12 mx-auto pt-6 leading-6 social-animation-6">
                 <ul className="services-list" >
                     {services2.map((service, index) => (
-                        <li key={index} style={{marginBottom: '10px', fontSize: '1rem'}}>
+                        <li key={index} style={{marginBottom: '0.625rem', fontSize: '1rem'}}>
                             <FontAwesomeIcon icon={faCheck} size="xl"/>
                             {service}
                         </li>
                     ))}
                 </ul>
             </div>
-            <div className="Subheadingmain max-w-300  m-auto social-animation-branding2">
-                <h1 className="subheading pt-[0.5rem] pl-[2.5rem] social-animation-branding2"
-                    style={{textAlign: 'left', fontWeight: 'bold', fontSize: "1.8rem"}}>What do our branding &
+            <div className="Subheadingmain w-full max-w-[1200px] mx-auto px-2 md:px-2 social-animation-branding2">
+                <h1 className="subheading pt-4 md:pt-6 px-4 md:pl-9 text-xl md:text-2xl font-bold text-left social-animation-branding2">What do our branding &
                     marketing services include
                 </h1>
 
-                <p className="paragraph1 leading-8 pl-[2.5rem] pt-2 social-animation-branding2" style={{textAlign: 'left'}}>Branding and marketing services include creative and strategic solutions that define and enhance a brand’s identity. These services cover logo design, brand strategy, marketing materials, digital campaigns, and social media management. The goal is to create consistent, impactful communication that leaves a lasting impression across all platforms.
+                <p className="paragraph1 leading-7 md:leading-8 px-4 md:pl-9 pt-2 social-animation-branding2" style={{textAlign: 'left'}}>Branding and marketing services include creative and strategic solutions that define and enhance a brand’s identity. These services cover logo design, brand strategy, marketing materials, digital campaigns, and social media management. The goal is to create consistent, impactful communication that leaves a lasting impression across all platforms.
 
                 </p>
                
-                <div className="points max-w-450 pl-14 m-auto  pt-6 leading-6 social-animation-branding2" >
+                <div className="points w-full max-w-[1200px] px-4 md:px-12 mx-auto pt-6 leading-6 social-animation-branding2" >
                     <ul className="services-list" >
                         {services3.map((service, index) => (
-                            <li key={index} style={{marginBottom: '10px', fontSize: '1rem'}}>
+                            <li key={index} style={{marginBottom: '0.625rem', fontSize: '1rem'}}>
                                 <FontAwesomeIcon icon={faCheck} size="xl"/>
                                 {service}
                             </li>

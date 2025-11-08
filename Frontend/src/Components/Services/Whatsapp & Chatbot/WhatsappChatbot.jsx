@@ -15,6 +15,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 const WhatsappChatbot = () => {
     useGSAP(() => {
+        // Use smaller slide distance on mobile
+        const isMobile = window.innerWidth < 768;
+        const slideDistance = isMobile ? -50 : -150;
+        
         gsap.from(".whatsapp-animation-1", {
             scrollTrigger: {
                 trigger: ".whatsapp-animation-1",
@@ -23,7 +27,7 @@ const WhatsappChatbot = () => {
                 toggleActions: 'play none none reverse',
             }, 
             duration: 1.2, 
-            x: -150, 
+            x: slideDistance, 
             opacity: 0,
             ease: "power2.out"
         });
@@ -92,7 +96,7 @@ const WhatsappChatbot = () => {
     ];
 
     return (
-        <div className="whatsapp-chatbot-page bg-[#fefdf7] min-h-screen">
+        <div className="whatsapp-chatbot-page bg-[#fefdf7] min-h-screen pt-24">
             <SEO 
                 title="WhatsApp Business API & Chatbot Services - Automated Customer Support"
                 description="AI-powered WhatsApp Business API, chatbots, bulk SMS, and email marketing automation for 24/7 customer engagement and lead generation."

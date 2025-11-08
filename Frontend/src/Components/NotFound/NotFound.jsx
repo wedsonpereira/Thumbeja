@@ -16,13 +16,13 @@ const NotFound = () => {
             display: "grid",
             placeItems: "center",
             textAlign: "center",
-            padding: "24px"
+            padding: "1.5rem"
         }}>
             <div>
-                <div style={{fontSize: "80px", fontWeight: 800, lineHeight: 1}}>404</div>
-                <h1 style={{margin: "8px 0 4px 0"}}>Page Not Found</h1>
+                <div style={{fontSize: "5rem", fontWeight: 800, lineHeight: 1}}>404</div>
+                <h1 style={{margin: "0.5rem 0 0.25rem 0"}}>Page Not Found</h1>
                 <p style={{opacity: 0.8}}>Redirecting you to the home page...</p>
-                <p style={{marginTop: "12px"}}>
+                <p style={{marginTop: "0.75rem"}}>
                     Or go now: <Link to="/" style={{textDecoration: "underline"}}>Home</Link>
                 </p>
             </div>
