@@ -212,7 +212,7 @@ const SocialMediaMarketing = () => {
         gsap.from(".social-animation-branding", {
             scrollTrigger: {
                 trigger: ".social-animation-branding",
-                start: "top 90%",
+                start: "top 80%",
                 end: "bottom 20%",
                 toggleActions: 'play none none reverse',
             }, 
