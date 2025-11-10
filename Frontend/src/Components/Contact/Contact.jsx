@@ -39,20 +39,35 @@ const Contact = () => {
     const onSubmit = async (event) => {
         event.preventDefault();
         toast("Sending....");
-        const formData =event.target;
-        try{
-            axios.post("http://localhost:8000/contactform",formData).then((response) =>{
-                if(response.status === 200){
-                    toast("Form sent successfully.");
-                }
-            }).catch((err) =>{
-                toast("Some Error occurred", err.message)
-            })
-        }catch(e){
-            toast("Error",e.message);
-        }
 
+        const formData = new FormData(event.target);
+
+        // Convert FormData to JSON object
+        const data = {
+            name: formData.get('name'),
+            email: formData.get('company'),
+            business: formData.get('phoneNumber'),
+            contact: formData.get('email'),
+            message: formData.get('message')
+        };
+
+        try {
+            const response = await axios.post("http://localhost:8080/api/contact", data, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (response.status === 201 || response.status === 200) {
+                toast("Form sent successfully.");
+                event.target.reset(); // Reset the form
+            }
+        } catch (err) {
+            console.error("Error details:", err);
+            toast("Some Error occurred: " + (err.response?.data?.message || err.message));
+        }
     };
+
     useGSAP(()=>{
             gsap.from('.tp-contact-scroll-animation-1', {
                 y: -50, duration: 1, opacity: 0, ease: "power1.inOut",
@@ -78,7 +93,7 @@ const Contact = () => {
 
     return (<>
             <Header/>
-            <div ref={container} className={"tp-contact-main pt-24 flex items-center flex-col gap-6 w-full h-max bg-[#fefdf7] pb-8"}>
+            <div ref={container} className={"tp-contact-main pt-24 flex items-center flex-col gap-6 w-full h-max bg-[#fefdf7] pb-8 mt-[6rem]"}>
                 <div className={"tp-contact-header w-full h-[15%] flex gap-6 flex-col"}>
                     <div className={" tp-contact-lbl w-full flex items-center justify-center"}>
                         <span>Contact Us</span>

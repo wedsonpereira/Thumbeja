@@ -1,4 +1,4 @@
-import React from 'react';
+ import React from 'react';
 import Header from "../header/Header.jsx";
 import Footer from "../Footer/Footer.jsx";
 import "./Services.css";
@@ -47,7 +47,7 @@ const Services = () => {
                 url="https://thumbejapublicity.com/services-thumbeja-publicity"
             />
             <Header />
-            <div className={" h-max pb-8 pt-15 flex flex-col items-center bg-[#fefdf7] w-full"}>
+            <div className={" h-max pb-8 pt-15 flex flex-col items-center bg-[#fefdf7] w-full mt-[6rem]"}>
                 {/*services header */}
                 <div className={"m-0 flex items-center h-max justify-center w-[100%] flex-col"}>
                     <div className={"w-max h-max p-4 items-center justify-center tp-service-animation-1"}>
