@@ -1,0 +1,16 @@
+.tp-notify-bar {
+    position: fixed;
+    top: 15%;
+    left: 50%;
+    background: rgba(26, 26, 26, 0.69);
+    color: rgba(255, 255, 255, 0.99);
+    transform: translate(-50%);
+    font-weight: 500;
+    display: flex;
+    width: 20rem;
+    height: 4rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    gap: 1rem;
+}

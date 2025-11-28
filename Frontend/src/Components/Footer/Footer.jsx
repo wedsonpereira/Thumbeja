@@ -1,0 +1,93 @@
+import React from 'react';
+import thumbejalogo from '/src/assets/Images/thunbejalogo.png'
+import {faFacebook, faInstagram, faLinkedin, faWhatsapp} from "@fortawesome/free-brands-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {Link} from "react-router-dom";
+import {faArrowUp} from "@fortawesome/free-solid-svg-icons";
+import "./Footer.css"
+
+const Footer = () => {
+    return (
+        <div className="tp-footer h-max flex flex-col border-1 justify-center items-center p-2 bg-[#000115] text-white">
+            {/*bg-[#091e42]*/}
+            <div className={"tp-footer-content w-[80%] h-max flex items-center p-2 gap-2 m-auto justify-center align-center "}>
+                <div className={"tp-footer-content0 w-[50%] h-max  flex flex-col justify-between items-center p-2"}>
+                    <div className={"h-max w-full flex overflow-hidden items-center"}>
+                        <div className={"h-[10rem] w-[50%]"}>
+                            <img src={thumbejalogo} alt="" className={"w-full h-full object-contain scale-200"}/>
+                        </div>
+                        <div className={"tp-max800-text h-[100%] w-full flex p-2 "}>
+                            <p style={{color: 'white'}}>
+                                To empower businesses of all sizes with innovative technology, creative marketing, and reliable customer solutions that drive success and long-term growth.
+                            </p>
+                        </div>
+                    </div>
+                    <hr className={"w-[100%]"}/>
+                    <div className={"flex gap-3 flex-col p-3 justify-center items-center w-full"}>
+                        <div className={"tp-max800-text"}>
+                            <span className={"text-4xl"} style={{color: 'white'}}>Reach us @</span>
+                        </div>
+                        <div className={"flex gap-3 border-1 w-max p-2 rounded"}>
+                            <a href="https://www.facebook.com/share/17UorZadV3/?mibextid=wwXIfr" target={"_blank"} style={{color: 'white'}}><FontAwesomeIcon icon={faFacebook} size="lg"/></a>
+                            <a href="https://www.instagram.com/thumbeja_publicity?igsh=NGF3OTc1bTM1czds" target={"_blank"} style={{color: 'white'}}><FontAwesomeIcon icon={faInstagram} size="lg"/></a>
+                            <a href="https://wa.me/916366983700" target={"_blank"} style={{color: 'white'}}><FontAwesomeIcon icon={faWhatsapp} size="lg"/></a>
+                            <a href="https://linkedin.com/in/thumbeja-publicity-267636387" target={"_blank"} style={{color: 'white'}}><FontAwesomeIcon icon={faLinkedin} size="lg"/></a>
+                        </div>
+                    </div>
+                </div>
+                <div className={"tp-footer-content1 w-[50%] h-[100%] flex justify-evenly p-2"}>
+                    <div className={"flex flex-col gap-6"}>
+                        <div className={"flex flex-col items-start gap-3 tp-max800-text"}>
+                            <span className={"text-2xl"} style={{color: 'white'}}>Pages</span>
+                        </div>
+                        <div className={"flex flex-col items-start gap-3 tp-max800-text"}>
+                            <Link className={"text-sm"} to={"/services-thumbeja-publicity"} style={{color: 'white'}}>
+                                <span style={{color: 'white'}}>Services</span>
+                                <FontAwesomeIcon icon={faArrowUp} size="lg" style={{"transform":"rotate(45deg)", "color": "white"}} />
+                            </Link>
+                            <Link className={"text-sm"} to={"/contact-thumbeja-publicity"} style={{color: 'white'}}>
+                                <span style={{color: 'white'}}>Contact</span>
+                                <FontAwesomeIcon icon={faArrowUp} size="lg" style={{"transform":"rotate(45deg)", "color": "white"}} />
+                            </Link>
+                            <Link className={"text-sm"} to={"/career-thumbeja-publicity"} style={{color: 'white'}}>
+                                <span style={{color: 'white'}}>Career</span>
+                                <FontAwesomeIcon icon={faArrowUp} size="lg" style={{"transform":"rotate(45deg)", "color": "white"}} />
+                            </Link>
+                            <Link className={"text-sm"} to={"#about"} style={{color: 'white'}}>
+                                <span style={{color: 'white'}}>About</span>
+                                <FontAwesomeIcon icon={faArrowUp} size="lg" style={{"transform":"rotate(45deg)", "color": "white"}} />
+                            </Link>
+                            <Link className={"text-sm"} to={"/"} style={{color: 'white'}}>
+                                <span style={{color: 'white'}}>Home</span>
+                                <FontAwesomeIcon icon={faArrowUp} size="lg" style={{"transform":"rotate(45deg)", "color": "white"}} />
+                            </Link>
+                        </div>
+                    </div>
+                    <div className={"flex flex-col gap-6"}>
+                        <div className={"flex flex-col items-start  tp-max800-text"}>
+                            <span className={"text-2xl"} style={{color: 'white'}}>Organization information</span>
+                        </div>
+                        <div className={"flex flex-col items-start gap-3"}>
+                            <Link className={"text-sm"} to={"/terms-conditions-thumbeja-publicity"} style={{color: 'white'}}>
+                                <span style={{color: 'white'}}>Terms & Conditions </span>
+                                <FontAwesomeIcon icon={faArrowUp} size="lg" style={{"transform":"rotate(45deg)", "color": "white"}} />
+                            </Link>
+                            <Link className={"text-sm"} to={"/terms-conditions-thumbeja-publicity"} style={{color: 'white'}}>
+                                <span style={{color: 'white'}}>Privacy Policy</span>
+                                <FontAwesomeIcon icon={faArrowUp} size="lg" style={{"transform":"rotate(45deg)", "color": "white"}} />
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className={"h-max w-full flex flex-center justify-center items-center"}>
+                <hr/>
+                <div className={"h-[5rem] flex flex-center justify-center items-center text-center"}>
+                    <span className={"text-lg tp-copyright"} style={{color: 'white'}}>© 2025 Thumbeja Publicity. All rights reserved.</span>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default Footer;

@@ -1,0 +1,13 @@
+.website-development-page {
+    background-color: #fefdf7;
+    min-height: 100vh;
+}
+
+.website-development-page h1,
+.website-development-page h2 {
+    color: #091e42;
+}
+
+.website-development-page p {
+    color: #4a5568;
+}

@@ -1,0 +1,266 @@
+/* Main Wrapper */
+.about-main-wrapper {
+    width: 100%;
+}
+
+/* Section Container */
+.about-section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Labels */
+.about-label {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+}
+
+.about-label-dark {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #5e3bab;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+}
+
+/* CEO Section - Purple Background */
+.about-ceo-section {
+    background: linear-gradient(135deg, #5e3bab 0%, #7c5fd4 100%);
+    padding: 6rem 0;
+    position: relative;
+}
+
+.about-ceo-grid {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-ceo-image-wrapper {
+    position: relative;
+}
+
+.about-image-box {
+    position: relative;
+    border-radius: 50%;
+    aspect-ratio: 2/2;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.about-ceo-img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    display: block;
+}
+
+.about-ceo-text {
+    color: white;
+}
+
+.about-ceo-name {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.about-ceo-role {
+    font-size: 1.25rem;
+    color: #fbbf24;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.about-ceo-desc {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+/* Team Section - White Background */
+.about-team-section {
+    background: #ffffff;
+    padding: 6rem 0;
+}
+
+.about-team-grid {
+    display: grid;
+    grid-template-columns: 1fr 500px;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-team-text {
+    color: #1f2937;
+}
+
+.about-team-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.about-team-desc {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: #4b5563;
+}
+
+.about-team-image-wrapper {
+    position: relative;
+}
+
+.about-team-img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .about-ceo-grid {
+        grid-template-columns: 350px 1fr;
+        gap: 3rem;
+    }
+
+    .about-team-grid {
+        grid-template-columns: 1fr 450px;
+        gap: 3rem;
+    }
+
+    .about-ceo-img,
+    .about-team-img {
+        height: 400px;
+    }
+
+    .about-ceo-name,
+    .about-team-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .about-section-container {
+        padding: 0 1.5rem;
+    }
+
+    .about-ceo-section,
+    .about-team-section {
+        padding: 4rem 0;
+    }
+
+    .about-ceo-grid,
+    .about-team-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .about-ceo-image-wrapper,
+    .about-team-image-wrapper {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .about-ceo-img,
+    .about-team-img {
+        height: 350px;
+    }
+
+    .about-ceo-text,
+    .about-team-text {
+        text-align: center;
+    }
+
+    .about-ceo-name,
+    .about-team-title {
+        font-size: 2.25rem;
+    }
+
+    .about-ceo-desc,
+    .about-team-desc {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-ceo-section,
+    .about-team-section {
+        padding: 3rem 0;
+    }
+
+    .about-section-container {
+        padding: 0 1rem;
+    }
+
+    .about-ceo-grid,
+    .about-team-grid {
+        gap: 2rem;
+    }
+
+    .about-ceo-img,
+    .about-team-img {
+        height: 300px;
+    }
+
+    .about-ceo-name,
+    .about-team-title {
+        font-size: 1.875rem;
+    }
+
+    .about-ceo-role {
+        font-size: 1.125rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .about-ceo-desc,
+    .about-team-desc {
+        font-size: 0.9375rem;
+        line-height: 1.7;
+    }
+
+    .about-label,
+    .about-label-dark {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-ceo-section,
+    .about-team-section {
+        padding: 2.5rem 0;
+    }
+
+    .about-ceo-img,
+    .about-team-img {
+        height: 250px;
+    }
+
+    .about-ceo-name,
+    .about-team-title {
+        font-size: 1.5rem;
+    }
+
+    .about-ceo-role {
+        font-size: 1rem;
+    }
+
+    .about-ceo-desc,
+    .about-team-desc {
+        font-size: 0.875rem;
+    }
+}
