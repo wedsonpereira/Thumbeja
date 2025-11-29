@@ -1,0 +1,30 @@
+:root{--glass-bg: rgba(255,255,255,0.04);--accent:#6ad0ff}
+html,body,#root{height:100%;}
+body{margin:0;background:#000;color:#fff;font-family:Inter,system-ui,Arial,sans-serif}
+.app-root{min-height:200vh; /* allow scrolling */}
+.site-header{position:fixed;left:0;right:0;top:0;height:72px;display:flex;align-items:center;z-index:60;backdrop-filter: blur(8px);-webkit-backdrop-filter: blur(8px);background:rgba(255,255,255,0.02);border-bottom:1px solid rgba(255,255,255,0.03)}
+.header-inner{width:100%;max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:700;letter-spacing:1px}
+.nav{display:flex;gap:20px}
+.nav a{cursor:pointer;padding:8px 10px;border-radius:8px}
+.nav a:hover{background:rgba(255,255,255,0.03)}
+
+.main-canvas{position:relative;width:100%;height:100vh;display:flex;align-items:center;justify-content:center}
+.canvas-stage{position:relative;width:100%;height:100vh;overflow:visible}
+.canvas-stage canvas{width:100%;height:100%}
+
+.panels{position:fixed;left:50%;transform:translateX(-50%);top:50%;z-index:40;pointer-events:none}
+.glass-panel{position:absolute;left:50%;width:420px;max-width:86vw;background:linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));border-radius:12px;padding:18px;backdrop-filter: blur(8px);-webkit-backdrop-filter: blur(8px);box-shadow:0 8px 30px rgba(0,0,0,0.6);pointer-events:auto;transform-origin:center;transition:transform 0.45s cubic-bezier(.22,.9,.18,1),opacity 0.3s}
+.glass-panel h3{margin:0 0 8px 0}
+.glass-panel .muted{opacity:0.8;margin:0 0 8px 0}
+.glass-panel ul{margin:8px 0 12px 18px;padding:0}
+.cta{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:8px;color:#fff;cursor:pointer}
+
+.site-footer{position:relative;min-height:160px;background:#0a0a0a;color:#ddd;display:flex;align-items:center;justify-content:center}
+.footer-inner{opacity:0.95}
+
+.carving-overlay{position:fixed;left:0;bottom:0;height:160px;background:linear-gradient(90deg,#6b4f3e 0%, #6b4f3e 100%);z-index:55;mix-blend-mode:normal;transition:width 0.45s cubic-bezier(.22,.9,.18,1)}
+
+@media (max-width:800px){
+  .glass-panel{width:86vw}
+}
