@@ -315,7 +315,7 @@ const Home = () => {
             {/*Who choose us Container*/}
             <div
                 className={"tp-content-whychooseus min-h-[20rem] w-[85%] m-auto pt-20 pb-15 flex flex-col gap-7 select-none"}>
-                <div className={"tp-content-whychooseus0 h-[15rem] w-[100%] flex"}>
+                <div className={"tp-content-whychooseus0 h-min[15rem] w-[100%] flex"}>
                     <div className={"flex w-[50%] flex-col gap-5 justify-center home-animation-6"}>
                         <span className={"text-lg"}>Why Choose Us-----</span>
                         <span
@@ -363,7 +363,7 @@ const Home = () => {
             </div>
 
             {/* About Section */}
-            <About />
+            <About  />
 
             <Footer/>
         </>

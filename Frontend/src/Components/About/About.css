@@ -1,161 +1,303 @@
-/* Main Wrapper */
-.about-main-wrapper {
+/* About Section Wrapper */
+.about-section-wrapper {
     width: 100%;
 }
 
-/* Section Container */
-.about-section-container {
+/* Container */
+.about-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
 }
 
-/* Labels */
-.about-label {
+/* Section Headers */
+.about-section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.about-section-label {
     display: inline-block;
     font-size: 0.875rem;
     font-weight: 600;
-    color: rgba(255, 255, 255, 0.8);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+    text-transform: capitalize;
     margin-bottom: 1rem;
 }
 
-.about-label-dark {
-    display: inline-block;
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: #5e3bab;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 1rem;
-}
-
-/* CEO Section - Purple Background */
-.about-ceo-section {
-    background: linear-gradient(135deg, #5e3bab 0%, #7c5fd4 100%);
-    padding: 6rem 0;
-    position: relative;
-}
-
-.about-ceo-grid {
-    display: grid;
-    grid-template-columns: 400px 1fr;
-    gap: 4rem;
-    align-items: center;
-}
-
-.about-ceo-image-wrapper {
-    position: relative;
-}
-
-.about-image-box {
-    position: relative;
-    border-radius: 50%;
-    aspect-ratio: 2/2;
-    overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-}
-
-.about-ceo-img {
-    width: 100%;
-    height: 450px;
-    object-fit: cover;
-    display: block;
-}
-
-.about-ceo-text {
-    color: white;
-}
-
-.about-ceo-name {
+.about-section-title {
     font-size: 3rem;
     font-weight: 700;
-    color: white;
-    margin-bottom: 0.5rem;
+    color: #1f2937;
     line-height: 1.2;
 }
 
-.about-ceo-role {
-    font-size: 1.25rem;
-    color: #fbbf24;
-    font-weight: 500;
-    margin-bottom: 2rem;
-}
-
-.about-ceo-desc {
-    font-size: 1.125rem;
-    line-height: 1.8;
-    color: rgba(255, 255, 255, 0.95);
-}
-
-/* Team Section - White Background */
-.about-team-section {
+/* CEO Section */
+.about-ceo-section {
     background: #ffffff;
     padding: 6rem 0;
 }
 
-.about-team-grid {
+.about-ceo-content {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-ceo-image-box {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    flex-shrink: 0;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.about-ceo-photo {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.about-ceo-image-box:hover .about-ceo-photo {
+    transform: scale(1.05);
+}
+
+.about-ceo-info {
+    padding-left: 2rem;
+}
+
+.about-ceo-name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+}
+
+.about-ceo-position {
+    font-size: 1.125rem;
+    color: #5e3bab;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.about-ceo-bio {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: #4b5563;
+}
+
+/* Team Section */
+.about-team-section {
+    background: #f9fafb;
+    padding: 6rem 0;
+}
+
+.about-team-content {
     display: grid;
     grid-template-columns: 1fr 500px;
     gap: 4rem;
     align-items: center;
 }
 
-.about-team-text {
-    color: #1f2937;
+.about-team-info {
+    padding-right: 2rem;
 }
 
-.about-team-title {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #1f2937;
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
-}
-
-.about-team-desc {
+.about-team-bio {
     font-size: 1.125rem;
-    line-height: 1.8;
+    line-height: 1.9;
     color: #4b5563;
+    margin-bottom: 3rem;
 }
 
-.about-team-image-wrapper {
+.about-team-values {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.about-team-value-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.about-value-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    background: #5e3bab;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.about-value-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.about-value-content {
+    flex: 1;
+}
+
+.about-value-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+}
+
+.about-value-text {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: #6b7280;
+}
+
+.about-team-image-box {
     position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 12px;
 }
 
-.about-team-img {
+.about-team-photo {
     width: 100%;
     height: 450px;
     object-fit: cover;
+    border-radius: 12px;
     display: block;
+    transition: transform 0.3s ease;
+}
+
+.about-team-image-box:hover .about-team-photo {
+    transform: scale(1.05);
+}
+
+/* Image Overlay */
+.about-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(94, 59, 171, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.about-ceo-image-box:hover .about-image-overlay,
+.about-team-image-box:hover .about-image-overlay {
+    opacity: 1;
+}
+
+.about-zoom-icon {
+    width: 48px;
+    height: 48px;
+    color: white;
+}
+
+/* Lightbox */
+.about-lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 2rem;
+}
+
+.about-lightbox-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+.about-lightbox-image {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.about-lightbox-close {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    background: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.about-lightbox-close:hover {
+    background: #f3f4f6;
+}
+
+.about-lightbox-close svg {
+    width: 24px;
+    height: 24px;
+    color: #1f2937;
 }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-    .about-ceo-grid {
-        grid-template-columns: 350px 1fr;
+    .about-ceo-content {
+        grid-template-columns: 300px 1fr;
         gap: 3rem;
     }
 
-    .about-team-grid {
+    .about-ceo-image-box {
+        width: 300px;
+        height: 300px;
+    }
+
+    .about-ceo-photo {
+        width: 300px;
+        height: 300px;
+    }
+
+    .about-team-content {
         grid-template-columns: 1fr 450px;
         gap: 3rem;
     }
 
-    .about-ceo-img,
-    .about-team-img {
+    .about-team-photo {
         height: 400px;
     }
 
-    .about-ceo-name,
-    .about-team-title {
+    .about-section-title {
         font-size: 2.5rem;
+    }
+
+    .about-ceo-name {
+        font-size: 2rem;
     }
 }
 
 @media (max-width: 900px) {
-    .about-section-container {
+    .about-container {
         padding: 0 1.5rem;
     }
 
@@ -164,78 +306,167 @@
         padding: 4rem 0;
     }
 
-    .about-ceo-grid,
-    .about-team-grid {
+    .about-section-header {
+        margin-bottom: 3rem;
+    }
+
+    .about-section-title {
+        font-size: 2rem;
+    }
+
+    .about-ceo-content,
+    .about-team-content {
         grid-template-columns: 1fr;
         gap: 2.5rem;
     }
 
-    .about-ceo-image-wrapper,
-    .about-team-image-wrapper {
+    .about-ceo-image-box {
+        width: 280px;
+        height: 280px;
+        margin: 0 auto;
+    }
+
+    .about-ceo-photo {
+        width: 280px;
+        height: 280px;
+    }
+
+    .about-team-image-box {
         max-width: 500px;
         margin: 0 auto;
     }
 
-    .about-ceo-img,
-    .about-team-img {
+    .about-team-photo {
         height: 350px;
     }
 
-    .about-ceo-text,
-    .about-team-text {
+    .about-ceo-info,
+    .about-team-info {
+        padding-left: 0;
+        padding-right: 0;
         text-align: center;
     }
 
-    .about-ceo-name,
-    .about-team-title {
-        font-size: 2.25rem;
+    .about-ceo-name {
+        font-size: 1.875rem;
     }
 
-    .about-ceo-desc,
-    .about-team-desc {
+    .about-ceo-bio,
+    .about-team-bio {
         font-size: 1rem;
+    }
+
+    .about-team-bio {
+        margin-bottom: 2rem;
+    }
+
+    .about-team-values {
+        gap: 1.5rem;
+    }
+
+    .about-team-value-item {
+        gap: 1rem;
+    }
+
+    .about-value-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .about-value-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .about-value-title {
+        font-size: 1rem;
+    }
+
+    .about-value-text {
+        font-size: 0.875rem;
     }
 }
 
 @media (max-width: 600px) {
+    .about-container {
+        padding: 0 1rem;
+    }
+
     .about-ceo-section,
     .about-team-section {
         padding: 3rem 0;
     }
 
-    .about-section-container {
-        padding: 0 1rem;
+    .about-section-header {
+        margin-bottom: 2rem;
     }
 
-    .about-ceo-grid,
-    .about-team-grid {
+    .about-section-label {
+        font-size: 0.75rem;
+    }
+
+    .about-section-title {
+        font-size: 1.75rem;
+    }
+
+    .about-ceo-content,
+    .about-team-content {
         gap: 2rem;
     }
 
-    .about-ceo-img,
-    .about-team-img {
+    .about-ceo-image-box {
+        width: 240px;
+        height: 240px;
+    }
+
+    .about-ceo-photo {
+        width: 240px;
+        height: 240px;
+    }
+
+    .about-team-photo {
         height: 300px;
     }
 
-    .about-ceo-name,
-    .about-team-title {
-        font-size: 1.875rem;
+    .about-ceo-name {
+        font-size: 1.5rem;
     }
 
-    .about-ceo-role {
-        font-size: 1.125rem;
+    .about-ceo-position {
+        font-size: 1rem;
         margin-bottom: 1.5rem;
     }
 
-    .about-ceo-desc,
-    .about-team-desc {
+    .about-ceo-bio,
+    .about-team-bio {
         font-size: 0.9375rem;
         line-height: 1.7;
     }
 
-    .about-label,
-    .about-label-dark {
-        font-size: 0.75rem;
+    .about-team-bio {
+        margin-bottom: 1.5rem;
+    }
+
+    .about-team-values {
+        gap: 1.25rem;
+    }
+
+    .about-value-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .about-value-icon svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .about-value-title {
+        font-size: 0.9375rem;
+    }
+
+    .about-value-text {
+        font-size: 0.8125rem;
     }
 }
 
@@ -245,22 +476,57 @@
         padding: 2.5rem 0;
     }
 
-    .about-ceo-img,
-    .about-team-img {
-        height: 250px;
-    }
-
-    .about-ceo-name,
-    .about-team-title {
+    .about-section-title {
         font-size: 1.5rem;
     }
 
-    .about-ceo-role {
-        font-size: 1rem;
+    .about-ceo-image-box {
+        width: 200px;
+        height: 200px;
     }
 
-    .about-ceo-desc,
-    .about-team-desc {
+    .about-ceo-photo {
+        width: 200px;
+        height: 200px;
+    }
+
+    .about-team-photo {
+        height: 250px;
+    }
+
+    .about-ceo-name {
+        font-size: 1.25rem;
+    }
+
+    .about-ceo-bio,
+    .about-team-bio {
         font-size: 0.875rem;
+    }
+
+    .about-team-bio {
+        margin-bottom: 1.25rem;
+    }
+
+    .about-team-values {
+        gap: 1rem;
+    }
+
+    .about-team-value-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-value-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .about-value-title {
+        font-size: 0.875rem;
+    }
+
+    .about-value-text {
+        font-size: 0.8125rem;
     }
 }

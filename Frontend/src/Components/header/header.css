@@ -192,3 +192,127 @@
 
 
 
+
+
+
+/* Services Dropdown Container */
+.tp-services-dropdown {
+    position: relative;
+}
+
+/* Services Mega Menu */
+.tp-services-mega-menu {
+    position: fixed;
+    top: 6rem;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(22, 5, 94, 0.1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    animation: megaMenuSlideDown 0.3s ease-out;
+}
+
+/* Bridge element to prevent gap between nav item and mega menu */
+.tp-services-dropdown::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150%;
+    height: 0;
+    background: transparent;
+}
+
+.tp-services-dropdown:hover::after {
+    height: 20px;
+    bottom: -20px;
+}
+
+@keyframes megaMenuSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tp-mega-menu-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.tp-mega-menu-content {
+    display: flex;
+    gap: 3rem;
+}
+
+.tp-mega-menu-section {
+    flex: 1;
+}
+
+.tp-mega-menu-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #5e3bab;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+}
+
+.tp-mega-menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+}
+
+.tp-mega-menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.875rem 1rem;
+    color: #1f2937;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    font-size: 0.9375rem;
+}
+
+.tp-mega-menu-item:hover {
+    background: #f3f0ff;
+    color: #5e3bab;
+}
+
+.tp-mega-item-name {
+    font-weight: 500;
+}
+
+.tp-mega-item-arrow {
+    opacity: 0;
+    transform: translateX(-5px);
+    transition: all 0.2s ease;
+    font-size: 0.875rem;
+}
+
+.tp-mega-menu-item:hover .tp-mega-item-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+@media (max-width: 1024px) {
+    .tp-mega-menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .tp-services-mega-menu {
+        display: none;
+    }
+}
