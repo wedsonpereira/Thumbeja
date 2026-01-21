@@ -1,9 +1,12 @@
-import React, {memo, useState} from 'react';
+import React, { memo, useState, useEffect } from 'react';
 import "./header.css"
-import {Link, useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import thumbeja from "/src/assets/Images/thunbejalogo.png";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faArrowRight, faChevronDown} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight, faChevronDown, faTimes, faEnvelope, faPhone, faHome, faBriefcase, faInfoCircle, faConciergeBell } from "@fortawesome/free-solid-svg-icons";
+import { faInstagram, faLinkedin, faFacebook } from "@fortawesome/free-brands-svg-icons";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const Header = () => {
     const navigateTo = useNavigate();
@@ -21,39 +24,77 @@ const Header = () => {
         { name: "Social Media Handling", path: "/services/social-media-handling-mangalore" },
         { name: "Graphic Design", path: "/services/graphic-design-mangalore" },
         { name: "Imaging Design", path: "/services/imaging-design-mangalore" },
-        { name: "3D Design", path: "/services/3d-design-mangalore" }
+        { name: "3D Design", path: "https://zyfox.in" }
     ];
 
     const imageClickHandler = () => {
         navigateTo("/")
     }
 
-    const handleburgerClick = () => {
-        let burger = document.querySelector(".burger");
-        let navcontainer=document.querySelector(".nav");
-        burger.classList.toggle("nav-open");
-        navcontainer.classList.toggle("nav-container");
-    }
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    };
+
+    useGSAP(() => {
+        if (isOpen) {
+            gsap.to(".tp-mobile-nav", {
+                x: 0,
+                duration: 0.8,
+                ease: "power4.out"
+            });
+            gsap.fromTo(".tp-mobile-link",
+                { y: 50, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.6, stagger: 0.1, ease: "power3.out", delay: 0.3 }
+            );
+            gsap.fromTo(".tp-mobile-footer-item",
+                { y: 20, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.6, stagger: 0.1, ease: "power3.out", delay: 0.7 }
+            );
+        } else {
+            gsap.to(".tp-mobile-nav", {
+                x: "100%",
+                duration: 0.6,
+                ease: "power4.in"
+            });
+        }
+    }, [isOpen]);
+
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "auto";
+        }
+        return () => {
+            document.body.style.overflow = "auto";
+        };
+    }, [isOpen]);
+
+    const handleLinkClick = () => {
+        setIsOpen(false);
+    };
 
 
     return (
         <>
-            <div className="tp-header sticky z-50 w-[100%] flex items-center justify-center">
+            <div className="tp-header sticky z-50">
                 <div className="tp-header-left">
                     <div className={"tp-image"}>
-                        <img src={thumbeja} className={"tp-logo"} alt="text" onClick={imageClickHandler}/>
+                        <img src={thumbeja} className="tp-logo" alt="text" onClick={imageClickHandler} />
                     </div>
                 </div>
 
                 {/*the component is hidden*/}
-                <div className="tp-header-nav h-[80%] w-[38%] gap-x-4 text-[1.2rem] flex justify-evenly items-center relative text-center">
+                <div className="tp-header-nav h-[80%] w-[38%] gap-x-4 text-[1rem] flex justify-evenly items-center relative text-center">
                     <div className="tp-underline relative flex items-center justify-center">
                         <Link className={"text-center pr-2 pl-2"} to={"/"}>Home</Link>
                     </div>
                     <div className="tp-underline relative flex items-center justify-center">
                         <Link className={"text-center pr-2 pl-2"} to={"/career-thumbeja-publicity"}>Career</Link>
                     </div>
-                    <div 
+                    <div
                         className="tp-services-dropdown relative flex items-center justify-center h-full"
                         onMouseEnter={() => setServicesOpen(true)}
                         onMouseLeave={() => setServicesOpen(false)}
@@ -62,7 +103,7 @@ const Header = () => {
                             Services
                             <FontAwesomeIcon icon={faChevronDown} size="sm" className={`transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
                         </span>
-                        
+
                         {/* Services Mega Menu - now inside the dropdown container */}
                         {servicesOpen && (
                             <div className="tp-services-mega-menu">
@@ -72,7 +113,7 @@ const Header = () => {
                                             <h3 className="tp-mega-menu-title">Our Services</h3>
                                             <div className="tp-mega-menu-grid">
                                                 {services.map((service, index) => (
-                                                    <Link 
+                                                    <Link
                                                         key={index}
                                                         to={service.path}
                                                         className="tp-mega-menu-item"
@@ -96,10 +137,16 @@ const Header = () => {
 
 
 
-                {/*This component is the replacement of the 2 componants*/}
-                <div className={"relative w-[5rem] h-full hidden burger-menu "}>
-                    <button className={"burger"} onClick={() => handleburgerClick()}>
-                        <div className={"manu-hamburger"}></div>
+                {/* Hamburger Button */}
+                <div className="burger-menu-wrapper">
+                    <button
+                        className={`tp-hamburger ${isOpen ? 'is-active' : ''}`}
+                        onClick={toggleMenu}
+                        aria-label="Toggle Menu"
+                    >
+                        <span className="hamburger-box">
+                            <span className="hamburger-inner"></span>
+                        </span>
                     </button>
                 </div>
 
@@ -107,23 +154,63 @@ const Header = () => {
                 <div className={"tp-header-nav tp-header-right "}>
                     <Link to="/contact-thumbeja-publicity">
                         <button
-                            className={"p-4 font-bold border-2 bg-[#091e42] cursor-pointer text-white rounded-full  border-none outline-none hover:bg-[#091e78] transition"}>
+                            className={"p-3 font-bold bg-[#091e42] cursor-pointer text-white rounded-full  border-none outline-none hover:bg-[#091e78] transition"}>
                             Contact Us
                         </button>
                     </Link>
                 </div>
             </div>
-            <div className={"hidden w-full h-[100dvh] border-1 z-[100] nav"}>
-                <ul className={"w-[100%] flex nav-links flex-col items-center justify-center h-[40rem] gap-10 text-2xl"}>
-                    <Link className={'w-[70%] border-b-2 text-center leading-13 border-blue-600'} to={'/'}><li >Home</li></Link>
-                    <Link className={'w-[70%] border-b-2 text-center leading-13 border-blue-600'} to={'/services-thumbeja-publicity'}><li>Services</li></Link>
-                    <Link className={'w-[70%] border-b-2 text-center leading-13 border-blue-600'} to={'/career-thumbeja-publicity'}><li>Career</li></Link>
-                    <Link className={'w-[70%] border-b-2 text-center leading-13 border-blue-600'} to={'#About'}><li>About Us</li></Link>
-                </ul>
-                <Link to={"/contact-thumbeja-publicity"} className={"w-[100%] text-white p-5 bg-blue-900 flex items-center"}>
-                    <h2 className={"p-1"}>Contact</h2>
-                    <FontAwesomeIcon className={"p-1"} icon={faArrowRight} size="lg" />
-                </Link>
+            {/* Premium Mobile Navigation Panel */}
+            <div className="tp-mobile-nav">
+                <div className="tp-mobile-nav-bg"></div>
+
+                <div className="tp-mobile-nav-content">
+                    <div className="tp-mobile-nav-header">
+                        <img src={thumbeja} className="tp-mobile-logo" alt="logo" onClick={() => { handleLinkClick(); imageClickHandler(); }} />
+                        <button className="tp-mobile-close" onClick={toggleMenu}>
+                            <FontAwesomeIcon icon={faTimes} />
+                        </button>
+                    </div>
+
+                    <nav className="tp-mobile-nav-links">
+                        <Link className="tp-mobile-link" to="/" onClick={handleLinkClick}>
+                            <FontAwesomeIcon icon={faHome} className="link-icon" /> Home
+                        </Link>
+                        <Link className="tp-mobile-link" to="/services-thumbeja-publicity" onClick={handleLinkClick}>
+                            <FontAwesomeIcon icon={faConciergeBell} className="link-icon" /> Services
+                        </Link>
+                        <Link className="tp-mobile-link" to="/career-thumbeja-publicity" onClick={handleLinkClick}>
+                            <FontAwesomeIcon icon={faBriefcase} className="link-icon" /> Career
+                        </Link>
+                        <Link className="tp-mobile-link" to="/about-thumbeja-publicity" onClick={handleLinkClick}>
+                            <FontAwesomeIcon icon={faInfoCircle} className="link-icon" /> About
+                        </Link>
+                        <Link className="tp-mobile-link" to="/contact-thumbeja-publicity" onClick={handleLinkClick}>
+                            <FontAwesomeIcon icon={faEnvelope} className="link-icon" /> Contact
+                        </Link>
+                    </nav>
+
+                    <div className="tp-mobile-nav-footer">
+                        <div className="tp-mobile-footer-section">
+                            <p className="tp-mobile-footer-label tp-mobile-footer-item">Get in touch</p>
+                            <a href="mailto:info@thumbeja.com" className="tp-mobile-footer-link tp-mobile-footer-item">
+                                <FontAwesomeIcon icon={faEnvelope} className="mr-2" /> info@thumbeja.com
+                            </a>
+                            <a href="tel:+911234567890" className="tp-mobile-footer-link tp-mobile-footer-item">
+                                <FontAwesomeIcon icon={faPhone} className="mr-2" /> +91 1234567890
+                            </a>
+                        </div>
+
+                        <div className="tp-mobile-footer-section">
+                            <p className="tp-mobile-footer-label tp-mobile-footer-item">Follow us</p>
+                            <div className="tp-mobile-socials">
+                                <a href="#" className="tp-mobile-social-icon tp-mobile-footer-item"><FontAwesomeIcon icon={faInstagram} /></a>
+                                <a href="#" className="tp-mobile-social-icon tp-mobile-footer-item"><FontAwesomeIcon icon={faLinkedin} /></a>
+                                <a href="#" className="tp-mobile-social-icon tp-mobile-footer-item"><FontAwesomeIcon icon={faFacebook} /></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </>

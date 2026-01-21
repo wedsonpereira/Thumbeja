@@ -2,7 +2,7 @@ export function snowflakeCursor(options) {
     let hasWrapperEl = options && options.element;
     let element = hasWrapperEl || document.body;
 
-    let possibleEmoji = [""];
+    let possibleEmoji = ["💙🧡"];
     let width = window.innerWidth;
     let height = window.innerHeight;
     let cursor = { x: width / 2, y: width / 2 };
@@ -57,18 +57,20 @@ export function snowflakeCursor(options) {
         possibleEmoji.forEach((emoji) => {
             let measurements = context.measureText(emoji);
             let bgCanvas = document.createElement("canvas");
+            const textWidth = Math.ceil(measurements.width) || 10;
+            const textHeight = Math.ceil(measurements.actualBoundingBoxAscent + measurements.actualBoundingBoxDescent) || 15;
+
+            bgCanvas.width = textWidth;
+            bgCanvas.height = textHeight;
+
             let bgContext = bgCanvas.getContext("2d");
-
-            bgCanvas.width = measurements.width;
-            bgCanvas.height = measurements.actualBoundingBoxAscent * 2;
-
             bgContext.textAlign = "center";
-            bgContext.font = "8px serif";
+            bgContext.font = "12px serif";
             bgContext.textBaseline = "middle";
             bgContext.fillText(
                 emoji,
-                bgCanvas.width / 2,
-                measurements.actualBoundingBoxAscent
+                textWidth / 2,
+                textHeight / 2
             );
 
             canvImages.push(bgCanvas);

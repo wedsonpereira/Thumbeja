@@ -1,6 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './About.css';
 import aboutData from "../../assets/JsonData/About"
+
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
     const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -17,6 +22,34 @@ const About = () => {
         setLightboxImage('');
         document.body.style.overflow = 'auto';
     };
+
+    useEffect(() => {
+        gsap.from(".about-ceo-section", {
+            scrollTrigger: {
+                trigger: ".about-ceo-section",
+                toggleActions: 'restart none none reverse',
+                start: "top 80%",
+                end: "bottom 80%"
+
+
+            }, stagger: 0.2, duration: 1, x: -100, opacity: 0
+        })
+
+
+        gsap.from(".about-team-section", {
+            scrollTrigger: {
+                trigger: ".about-team-section",
+                toggleActions: 'restart none none reverse', 
+                start: "top 80%",
+                end: "bottom-=10% 80%"
+
+            }, stagger: 0.2, duration: 1, x: -100, opacity: 0
+        })
+    }, [])
+
+
+
+
 
     return (
         <div className="about-section-wrapper" id="about">
@@ -50,7 +83,7 @@ const About = () => {
             </section>
 
             {/* Team Section */}
-            <section className="about-team-section">
+            <section className="about-team-section ">
                 <div className="about-container">
                     <div className="about-section-header">
                         <span className="about-section-label">------Our People------</span>
@@ -59,7 +92,7 @@ const About = () => {
                     <div className="about-team-content">
                         <div className="about-team-info">
                             <p className="about-team-bio">{aboutData.team.description}</p>
-                            
+
                             <div className="about-team-values">
                                 <div className="about-team-value-item">
                                     <div className="about-value-icon">

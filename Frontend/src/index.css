@@ -4,6 +4,7 @@
 *{
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
+    user-select:text;
 }
 
 body{

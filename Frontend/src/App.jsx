@@ -52,7 +52,7 @@ function App() {
                 <Route path="/about-thumbeja-publicity" element={<About />}/>
                 <Route path={"*"} element={<NotFound/>}/>
             </Routes>
-            <ChatWidget/>
+            {/*<ChatWidget/>*/}
         </>
     );
 }
