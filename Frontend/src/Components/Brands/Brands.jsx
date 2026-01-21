@@ -8,7 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Brands = () => {
+const Brands = ({ className }) => {
     const brands = [
         { src: kby, alt: "KBY" },
         { src: invitation, alt: "Invitation" },
@@ -33,7 +33,7 @@ const Brands = () => {
     }, []);
 
     return (
-        <section className="brands-compact-section bg-black py-10 md:py-14 relative z-20 ">
+        <section className={`brands-compact-section bg-black py-12 md:py-20 ${className} relative z-20`}>
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
                 <div className="brands-compact-header text-center mb-8 md:mb-10">
                     <h2 className="brands-compact-title text-2xl md:text-3xl font-bold tracking-tight">Our Associated Brands</h2>

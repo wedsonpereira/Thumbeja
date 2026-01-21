@@ -349,7 +349,7 @@ const Home = () => {
             <Brands className="home-animation-7" />
 
             {/*Process container*/}
-            <div className={"tp-content-process min-h-[25rem] w-[85%] m-auto mt-[7rem] flex flex-col gap-6 "}>
+            <div className={"tp-content-process min-h-[25rem] w-[85%] m-auto mt-0 pb-12 md:pb-20 flex flex-col gap-6 "}>
                 <div
                     className={"flex flex-col gap-1 w-full h-[11rem] items-center justify-evenly tp-content-process0 text-center home-animation-5"}>
                     <span>------Process-----</span>
