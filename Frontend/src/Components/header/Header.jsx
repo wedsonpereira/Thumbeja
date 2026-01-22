@@ -7,6 +7,8 @@ import { faArrowRight, faChevronDown, faTimes, faEnvelope, faPhone, faHome, faBr
 import { faInstagram, faLinkedin, faFacebook } from "@fortawesome/free-brands-svg-icons";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { HashLink } from "react-router-hash-link";
+
 
 const Header = () => {
     const navigateTo = useNavigate();
@@ -99,10 +101,10 @@ const Header = () => {
                         onMouseEnter={() => setServicesOpen(true)}
                         onMouseLeave={() => setServicesOpen(false)}
                     >
-                        <span className={"tp-underline relative flex items-center justify-center text-center pr-2 pl-2 h-[70%] gap-2 cursor-pointer"}>
+                        <Link className={"tp-underline relative flex items-center justify-center text-center pr-2 pl-2 h-[70%] gap-2 cursor-pointer"} to={"/services-thumbeja-publicity"}>
                             Services
                             <FontAwesomeIcon icon={faChevronDown} size="sm" className={`transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
-                        </span>
+                        </Link>
 
                         {/* Services Mega Menu - now inside the dropdown container */}
                         {servicesOpen && (
@@ -131,7 +133,7 @@ const Header = () => {
                         )}
                     </div>
                     <div className="tp-underline relative flex items-center justify-center">
-                        <Link className={"text-center pr-2 pl-2"} to={"/career-thumbeja-publicity"}>About</Link>
+                        <HashLink className={"text-center pr-2 pl-2"} to={"/#about"}>About</HashLink>
                     </div>
                 </div>
 
@@ -154,7 +156,7 @@ const Header = () => {
                 <div className={"tp-header-nav tp-header-right "}>
                     <Link to="/contact-thumbeja-publicity">
                         <button
-                            className={"p-3 font-bold bg-[#091e42] cursor-pointer text-white rounded-full  border-none outline-none hover:bg-[#091e78] transition"}>
+                            className={"p-3 bg-[#091e42] cursor-pointer text-white rounded-full  border-none outline-none hover:bg-[#091e78] transition text-sm"}>
                             Contact Us
                         </button>
                     </Link>
@@ -177,7 +179,7 @@ const Header = () => {
                             <FontAwesomeIcon icon={faHome} className="link-icon" /> Home
                         </Link>
                         <Link className="tp-mobile-link" to="/services-thumbeja-publicity" onClick={handleLinkClick}>
-                            <FontAwesomeIcon icon={faConciergeBell} className="link-icon" /> Services
+                            <FontAwesomeIcon icon={faConciergeBell} className="link-icon"  /> Services
                         </Link>
                         <Link className="tp-mobile-link" to="/career-thumbeja-publicity" onClick={handleLinkClick}>
                             <FontAwesomeIcon icon={faBriefcase} className="link-icon" /> Career

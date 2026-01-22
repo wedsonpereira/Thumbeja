@@ -29,7 +29,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination"
 import About from "../About/About.jsx";
 import { Link } from "react-router-dom"
-import { faServicestack } from "@fortawesome/free-brands-svg-icons";
 import Brands from "../Brands/Brands.jsx";
 
 gsap.registerPlugin(ScrollTrigger)
@@ -191,49 +190,59 @@ const Home = () => {
                                 <img
                                     src={item.src}
                                     alt={item.text}
-                                    className="w-full h-full object-cover brightness-[0.45] scale-105"
+                                    className="w-full h-full object-cover brightness-[0.35] scale-105"
                                 />
 
-                                {/* Overlay Content */}
-                                <div className="absolute inset-0 flex items-center">
-                                    <div className="container mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                                {/* Dark Overlay for better readability */}
+                                <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60"></div>
 
-                                        {/* Main Content */}
-                                        <div className="lg:col-span-8 flex flex-col gap-8">
-                                            <div className="overflow-hidden">
-                                                <h1 className="tp-hero-title-gradient text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black leading-[1.1] tracking-tight tp-hero-title">
-                                                    {item.text}
-                                                </h1>
-                                            </div>
+                                {/* Centered Content */}
+                                <div className="absolute inset-0 flex items-center justify-center">
+                                    <div className="container mx-auto px-6 lg:px-12">
+                                        <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
 
-                                            <p className="tp-hero-subtitle text-lg md:text-2xl max-w-2xl tp-hero-desc">
+                                            {/* Tagline */}
+                                            <span className="tp-hero-tagline text-sm md:text-base tracking-[0.3em] uppercase mb-4 tp-hero-title">
+                                                Digital Marketing Agency
+                                            </span>
+
+                                            {/* Main Title */}
+                                            <h1 className="tp-hero-title-corporate text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight mb-6 tp-hero-title">
+                                                {item.text}
+                                            </h1>
+
+                                            {/* Description */}
+                                            <p className="tp-hero-description text-base md:text-xl max-w-2xl mb-8 tp-hero-desc">
                                                 {item.description}
                                             </p>
 
-                                            <div className="flex flex-col sm:flex-row items-center gap-6 mt-4 tp-hero-btns">
-                                                <Link to="/contact-thumbeja-publicity" className="tp-hero-btn-primary group w-full sm:w-auto">
-                                                    Start Your Journey
-                                                    <FontAwesomeIcon icon={faArrowRight} className="ml-3 transition-transform group-hover:translate-x-2" />
+                                            {/* Buttons */}
+                                            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10 tp-hero-btns">
+                                                <Link to="/contact-thumbeja-publicity" className="tp-hero-btn-primary group">
+                                                    Get Started
+                                                    <FontAwesomeIcon icon={faArrowRight} className="ml-3 transition-transform group-hover:translate-x-1" />
                                                 </Link>
-                                                <Link to="/services-thumbeja-publicity" className="tp-hero-btn-secondary w-full sm:w-auto text-center">
-                                                    Our Portfolio
+                                                <Link to="/services-thumbeja-publicity" className="tp-hero-btn-ghost">
+                                                    View Portfolio
                                                 </Link>
                                             </div>
-                                        </div>
 
-                                        {/* Floating Highlight Cards (Desktop) */}
-                                        <div className="hidden lg:col-span-4 lg:flex flex-col gap-6 tp-hero-stats">
-                                            <div className="tp-hero-stat-card">
-                                                <span className="tp-hero-stat-num">Focus</span>
-                                                <span className="tp-hero-stat-label">Client Centric</span>
-                                            </div>
-                                            <div className="tp-hero-stat-card translate-x-12">
-                                                <span className="tp-hero-stat-num">Vision</span>
-                                                <span className="tp-hero-stat-label">Digital Innovation</span>
-                                            </div>
-                                            <div className="tp-hero-stat-card">
-                                                <span className="tp-hero-stat-num">Growth</span>
-                                                <span className="tp-hero-stat-label">Brand Scalability</span>
+                                            {/* Trust Indicators */}
+                                            <div className="tp-hero-trust-indicators flex flex-wrap items-center justify-center gap-6 md:gap-10 tp-hero-stats">
+                                                <div className="tp-hero-trust-item tp-hero-stat-card">
+                                                    <span className="tp-hero-trust-number">100%</span>
+                                                    <span className="tp-hero-trust-label">Client Satisfaction</span>
+                                                </div>
+                                                <div className="tp-hero-trust-divider hidden md:block"></div>
+                                                <div className="tp-hero-trust-item tp-hero-stat-card">
+                                                    <span className="tp-hero-trust-number">100%</span>
+                                                    <span className="tp-hero-trust-label">Quality Assurance</span>
+                                                </div>
+                                                <div className="tp-hero-trust-divider hidden md:block"></div>
+                                                <div className="tp-hero-trust-item tp-hero-stat-card">
+                                                    <span className="tp-hero-trust-number">ROI</span>
+                                                    <span className="tp-hero-trust-label">Focused Results</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -255,7 +264,7 @@ const Home = () => {
 
             {/*2st content starting*/}
             <div
-                className={"tp-content-services h-max flex items-center w-[90%] m-auto mt-0 pb-10 pt-10     flex-col justify-center gap-10"}
+                className={"tp-content-services h-max flex items-center w-[90%] m-auto mb-40  pt-10 flex-col justify-center gap-10"}
                 id={"container-services"}>
                 <div className={"tp-content-header-2 h-max p-2 flex items-center justify-evenly gap-10"}>
                     <div className={"w-[45%] h-[10rem] p-2 flex flex-col  justify-center gap-10 home-animation-3"}>
@@ -346,10 +355,10 @@ const Home = () => {
             {/*    </div>*/}
             {/*</div>*/}
 
-            <Brands className="home-animation-7" />
+            <Brands />
 
             {/*Process container*/}
-            <div className={"tp-content-process min-h-[25rem] w-[85%] m-auto mt-0 pb-12 md:pb-20 flex flex-col gap-6 "}>
+            <div className={"tp-content-process min-h-[25rem] w-[85%] m-auto mt-30 pb-12 flex flex-col gap-6"}>
                 <div
                     className={"flex flex-col gap-1 w-full h-[11rem] items-center justify-evenly tp-content-process0 text-center home-animation-5"}>
                     <span>------Process-----</span>

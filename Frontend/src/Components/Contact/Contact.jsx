@@ -55,7 +55,7 @@ const Contact = () => {
         try {
             const response = await axios.post(
                 // change this to https://thumbeja.com/spring/api/contact in production
-                "https://thumbeja.com/server/api/email/send",
+                "https://thumbeja.com/service/api/email/send",
                 data,
                 {
                     headers: {

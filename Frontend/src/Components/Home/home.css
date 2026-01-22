@@ -141,68 +141,114 @@
 }
 
 
-/* Premium Hero Section Styles */
+/* Premium Corporate Hero Section Styles */
 .tp-hero-section {
     position: relative;
     overflow: hidden;
 }
 
-.tp-hero-slide-content {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
+/* Tagline above title */
+.tp-hero-tagline {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+    letter-spacing: 0.3em;
 }
 
-.tp-hero-title-gradient {
-    background: white;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+/* Clean corporate title */
+.tp-hero-title-corporate {
+    color: #ffffff;
+    font-weight: 700;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
-.tp-hero-subtitle {
-    color: rgba(255, 255, 255, 0.8);
-    font-weight: 300;
-    line-height: 1.6;
+/* Description text */
+.tp-hero-description {
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 400;
+    line-height: 1.7;
 }
 
+/* Primary Button - Corporate Style */
 .tp-hero-btn-primary {
-    background: #091e42;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
     color: white;
-    padding: 1.25rem 2.5rem;
-    border-radius: 50px;
+    padding: 1rem 2rem;
+    border-radius: 8px;
     font-weight: 600;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .tp-hero-btn-primary:hover {
-    transform: translateY(-5px) scale(1.05);
-    background: #0a2a5e;
-    box-shadow: 0 15px 30px rgba(9, 30, 66, 0.4);
-    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(135deg, #252550 0%, #1a2a4e 100%);
 }
 
-.tp-hero-btn-secondary {
-    background: darkred;
-    backdrop-filter: blur(10px);
+/* Ghost Button - Outlined Style */
+.tp-hero-btn-ghost {
+    background: transparent;
     color: white;
-    padding: 1.25rem 2.5rem;
-    border-radius: 50px;
+    padding: 1rem 2rem;
+    border-radius: 8px;
     font-weight: 600;
-    transition: all 0.4s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.tp-hero-btn-secondary:hover {
-    background: #a60000;
-    transform: translateY(-3px);
-    border-color: rgba(255, 255, 255, 0.4);
+.tp-hero-btn-ghost:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.8);
+    transform: translateY(-2px);
 }
 
+/* Trust Indicators */
+.tp-hero-trust-indicators {
+    margin-top: 1rem;
+}
+
+.tp-hero-trust-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+}
+
+.tp-hero-trust-number {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.tp-hero-trust-label {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.tp-hero-trust-divider {
+    width: 1px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Scroll Indicator */
 .tp-hero-scroll-indicator {
     position: absolute;
-    bottom: 3rem;
+    bottom: 2rem;
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
@@ -211,22 +257,22 @@
     align-items: center;
     gap: 0.5rem;
     color: white;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
-    opacity: 0.6;
+    letter-spacing: 0.15em;
+    opacity: 0.5;
     transition: opacity 0.3s ease;
 }
 
 .tp-hero-scroll-indicator:hover {
-    opacity: 1;
+    opacity: 0.8;
 }
 
 .tp-hero-mouse {
-    width: 24px;
-    height: 40px;
-    border: 2px solid white;
-    border-radius: 12px;
+    width: 22px;
+    height: 36px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 11px;
     position: relative;
 }
 
@@ -249,32 +295,35 @@
     }
 
     100% {
-        transform: translate(-50%, 15px);
+        transform: translate(-50%, 12px);
         opacity: 0;
     }
 }
 
+/* Legacy styles - keep for compatibility */
+.tp-hero-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 300;
+    line-height: 1.6;
+}
+
 .tp-hero-stat-card {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 1.5rem;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    background: transparent;
+    backdrop-filter: none;
+    border: none;
+    padding: 0;
 }
 
 .tp-hero-stat-num {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #4facfe;
+    color: #ffffff;
 }
 
 .tp-hero-stat-label {
     font-size: 0.75rem;
     color: rgba(255, 255, 255, 0.6);
-    text-transform: capitalize;
+    text-transform: uppercase;
     letter-spacing: 0.05em;
 }
 
@@ -291,37 +340,58 @@
     opacity: 1 !important;
     width: 30px !important;
     border-radius: 5px !important;
-    background: #4facfe !important;
+    background: #ffffff !important;
 }
 
 
 /* Mobile Refinements for Hero */
 @media (max-width: 768px) {
-    .tp-hero-title-gradient {
-        font-size: 2.5rem !important;
-        line-height: 1.2;
+    .tp-hero-tagline {
+        font-size: 0.7rem !important;
+        letter-spacing: 0.2em;
+        margin-bottom: 0.75rem;
     }
 
-    .tp-hero-subtitle {
-        font-size: 1rem !important;
-        line-height: 1.5;
+    .tp-hero-title-corporate {
+        font-size: 2rem !important;
+        line-height: 1.2;
         margin-bottom: 1rem;
     }
 
+    .tp-hero-description {
+        font-size: 0.95rem !important;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        padding: 0 0.5rem;
+    }
+
     .tp-hero-btn-primary,
-    .tp-hero-btn-secondary {
-        padding: 1rem 1.5rem;
-        font-size: 0.9rem;
+    .tp-hero-btn-ghost {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.85rem;
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .tp-hero-trust-indicators {
+        margin-top: 0.5rem;
+    }
+
+    .tp-hero-trust-number {
+        font-size: 1.25rem;
+    }
+
+    .tp-hero-trust-label {
+        font-size: 0.65rem;
     }
 
     .tp-hero-scroll-indicator {
         display: none;
-        /* Hide on mobile to avoid overlap */
     }
 
     .tp-hero-section .container {
         padding-top: 2rem;
-        padding-bottom: 5rem;
+        padding-bottom: 4rem;
     }
 }
 
@@ -409,16 +479,16 @@
     /* third container*/
     .tp-content-services {
         /*max-height:max-content ;*/
-        height: 100%;
+        height: max-content;
         flex-direction: column;
         width: 93%;
-        padding-bottom: 3rem;
+
 
 
         .tp-content-header-2 {
             flex-direction: column;
             /*border: 1px solid rgb(194, 199, 208);*/
-            padding: 0;
+            padding:0;
             gap: 0;
 
             div:first-child {
@@ -648,6 +718,7 @@
         /*border: 1px solid red;*/
         margin: 3rem auto;
         width: 93%;
+        padding-top: 0;
 
         .tp-content-whychooseus0 {
             flex-direction: column;

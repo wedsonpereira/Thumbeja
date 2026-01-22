@@ -1,0 +1,16 @@
+package com.emails.emaildataview.Dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class EmailRequest {
+    private String name;
+    private String email;
+    private String business;
+    private String contact;
+    private String message;
+}

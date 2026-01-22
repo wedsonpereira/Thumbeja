@@ -8,6 +8,8 @@
     padding: 20px 0;
 }
 
+
+
 .brands-marquee-content {
     display: flex;
     gap: 100px;
@@ -52,8 +54,12 @@
 
 /* Mobile Adjustments */
 @media (max-width: 768px) {
-    .brands-marquee-content {
+    .brands-marquee-header {
         animation-duration: 20s;
         gap: 30px;
+    }
+
+    .brands-compact-header{
+        padding-top: 0;
     }
 }
