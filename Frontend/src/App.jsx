@@ -23,6 +23,7 @@ import Imaging from "./Components/Services/Imaging/Imaging.jsx";
 import ThreeD from "./Components/Services/3d/ThreeD.jsx";
 import ChatWidget from "./Components/ChatWidget/ChatWidget.jsx";
 import About from "./assets/JsonData/About.js";
+import CorporateGallery from "./Components/Corporate Gallery/Corporate Gallery.jsx";
 
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
                 <Route path="services/imaging-design-mangalore" element={<Imaging/>}/>
                 <Route path="services/3d-design-mangalore" element={<ThreeD />}/>
                 <Route path="/about-thumbeja-publicity" element={<About />}/>
+                <Route path="/corporate-gallery" element={<CorporateGallery />}/>
                 <Route path={"*"} element={<NotFound/>}/>
             </Routes>
             {/*<ChatWidget/>*/}

@@ -5,38 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a41b4cc4-7ee7-4327-98cf-089d42916e72" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Frontend/src/assets/CarousalImages/Social-Media-Marketing.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/src/assets/CarousalImages/best-customer-service.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/src/assets/CarousalImages/digital-marketing.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/src/assets/CarousalImages/event-management.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/src/assets/CarousalImages/outdoor-marketing.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/src/assets/CarousalImages/printing-and-branding.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Frontend/src/assets/CarousalImages/website-software-development.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Thumbeja.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Thumbeja.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/Components/Brands/Brands.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/Components/Brands/Brands.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/Components/Brands/Brands.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/Components/Brands/Brands.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/Components/Contact/Contact.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/Components/Contact/Contact.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/Components/Footer/Footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/Components/Footer/Footer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/Components/Footer/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/Components/Footer/Footer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/Components/Home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/Components/Home/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/Components/Home/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/Components/Home/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/Components/TermsConditions/Terms&amp;Conditions.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/Components/TermsConditions/Terms&amp;Conditions.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/Components/header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/Components/header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/Components/header/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/Components/header/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/assets/CarousalImages/Social-Media-Marketing.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/assets/CarousalImages/best-customer-service.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/assets/CarousalImages/digital-marketing.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/assets/CarousalImages/event-management.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/assets/CarousalImages/machine-printing-images.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/assets/CarousalImages/outdoor-banner-advertising.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/assets/CarousalImages/web-development.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/assets/JsonData/HomePageData.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/assets/JsonData/HomePageData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/firebase.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/custom_email_app/backend/emaildataview/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/custom_email_app/backend/emaildataview/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/backend/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/emails/emaildataview/Controller/EmailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/emails/emaildataview/Controller/EmailController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,30 +63,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Node.js.Contact.jsx.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1&quot;: &quot;true&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Thumbeja/Desktop/CodeStore/Thumbeja&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2025.2.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Node.js.Contact.jsx.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/home/wedson/Desktop/Thumbeja/Frontend",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.completion",
+    "to.speed.mode.migration.done": "true",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2025.2.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Thumbeja\Desktop\CodeStore\Thumbeja\Frontend\src\assets\CarousalImages" />
@@ -123,7 +97,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-WS-252.26830.93" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.30387.83" />
       </set>
     </attachedChunks>
   </component>
@@ -142,6 +116,8 @@
       <workItem from="1769056985732" duration="3195000" />
       <workItem from="1769060214302" duration="4311000" />
       <workItem from="1769065899017" duration="12549000" />
+      <workItem from="1769188060770" duration="609000" />
+      <workItem from="1769191015074" duration="80000" />
     </task>
     <task id="LOCAL-00001" summary="nothing">
       <option name="closed" value="true" />
