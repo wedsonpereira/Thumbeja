@@ -135,6 +135,9 @@ const Header = () => {
                     <div className="tp-underline relative flex items-center justify-center">
                         <HashLink className={"text-center pr-2 pl-2"} to={"/#about"}>About</HashLink>
                     </div>
+                    <div className="tp-underline relative flex items-center justify-center">
+                        <HashLink className={"text-center pr-2 w-max pl-2"} to={"/corporate-gallery"}>Corporate Gallery</HashLink>
+                    </div>
                 </div>
 
 
