@@ -7,7 +7,7 @@ import {CarouselBox, MultiCards} from "@/Components/Corporate Gallery/Carousal.t
 import ShadCnPagination from "@/Components/Corporate Gallery/ShadCnPagination.tsx";
 
 
-const DriveAPIKEY = "AIzaSyCxo3L0EhlmszOunHeU8iIPcuL9J3H9QaQ"
+const DriveAPIKEY = ""
 const FolderID = "1l2UBrT3MH3iuNdchZTNCFQbZ4rrpMAQk"
 
 const url = `https://www.googleapis.com/drive/v3/files?q='${FolderID}'+in+parents+and+mimeType+contains+'image/'&fields=files(id,name,mimeType,thumbnailLink)&key=${DriveAPIKEY}`
