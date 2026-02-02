@@ -166,17 +166,10 @@ const Header = () => {
                 </div>
             </div>
             {/* Premium Mobile Navigation Panel */}
-            <div className="tp-mobile-nav">
-                <div className="tp-mobile-nav-bg"></div>
+            <div className="tp-mobile-nav mt-[4rem]">
+                <div className="tp-mobile-nav-bg border-pink-500"></div>
 
                 <div className="tp-mobile-nav-content">
-                    <div className="tp-mobile-nav-header">
-                        <img src={thumbeja} className="tp-mobile-logo" alt="logo" onClick={() => { handleLinkClick(); imageClickHandler(); }} />
-                        <button className="tp-mobile-close" onClick={toggleMenu}>
-                            <FontAwesomeIcon icon={faTimes} />
-                        </button>
-                    </div>
-
                     <nav className="tp-mobile-nav-links">
                         <Link className="tp-mobile-link" to="/" onClick={handleLinkClick}>
                             <FontAwesomeIcon icon={faHome} className="link-icon" /> Home
@@ -193,9 +186,12 @@ const Header = () => {
                         <Link className="tp-mobile-link" to="/contact-thumbeja-publicity" onClick={handleLinkClick}>
                             <FontAwesomeIcon icon={faEnvelope} className="link-icon" /> Contact
                         </Link>
+                        <Link className="tp-mobile-link" to="/corporate-gallery" onClick={handleLinkClick}>
+                            <FontAwesomeIcon icon={faEnvelope} className="link-icon" />Gallery
+                        </Link>
                     </nav>
 
-                    <div className="tp-mobile-nav-footer">
+                    <div className="tp-mobile-nav-footer mt-10">
                         <div className="tp-mobile-footer-section">
                             <p className="tp-mobile-footer-label tp-mobile-footer-item">Get in touch</p>
                             <a href="mailto:info@thumbeja.com" className="tp-mobile-footer-link tp-mobile-footer-item">

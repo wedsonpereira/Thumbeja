@@ -27,7 +27,7 @@ import CorporateGallery from "./Components/Corporate Gallery/CorporateGallery.js
 
 
 function App() {
-    snowflakeCursor(document.body);
+    // snowflakeCursor(document.body);
 
     return (
         <>

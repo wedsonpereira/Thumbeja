@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Parisienne&display=swap');
+.gradient-text {
+    /*background: linear-gradient(90deg, #d6d4ea, #09ddd7, #e792c6, #d6d4ea);*/
+    color: rgba(246, 246, 246, 0.91);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+
+    animation: colorflex 4s ease-in-out infinite;
+    font-family:"Montserrat",sans-serif ;
+    text-rendering: optimizeLegibility;
+    text-decoration-color: #0f172a;
+    text-decoration: double ;
+
+
+}
+
+
+
+/*.image-mask{*/
+/*    !*--webkit-mask-image: url('../../assets/Paths/wave-haikei.svg');*!*/
+/*    mask-image: url('../../assets/Paths/wave-haikei.svg');*/
+/*    !*mask-composite: intersect;*!*/
+/*    mask-position: top;*/
+/*    mask-repeat: no-repeat;*/
+/*    mask-size: 100% 50%;*/
+/*    filter: grayscale(100%) brightness(70%);*/
+/*}*/
+
+.image-mask {
+    mask-image: url('../../assets/Paths/wave-haikei.svg');
+    -webkit-mask-image: url('../../assets/Paths/wave-haikei.svg');
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-size: cover;
+    -webkit-mask-size: cover;
+    mask-position: top center;
+    -webkit-mask-position: top center;
+    /*filter: grayscale(100%) brightness(70%);*/
+    position: relative;
+    z-index: 5;
+    display: block;
+}
+
+
+.gradient-finish{
+    /*background:linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(17,24,39,0.95) 100%);*/
+    /*mask-image: linear-gradient(to bottom, white 85%, #021b44 10%,transparent 100%);*/
+    div{
+        h1{
+            font-family: "Poppins", "Mea Culpa",cursive;
+        }
+    }
+}
+
+/*.corporate-overlay::before{*/
+/*    content: "";*/
+/*    !*background: rgba(232, 123, 20, 0.2);*!*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    z-index: 7;*/
+
+/*}*/
+
+
+.cr-image{
+        background: linear-gradient(#020618 40%, rgb(255, 177, 116) 30%, #fcefb0 100%);
+        background-blend-mode: normal;
+
+
+}
+
+
+

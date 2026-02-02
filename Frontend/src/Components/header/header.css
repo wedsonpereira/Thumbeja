@@ -186,12 +186,13 @@
 }
 
 /* Premium Mobile Nav Panel Styles */
+
 .tp-mobile-nav {
     position: fixed;
     top: 0;
     right: 0;
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
     z-index: 999;
     transform: translateX(100%);
     display: flex;
@@ -200,9 +201,8 @@
 
 .tp-mobile-nav-bg {
     position: absolute;
-    inset: 0;
-    background: rgba(4, 4, 18, 0.95);
-    backdrop-filter: blur(20px);
+    /*background: rgba(4, 4, 18, 0.95);*/
+    /*backdrop-filter: blur(20px);*/
 }
 
 .tp-mobile-nav-content {
@@ -221,38 +221,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 4rem;
-}
-
-.tp-mobile-logo {
-    height: 3.5rem;
-    cursor: pointer;
-}
-
-.tp-mobile-close {
-    background: transparent;
-    border: none;
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
-    width: 3rem;
-    height: 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    transition: all 0.3s ease;
-}
-
-.tp-mobile-close:hover {
-    background: rgba(255, 255, 255, 0.1);
+    margin-bottom: 2rem;
 }
 
 .tp-mobile-nav-links {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    margin-bottom: auto;
+    gap: 1.2rem;
+    /*margin-bottom: auto;*/
 }
 
 .tp-mobile-link {
@@ -336,12 +312,8 @@
     .tp-mobile-link {
         font-size: 2rem;
     }
+    
 }
-
-
-
-
-
 
 /* Services Dropdown Container */
 .tp-services-dropdown {
@@ -462,6 +434,13 @@
 
 @media (max-width: 900px) {
     .tp-services-mega-menu {
+        display: none;
+
+    }
+}
+
+@media (width > 900px) {
+    .tp-mobile-nav{
         display: none;
     }
 }
