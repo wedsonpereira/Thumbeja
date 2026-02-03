@@ -23,7 +23,7 @@ import Imaging from "./Components/Services/Imaging/Imaging.jsx";
 import ThreeD from "./Components/Services/3d/ThreeD.jsx";
 import ChatWidget from "./Components/ChatWidget/ChatWidget.jsx";
 import About from "./assets/JsonData/About.js";
-import CorporateGallery from "./Components/Corporate Gallery/CorporateGallery.jsx";
+import CorporateGallery from "./Components/CorporateGallery/CorporateGallery.jsx";
 
 
 function App() {

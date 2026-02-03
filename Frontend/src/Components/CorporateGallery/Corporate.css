@@ -2,15 +2,10 @@
 .gradient-text {
     /*background: linear-gradient(90deg, #d6d4ea, #09ddd7, #e792c6, #d6d4ea);*/
     color: rgba(246, 246, 246, 0.91);
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+    text-shadow: 0 0 2rem 6rem red;
 
     animation: colorflex 4s ease-in-out infinite;
     font-family:"Montserrat",sans-serif ;
-    text-rendering: optimizeLegibility;
-    text-decoration-color: #0f172a;
-    text-decoration: double ;
-
-
 }
 
 
