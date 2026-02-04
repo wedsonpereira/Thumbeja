@@ -15,7 +15,7 @@ import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { useGSAP } from "@gsap/react";
 import galleryData from "@/assets/JsonData/demoDataCorporate.jsx";
 
-const DriveAPIKEY = "AIzaSyApjsVhgf3KAZNmCHgURVwpc3vTnas1lqk"
+const DriveAPIKEY = ""
 const FolderID = "1l2UBrT3MH3iuNdchZTNCFQbZ4rrpMAQk"
 
 // const url = `https://www.googleapis.com/drive/v3/files?q='${FolderID}'+in+parents+and+mimeType+contains+'image/'&fields=files(id,name,mimeType,description,thumbnailLink)&key=${DriveAPIKEY}`
