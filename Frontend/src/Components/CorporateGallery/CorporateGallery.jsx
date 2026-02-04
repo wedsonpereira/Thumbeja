@@ -131,8 +131,8 @@ const CorporateGallery = () => {
                     </div>
 
                     {/* Gallery Section */}
-                    <div className="h-max p-3 bg-[#fcefb0] border-blue-900 overflow-hidden w-full ">
-                        <div className="flex flex-col pb-4 lg:w-[90%] m-auto p-4">
+                    <div className="h-max p-3 bg-[#fcefb0] border-blue-900 overflow-hidden w-full">
+                        <div className="flex flex-col pb-4 lg:w-[90%] m-auto pt-14">
                             <span className="text-[clamp(2.2rem,3.3vw,10rem)] font-semibold leading-20 text-slate-800 fadeUp">
                                 Visual Overview
                             </span>

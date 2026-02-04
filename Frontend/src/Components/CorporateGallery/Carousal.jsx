@@ -26,7 +26,8 @@ import {
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCircleXmark} from "@fortawesome/free-solid-svg-icons";
 import {isVisible} from "bootstrap/js/src/util/index.js";
-export function CarouselBox({api,animation,dummydata}) {
+
+export function CarouselBox({api, animation, dummydata}) {
 
 
     // const [api, setApi] = useState(null);
@@ -65,16 +66,17 @@ export function CarouselBox({api,animation,dummydata}) {
     // }, []);
 
     return (
-        <Carousel className={`lg:w-[70%] h-[40vh] lg:h-[44rem] p-4 ${animation}`} style={{ marginInline:"auto"}}
-                   plugins={[Autoplay({delay: 3000})]}>
-            <CarouselContent className="h-full items-stretch" >
+        <Carousel className={`lg:w-[70%] h-[40vh] lg:h-[44rem] p-4 ${animation}`} style={{marginInline: "auto"}}
+                  plugins={[Autoplay({delay: 3000})]}>
+            <CarouselContent className="h-full items-stretch">
                 {
                     data.map((item, index) => {
                         return (
                             <CarouselItem className="h-full min-h-0 p-0 " key={index}>
                                 <Card className="h-full p-0 border-0">
                                     <CardContent className="h-full p-0">
-                                        <img className="w-full h-full object-cover " src={`${item.imageUrl}?w=800&q=60&auto=format&fit=crop`} alt=""/>
+                                        <img className="w-full h-full object-cover "
+                                             src={`${item.imageUrl}?w=800&q=60&auto=format&fit=crop`} alt=""/>
                                     </CardContent>
                                 </Card>
                             </CarouselItem>
@@ -88,9 +90,10 @@ export function CarouselBox({api,animation,dummydata}) {
 
     )
 }
+
 // 'https://drive.google.com/thumbnail?id=${item.id}&sz=w1200`
 
-export function MultiCards({data,animation,Imagesetter}) {
+export function MultiCards({data, animation, Imagesetter}) {
 
     const isXs = useMediaQuery("(max-width:640px)");
     const isSm = useMediaQuery("(max-width:768px)");
@@ -99,16 +102,20 @@ export function MultiCards({data,animation,Imagesetter}) {
 
     const cols = isXs ? 2 : isSm ? 3 : isMd ? 3 : 6
 
-    const {img,setImage}=Imagesetter
+    const {img, setImage} = Imagesetter
 
     return (
         <ImageList variant={"standard"} gap={10} cols={cols} className={"w-full lg:w-[90%] m-auto"}>
             {data.map((item, i) => {
                 return (
                     <ImageListItem key={i} onClick={
-                        ()=>setImage({image:item,isVisible:true})
+                        () => {
+                            setImage({image: item, isVisible: true})
+                            document.body.style.overflow = "hidden"
+                        }
                     }>
-                        <img src={`${item.imageUrl}?w=800&q=60&auto=format&fit=crop`} alt="just image" className={`rounded-2xl ${animation}`}/>
+                        <img src={`${item.imageUrl}?w=800&q=60&auto=format&fit=crop`} alt="just image"
+                             className={`rounded-2xl ${animation}`}/>
                     </ImageListItem>
                 )
             })}
@@ -116,31 +123,56 @@ export function MultiCards({data,animation,Imagesetter}) {
     )
 }
 
-export function ImageModel({Imagesetter}){
+export function ImageModel({Imagesetter}) {
+    const {image, setImage} = Imagesetter;
+    const [zoom, setZoom] = React.useState(1);
+    const [origin, setOrigin] = React.useState({x: 50, y: 50});
 
-    const {image,setImage}=Imagesetter;
-
-    const {id,description, imageUrl, name}=image
-
-    console.log(imageUrl)
-    console.log(image.isVisible)
-
-
-    return(
-        <div className={`h-[100vh] w-[100vw] z-40 bg-transparent inset-0 ${image.isVisible?'block':'hidden'} fixed overflow-hidden text-white backdrop-blur-2xl place-items-center `}>
-            <dialog className={" max-[90%] h-[70%] bg-slate-900 inset-0 block shadow-black shadow-2xl m-auto top-10 rounded-2xl"}>
-                <img src={`${image.image}?w=800&q=60&auto=format&fit=crop`} alt=""/>
-            </dialog>
-            <FontAwesomeIcon icon={faCircleXmark} onClick={()=>setImage({image:"",isVisible:true})}/>
+    const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+    const handleWheel = (event) => {
+        event.preventDefault();
+        const rect = event.currentTarget.getBoundingClientRect();
+        const x = ((event.clientX - rect.left) / rect.width) * 100;
+        const y = ((event.clientY - rect.top) / rect.height) * 100;
+        setOrigin({x, y});
+        const delta = event.deltaY;
+        const step = 0.08;
+        const direction = delta > 0 ? -1 : 1; // wheel down -> zoom out, up -> zoom in
+        setZoom((z) => clamp(z + direction * step, 1, 3));
+    };
+    return (
+        <div
+            className={`fixed inset-0 z-[9999] ${image.isVisible ? "flex backdrop-brightness-25" : "hidden"} items-center justify-center text-white backdrop-blur-sm`}>
+            <div className={"relative bg-white shadow-black shadow-2xl rounded-2xl overflow-hidden"}>
+                <img
+                    src={`${image.image.imageUrl}?w=800&q=60&auto=format&fit=crop`}
+                    alt=""
+                    onWheel={handleWheel}
+                    style={{
+                        transform: `scale(${zoom})`,
+                        transformOrigin: `${origin.x}% ${origin.y}%`,
+                        transition: "transform 80ms linear"
+                    }}
+                />
+            </div>
+            <FontAwesomeIcon
+                icon={faCircleXmark}
+                style={{color: "white"}}
+                size={"2xl"}
+                className={"absolute z-[10] right-[20%] top-[45%] p-2 hover:scale-110 transition"}
+                onClick={() => {
+                    setImage({image: "", isVisible: false})
+                    document.body.style.overflow = "visible"
+                }}
+            />
         </div>
     )
 }
 
 
-
- export const ShadCnPagination = ({end}) => {
+export const ShadCnPagination = ({end}) => {
     return (
-        <div className={`w-full items-center flex mt-5 justify-center h-[6rem] bg-slate-800 ${end}`}>
+        <div className={`w-full items-center flex mt-5 justify-center h-[4rem] bg-slate-800 ${end} rounded-xl`}>
             <Pagination className={"text-white "}>
                 <PaginationContent>
                     <PaginationItem>
