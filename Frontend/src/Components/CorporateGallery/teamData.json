@@ -1,0 +1,113 @@
+{
+  "hero": {
+    "titlePurple": "Streamline Your Team,",
+    "titleBlack": "Supercharge Your Workflow",
+    "paragraph": "All-in-one platform to plan, collaborate, and deliver — faster and smarter.",
+    "ctaText": "Get started for Free"
+  },
+  "teamMembers": [
+    {
+      "id": 1,
+      "name": "Alex Johnson",
+      "image": "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW58ZW58MHx8MHx8fDA%3D"
+    },
+    {
+      "id": 2,
+      "name": "Maria Garcia",
+      "image": "https://images.unsplash.com/photo-1461800919507-79b16743b257?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aHVtYW58ZW58MHx8MHx8fDA%3D"
+    },
+    {
+      "id": 3,
+      "name": "James Wilson",
+      "image": "https://images.unsplash.com/photo-1589571894960-20bbe2828d0a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aHVtYW58ZW58MHx8MHx8fDA%3D"
+    },
+    {
+      "id": 4,
+      "name": "Sarah Chen",
+      "image": "https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGh1bWFufGVufDB8fDB8fHww"
+    },
+    {
+      "id": 5,
+      "name": "David Park",
+      "image": "https://images.unsplash.com/photo-1499996860823-5214fcc65f8f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGh1bWFufGVufDB8fDB8fHww"
+    },
+    {
+      "id": 6,
+      "name": "Emily Davis",
+      "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fGh1bWFufGVufDB8fDB8fHww"
+    },
+    {
+      "id": 7,
+      "name": "Michael Brown",
+      "image": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fGh1bWFufGVufDB8fDB8fHww"
+    },
+    {
+      "id": 8,
+      "name": "Sophie Martinez",
+      "image": "https://images.unsplash.com/photo-1618835962148-cf177563c6c0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fGh1bWFufGVufDB8fDB8fHww"
+    }
+  ],
+  "features": [
+    {
+      "id": 1,
+      "icon": "🤝",
+      "title": "Real-Time Collaboration",
+      "description": "Communicate seamlessly and keep everyone in sync with built-in messaging, file sharing, and live updates."
+    },
+    {
+      "id": 2,
+      "icon": "📋",
+      "title": "Task & Project Tracking",
+      "description": "Assign tasks, set deadlines, and visualize progress with boards, lists, and timelines tailored to your team's style."
+    },
+    {
+      "id": 3,
+      "icon": "📊",
+      "title": "Performance Insights",
+      "description": "Make smarter decisions with analytics that show productivity trends, bottlenecks, and team workload balance."
+    }
+  ],
+  "visionBanner": {
+    "title": "Holistic Wellness: Our Vision Unveiled",
+    "subtitle": "Explore the depth of our app, our vision for holistic wellness, and the team driving change.",
+    "backgroundImage": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&auto=format&fit=crop&q=80"
+  },
+  "featuresIntro": {
+    "title": "Highlights That You Can't Miss",
+    "subtitle": "From task tracking to real-time chat, our features are built to keep your team connected, organized, and moving forward—together."
+  },
+  "bentoGrid": [
+    {
+      "id": 1,
+      "title": "Built-In Team Chat",
+      "description": "Communicate instantly within projects to stay aligned across teams and departments.",
+      "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&auto=format&fit=crop&q=80",
+      "bgColor": "#e8ddd0",
+      "size": "large"
+    },
+    {
+      "id": 2,
+      "title": "Task Assignment",
+      "description": "Easily create, assign, and track tasks to keep everyone aligned and accountable.",
+      "image": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&auto=format&fit=crop&q=80",
+      "bgColor": "#d9d0c4",
+      "size": "small"
+    },
+    {
+      "id": 3,
+      "title": "Real-Time Scheduling",
+      "description": "Plan meetings, set deadlines, and sync calendars so your team stays on the same page.",
+      "image": null,
+      "bgColor": "#e2d9cd",
+      "size": "small"
+    },
+    {
+      "id": 4,
+      "title": "Progress Tracking",
+      "description": "Visualize team performance with dashboards that highlight what's done and what's next.",
+      "image": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&auto=format&fit=crop&q=80",
+      "bgColor": "#6b7f6b",
+      "size": "large"
+    }
+  ]
+}

@@ -3,6 +3,7 @@ import imageData from '../../../assets/imagedata/images.js';
 import './imaging.css';
 import Header from "../../header/Header.jsx";
 import Footer from "../../Footer/Footer.jsx";
+import SEO from "../../SEO/SEO.jsx";
 
 const SERVICE_CATEGORIES = [
     { id: 'e-commerce', label: 'e-commerce' },
@@ -168,6 +169,12 @@ function App() {
 
     return (
         <>
+            <SEO
+                title="Imaging Design Services - Product Editing & Retouching"
+                description="Professional imaging services including clipping path, retouching, shadow creation, and alpha masking for e-commerce and brand visuals."
+                keywords="image editing services, clipping path, photo retouching, alpha masking, e-commerce product editing"
+                url="https://thumbeja.com/services/imaging-design-mangalore"
+            />
             <Header/>
             <div className="imaging-main-content">
                 <h1 className="imaging-main-title">Our Services</h1>

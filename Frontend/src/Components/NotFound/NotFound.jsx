@@ -16,7 +16,8 @@ const NotFound = () => {
             <SEO 
                 title="404 - Page Not Found"
                 description="The page you are looking for does not exist. Redirecting to Thumbeja Publicity homepage."
-                url={window.location.href}
+                url="https://thumbeja.com/404"
+                noIndex={true}
             />
             <div style={{
                 minHeight: "70vh",

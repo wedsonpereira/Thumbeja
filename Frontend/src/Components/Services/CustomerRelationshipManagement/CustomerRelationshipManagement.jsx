@@ -14,6 +14,7 @@ import mountain from "../../../assets/Images/Gemini_Generated_Image_su9pixsu9pix
 import gsap from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import {useGSAP} from "@gsap/react";
+import SEO from "../../SEO/SEO.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 const CustomerRelationshipManagement = () => {
@@ -129,6 +130,12 @@ const CustomerRelationshipManagement = () => {
 
     return (
         <div className="DigitalMarketing max-width-[2000px] min-h-[60rem] pt-24">
+            <SEO
+                title="CRM Solutions & Customer Management Services"
+                description="Streamline customer journeys with CRM setup, automation, lead tracking, and performance reporting tailored for growing businesses."
+                keywords="CRM solutions Mangalore, customer relationship management, lead tracking, sales automation, CRM setup"
+                url="https://thumbeja.com/services/crm-solutions-mangalore"
+            />
             <Header/>
             <div className="DigitalMarketingbox1 max-w-300  m-auto crm-animation-1">
                 <h1 className="heading pt-[4rem] pl-[1.5rem] "

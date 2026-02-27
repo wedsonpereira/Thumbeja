@@ -113,7 +113,7 @@ const VideoMarketing = () => {
                 title="Video Marketing Services - Explainer Videos, Reels & Product Demos"
                 description="Professional video marketing services including explainer videos, product demonstrations, event coverage, social media reels, and corporate videos for engaging storytelling."
                 keywords="video marketing, explainer videos, product demo videos, social media reels, corporate videos, video production Mangalore"
-                url="https://thumbejapublicity.com/services/video-marketing-mangalore"
+                url="https://thumbeja.com/services/video-marketing-mangalore"
             />
             <Header/>
             

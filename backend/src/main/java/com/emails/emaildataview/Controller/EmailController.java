@@ -24,9 +24,4 @@ public class EmailController {
             return ResponseEntity.status(500).body("Failed to send email: " + e.getMessage());
         }
     }
-
-    @GetMapping("/getDriveImages")
-    public void  getGoogleDriveImages(){
-
-    }
 }

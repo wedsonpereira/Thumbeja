@@ -101,7 +101,7 @@ const WhatsappChatbot = () => {
                 title="WhatsApp Business API & Chatbot Services - Automated Customer Support"
                 description="AI-powered WhatsApp Business API, chatbots, bulk SMS, and email marketing automation for 24/7 customer engagement and lead generation."
                 keywords="WhatsApp Business API, chatbot services, AI chatbot, bulk SMS, email marketing, customer support automation, WhatsApp marketing"
-                url="https://thumbejapublicity.com/services/whatsapp-chatbot-services"
+                url="https://thumbeja.com/services/whatsapp-chatbot-services"
             />
             <Header/>
             

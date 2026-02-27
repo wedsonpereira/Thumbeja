@@ -1,162 +1,120 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Header from "../header/Header.jsx";
-import "./Corporate.css"
+import "./Corporate.css";
 import Footer from "../Footer/Footer.jsx";
-import {
-    CarouselBox,
-    ImageModel,
-    MultiCards,
-    ShadCnPagination
-} from "./Carousal.jsx";
+import { FilmstripCarousel, GalleryGrid, ImageModel, ShadCnPagination } from "./Carousal.jsx";
 import axios from "axios";
-import gsap from 'gsap'
+import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { useGSAP } from "@gsap/react";
+import SEO from "../SEO/SEO.jsx";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faImages, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { TeamHero, TeamCards, FeaturesIntro, BentoGrid } from "./Team.jsx";
+import VisionBanner from "./VisionBanner.jsx";
 
-const DriveAPIKEY = "AIzaSyCxo3L0EhlmszOunHeU8iIPcuL9J3H9QaQ"
-const FolderID = "1l2UBrT3MH3iuNdchZTNCFQbZ4rrpMAQk"
 
-const url = `https://www.googleapis.com/drive/v3/files?q='${FolderID}'+in+parents+and+mimeType+contains+'image/'&fields=files(id,name,mimeType,description,thumbnailLink)&key=${DriveAPIKEY}`
+const DriveAPIKEY = import.meta.env.VITE_GOOGLE_DRIVE_API_KEY;
+const FolderID = import.meta.env.VITE_GOOGLE_DRIVE_FOLDER_ID;
+const url = `https://www.googleapis.com/drive/v3/files?q='${FolderID}'+in+parents+and+mimeType+contains+'image/'&fields=files(id,name,mimeType,description,thumbnailLink)&key=${DriveAPIKEY}`;
 
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother, useGSAP)
+gsap.registerPlugin(ScrollTrigger, useGSAP);
+
+/* Hero background — uses the first gallery image once loaded, else a fallback */
+const FALLBACK_BG = "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070&auto=format&fit=crop";
 
 const CorporateGallery = () => {
     const [data, setData] = useState([]);
-    const [currentPage, setCurrentPage] = React.useState(1);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [heroBg, setHeroBg] = useState(FALLBACK_BG);
     const wrapperRef = useRef(null);
-    // const smootherRef = useRef(null);
-    const gallerySectionRef = useRef(null);
+    const galleryRef = useRef(null);
+    const filmstripRef = useRef(null);
     const pageSize = 20;
 
+    const [image, setImage] = useState({ image: "", isVisible: false });
 
-    // The state of the MultiCardmodel
-    let [image, setImage] = useState({
-        image: "",
-        isVisible: false
-    });
-
-
-    // Fetch data
     useEffect(() => {
-        axios.get(url).then((response) => {
-            setData(response.data.files);
-        })
+        axios.get(url)
+            .then(r => {
+                if (r.data.files?.length > 0) {
+                    // Filter out HEIC/HEIF or other unsupported formats
+                    const validFiles = r.data.files.filter(f => {
+                        const name = (f.name || "").toLowerCase();
+                        return !name.endsWith('.heic') && !name.endsWith('.heif') && !name.endsWith('.mp4') && !name.endsWith('.mov');
+                    });
+
+                    setData(validFiles);
+
+                    if (validFiles.length > 0) {
+                        // use a random image from the gallery as the hero backdrop
+                        const pick = validFiles[Math.floor(Math.random() * Math.min(10, validFiles.length))];
+                        setHeroBg(`https://lh3.googleusercontent.com/d/${pick.id}=w2000`);
+                    }
+                } else {
+                    setData([]);
+                }
+            })
             .catch(console.error);
     }, []);
 
-
+    /* ── Hero entrance ── */
     useGSAP(() => {
-
-        gsap.from(".fadeYin", {
-            ease: "power1.out",
-            opacity: 0,
-            y: -70,
-            duration: 1
-        });
-
-        gsap.from(".fadeXin", {
-            ease: "power1.out",
-            opacity: 0,
-            stagger: 0.5,
-            y: -20,
-            delay: 0.2,
-            duration: 1
-        });
-
+        const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+        tl.from(".cg-anim-eyebrow", { opacity: 0, y: -16, duration: 0.6 })
+            .from(".cg-anim-title", { opacity: 0, y: 28, duration: 0.8 }, "-=0.3")
+            .from(".cg-anim-desc", { opacity: 0, y: 16, duration: 0.6 }, "-=0.4")
+            .from(".cg-anim-ctas", { opacity: 0, y: 14, duration: 0.5 }, "-=0.3")
+            .from(".cg-anim-stat", { opacity: 0, y: 10, stagger: 0.1, duration: 0.4 }, "-=0.2")
+            .from(".cg-anim-scroll", { opacity: 0, duration: 0.5 }, "-=0.1");
     }, { scope: wrapperRef });
 
-    // Title animation should start after the section is ~200px into the viewport
+    /* ── Filmstrip animation — simple slide only, no opacity ── */
     useGSAP(() => {
-        if (!gallerySectionRef.current) return;
+        gsap.from(".cg-fs-anim", {
+            y: 20, stagger: 0.1, duration: 0.6, ease: "power2.out",
+            scrollTrigger: {
+                trigger: filmstripRef.current,
+                start: "top bottom",
+                toggleActions: "play none none none",
+            },
+        });
+    }, { scope: wrapperRef });
 
-        const ctx = gsap.context(() => {
-            // Set initial state
-            gsap.set(".gallery-title", { opacity: 0, y: 40 });
-
-            gsap.to(".gallery-title", {
-                ease: "power1.out",
-                opacity: 1,
-                y: 0,
-                duration: 0.6,
-                stagger: 0.1,
-                scrollTrigger: {
-                    trigger: gallerySectionRef.current,
-                    start: "top bottom-=300", // Triggers when section is 200px into viewport
-                    end: "bottom top",
-                    toggleActions: "play complete none reverse", // play on enter, complete on leave, none on re-enter, reverse on leave-back
-                },
-            });
-        }, gallerySectionRef);
-
-        return () => ctx.revert();
+    /* ── Gallery animation — simple slide only, no opacity ── */
+    useGSAP(() => {
+        if (!galleryRef.current) return;
+        gsap.from(".cg-ga-anim", {
+            y: 18, stagger: 0.08, duration: 0.55, ease: "power2.out",
+            scrollTrigger: {
+                trigger: galleryRef.current,
+                start: "top bottom",
+                toggleActions: "play none none none",
+            },
+        });
     }, { scope: wrapperRef, dependencies: [data] });
 
     const totalPages = Math.max(1, Math.ceil(data.length / pageSize));
     const pagedData = data.slice((currentPage - 1) * pageSize, currentPage * pageSize);
 
-    useEffect(() => {
-        if (currentPage > totalPages) {
-            setCurrentPage(1);
-        }
-    }, [currentPage, totalPages]);
+    const scrollTo = (ref) => ref.current?.scrollIntoView({ behavior: "smooth" });
 
     return (
         <>
-            <div ref={wrapperRef} className="wrapper overflow-hidden">
+            <SEO
+                title="Corporate Gallery – Thumbeja Publicity"
+                description="Explore Thumbeja Publicity's corporate gallery showcasing branding projects, campaigns, and creative highlights."
+                keywords="corporate gallery, branding portfolio, marketing projects, Thumbeja Publicity"
+                url="https://thumbeja.com/corporate-gallery"
+            />
+
+            <div ref={wrapperRef} className="cg-page wrapper overflow-hidden">
                 <Header />
-                <div className="cpr-content">
-                    {/* Hero Section */}
-                    <div className="h-[40rem] w-full relative overflow-hidden -mt-[5rem] bg-slate-950">
-                        <img
-                            src={"https://images.unsplash.com/photo-1566140967404-b8b3932483f5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
-                            className="w-full h-full object-cover block blur-[0.2rem] brightness-[60%] shadow-blue-600 shadow-2xl image-mask"
-                            alt=""
-                        />
-                        <div className="font-bold absolute left-1/2 top-[50%] -translate-x-1/2 -translate-y-1/2 w-full h-full p-3 flex flex-col items-center justify-center z-5">
-                            <h1 className="text-[clamp(3.5rem,10vw,8rem)] font-semibold tracking-tight gradient-text fadeYin">
-                                Studio
-                            </h1>
-                        </div>
-                    </div>
-
-                    {/* Highlights Section */}
-                    <div className="min-h-[25rem] max-h-max bg-slate-950 place-content-end overflow-hidden p-6">
-                        <h1 className="text-[clamp(2.2rem,3.3vw,10rem)] text-white lg:p-5 p-0 text-center leading-13 capitalize fadeXin">
-                            Corporate highlights
-                        </h1>
-                        <p className="text-[clamp(1rem,1.3vw,10rem)] text-white/70 text-center w-[100%] m-auto fadeXin">
-                            Discover the key milestones, achievements, and innovations that have defined our journey and
-                            propelled our growth.
-                        </p>
-                    </div>
-
-                    {/* Carousel Section */}
-                    <div className="w-full min-h-[20rem] cr-image overflow-hidden">
-                        <CarouselBox animation={"fadeXin"} api={DriveAPIKEY} data={data} />
-                    </div>
-
-                    {/* Gallery Section */}
-                    <div ref={gallerySectionRef} className="h-max p-3 bg-[#fcefb0] border-blue-900 overflow-hidden w-full transition-all">
-                        <div className="flex flex-col pb-4 lg:w-[90%] m-auto pt-14 lg:!p-10">
-                            <span className="text-[clamp(2.2rem,3.3vw,10rem)] font-semibold leading-20 text-slate-800 gallery-title">
-                                Visual Overview
-                            </span>
-                            <span className="text-[clamp(1rem,1.2vw,1.5rem)] text-slate-700 gallery-title">
-                                A comprehensive visual representation of our company and its capabilities
-                            </span>
-                        </div>
-                        <MultiCards
-                            data={pagedData}
-                            animation={"multiCardItem"}
-                            Imagesetter={{ image, setImage }}
-                            currentPage={currentPage}
-                            triggerRef={gallerySectionRef}
-                        />
-                        <ShadCnPagination end={"pagination"} currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage} />
-                        <ImageModel Imagesetter={{ image, setImage }} />
-                    </div>
-                </div>
+                <TeamHero />
+                <VisionBanner />
+                <FeaturesIntro />
+                <TeamCards />
+                <BentoGrid />
                 <Footer />
             </div>
         </>

@@ -18,6 +18,7 @@ import BrandMarketImg2 from "../../../assets/Images/BrandMarketImg2.png";
 import BrankMarketImg3 from "../../../assets/Images/brankmarket3.png";
 import BrankMarketImg4 from "../../../assets/Images/brankmarket4.png";
 import BrandMarketImg5 from "../../../assets/Images/brandmarket5.png";
+import SEO from "../../SEO/SEO.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -269,6 +270,12 @@ const SocialMediaMarketing = () => {
 
     return (
         <div className="DigitalMarketing w-full overflow-x-hidden pt-24">
+            <SEO
+                title="Social Media Marketing Services in Mangalore"
+                description="Social media marketing services for Instagram, Facebook, LinkedIn, and WhatsApp campaigns to grow reach, engagement, and conversions."
+                keywords="social media marketing Mangalore, Instagram marketing, Facebook ads, LinkedIn marketing, brand growth"
+                url="https://thumbeja.com/services/social-media-marketing-mangalore"
+            />
             <Header/>
             <div className="DigitalMarketingbox1 max-w-[1200px] mx-auto mb-8 px-4 md:px-8 social-animation-1">
                 <h1 className="heading pt-8 md:pt-16 px-4 md:pl-1 text-2xl md:text-3xl lg:text-4xl font-bold text-left"> Social Media Marketing</h1>

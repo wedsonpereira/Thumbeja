@@ -1,5 +1,4 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Allow: /
 
-Sitemap: https://thumbejapublicity.com/sitemap.xml
+Sitemap: https://thumbeja.com/sitemap.xml

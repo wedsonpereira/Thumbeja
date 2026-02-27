@@ -184,7 +184,7 @@ const DigitalMarketing = () => {
                 title="Digital Marketing Services - SEO, Google Ads & Social Media"
                 description="Comprehensive digital marketing services including SEO, Google Ads, social media marketing, and content strategy to boost your online presence and drive conversions."
                 keywords="digital marketing, SEO services, Google Ads, search engine marketing, social media marketing, content marketing, online advertising"
-                url="https://thumbejapublicity.com/services/digital-marketing-mangalore"
+                url="https://thumbeja.com/services/digital-marketing-mangalore"
             />
             <Header/>
             

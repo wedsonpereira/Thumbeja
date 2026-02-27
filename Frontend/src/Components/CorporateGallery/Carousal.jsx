@@ -1,23 +1,10 @@
-import * as React from "react"
-import { Card, CardContent } from "@/Components/ui/card"
-
-import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
-} from "@/Components/ui/carousel"
+import * as React from "react";
+import { useEffect, useRef, useState } from "react";
 import { ImageList, useMediaQuery } from "@mui/material";
-import ImageListItem from '@mui/material/ImageListItem';
-import { useEffect } from "react";
-import axios from "axios";
-import Autoplay from "embla-carousel-autoplay"
+import ImageListItem from "@mui/material/ImageListItem";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-// import {useState} from "react";
-
 import {
     Pagination,
     PaginationContent,
@@ -26,245 +13,282 @@ import {
     PaginationNext,
     PaginationPrevious,
     PaginationEllipsis,
-} from "@/Components/ui/pagination"
+} from "@/Components/ui/pagination";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
+import { faXmark, faExpand } from "@fortawesome/free-solid-svg-icons";
+import Autoplay from "embla-carousel-autoplay";
+import useEmblaCarousel from "embla-carousel-react";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
-export function CarouselBox({ api, animation }) {
 
-    const FolderID = "1Q_mglxwrc3FR-uMfIOBKC01tijM9SLuO"
-    const url = `https://www.googleapis.com/drive/v3/files?q='${FolderID}'+in+parents+and+mimeType+contains+'image/'&fields=files(id,name,mimeType,description,thumbnailLink)&key=${api}`
-
-    const [data, setData] = React.useState([]);
-
+/* ═══════════════════════════════════════════════
+   FILMSTRIP CAROUSEL
+   A wide horizontal auto-scrolling filmstrip
+════════════════════════════════════════════════ */
+export function FilmstripCarousel({ data = [] }) {
+    const items = data;
+    const [emblaRef, emblaApi] = useEmblaCarousel(
+        { loop: true, align: "start", dragFree: true },
+        [Autoplay({ delay: 2800, stopOnInteraction: false })]
+    );
+    const [selectedIndex, setSelectedIndex] = useState(0);
 
     useEffect(() => {
-        axios.get(url).then((response) => {
-            setData(response.data.files);
-        })
-            .catch(console.error);
-    }, [data]);
+        if (!emblaApi) return;
+        const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap());
+        emblaApi.on("select", onSelect);
+        return () => emblaApi.off("select", onSelect);
+    }, [emblaApi]);
+
+    const totalDots = Math.min(5, items.length);
+    const activeDot = totalDots > 0 ? selectedIndex % totalDots : -1;
 
     return (
-        <Carousel className={`lg:w-[70%] h-[40vh] lg:h-[44rem] p-4 ${animation}`} style={{ marginInline: "auto" }}
-            plugins={[Autoplay({ delay: 3000 })]}>
-            <CarouselContent className="h-full items-stretch">
-                {
-                    data.map((item, index) => {
-                        return (
-                            <CarouselItem className="h-full min-h-0 p-0 " key={index}>
-                                <Card className="h-full p-0 border-0">
-                                    <CardContent className="h-full p-0">
-                                        <img className="w-full h-full object-cover "
-                                            src={`https://drive.google.com/thumbnail?id=${item.id}&sz=w1200`} alt="" />
-                                    </CardContent>
-                                </Card>
-                            </CarouselItem>
-                        )
-                    })
-                }
-            </CarouselContent>
-            <CarouselPrevious className="bottom-8 left-15" />
-            <CarouselNext className="bottom-8 right-15" />
-        </Carousel>
+        <>
+            <div className="cg-filmstrip__carousel" ref={emblaRef}>
+                <div className="cg-filmstrip__track" style={{ paddingLeft: "clamp(1.5rem,5vw,5rem)" }}>
+                    {items.map((item, i) => (
+                        <div className="cg-filmstrip__slide" key={i}>
+                            <div className="cg-filmstrip__slide-inner">
+                                <img
+                                    src={`https://lh3.googleusercontent.com/d/${item.id}=w800`}
+                                    alt={item.name || "gallery image"}
+                                    loading="lazy"
+                                />
+                                {item.name && (
+                                    <span className="cg-filmstrip__slide-label">{item.name}</span>
+                                )}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
 
-    )
+            {/* Controls bar */}
+            <div className="cg-filmstrip__controls">
+                <div className="cg-filmstrip__progress">
+                    {Array.from({ length: totalDots }).map((_, i) => (
+                        <div
+                            key={i}
+                            className={`cg-filmstrip__dot ${i === activeDot ? "cg-filmstrip__dot--active" : ""}`}
+                        />
+                    ))}
+                </div>
+                <div className="cg-filmstrip__arrows">
+                    <button
+                        className="cg-filmstrip__arrow"
+                        onClick={() => emblaApi?.scrollPrev()}
+                        aria-label="Previous"
+                    >
+                        ←
+                    </button>
+                    <button
+                        className="cg-filmstrip__arrow"
+                        onClick={() => emblaApi?.scrollNext()}
+                        aria-label="Next"
+                    >
+                        →
+                    </button>
+                </div>
+            </div>
+        </>
+    );
 }
 
-// 'https://drive.google.com/thumbnail?id=${item.id}&sz=w1200`
 
-export function MultiCards({ data, animation, Imagesetter, currentPage, triggerRef }) {
-
+/* ═══════════════════════════════════════════════
+   GALLERY GRID
+   MUI ImageList masonry with styled cards
+════════════════════════════════════════════════ */
+export function GalleryGrid({ data, Imagesetter, currentPage, triggerRef }) {
+    const isXxs = useMediaQuery("(max-width:480px)");
     const isXs = useMediaQuery("(max-width:640px)");
     const isSm = useMediaQuery("(max-width:768px)");
-    const isMd = useMediaQuery("(max-width:1024px)");
-    const containerRef = React.useRef(null);
+    const isMd = useMediaQuery("(max-width:1200px)");
+    const containerRef = useRef(null);
+    const { setImage } = Imagesetter;
 
-
-    const cols = isXs ? 2 : isSm ? 4 : isMd ? 4 : 4
-
-    const { setImage } = Imagesetter
+    const cols = isXxs ? 1 : isXs ? 2 : isSm ? 3 : isMd ? 4 : 5;
 
     useGSAP(() => {
         if (!containerRef.current || data.length === 0) return;
-
         const ctx = gsap.context(() => {
-            const items = gsap.utils.toArray(`.${animation}`);
-            if (items.length === 0) return;
-
-            const triggerEl = triggerRef?.current || containerRef.current;
-
-            gsap.set(items, { opacity: 0, y: 30 });
-            gsap.to(items, {
-                ease: "power1.out",
-                opacity: 1,
-                y: 0,
-                duration: 0.5,
-                stagger: 0.05,
+            const cards = containerRef.current.querySelectorAll(".cg-gallery-card");
+            if (!cards.length) return;
+            gsap.set(cards, { y: 28, scale: 0.96 });
+            gsap.to(cards, {
+                y: 0, scale: 1,
+                duration: 0.55, stagger: 0.04, ease: "power2.out",
                 scrollTrigger: {
-                    trigger: triggerEl,
-                    start: "top bottom-=200", // Triggers when section is 200px into viewport
-                    end: "bottom top",
-                    toggleActions: "play complete none reverse", // play on enter, complete on leave, none on re-enter, reverse on leave-back
+                    trigger: triggerRef?.current || containerRef.current,
+                    start: "top bottom-=100",
+                    toggleActions: "play none none none",
                 },
             });
         }, containerRef);
-
         ScrollTrigger.refresh();
-
         return () => ctx.revert();
     }, { scope: containerRef, dependencies: [currentPage, data.length] });
 
     return (
-        <ImageList
-            ref={containerRef}
-            variant={"standard"}
-            gap={10}
-            cols={cols}
-            className={"w-full lg:w-[90%] m-auto lg:!p-10 sm:px-3 box-border border-blue-800 "}
-        >
-            {data.map((item, i) => {
-                return (
-                    <ImageListItem key={i} onClick={
-                        () => {
-                            setImage({ image: item.id, isVisible: true })
-                            document.body.style.overflow = "hidden"
-                        }
-                    }>
-                        <img src={`https://drive.google.com/thumbnail?id=${item.id}&sz=w1200`} alt="just image"
-                            className={`rounded-2xl ${animation}`} />
+        <div ref={containerRef} className="cg-gallery__grid-wrap">
+            <ImageList
+                variant="masonry"
+                cols={cols}
+                gap={12}
+                sx={{ overflow: "visible", width: "100%" }}
+            >
+                {data.map((item, i) => (
+                    <ImageListItem key={i}>
+                        <div
+                            className="cg-gallery-card"
+                            onClick={() => {
+                                setImage({ image: item.id, isVisible: true });
+                                document.body.style.overflow = "hidden";
+                            }}
+                        >
+                            <img
+                                className="cg-gallery-card__img"
+                                src={`https://lh3.googleusercontent.com/d/${item.id}=w800`}
+                                alt={item.name || "gallery image"}
+                                loading="lazy"
+                            />
+                            <div className="cg-gallery-card__hover">
+                                <div className="cg-gallery-card__hover-icon">
+                                    <FontAwesomeIcon icon={faExpand} />
+                                </div>
+                                {item.name && (
+                                    <span className="cg-gallery-card__name">{item.name}</span>
+                                )}
+                            </div>
+                        </div>
                     </ImageListItem>
-                )
-            })}
-        </ImageList>
-    )
+                ))}
+            </ImageList>
+        </div>
+    );
 }
 
+
+/* ═══════════════════════════════════════════════
+   IMAGE LIGHTBOX
+════════════════════════════════════════════════ */
 export function ImageModel({ Imagesetter }) {
     const { image, setImage } = Imagesetter;
-    const [zoom, setZoom] = React.useState(1);
-    const [origin, setOrigin] = React.useState({ x: 50, y: 50 });
+    const [zoom, setZoom] = useState(1);
+    const [origin, setOrigin] = useState({ x: 50, y: 50 });
 
+    const clamp = (v, min, max) => Math.min(Math.max(v, min), max);
 
-    const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
-    const handleWheel = (event) => {
-        // event.preventDefault();
-        const rect = event.currentTarget.getBoundingClientRect();
-        const x = ((event.clientX - rect.left) / rect.width) * 100;
-        const y = ((event.clientY - rect.top) / rect.height) * 100;
-        setOrigin({ x, y });
-        const delta = event.deltaY;
-        const step = 0.08;
-        const direction = delta > 0 ? -1 : 1; // wheel down -> zoom out, up -> zoom in
-        setZoom((z) => clamp(z + direction * step, 1, 3));
+    const handleWheel = e => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        setOrigin({
+            x: ((e.clientX - rect.left) / rect.width) * 100,
+            y: ((e.clientY - rect.top) / rect.height) * 100,
+        });
+        setZoom(z => clamp(z + (e.deltaY > 0 ? -0.08 : 0.08), 1, 3));
     };
+
+    const close = () => {
+        setImage({ image: "", isVisible: false });
+        setZoom(1);
+        document.body.style.overflow = "";
+    };
+
+    useEffect(() => () => {
+        document.body.style.overflow = "";
+    }, []);
+
+    if (!image.isVisible || !image.image) return null;
+
     return (
-        <div
-            className={`fixed inset-0 z-[9999] ${image.isVisible ? "flex backdrop-brightness-25" : "hidden"} items-center justify-center text-white backdrop-blur-sm`}>
-            <div className={"relative bg-white shadow-black shadow-2xl rounded-2xl overflow-hidden"}>
+        <div className={`cg-lightbox${image.isVisible ? " is-visible" : ""}`} onClick={close}>
+            <div className="cg-lightbox__frame" onClick={e => e.stopPropagation()}>
                 <img
-                    src={`https://drive.google.com/thumbnail?id=${image.image}&sz=w1200`}
+                    src={`https://lh3.googleusercontent.com/d/${image.image}=w1200`}
                     alt=""
                     onWheel={handleWheel}
+                    className="object-contain max-h-[90vh] max-w-[90vw] w-auto h-auto"
                     style={{
                         transform: `scale(${zoom})`,
                         transformOrigin: `${origin.x}% ${origin.y}%`,
-                        transition: "transform 80ms linear"
+                        transition: zoom === 1 ? "transform 300ms ease" : "transform 80ms linear",
+                        display: "block",
                     }}
                 />
             </div>
-            <FontAwesomeIcon
-                icon={faCircleXmark}
-                style={{ color: "white" }}
-                size={"2xl"}
-                className={"absolute z-[10] right-4 top-4 p-2 hover:scale-110 transition lg:right-10 lg:top-6"}
-                onClick={() => {
-                    setImage({ image: "", isVisible: false })
-                    document.body.style.overflow = "visible"
-                }}
-            />
+            <button
+                className="cg-lightbox__close"
+                onClick={close}
+                aria-label="Close"
+            >
+                <FontAwesomeIcon icon={faXmark} size="lg" />
+            </button>
         </div>
-    )
+    );
 }
 
 
-export const ShadCnPagination = ({ end, currentPage, totalPages, onPageChange }) => {
+/* ═══════════════════════════════════════════════
+   PAGINATION
+════════════════════════════════════════════════ */
+export function ShadCnPagination({ currentPage, totalPages, onPageChange }) {
     const buildPages = () => {
-        if (totalPages <= 7) {
-            return Array.from({ length: totalPages }, (_, i) => i + 1);
-        }
-
+        if (totalPages <= 7) return Array.from({ length: totalPages }, (_, i) => i + 1);
         const pages = [1];
         const start = Math.max(2, currentPage - 1);
-        const endPage = Math.min(totalPages - 1, currentPage + 1);
-
-        if (start > 2) pages.push("ellipsis-left");
-        for (let i = start; i <= endPage; i += 1) pages.push(i);
-        if (endPage < totalPages - 1) pages.push("ellipsis-right");
+        const end = Math.min(totalPages - 1, currentPage + 1);
+        if (start > 2) pages.push("el-l");
+        for (let i = start; i <= end; i++) pages.push(i);
+        if (end < totalPages - 1) pages.push("el-r");
         pages.push(totalPages);
-
         return pages;
     };
 
     const pages = buildPages();
-    const isPrevDisabled = currentPage <= 1;
-    const isNextDisabled = currentPage >= totalPages;
-
-    const handlePageClick = (event, page) => {
-        event.preventDefault();
-        if (page === currentPage) return;
-        onPageChange(page);
-    };
 
     return (
-        <div className={`w-[90%] mt-5 h-[4rem] flex  justify-end ${end}  m-auto  `}>
-            <Pagination className={"text-white w-auto mx-0 h-full top-0 bg-black/70 rounded-xl p-2 "}>
+        <div className="cg-pagination">
+            <Pagination className="text-white w-auto mx-0">
                 <PaginationContent>
                     <PaginationItem>
                         <PaginationPrevious
                             href="#"
-                            className={isPrevDisabled ? "pointer-events-none opacity-50" : ""}
-                            onClick={(event) => {
-                                event.preventDefault();
-                                if (!isPrevDisabled) onPageChange(currentPage - 1);
-                            }}
+                            className={`hover:bg-[#5439a3]/30 text-white ${currentPage <= 1 ? "pointer-events-none opacity-40" : ""}`}
+                            onClick={e => { e.preventDefault(); if (currentPage > 1) onPageChange(currentPage - 1); }}
                         />
                     </PaginationItem>
-                    {pages.map((page, index) => {
-                        if (typeof page !== "number") {
-                            return (
-                                <PaginationItem key={`${page}-${index}`}>
-                                    <PaginationEllipsis />
-                                </PaginationItem>
-                            );
-                        }
-
-                        return (
+                    {pages.map((page, idx) =>
+                        typeof page !== "number" ? (
+                            <PaginationItem key={`${page}-${idx}`}>
+                                <PaginationEllipsis className="text-white/40" />
+                            </PaginationItem>
+                        ) : (
                             <PaginationItem key={page}>
-                                <PaginationLink className={page === currentPage ? "text-black" : "text-white"}
+                                <PaginationLink
                                     href="#"
                                     isActive={page === currentPage}
-                                    onClick={(event) => handlePageClick(event, page)}
+                                    className={page === currentPage
+                                        ? "bg-[#5439a3] text-white border-[#5439a3]"
+                                        : "text-white/60 hover:bg-[#5439a3]/20 hover:text-white"
+                                    }
+                                    onClick={e => { e.preventDefault(); if (page !== currentPage) onPageChange(page); }}
                                 >
                                     {page}
                                 </PaginationLink>
                             </PaginationItem>
-                        );
-                    })}
+                        )
+                    )}
                     <PaginationItem>
                         <PaginationNext
                             href="#"
-                            className={isNextDisabled ? "pointer-events-none opacity-50" : ""}
-                            onClick={(event) => {
-                                event.preventDefault();
-                                if (!isNextDisabled) onPageChange(currentPage + 1);
-                            }}
+                            className={`hover:bg-[#5439a3]/30 text-white ${currentPage >= totalPages ? "pointer-events-none opacity-40" : ""}`}
+                            onClick={e => { e.preventDefault(); if (currentPage < totalPages) onPageChange(currentPage + 1); }}
                         />
                     </PaginationItem>
                 </PaginationContent>
             </Pagination>
         </div>
     );
-};
+}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './About.css';
 import aboutData from "../../assets/JsonData/About"
+import SEO from "../SEO/SEO.jsx";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -52,35 +53,42 @@ const About = () => {
 
 
     return (
-        <div className="about-section-wrapper" id="about">
-            {/* CEO Section */}
-            <section className="about-ceo-section">
-                <div className="about-container">
-                    <div className="about-section-header">
-                        <span className="about-section-label">------Leadership------</span>
-                        <h2 className="about-section-title">Meet Our CEO</h2>
-                    </div>
-                    <div className="about-ceo-content">
-                        <div className="about-ceo-image-box" onClick={() => openLightbox(aboutData.ceo.image)}>
-                            <img
-                                src={aboutData.ceo.image}
-                                alt={aboutData.ceo.name}
-                                className="about-ceo-photo"
-                            />
-                            <div className="about-image-overlay">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="about-zoom-icon">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
-                                </svg>
+        <>
+            <SEO
+                title="About Thumbeja Publicity - Leadership & Team"
+                description="Learn about Thumbeja Publicity's leadership, team values, and mission to deliver impactful branding and digital marketing solutions."
+                keywords="about Thumbeja Publicity, marketing agency team, branding experts Mangalore"
+                url="https://thumbeja.com/about-thumbeja-publicity"
+            />
+            <div className="about-section-wrapper" id="about">
+                {/* CEO Section */}
+                <section className="about-ceo-section">
+                    <div className="about-container">
+                        <div className="about-section-header">
+                            <span className="about-section-label">------Leadership------</span>
+                            <h2 className="about-section-title">Meet Our CEO</h2>
+                        </div>
+                        <div className="about-ceo-content">
+                            <div className="about-ceo-image-box" onClick={() => openLightbox(aboutData.ceo.image)}>
+                                <img
+                                    src={aboutData.ceo.image}
+                                    alt={aboutData.ceo.name}
+                                    className="about-ceo-photo"
+                                />
+                                <div className="about-image-overlay">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="about-zoom-icon">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div className="about-ceo-info">
+                                <h3 className="about-ceo-name">{aboutData.ceo.name}</h3>
+                                <p className="about-ceo-position">{aboutData.ceo.role}</p>
+                                <p className="about-ceo-bio">{aboutData.ceo.description}</p>
                             </div>
                         </div>
-                        <div className="about-ceo-info">
-                            <h3 className="about-ceo-name">{aboutData.ceo.name}</h3>
-                            <p className="about-ceo-position">{aboutData.ceo.role}</p>
-                            <p className="about-ceo-bio">{aboutData.ceo.description}</p>
-                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
             {/* Team Section */}
             <section className="about-team-section ">
@@ -160,7 +168,8 @@ const About = () => {
                     </div>
                 </div>
             )}
-        </div>
+            </div>
+        </>
     );
 };
 

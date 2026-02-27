@@ -488,7 +488,7 @@
         .tp-content-header-2 {
             flex-direction: column;
             /*border: 1px solid rgb(194, 199, 208);*/
-            padding:0;
+            padding: 0;
             gap: 0;
 
             div:first-child {
@@ -784,4 +784,132 @@
 
     }
 
+}
+
+/* Products Section - Compact Mobile Horizontal Scroll Grid */
+.tp-products-mobile-scroll {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.tp-products-scroll-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-auto-flow: column;
+    grid-auto-columns: 44%;
+    gap: 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.tp-products-scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+.tp-product-compact-card {
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 16px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.25s ease;
+    min-height: 0;
+}
+
+.tp-product-compact-card:active {
+    transform: scale(0.97);
+    box-shadow: 0 2px 12px rgba(84, 57, 163, 0.12);
+}
+
+.tp-product-compact-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.tp-product-compact-title {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 4px 0;
+    line-height: 1.3;
+}
+
+.tp-product-compact-desc {
+    font-size: 0.72rem;
+    color: #64748b;
+    line-height: 1.45;
+    margin: 0 0 8px 0;
+    flex-grow: 1;
+}
+
+.tp-product-compact-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-top: auto;
+}
+
+/* Tablet breakpoint - wider cards */
+@media (min-width: 481px) and (max-width: 1024px) {
+    .tp-products-scroll-container {
+        grid-auto-columns: 36%;
+        gap: 14px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .tp-products-scroll-container {
+        grid-auto-columns: 28%;
+        gap: 16px;
+    }
+}
+
+/* Mobile adjustments for products section */
+@media (max-width: 768px) {
+    .tp-products-section {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .tp-products-heading {
+        font-size: 1.8rem !important;
+    }
+
+    .tp-products-section .text-center.mb-14 {
+        margin-bottom: 1.5rem;
+    }
+
+    .tp-products-section .text-center.mb-14>span:first-child {
+        font-size: 0.875rem;
+    }
+
+    .tp-products-section .text-center.mb-14>p {
+        font-size: 0.95rem;
+        margin-top: 0.75rem;
+    }
 }

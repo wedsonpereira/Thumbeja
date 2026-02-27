@@ -89,7 +89,7 @@ const WebsiteSoftwareDevelopment = () => {
                 title="Website & Software Development - Custom Web Solutions & E-commerce"
                 description="Professional website and software development services including responsive design, e-commerce platforms, mobile apps, SEO-friendly websites, and custom business applications."
                 keywords="website development, web design, e-commerce development, mobile app development, custom software, SEO-friendly websites, web development Mangalore"
-                url="https://thumbejapublicity.com/services/website-development-mangalore"
+                url="https://thumbeja.com/services/website-development-mangalore"
             />
             <Header/>
             

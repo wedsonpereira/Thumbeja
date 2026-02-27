@@ -12,6 +12,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
+import SEO from "../SEO/SEO.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 const Contact = () => {
@@ -54,7 +55,7 @@ const Contact = () => {
 
         try {
             const response = await axios.post(
-                // change this to https://thumbeja.com/spring/api/contact in production
+                // change this to http://localhost:8080/api/contact in production
                 "https://thumbeja.com/service/api/email/send",
                 data,
                 {
@@ -112,6 +113,12 @@ const Contact = () => {
     }, [])
 
     return (<>
+        <SEO
+            title="Contact Thumbeja Publicity - Marketing Agency in Mangalore"
+            description="Contact Thumbeja Publicity for digital marketing, branding, web development, printing, and advertising services in Mangalore."
+            keywords="contact Thumbeja Publicity, digital marketing agency contact, Mangalore marketing agency, branding services contact"
+            url="https://thumbeja.com/contact-thumbeja-publicity"
+        />
         <Header />
         <div ref={container} className={"tp-contact-main pt-24 flex items-center flex-col gap-6 w-full h-max bg-[#fefdf7] pb-8 mt-[6rem]"}>
             <div className={"tp-contact-header w-full h-[15%] flex gap-6 flex-col"}>
@@ -196,7 +203,7 @@ const Contact = () => {
                     <div className="tp-contact-input-box2 h-max">
                         <div className="tp-contact-agreement rounded flex items-start gap-5">
                             <input type="checkbox" required={true} className={"scale-125 tp-contact-scroll-animation-1"} />
-                            <Link to={"/info"} className={"hover:text-[blue] tp-contact-scroll-animation-1"}> All agree to the terms &
+                            <Link to={"/terms-conditions-thumbeja-publicity"} className={"hover:text-[blue] tp-contact-scroll-animation-1"}> All agree to the terms &
                                 conditions.</Link>
                         </div>
                         <div className="rounded text-white tp-submit-btn tp-contact-scroll-animation-1">

@@ -44,7 +44,7 @@ const Services = () => {
                 title="Our Services - Digital Marketing, Web Development & Branding"
                 description="Explore our comprehensive digital services: SEO, social media marketing, web development, printing, video marketing, WhatsApp automation, CRM, outdoor advertising, software development and graphic design."
                 keywords="digital marketing services, web development, SEO services, social media marketing, printing services, video marketing, WhatsApp marketing, CRM solutions, outdoor advertising, software development"
-                url="https://thumbejapublicity.com/services-thumbeja-publicity"
+                url="https://thumbeja.com/services-thumbeja-publicity"
             />
             <Header />
             <div className={" h-max pb-8 pt-15 flex flex-col items-center bg-[#fefdf7] w-full mt-[6rem]"}>

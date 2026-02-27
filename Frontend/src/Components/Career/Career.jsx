@@ -6,6 +6,7 @@ import gsap from 'gsap'
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import "./Career.css"
 import {useGSAP} from "@gsap/react";
+import SEO from "../SEO/SEO.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 const Career = () => {
@@ -40,6 +41,12 @@ const Career = () => {
 
     return (
         <>
+            <SEO
+                title="Careers at Thumbeja Publicity - Join Our Team"
+                description="Explore current openings at Thumbeja Publicity in digital marketing, web development, SEO, and design roles."
+                keywords="Thumbeja careers, marketing jobs Mangalore, SEO jobs, web developer jobs, design jobs"
+                url="https://thumbeja.com/career-thumbeja-publicity"
+            />
             <Header/>
             <div className={"tp-career-main h-max flex flex-col  items-center bg-[#fefdf7] pb-8 gap-10 mt-[6rem]"}>
                 <div className={"tp-career0 w-[70%] text-center flex flex-col h-max gap-5 pt-20 items-center tp-career-animation-1"}>

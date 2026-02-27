@@ -13,6 +13,7 @@ import cardAnimations from "../../../assets/JsonData/CardAnimations/CardAnimatio
 import gsap from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import {useGSAP} from "@gsap/react";
+import SEO from "../../SEO/SEO.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -267,6 +268,12 @@ const Printing = () => {
 
     return (
         <div className="DigitalMarketing max-width-[2000px] min-h-[60rem] pt-24">
+            <SEO
+                title="Printing & Branding Services in Mangalore"
+                description="Professional printing and branding services including brochures, business cards, signage, packaging, and promotional materials."
+                keywords="printing services Mangalore, branding services, brochure design, business cards, promotional materials"
+                url="https://thumbeja.com/services/printing-services-mangalore"
+            />
             <Header/>
             <div className="DigitalMarketingbox1 max-w-300 m-auto mb-8 social-animation-1">
                 <h1 className="heading pt-[4rem] pl-[1.5rem]"

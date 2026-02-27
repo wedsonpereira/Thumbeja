@@ -30,10 +30,21 @@ import "swiper/css/pagination"
 import About from "../About/About.jsx";
 import { Link } from "react-router-dom"
 import Brands from "../Brands/Brands.jsx";
+import productsData from "../../assets/JsonData/ProductsData.js";
 
 gsap.registerPlugin(ScrollTrigger)
 
 const Home = () => {
+
+    const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
+
+    useEffect(() => {
+        const handleResize = () => setWindowWidth(window.innerWidth);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    const isMobileOrTablet = windowWidth <= 1024;
 
     const [Index, setIndex] = useState(0);
 
@@ -137,16 +148,18 @@ const Home = () => {
             opacity: 0
         });
 
-        gsap.from(".home-animation-6", {
+        gsap.from(".product-card-animation", {
             scrollTrigger: {
-                trigger: ".home-animation-6",
+                trigger: ".product-card-animation",
+                start: "top bottom-=100",
                 toggleActions: 'restart none none reverse',
             },
-            stagger: 0.2,
-            duration: 1,
-            x: -100,
-            opacity: 0
-        });
+            y: -30,
+            opacity: 0,
+            duration: 0.3,
+            stagger: 0.1,
+            ease: "power2.out",
+        }, []);
 
     }, [])
 
@@ -261,6 +274,92 @@ const Home = () => {
                 </div>
             </div>
             {/*1st content starting*/}
+
+            {/* Our Products Section */}
+            <div className="min-h-max py-20 px-6 tp-products-section">
+                <div className="max-w-7xl mx-auto">
+                    <div className="text-center mb-14">
+                        <span className="text-lg text-slate-600">Our Products -------------------</span>
+                        <h2 className="text-5xl font-semibold text-slate-900 mt-4 tp-products-heading">
+                            Explore Our <span className="text-[#5439a3]">Digital Solutions</span>
+                        </h2>
+                        <p className="text-lg text-slate-600 max-w-2xl mx-auto mt-4">
+                            Innovative products designed to transform your business operations and digital presence.
+                        </p>
+                    </div>
+
+                    {/* Mobile/Tablet: Compact Horizontal Scroll Grid */}
+                    {isMobileOrTablet ? (
+                        <div className="tp-products-mobile-scroll">
+                            <div className="tp-products-scroll-container">
+                                {productsData.map((product) => (
+                                    <a
+                                        key={product.id}
+                                        href={product.link}
+                                        target={product.type === "external" ? "_blank" : "_self"}
+                                        rel={product.type === "external" ? "noopener noreferrer" : ""}
+                                        className="tp-product-compact-card product-card-animation"
+                                    >
+                                        <div className={`tp-product-compact-icon ${product.colorClass} ${product.shadowClass}`}>
+                                            {product.image ? (
+                                                <img src={product.image} alt={product.title} className="w-full h-full object-cover" />
+                                            ) : (
+                                                product.initials
+                                            )}
+                                        </div>
+                                        <h3 className="tp-product-compact-title">{product.title}</h3>
+                                        <p className="tp-product-compact-desc">
+                                            {product.description.length > 60
+                                                ? product.description.substring(0, 60) + '...'
+                                                : product.description}
+                                        </p>
+                                        <span className={`tp-product-compact-cta ${product.textClass}`}>
+                                            {product.type === "phone" ? "Contact" : "Visit"}
+                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                                <path d="M7 17l9.2-9.2M17 17V7H7" />
+                                            </svg>
+                                        </span>
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
+                    ) : (
+                        /* Desktop: Grid Layout */
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {productsData.map((product) => (
+                                <div key={product.id} className="group bg-white border border-slate-200 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 flex flex-col h-full product-card-animation">
+                                    <div className={`w-12 h-12 mb-6 rounded-lg ${product.colorClass} flex items-center justify-center text-white text-xl font-bold shadow-lg ${product.shadowClass} overflow-hidden`}>
+                                        {product.image ? (
+                                            <img src={product.image} alt={product.title} className="w-full h-full object-cover" />
+                                        ) : (
+                                            product.initials
+                                        )}
+                                    </div>
+                                    <h3 className="text-xl font-bold text-slate-900 mb-3">{product.title}</h3>
+                                    <p className="text-slate-600 mb-6 flex-grow">
+                                        {product.description}
+                                    </p>
+                                    <a
+                                        href={product.link}
+                                        target={product.type === "external" ? "_blank" : "_self"}
+                                        rel={product.type === "external" ? "noopener noreferrer" : ""}
+                                        className={`inline-flex items-center ${product.textClass} font-semibold ${product.hoverTextClass} transition-colors`}
+                                    >
+                                        {product.type === "phone" ? "Contact Us" : "Visit Website"}
+                                        <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            {product.type === "phone" ? (
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                            ) : (
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                            )}
+                                        </svg>
+                                    </a>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                </div>
+            </div>
 
             {/*2st content starting*/}
             <div

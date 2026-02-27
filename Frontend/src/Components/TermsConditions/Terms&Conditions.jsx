@@ -3,10 +3,17 @@ import Header from "../header/Header.jsx";
 import Footer from "../Footer/Footer.jsx";
 import privacy from "../../assets/JsonData/privacy.jsx";
 import "./terms.css"
+import SEO from "../SEO/SEO.jsx";
 
 const TermsConditions = () => {
     return (
         <>
+            <SEO
+                title="Privacy Policy & Terms - Thumbeja Publicity"
+                description="Read Thumbeja Publicity privacy policy and terms and conditions for our digital marketing and branding services."
+                keywords="privacy policy, terms and conditions, Thumbeja Publicity policies"
+                url="https://thumbeja.com/terms-conditions-thumbeja-publicity"
+            />
             <Header />
             <div className="w-full bg-[#ffffff] py-12 flex justify-center mt-20">
                 <div className="w-[92%] md:w-[75%] lg:w-[65%] bg-white shadow-lg rounded-xl p-6 md:p-10 border border-[#e5e7eb]">

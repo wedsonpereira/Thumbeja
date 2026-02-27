@@ -12,6 +12,7 @@ import {galleries, services4,logoGallery} from "../../../assets/JsonData/Service
 import gsap from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import {useGSAP} from "@gsap/react";
+import SEO from "../../SEO/SEO.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -104,6 +105,12 @@ const GraphicDesign = () => {
 
     return (
         <div className="DigitalMarketing w-full overflow-x-hidden min-h-[60rem] pt-24">
+            <SEO
+                title="Graphic Design Services - Branding, Posters & Creative Assets"
+                description="Creative graphic design services for logos, posters, social media creatives, brochures, and brand identity assets."
+                keywords="graphic design Mangalore, logo design, poster design, branding creatives, marketing collateral design"
+                url="https://thumbeja.com/services/graphic-design-mangalore"
+            />
             <Header/>
             <div className="DigitalMarketingbox1 max-w-[1200px] mx-auto mb-8 px-4 md:px-8 graphic-animation-1">
                 <h1 className="heading pt-8 md:pt-16 px-4 md:pl-2 text-2xl md:text-3xl lg:text-4xl font-bold text-left">Graphic Design</h1>

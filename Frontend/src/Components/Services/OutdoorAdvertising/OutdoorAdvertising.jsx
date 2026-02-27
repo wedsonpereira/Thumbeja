@@ -17,6 +17,7 @@ import OutdoorAdvertisementPic2Img from "../../../assets/Images/OutdoorAdvertise
 import gsap from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import {useGSAP} from "@gsap/react";
+import SEO from "../../SEO/SEO.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 const OutdoorAdvertising = () => {
@@ -145,6 +146,12 @@ const OutdoorAdvertising = () => {
 
     return (
         <div className="DigitalMarketing w-full overflow-x-hidden min-h-[60rem] pt-24">
+            <SEO
+                title="Outdoor Advertising Services in Mangalore"
+                description="Outdoor advertising services including hoardings, banners, LED displays, and strategic media placements to maximize local brand visibility."
+                keywords="outdoor advertising Mangalore, hoardings, LED advertising, banner advertising, brand visibility"
+                url="https://thumbeja.com/services/outdoor-advertising-mangalore"
+            />
             <Header/>
             <div className="DigitalMarketingbox1 max-w-[1200px] mx-auto mb-8 px-4 md:px-8 outdoor-animation-1">
                 <h1 className="heading pt-8 md:pt-16 px-4 md:pl-2 text-2xl md:text-3xl lg:text-4xl font-bold text-left">Outdoor Advertising</h1>

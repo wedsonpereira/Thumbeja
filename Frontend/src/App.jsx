@@ -22,7 +22,7 @@ import WebsiteSoftwareDevelopment from "./Components/Services/Website Software D
 import Imaging from "./Components/Services/Imaging/Imaging.jsx";
 import ThreeD from "./Components/Services/3d/ThreeD.jsx";
 import ChatWidget from "./Components/ChatWidget/ChatWidget.jsx";
-import About from "./assets/JsonData/About.js";
+import About from "./Components/About/About.jsx";
 import CorporateGallery from "./Components/CorporateGallery/CorporateGallery.jsx";
 
 
@@ -48,8 +48,8 @@ function App() {
                 <Route path="/services/outdoor-advertising-mangalore" element={<OutdoorAdvertising/>}/>
                 <Route path="/services/social-media-handling-mangalore" element={<SocialMediaHandling/>}/>
                 <Route path="/services/graphic-design-mangalore" element={<GraphicDesign/>}/>
-                <Route path="services/imaging-design-mangalore" element={<Imaging/>}/>
-                <Route path="services/3d-design-mangalore" element={<ThreeD />}/>
+                <Route path="/services/imaging-design-mangalore" element={<Imaging/>}/>
+                <Route path="/services/3d-design-mangalore" element={<ThreeD />}/>
                 <Route path="/about-thumbeja-publicity" element={<About />}/>
                 <Route path="/corporate-gallery" element={<CorporateGallery />}/>
                 <Route path={"*"} element={<NotFound/>}/>

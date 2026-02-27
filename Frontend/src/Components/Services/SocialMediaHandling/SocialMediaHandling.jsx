@@ -20,6 +20,7 @@ import SocialMedia4Img from "../../../assets/Images/SocialMedia4.png";
 import SocialMedia5Img from "../../../assets/Images/SocialMedia5.png";
 import SocialMedia6Img from "../../../assets/Images/SocialMedia6.png";
 import SocialMedia7Img from "../../../assets/Images/SocialMedia7.jpg";
+import SEO from "../../SEO/SEO.jsx";
 
 const SocialMediaHandling = () => {
     useGSAP(() => {
@@ -121,6 +122,12 @@ const SocialMediaHandling = () => {
 
     return (
         <div className="DigitalMarketing w-full overflow-x-hidden min-h-[60rem] pt-24">
+            <SEO
+                title="Social Media Handling & Management Services"
+                description="Complete social media handling services for content planning, post design, publishing, audience engagement, and performance analytics."
+                keywords="social media handling, social media management Mangalore, content planning, audience engagement, social media analytics"
+                url="https://thumbeja.com/services/social-media-handling-mangalore"
+            />
             <Header/>
             <div className="DigitalMarketingbox1 max-w-[1200px] mx-auto mb-8 px-4 md:px-8 social-handling-animation-1">
                 <h1 className="heading pt-8 md:pt-16 px-4 md:pl-2 text-2xl md:text-3xl lg:text-4xl font-bold text-left">Social Media Handling</h1>

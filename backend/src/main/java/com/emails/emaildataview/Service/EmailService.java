@@ -28,7 +28,6 @@ public class EmailService {
             // 1. Send email to Admin (Wedson)
             sendToAdmin(request);
             System.out.println("Admin email sent successfully");
-
             // 2. Send acknowledgment to User
             sendAcknowledgment(request);
             System.out.println("User acknowledgment sent successfully");
