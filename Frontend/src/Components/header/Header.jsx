@@ -175,7 +175,7 @@ const Header = () => {
                             <FontAwesomeIcon icon={faHome} className="link-icon" /> Home
                         </Link>
                         <Link className="tp-mobile-link" to="/services-thumbeja-publicity" onClick={handleLinkClick}>
-                            <FontAwesomeIcon icon={faConciergeBell} className="link-icon"  /> Services
+                            <FontAwesomeIcon icon={faConciergeBell} className="link-icon" /> Services
                         </Link>
                         <Link className="tp-mobile-link" to="/career-thumbeja-publicity" onClick={handleLinkClick}>
                             <FontAwesomeIcon icon={faBriefcase} className="link-icon" /> Career

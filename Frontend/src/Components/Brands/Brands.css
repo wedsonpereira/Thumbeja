@@ -1,20 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Ephesis&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playwrite+AU+SA:wght@100..400&family=Playwrite+GB+S:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap');
 
-/* Compact Infinite Marquee Styles */
+/* Modern Infinite Marquee Styles */
 
 .brands-marquee-container {
     overflow: hidden;
     width: 100%;
-    padding: 20px 0;
 }
-
-
 
 .brands-marquee-content {
     display: flex;
-    gap: 100px;
     width: max-content;
-    animation: marquee-scroll 40s linear infinite;
+    animation: marquee-scroll 45s linear infinite;
     align-items: center;
 }
 
@@ -32,34 +28,16 @@
     }
 }
 
-.brand-minimal-item {
-    flex-shrink: 0;
-    transition: all 0.4s ease;
-    opacity: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.brand-modern-pill {
+    /* Custom bounce curve for hover */
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.brand-minimal-item:hover {
-    transform: scale(1.1);
-}
 
-.brands-compact-title {
-    background: linear-gradient(135deg, #ffffff 0%, #a1a1a1 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
 
 /* Mobile Adjustments */
 @media (max-width: 768px) {
-    .brands-marquee-header {
-        animation-duration: 20s;
-        gap: 30px;
-    }
-
-    .brands-compact-header{
-        padding-top: 0;
+    .brands-marquee-content {
+        animation-duration: 25s;
     }
 }

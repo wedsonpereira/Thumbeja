@@ -453,9 +453,6 @@ const Home = () => {
             {/*        </div>*/}
             {/*    </div>*/}
             {/*</div>*/}
-
-            <Brands />
-
             {/*Process container*/}
             <div className={"tp-content-process min-h-[25rem] w-[85%] m-auto mt-30 pb-12 flex flex-col gap-6"}>
                 <div
@@ -564,6 +561,8 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+
+            <Brands />
 
             {/* About Section */}
             <About />

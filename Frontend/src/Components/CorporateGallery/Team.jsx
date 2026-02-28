@@ -1,6 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import teamData from './teamData.json';
 import './Team.css';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(ScrollTrigger);
 
 /* ── SECTION 1 : Text / Hero ── */
 const TeamHero = () => {
@@ -90,18 +95,18 @@ const TeamHero = () => {
             <p className="team-paragraph">{teamData.hero.paragraph}</p>
             <button className="team-cta">
                 <span>{teamData.hero.ctaText}</span>
-                <span className="team-cta__arrow">→</span>
             </button>
         </div>
     );
 };
 
 /* ── SECTION 2 : Image Cards (infinite loop) ── */
-const TeamCards = () => {
+const TeamCards = ({ overrideData = [] }) => {
     const trackRef = useRef(null);
 
-    /* Duplicate the cards for seamless infinite loop */
-    const duplicatedMembers = [...teamData.teamMembers, ...teamData.teamMembers];
+    // Create an infinitely scrolling duplicated strip using real dynamic data, fallback to JSON if empty while loading
+    const activeData = overrideData.length > 0 ? overrideData : teamData.teamMembers;
+    const duplicatedMembers = [...activeData, ...activeData];
 
     /* Pause animation on hover */
     useEffect(() => {
@@ -119,25 +124,35 @@ const TeamCards = () => {
         };
     }, []);
 
+    // Ensure we're ready before doing math on lengths
+    if (!activeData.length) return null;
+
     return (
         <div className="team-cards-wrapper">
             <div className="team-cards-track" ref={trackRef}>
-                {duplicatedMembers.map((member, index) => (
-                    <div
-                        className="team-card"
-                        key={`${member.id}-${index}`}
-                        style={{ '--i': index % teamData.teamMembers.length }}
-                    >
-                        <div className="team-card__inner">
-                            <img
-                                src={member.image}
-                                alt={member.name}
-                                className="team-card__img"
-                                loading="lazy"
-                            />
+                {duplicatedMembers.map((member, index) => {
+                    // Handle dual structure mapping based on if it's Live API data or fallback JSON data
+                    const isLiveApi = overrideData.length > 0;
+                    const imgSource = isLiveApi ? `https://lh3.googleusercontent.com/d/${member.id}=w600` : member.image;
+                    const imgAlt = isLiveApi ? member.name : member.name;
+
+                    return (
+                        <div
+                            className="team-card"
+                            key={`${member.id}-${index}`}
+                            style={{ '--i': index % activeData.length }}
+                        >
+                            <div className="team-card__inner">
+                                <img
+                                    src={imgSource}
+                                    alt={imgAlt}
+                                    className="team-card__img object-cover object-center"
+                                    loading="lazy"
+                                />
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    );
+                })}
             </div>
         </div>
     );
@@ -146,24 +161,29 @@ const TeamCards = () => {
 
 const FeaturesIntro = () => {
     const { title, subtitle } = teamData.featuresIntro;
-    const [isVisible, setIsVisible] = useState(false);
     const sectionRef = useRef(null);
 
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setIsVisible(true);
-                } else {
-                    setIsVisible(false); // Play the animation each time we reach the section
-                }
-            },
-            { threshold: 0.3 }
-        );
+    useGSAP(() => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: sectionRef.current,
+                start: "top 75%",
+                end: "top 25%",
+                scrub: 1, // Add scrub to match scroll speed 
+                once: false,
+                // These prevent the timeline from scrubbing backwards when scrolling up
+                onLeave: () => tl.progress(1),
+                onEnterBack: () => tl.progress(1),
+                // Only reset the animation when scrolling completely past it at the top
+                onLeaveBack: () => tl.progress(0),
+            }
+        });
 
-        if (sectionRef.current) observer.observe(sectionRef.current);
-        return () => observer.disconnect();
-    }, []);
+        tl.to(".features-arrow", { opacity: 1, duration: 0.1 })
+            .to(".arrow-path", { strokeDashoffset: 0, duration: 1, ease: 'none' })
+            .fromTo(".arrow-head", { opacity: 0 }, { opacity: 1, duration: 0.2 }, "-=0.2");
+
+    }, { scope: sectionRef });
 
     // Split title roughly in half by words
     const words = title.split(' ');
@@ -172,7 +192,7 @@ const FeaturesIntro = () => {
     const secondHalf = words.slice(midpoint).join(' ');
 
     return (
-        <section className={`features-intro ${isVisible ? 'is-visible' : ''}`} ref={sectionRef}>
+        <section className="features-intro" ref={sectionRef}>
             <div className="features-intro__container">
                 {/* Left Animated Arrow */}
                 <svg className="features-arrow features-arrow--left" width="120" height="80" viewBox="0 0 120 80" fill="none">

@@ -37,58 +37,117 @@
     padding: 6rem 0;
 }
 
-.about-ceo-content {
+.about-ceo-modern-layout {
     display: grid;
-    grid-template-columns: 350px 1fr;
-    gap: 4rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 2rem 4rem;
+    align-items: start;
+}
+
+/* Title spans the left column top */
+.about-ceo-title-block {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+/* Image in the right column, spanning both rows */
+.about-ceo-modern-layout>.about-ceo-image-box {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    align-self: center;
+}
+
+/* Info (bio + features) sits below the title on the left */
+.about-ceo-modern-layout>.about-ceo-info {
+    grid-column: 1;
+    grid-row: 2;
+    padding-right: 2rem;
+}
+
+.about-ceo-title {
+    font-size: 3rem;
+    font-weight: 500;
+    color: #111827;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.about-ceo-bio {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4b5563;
+    margin-bottom: 3rem;
+}
+
+/* Feature Grid under CEO text */
+.about-ceo-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.ceo-feature-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+}
+
+.ceo-feature-icon {
+    width: 60px;
+    height: 60px;
+    background: #e5e7eb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.ceo-feature-icon svg {
+    width: 28px;
+    height: 28px;
+    color: #1f2937;
+}
+
+.ceo-feature-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1f2937;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+}
+
+.ceo-feature-text {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #6b7280;
+    line-height: 1.5;
 }
 
 .about-ceo-image-box {
     position: relative;
-    width: 350px;
-    height: 350px;
+    width: 100%;
+    height: 100%;
     flex-shrink: 0;
     cursor: pointer;
     overflow: hidden;
-    border-radius: 50%;
+    /* Removing the heavy borders/radius to match the flatter professional design */
+    border-radius: 4px;
 }
 
 .about-ceo-photo {
-    width: 350px;
-    height: 350px;
-    object-fit: cover;
-    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
     display: block;
-    transition: transform 0.3s ease;
+    border-radius: 4px;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .about-ceo-image-box:hover .about-ceo-photo {
-    transform: scale(1.05);
-}
-
-.about-ceo-info {
-    padding-left: 2rem;
-}
-
-.about-ceo-name {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #1f2937;
-    margin-bottom: 0.5rem;
-}
-
-.about-ceo-position {
-    font-size: 1.125rem;
-    color: #5e3bab;
-    font-weight: 600;
-    margin-bottom: 2rem;
-}
-
-.about-ceo-bio {
-    font-size: 1.0625rem;
-    line-height: 1.8;
-    color: #4b5563;
+    transform: scale(1.02);
 }
 
 /* Team Section */
@@ -99,8 +158,8 @@
 
 .about-team-content {
     display: grid;
-    grid-template-columns: 1fr 500px;
-    gap: 4rem;
+    grid-template-columns: 7fr 5fr;
+    gap: 5rem;
     align-items: center;
 }
 
@@ -165,20 +224,21 @@
     position: relative;
     cursor: pointer;
     overflow: hidden;
-    border-radius: 12px;
+    border-radius: 32px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .about-team-photo {
     width: 100%;
-    height: 450px;
-    object-fit: cover;
-    border-radius: 12px;
+    height: auto;
+    border-radius: 32px;
     display: block;
-    transition: transform 0.3s ease;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .about-team-image-box:hover .about-team-photo {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 /* Image Overlay */
@@ -263,28 +323,14 @@
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-    .about-ceo-content {
-        grid-template-columns: 300px 1fr;
+    .about-ceo-modern-layout {
+        grid-template-columns: 1fr 1fr;
         gap: 3rem;
-    }
-
-    .about-ceo-image-box {
-        width: 300px;
-        height: 300px;
-    }
-
-    .about-ceo-photo {
-        width: 300px;
-        height: 300px;
     }
 
     .about-team-content {
-        grid-template-columns: 1fr 450px;
+        grid-template-columns: 6fr 4fr;
         gap: 3rem;
-    }
-
-    .about-team-photo {
-        height: 400px;
     }
 
     .about-section-title {
@@ -314,30 +360,59 @@
         font-size: 2rem;
     }
 
-    .about-ceo-content,
-    .about-team-content {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
+    .about-ceo-modern-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
     }
 
-    .about-ceo-image-box {
-        width: 280px;
-        height: 280px;
+    .about-team-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    /* Mobile order: Title → Photo → Content */
+    .about-ceo-title-block {
+        grid-column: 1;
+        grid-row: auto;
+        order: 1;
+        text-align: center;
+    }
+
+    .about-ceo-modern-layout>.about-ceo-image-box {
+        grid-column: 1;
+        grid-row: auto;
+        order: 2;
+        width: 100%;
+        max-width: 300px;
         margin: 0 auto;
     }
 
+    .about-ceo-modern-layout>.about-ceo-info {
+        grid-column: 1;
+        grid-row: auto;
+        order: 3;
+        padding-right: 0;
+    }
+
+    .about-ceo-features {
+        grid-template-columns: 1fr 1fr;
+    }
+
     .about-ceo-photo {
-        width: 280px;
-        height: 280px;
+        width: 100%;
+        height: auto;
     }
 
     .about-team-image-box {
+        width: 100%;
         max-width: 500px;
         margin: 0 auto;
     }
 
     .about-team-photo {
-        height: 350px;
+        width: 100%;
+        height: auto;
     }
 
     .about-ceo-info,
@@ -415,17 +490,15 @@
     }
 
     .about-ceo-image-box {
-        width: 240px;
-        height: 240px;
+        max-width: 300px;
     }
 
     .about-ceo-photo {
-        width: 240px;
-        height: 240px;
+        width: 100%;
     }
 
     .about-team-photo {
-        height: 300px;
+        width: 100%;
     }
 
     .about-ceo-name {

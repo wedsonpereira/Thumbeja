@@ -35,26 +35,25 @@ const CorporateGallery = () => {
     const [image, setImage] = useState({ image: "", isVisible: false });
 
     useEffect(() => {
-        axios.get(url)
-            .then(r => {
-                if (r.data.files?.length > 0) {
-                    // Filter out HEIC/HEIF or other unsupported formats
-                    const validFiles = r.data.files.filter(f => {
-                        const name = (f.name || "").toLowerCase();
-                        return !name.endsWith('.heic') && !name.endsWith('.heif') && !name.endsWith('.mp4') && !name.endsWith('.mov');
-                    });
+        axios.get(url).then(r => {
+            if (r.data.files?.length > 0) {
+                // Filter out HEIC/HEIF or other unsupported formats
+                const validFiles = r.data.files.filter(f => {
+                    const name = (f.name || "").toLowerCase();
+                    return !name.endsWith('.HIEC');
+                });
 
-                    setData(validFiles);
+                setData(validFiles);
 
-                    if (validFiles.length > 0) {
-                        // use a random image from the gallery as the hero backdrop
-                        const pick = validFiles[Math.floor(Math.random() * Math.min(10, validFiles.length))];
-                        setHeroBg(`https://lh3.googleusercontent.com/d/${pick.id}=w2000`);
-                    }
-                } else {
-                    setData([]);
+                if (validFiles.length > 0) {
+                    // use a random image from the gallery as the hero backdrop
+                    const pick = validFiles[Math.floor(Math.random() * Math.min(10, validFiles.length))];
+                    setHeroBg(`https://lh3.googleusercontent.com/d/${pick.id}=w2000`);
                 }
-            })
+            } else {
+                setData([]);
+            }
+        })
             .catch(console.error);
     }, []);
 
@@ -72,7 +71,7 @@ const CorporateGallery = () => {
     /* ── Filmstrip animation — simple slide only, no opacity ── */
     useGSAP(() => {
         gsap.from(".cg-fs-anim", {
-            y: 20, stagger: 0.1, duration: 0.6, ease: "power2.out",
+            y: 20, stagger: 0.1, duration: 5, ease: "power2.out",
             scrollTrigger: {
                 trigger: filmstripRef.current,
                 start: "top bottom",
@@ -94,7 +93,7 @@ const CorporateGallery = () => {
         });
     }, { scope: wrapperRef, dependencies: [data] });
 
-    const totalPages = Math.max(1, Math.ceil(data.length / pageSize));
+    const totalPages = Math.max(12, Math.ceil(data.length / pageSize));
     const pagedData = data.slice((currentPage - 1) * pageSize, currentPage * pageSize);
 
     const scrollTo = (ref) => ref.current?.scrollIntoView({ behavior: "smooth" });
@@ -113,7 +112,7 @@ const CorporateGallery = () => {
                 <TeamHero />
                 <VisionBanner />
                 <FeaturesIntro />
-                <TeamCards />
+                <TeamCards overrideData={data} />
                 <Footer />
             </div>
         </>
