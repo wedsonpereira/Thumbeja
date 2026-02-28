@@ -401,7 +401,7 @@
     .tp-home {
         display: flex;
         flex-direction: column;
-        background: white;
+        background: #fefdf7;
         margin-top: 5rem;
         /*border:1px solid red;*/
         gap: 2rem;

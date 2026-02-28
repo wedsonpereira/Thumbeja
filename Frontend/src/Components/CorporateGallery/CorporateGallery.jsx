@@ -114,7 +114,6 @@ const CorporateGallery = () => {
                 <VisionBanner />
                 <FeaturesIntro />
                 <TeamCards />
-                <BentoGrid />
                 <Footer />
             </div>
         </>

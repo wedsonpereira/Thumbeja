@@ -33,7 +33,7 @@
 
 /* CEO Section */
 .about-ceo-section {
-    background: #ffffff;
+    background: #fefdf7;
     padding: 6rem 0;
 }
 
@@ -93,7 +93,7 @@
 
 /* Team Section */
 .about-team-section {
-    background: #f9fafb;
+    background: #fefdf7;
     padding: 6rem 0;
 }
 
@@ -471,6 +471,7 @@
 }
 
 @media (max-width: 480px) {
+
     .about-ceo-section,
     .about-team-section {
         padding: 2.5rem 0;

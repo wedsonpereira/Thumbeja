@@ -1,9 +1,9 @@
 {
   "hero": {
-    "titlePurple": "Streamline Your Team,",
-    "titleBlack": "Supercharge Your Workflow",
-    "paragraph": "All-in-one platform to plan, collaborate, and deliver — faster and smarter.",
-    "ctaText": "Get started for Free"
+    "titlePurple": "Weclome To The Gallery",
+    "titleBlack": "",
+    "paragraph": "We in Thumbeja Publicity store Memories, Share & Create new :), We tweet all our work here so that you can get the most recent content",
+    "ctaText": "Let's Jump in"
   },
   "teamMembers": [
     {
@@ -47,34 +47,14 @@
       "image": "https://images.unsplash.com/photo-1618835962148-cf177563c6c0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fGh1bWFufGVufDB8fDB8fHww"
     }
   ],
-  "features": [
-    {
-      "id": 1,
-      "icon": "🤝",
-      "title": "Real-Time Collaboration",
-      "description": "Communicate seamlessly and keep everyone in sync with built-in messaging, file sharing, and live updates."
-    },
-    {
-      "id": 2,
-      "icon": "📋",
-      "title": "Task & Project Tracking",
-      "description": "Assign tasks, set deadlines, and visualize progress with boards, lists, and timelines tailored to your team's style."
-    },
-    {
-      "id": 3,
-      "icon": "📊",
-      "title": "Performance Insights",
-      "description": "Make smarter decisions with analytics that show productivity trends, bottlenecks, and team workload balance."
-    }
-  ],
   "visionBanner": {
-    "title": "Holistic Wellness: Our Vision Unveiled",
-    "subtitle": "Explore the depth of our app, our vision for holistic wellness, and the team driving change.",
+    "title": "Our Vision is to Help businesses and brands to grow",
+    "subtitle": "We provide the best digital marketing solutions in the market. Our team experienced in Digital Marketing, Social Media Marketing, Content Marketing, SEO, SEM, and more.",
     "backgroundImage": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&auto=format&fit=crop&q=80"
   },
   "featuresIntro": {
     "title": "Highlights That You Can't Miss",
-    "subtitle": "From task tracking to real-time chat, our features are built to keep your team connected, organized, and moving forward—together."
+    "subtitle": "We are together since 2023, The Modern Team where real talent meets modern solutions"
   },
   "bentoGrid": [
     {

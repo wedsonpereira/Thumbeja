@@ -15,7 +15,7 @@ const TermsConditions = () => {
                 url="https://thumbeja.com/terms-conditions-thumbeja-publicity"
             />
             <Header />
-            <div className="w-full bg-[#ffffff] py-12 flex justify-center mt-20">
+            <div className="w-full bg-[#fefdf7] py-12 flex justify-center mt-20">
                 <div className="w-[92%] md:w-[75%] lg:w-[65%] bg-white shadow-lg rounded-xl p-6 md:p-10 border border-[#e5e7eb]">
 
                     {/* Title */}
@@ -80,7 +80,7 @@ const TermsConditions = () => {
                 </div>
             </div>
 
-            <Footer/>
+            <Footer />
         </>
 
     );
