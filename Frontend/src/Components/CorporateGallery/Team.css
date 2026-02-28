@@ -4,6 +4,26 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
+/* ── SplitText animation helpers ── */
+.team-title {
+    perspective: 600px;
+}
+
+.team-title .char,
+.team-title .word {
+    display: inline-block;
+}
+
+.fi-word {
+    display: inline-block;
+}
+
+.vb-char,
+.vb-word {
+    display: inline-block;
+}
+
+
 .team-section {
     background: #f5efe6;
     font-family: 'Outfit', 'Poppins', sans-serif;
@@ -367,45 +387,53 @@
     background: #f5efe6;
     font-family: 'Outfit', 'Poppins', sans-serif;
     width: 100%;
-    overflow: hidden;
-    padding: 2rem 0 4rem;
+    overflow: visible;
+    padding: 3rem 0 5rem;
     mask-image: linear-gradient(to right,
             transparent 0%,
-            black 8%,
-            black 92%,
+            black 10%,
+            black 90%,
             transparent 100%);
     -webkit-mask-image: linear-gradient(to right,
             transparent 0%,
-            black 8%,
-            black 92%,
+            black 10%,
+            black 90%,
             transparent 100%);
 }
 
 .team-cards-track {
     display: flex;
     gap: 0;
-    animation: team-scroll 80s linear infinite;
     width: max-content;
     align-items: center;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    padding: 1rem 4vw;
+    cursor: grab;
+    -ms-overflow-style: none;
+    /* IE/Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
-@keyframes team-scroll {
-    0% {
-        transform: translateX(0);
-    }
+.team-cards-track::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari */
+}
 
-    100% {
-        transform: translateX(-50%);
-    }
+.team-cards-track:active {
+    cursor: grabbing;
 }
 
 .team-card {
     flex: 0 0 auto;
-    width: clamp(140px, 15vw, 200px);
+    width: clamp(160px, 18vw, 220px);
     perspective: 600px;
-    margin-right: -40px;
+    margin-right: -30px;
     position: relative;
     z-index: calc(10 - var(--i, 0));
+    scroll-snap-align: start;
 }
 
 .team-card__inner {
@@ -708,9 +736,8 @@
 
     .team-cards-track {
         gap: 0.75rem;
-        animation-duration: 35s;
         align-items: center;
-        padding-bottom: 0;
+        padding: 0.5rem 1rem;
     }
 
     .team-card {

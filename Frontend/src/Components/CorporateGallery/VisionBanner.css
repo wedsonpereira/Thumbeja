@@ -2,6 +2,11 @@
    VISION BANNER
 ═══════════════════════════════════════════ */
 
+/* SplitText animation helpers */
+.vision-banner__title {
+    perspective: 600px;
+}
+
 .vision-banner {
     position: relative;
     width: 100%;

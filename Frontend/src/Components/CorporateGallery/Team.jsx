@@ -3,14 +3,78 @@ import teamData from './teamData.json';
 import './Team.css';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { SplitText } from 'gsap/SplitText';
 import { useGSAP } from '@gsap/react';
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 /* ── SECTION 1 : Text / Hero ── */
 const TeamHero = () => {
+    const heroRef = useRef(null);
+
+    useGSAP(() => {
+        const ctx = gsap.context(() => {
+            const titleEl = heroRef.current.querySelector('.team-title');
+            if (!titleEl) return;
+
+            const split = new SplitText(titleEl, {
+                type: 'chars,words',
+                charsClass: 'char',
+                wordsClass: 'word',
+            });
+
+            /* ── Hide everything immediately ── */
+            gsap.set('.team-deco .deco', { opacity: 0, scale: 0 });
+            gsap.set(split.chars, { opacity: 0, y: 40, rotateX: -90 });
+            gsap.set('.team-paragraph', { opacity: 0, y: 24 });
+            gsap.set('.team-cta', { opacity: 0, y: 20, scale: 0.9 });
+
+            /* ── Master entrance timeline — strict sequence ── */
+            const tl = gsap.timeline({
+                delay: 0.3,
+                defaults: { ease: 'power3.out' },
+            });
+
+            /* Step 1: Decorative icons scatter in */
+            tl.to('.team-deco .deco', {
+                opacity: 1,
+                scale: 1,
+                stagger: { each: 0.03, from: 'random' },
+                duration: 0.4,
+                ease: 'back.out(1.7)',
+            });
+
+            /* Step 2: Title characters cascade in */
+            tl.to(split.chars, {
+                opacity: 1,
+                y: 0,
+                rotateX: 0,
+                stagger: 0.03,
+                duration: 0.7,
+            }, '-=0.2');
+
+            /* Step 3: Paragraph fades up */
+            tl.to('.team-paragraph', {
+                opacity: 1,
+                y: 0,
+                duration: 0.6,
+            }, '+=0.1');
+
+            /* Step 4: CTA button slides up */
+            tl.to('.team-cta', {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                duration: 0.5,
+            }, '+=0.1');
+
+        }, heroRef);
+
+        return () => ctx.revert();
+    }, { scope: heroRef });
+
     return (
-        <div className="team-text">
+        <div className="team-text" ref={heroRef}>
             {/* SVG gradient definitions (shared) */}
             {/* SVG gradient definitions removed as we are using solid styles */}
 
@@ -100,38 +164,85 @@ const TeamHero = () => {
     );
 };
 
-/* ── SECTION 2 : Image Cards (infinite loop) ── */
+/* ── SECTION 2 : Image Cards (horizontally scrollable + stagger) ── */
 const TeamCards = ({ overrideData = [] }) => {
     const trackRef = useRef(null);
+    const cardsWrapperRef = useRef(null);
 
-    // Create an infinitely scrolling duplicated strip using real dynamic data, fallback to JSON if empty while loading
     const activeData = overrideData.length > 0 ? overrideData : teamData.teamMembers;
-    const duplicatedMembers = [...activeData, ...activeData];
 
-    /* Pause animation on hover */
+    /* ScrollTrigger stagger reveal for each card */
+    useGSAP(() => {
+        if (!cardsWrapperRef.current) return;
+
+        const cards = cardsWrapperRef.current.querySelectorAll('.team-card');
+        if (!cards.length) return;
+
+        gsap.from(cards, {
+            opacity: 0,
+            y: 50,
+            scale: 0.85,
+            rotateY: 35,
+            stagger: {
+                each: 0.08,
+                from: 'start',
+            },
+            duration: 0.7,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: cardsWrapperRef.current,
+                start: 'top 70%',
+                toggleActions: 'play none none none',
+            },
+        });
+    }, { scope: cardsWrapperRef, dependencies: [activeData] });
+
+    /* Drag-to-scroll on desktop */
     useEffect(() => {
         const track = trackRef.current;
         if (!track) return;
 
-        const pause = () => track.style.animationPlayState = 'paused';
-        const play = () => track.style.animationPlayState = 'running';
+        let isDown = false;
+        let startX = 0;
+        let scrollLeft = 0;
 
-        track.addEventListener('mouseenter', pause);
-        track.addEventListener('mouseleave', play);
+        const onDown = (e) => {
+            isDown = true;
+            startX = e.pageX - track.offsetLeft;
+            scrollLeft = track.scrollLeft;
+            track.style.scrollBehavior = 'auto';
+        };
+        const onLeave = () => { isDown = false; };
+        const onUp = () => {
+            isDown = false;
+            track.style.scrollBehavior = 'smooth';
+        };
+        const onMove = (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - track.offsetLeft;
+            const walk = (x - startX) * 1.8;
+            track.scrollLeft = scrollLeft - walk;
+        };
+
+        track.addEventListener('mousedown', onDown);
+        track.addEventListener('mouseleave', onLeave);
+        track.addEventListener('mouseup', onUp);
+        track.addEventListener('mousemove', onMove);
         return () => {
-            track.removeEventListener('mouseenter', pause);
-            track.removeEventListener('mouseleave', play);
+            track.removeEventListener('mousedown', onDown);
+            track.removeEventListener('mouseleave', onLeave);
+            track.removeEventListener('mouseup', onUp);
+            track.removeEventListener('mousemove', onMove);
         };
     }, []);
 
-    // Ensure we're ready before doing math on lengths
     if (!activeData.length) return null;
 
     return (
-        <div className="team-cards-wrapper">
+        <div className="team-cards-wrapper" ref={cardsWrapperRef}>
             <div className="team-cards-track" ref={trackRef}>
-                {duplicatedMembers.map((member, index) => {
-                    // Handle dual structure mapping based on if it's Live API data or fallback JSON data
+                {activeData.map((member, index) => {
                     const isLiveApi = overrideData.length > 0;
                     const imgSource = isLiveApi ? `https://lh3.googleusercontent.com/d/${member.id}=w600` : member.image;
                     const imgAlt = isLiveApi ? member.name : member.name;
@@ -139,8 +250,8 @@ const TeamCards = ({ overrideData = [] }) => {
                     return (
                         <div
                             className="team-card"
-                            key={`${member.id}-${index}`}
-                            style={{ '--i': index % activeData.length }}
+                            key={`${member.id || index}-${index}`}
+                            style={{ '--i': index }}
                         >
                             <div className="team-card__inner">
                                 <img
@@ -164,25 +275,64 @@ const FeaturesIntro = () => {
     const sectionRef = useRef(null);
 
     useGSAP(() => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: sectionRef.current,
-                start: "top 75%",
-                end: "top 25%",
-                scrub: 1, // Add scrub to match scroll speed 
-                once: false,
-                // These prevent the timeline from scrubbing backwards when scrolling up
-                onLeave: () => tl.progress(1),
-                onEnterBack: () => tl.progress(1),
-                // Only reset the animation when scrolling completely past it at the top
-                onLeaveBack: () => tl.progress(0),
+        const ctx = gsap.context(() => {
+            /* ── Arrow draw animation (scrub-based) ── */
+            const arrowTl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: "top 65%",
+                    end: "top 25%",
+                    scrub: 1,
+                    once: false,
+                    onLeave: () => arrowTl.progress(1),
+                    onEnterBack: () => arrowTl.progress(1),
+                    onLeaveBack: () => arrowTl.progress(0),
+                }
+            });
+
+            arrowTl.to(".features-arrow", { opacity: 1, duration: 0.1 })
+                .to(".arrow-path", { strokeDashoffset: 0, duration: 1, ease: 'none' })
+                .fromTo(".arrow-head", { opacity: 0 }, { opacity: 1, duration: 0.2 }, "-=0.2");
+
+            /* ── SplitText on the features title ── */
+            const titleEl = sectionRef.current.querySelector('.features-intro__title');
+            if (titleEl) {
+                const split = new SplitText(titleEl, {
+                    type: 'words',
+                    wordsClass: 'fi-word',
+                });
+
+                gsap.from(split.words, {
+                    opacity: 0,
+                    y: 30,
+                    stagger: 0.06,
+                    duration: 0.7,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: sectionRef.current,
+                        start: 'top 65%',
+                        toggleActions: 'play none none none',
+                    },
+                });
             }
-        });
 
-        tl.to(".features-arrow", { opacity: 1, duration: 0.1 })
-            .to(".arrow-path", { strokeDashoffset: 0, duration: 1, ease: 'none' })
-            .fromTo(".arrow-head", { opacity: 0 }, { opacity: 1, duration: 0.2 }, "-=0.2");
+            /* ── Subtitle fade-up ── */
+            gsap.from('.features-intro__subtitle', {
+                opacity: 0,
+                y: 16,
+                duration: 0.6,
+                delay: 0.4,
+                ease: 'power2.out',
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: 'top 65%',
+                    toggleActions: 'play none none none',
+                },
+            });
 
+        }, sectionRef);
+
+        return () => ctx.revert();
     }, { scope: sectionRef });
 
     // Split title roughly in half by words
