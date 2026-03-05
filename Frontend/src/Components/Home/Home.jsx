@@ -179,14 +179,45 @@ const Home = () => {
     return (
         <>
             <SEO
-                title="Thumbeja Publicity - Digital Marketing & Branding Agency in Mangalore"
-                description="Transform your business with Thumbeja Publicity's comprehensive digital marketing services including SEO, social media marketing, web development, printing, branding, and outdoor advertising in Mangalore."
-                keywords="digital marketing Mangalore, SEO services, social media marketing, web development Mangalore, printing services, branding agency, outdoor advertising, graphic design, video marketing"
+                title="Thumbeja Publicity - Best Digital Marketing Agency in Mangalore, Karnataka"
+                description="Thumbeja Publicity is the best digital marketing agency in Mangalore, Karnataka. We offer SEO services, social media marketing, web development, printing, branding, outdoor advertising, video marketing & graphic design. Get a free consultation today!"
+                keywords="digital marketing agency in Mangalore, best digital marketing company Mangalore, SEO services Mangalore, social media marketing Mangalore, web development Mangalore, printing services Mangalore, branding agency Mangalore, outdoor advertising Mangalore, graphic design Mangalore, video marketing Mangalore, digital marketing Karnataka, online marketing Mangalore, Google Ads Mangalore, website design Mangalore, digital marketing near me, best SEO company Mangalore"
                 url="https://thumbeja.com"
+                structuredData={[
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "BreadcrumbList",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Home",
+                                "item": "https://thumbeja.com"
+                            }
+                        ]
+                    },
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "ProfessionalService",
+                        "name": "Thumbeja Publicity - Digital Marketing Agency",
+                        "image": "https://thumbeja.com/thumbeja.svg",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "streetAddress": "410, 4th floor, Sahakari Sadana, Near Rao & Rao Circle, Mission Street, Bunder",
+                            "addressLocality": "Mangalore",
+                            "addressRegion": "Karnataka",
+                            "postalCode": "575001",
+                            "addressCountry": "IN"
+                        },
+                        "telephone": "+916366983700",
+                        "url": "https://thumbeja.com",
+                        "priceRange": "$$"
+                    }
+                ]}
             />
             <Header />
             <div className="tp-hero-section w-full">
-                <div className="relative w-full h-[100dvh]">
+                <div className="tp-hero-slider-frame relative w-full h-[100dvh]">
                     <Swiper
                         modules={[Pagination, Autoplay]}
                         spaceBetween={0}
@@ -198,12 +229,12 @@ const Home = () => {
                         onSlideChangeTransitionStart={(swiper) => animateSlide(swiper)}
                         className="h-full">
                         {homeherodata.map((item, index) => (
-                            <SwiperSlide key={index} className="relative overflow-hidden">
+                            <SwiperSlide key={index} className="tp-hero-slide relative overflow-hidden">
                                 {/* Slide Image */}
                                 <img
                                     src={item.src}
                                     alt={item.text}
-                                    className="w-full h-full object-cover brightness-[0.35] scale-105"
+                                    className="tp-hero-slide-image w-full h-full object-cover brightness-[0.35] scale-105"
                                 />
 
                                 {/* Dark Overlay for better readability */}
@@ -216,7 +247,7 @@ const Home = () => {
 
                                             {/* Tagline */}
                                             <span className="tp-hero-tagline text-sm md:text-base tracking-[0.3em] uppercase mb-4 tp-hero-title">
-                                                Digital Marketing Agency
+                                                Best Digital Marketing Agency in Mangalore
                                             </span>
 
                                             {/* Main Title */}
@@ -281,10 +312,10 @@ const Home = () => {
                     <div className="text-center mb-14">
                         <span className="text-lg text-slate-600">Our Products -------------------</span>
                         <h2 className="text-5xl font-semibold text-slate-900 mt-4 tp-products-heading">
-                            Explore Our <span className="text-[#5439a3]">Digital Solutions</span>
+                            Explore Our <span className="text-[#5439a3]">Digital Solutions</span> in Mangalore
                         </h2>
                         <p className="text-lg text-slate-600 max-w-2xl mx-auto mt-4">
-                            Innovative products designed to transform your business operations and digital presence.
+                            Innovative digital marketing products and tools designed to transform your business operations and online presence in Mangalore, Karnataka.
                         </p>
                     </div>
 
@@ -368,13 +399,12 @@ const Home = () => {
                 <div className={"tp-content-header-2 h-max p-2 flex items-center justify-evenly gap-10"}>
                     <div className={"w-[45%] h-[10rem] p-2 flex flex-col  justify-center gap-10 home-animation-3"}>
                         <span className={"text-lg home-animation-3"}>Our Services -------------------</span>
-                        <span className={"text-5xl font-semibold home-animation-3"}>What we can do for <br /><span
-                            className={"text-[#5439a3]"}>our clients</span></span>
+                        <h2 className={"text-5xl font-semibold home-animation-3"}>Digital Marketing Services for <br /><span
+                            className={"text-[#5439a3]"}>Businesses in Mangalore</span></h2>
                     </div>
                     <div className={"w-[30%] flex h-[10rem] items-center justify-evenly home-animation-3"}>
                         <p className={"text-lg"}>
-                            We’re a team of strategists working globally with the largest brands, we believe that
-                            progress only happens when you refuse to play things safe. We combine ideas and behaviors.
+                            As a leading digital marketing agency in Mangalore, Karnataka, we help businesses grow with expert SEO, social media marketing, web development, printing, and branding solutions.
                         </p>
                     </div>
                 </div>
@@ -458,8 +488,8 @@ const Home = () => {
                 <div
                     className={"flex flex-col gap-1 w-full h-[11rem] items-center justify-evenly tp-content-process0 text-center home-animation-5"}>
                     <span>------Process-----</span>
-                    <span className={"text-5xl font-semibold"}>A systematic approach to<span
-                        className={"text-[#5e3bab]"}><br />digital marketing</span></span>
+                    <h2 className={"text-5xl font-semibold"}>Our Proven Digital Marketing<span
+                        className={"text-[#5e3bab]"}><br />Process in Mangalore</span></h2>
                 </div>
                 <div className={"flex text-black h-max w-full tp-content-process1"}>
                     <div className={"flex w-[50%] h-full items-center justify-center tp-content-process1-inner"}>
@@ -468,14 +498,14 @@ const Home = () => {
                                 <img
                                     src={processImg1}
                                     className="object-cover w-full h-full rounded-full tp-process-img1"
-                                    alt=""
+                                    alt="Digital marketing strategy planning with client in Mangalore"
                                 />
                             </div>
                             <div className="tp-process-2 w-[100%] home-animation-5">
                                 <img
                                     src={processImg2}
                                     className="object-cover w-full h-full rounded-full tp-process-img1"
-                                    alt=""
+                                    alt="Celebrating successful digital marketing campaign results"
                                 />
                             </div>
                         </div>
@@ -485,7 +515,7 @@ const Home = () => {
                                 <img
                                     src={processImg3}
                                     className="object-cover w-full h-full rounded-full tp-process-img1"
-                                    alt=""
+                                    alt="Executing digital marketing project for business growth"
                                 />
                             </div>
                         </div>
@@ -517,13 +547,13 @@ const Home = () => {
                 className={"tp-content-whychooseus min-h-[20rem] w-[85%] m-auto pt-20 pb-15 flex flex-col gap-7 select-none"}>
                 <div className={"tp-content-whychooseus0 h-min[15rem] w-[100%] flex"}>
                     <div className={"flex w-[50%] flex-col gap-5 justify-center home-animation-6"}>
-                        <span className={"text-lg"}>Why Choose Us-----</span>
-                        <span
-                            className={"text-5xl text-[#002221] leading-tight font-semibold "}>Effective and affordable <span
-                                className={"text-[#5e3bab]"}>marketing solutions</span> </span>
+                        <span className={"text-lg"}>Why Choose Us?</span>
+                        <h2
+                            className={"text-5xl text-[#002221] leading-tight font-semibold "}>Best Digital
+                            <span className={"text-[#5e3bab]"}> Marketing Agency in Mangalore</span></h2>
                     </div>
                     <div className={"flex w-[50%] flex-col justify-center home-animation-6"}>
-                        <span className={"text-lg"}>This agency is not just its expertise but a personalized approach that tailors strategies to each clients unique needs.</span>
+                        <span className={"text-lg"}>Choose Thumbeja Publicity for the best digital marketing, SEO, web development, and branding solutions in Mangalore, Karnataka — designed to grow and sustain your business with the highest returns.</span>
                     </div>
                 </div>
                 <div className={"tp-content-whychooseus1 flex overflow-hidden h-max gap-10 "}>
@@ -545,7 +575,7 @@ const Home = () => {
                                             <div className={`w-[100%] ${hoverIndex === index && 'h-[20rem]'} h-[0] flex items-start justify-center relative overflow-hidden tp-why-image-container`}>
                                                 <img src={homepageData3[hoverIndex].src}
                                                     className={"w-[95%] h-[95%] object-cover rounded-2xl transition-opacity duration-500 ease-in tp-whychooseus-animation"}
-                                                    alt="" />
+                                                    alt={`Thumbeja Publicity - ${homepageData3[hoverIndex].title}`} />
                                             </div>
                                         </div>
                                     )
@@ -557,7 +587,7 @@ const Home = () => {
                         className={"tp-content-whychooseus1-right w-[50%] h-[40rem] flex items-start justify-center relative overflow-hidden home-animation-6"}>
                         <img src={homepageData3[hoverIndex].src}
                             className={`min-w-[100%] h-[100%]  rounded-3xl transition-opacity duration-500 ease-in object-cover opacity-100 tp-whychooseus-animation-img`}
-                            alt="" />
+                            alt={`Why choose Thumbeja Publicity - ${homepageData3[hoverIndex].title}`} />
                     </div>
                 </div>
             </div>

@@ -1,7 +1,8 @@
 import "./App.css";
 import Home from "./Components/Home/Home.jsx";
 import Contact from "./Components/Contact/Contact.jsx";
-import {Routes, Route} from "react-router-dom";
+import {Routes, Route, Navigate} from "react-router-dom";
+import {useEffect, useState} from "react";
 import Services from "./Components/Services/Services.jsx";
 import Career from "./Components/Career/Career.jsx";
 import TermsConditions from "./Components/TermsConditions/Terms&Conditions.jsx";
@@ -24,6 +25,64 @@ import ThreeD from "./Components/Services/3d/ThreeD.jsx";
 import ChatWidget from "./Components/ChatWidget/ChatWidget.jsx";
 import About from "./Components/About/About.jsx";
 import CorporateGallery from "./Components/CorporateGallery/CorporateGallery.jsx";
+
+function ProtectedCorporateGalleryRoute() {
+    const [isAllowed, setIsAllowed] = useState(null);
+    const officeIp = (import.meta.env.OFFICE_IP || "").trim();
+
+    useEffect(() => {
+        let isMounted = true;
+        const controller = new AbortController();
+
+        const checkClientIp = async () => {
+            if (!officeIp) {
+                if (isMounted) {
+                    setIsAllowed(false);
+                }
+                return;
+            }
+
+            try {
+                const response = await fetch("https://api.ipify.org?format=json", {
+                    signal: controller.signal
+                });
+
+                if (!response.ok) {
+                    if (isMounted) {
+                        setIsAllowed(false);
+                    }
+                    return;
+                }
+
+                const data = await response.json();
+                if (isMounted) {
+                    setIsAllowed(data?.ip === officeIp);
+                }
+            } catch (error) {
+                if (error?.name !== "AbortError" && isMounted) {
+                    setIsAllowed(false);
+                }
+            }
+        };
+
+        checkClientIp();
+
+        return () => {
+            isMounted = false;
+            controller.abort();
+        };
+    }, [officeIp]);
+
+    if (isAllowed === null) {
+        return null;
+    }
+
+    if (!isAllowed) {
+        return <Navigate to="/" replace />;
+    }
+
+    return <CorporateGallery />;
+}
 
 
 function App() {
@@ -51,7 +110,7 @@ function App() {
                 <Route path="/services/imaging-design-mangalore" element={<Imaging/>}/>
                 <Route path="/services/3d-design-mangalore" element={<ThreeD />}/>
                 <Route path="/about-thumbeja-publicity" element={<About />}/>
-                <Route path="/corporate-gallery" element={<CorporateGallery />}/>
+                <Route path="/corporate-gallery" element={<ProtectedCorporateGalleryRoute />}/>
                 <Route path={"*"} element={<NotFound/>}/>
             </Routes>
             {/*<ChatWidget/>*/}

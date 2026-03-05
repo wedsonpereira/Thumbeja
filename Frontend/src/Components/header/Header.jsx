@@ -11,8 +11,10 @@ import { HashLink } from "react-router-hash-link";
 
 
 const Header = () => {
+    const ALLOWED_CORPORATE_GALLERY_IP = (import.meta.env.OFFICE_IP || "").trim();
     const navigateTo = useNavigate();
     const [servicesOpen, setServicesOpen] = useState(false);
+    const [showCorporateGallery, setShowCorporateGallery] = useState(false);
 
     const services = [
         { name: "Digital Marketing", path: "/services/digital-marketing-mangalore" },
@@ -74,6 +76,43 @@ const Header = () => {
         };
     }, [isOpen]);
 
+    useEffect(() => {
+        if (!ALLOWED_CORPORATE_GALLERY_IP) {
+            setShowCorporateGallery(false);
+            return;
+        }
+
+        let isMounted = true;
+        const controller = new AbortController();
+
+        const checkClientIp = async () => {
+            try {
+                const response = await fetch("https://api.ipify.org?format=json", {
+                    signal: controller.signal
+                });
+                if (!response.ok) {
+                    return;
+                }
+
+                const data = await response.json();
+                if (isMounted) {
+                    setShowCorporateGallery(data?.ip === ALLOWED_CORPORATE_GALLERY_IP);
+                }
+            } catch (error) {
+                if (error?.name !== "AbortError" && isMounted) {
+                    setShowCorporateGallery(false);
+                }
+            }
+        };
+
+        checkClientIp();
+
+        return () => {
+            isMounted = false;
+            controller.abort();
+        };
+    }, [ALLOWED_CORPORATE_GALLERY_IP]);
+
     const handleLinkClick = () => {
         setIsOpen(false);
     };
@@ -84,7 +123,7 @@ const Header = () => {
             <div className="tp-header sticky z-50">
                 <div className="tp-header-left">
                     <div className={"tp-image"}>
-                        <img src={thumbeja} className="tp-logo" alt="text" onClick={imageClickHandler} />
+                        <img src={thumbeja} className="tp-logo" alt="Thumbeja Publicity - Digital Marketing Agency in Mangalore" onClick={imageClickHandler} />
                     </div>
                 </div>
 
@@ -135,9 +174,11 @@ const Header = () => {
                     <div className="tp-underline relative flex items-center justify-center">
                         <HashLink className={"text-center pr-2 pl-2"} to={"/#about"}>About</HashLink>
                     </div>
-                    <div className="tp-underline relative flex items-center justify-center">
-                        <HashLink className={"text-center pr-2 w-max pl-2"} to={"/corporate-gallery"}>Corporate Gallery</HashLink>
-                    </div>
+                    {showCorporateGallery && (
+                        <div className="tp-underline relative flex items-center justify-center">
+                            <HashLink className={"text-center pr-2 w-max pl-2"} to={"/corporate-gallery"}>Corporate Gallery</HashLink>
+                        </div>
+                    )}
                 </div>
 
 
@@ -186,9 +227,11 @@ const Header = () => {
                         <Link className="tp-mobile-link" to="/contact-thumbeja-publicity" onClick={handleLinkClick}>
                             <FontAwesomeIcon icon={faEnvelope} className="link-icon" /> Contact
                         </Link>
-                        <Link className="tp-mobile-link" to="/corporate-gallery" onClick={handleLinkClick}>
-                            <FontAwesomeIcon icon={faEnvelope} className="link-icon" />Gallery
-                        </Link>
+                        {showCorporateGallery && (
+                            <Link className="tp-mobile-link" to="/corporate-gallery" onClick={handleLinkClick}>
+                                <FontAwesomeIcon icon={faEnvelope} className="link-icon" />Gallery
+                            </Link>
+                        )}
                     </nav>
 
                     <div className="tp-mobile-nav-footer mt-10">
@@ -197,17 +240,17 @@ const Header = () => {
                             <a href="mailto:info@thumbeja.com" className="tp-mobile-footer-link tp-mobile-footer-item">
                                 <FontAwesomeIcon icon={faEnvelope} className="mr-2" /> info@thumbeja.com
                             </a>
-                            <a href="tel:+911234567890" className="tp-mobile-footer-link tp-mobile-footer-item">
-                                <FontAwesomeIcon icon={faPhone} className="mr-2" /> +91 1234567890
+                            <a href="tel:+916366983700" className="tp-mobile-footer-link tp-mobile-footer-item">
+                                <FontAwesomeIcon icon={faPhone} className="mr-2" /> +91 6366983700
                             </a>
                         </div>
 
                         <div className="tp-mobile-footer-section">
                             <p className="tp-mobile-footer-label tp-mobile-footer-item">Follow us</p>
                             <div className="tp-mobile-socials">
-                                <a href="#" className="tp-mobile-social-icon tp-mobile-footer-item"><FontAwesomeIcon icon={faInstagram} /></a>
-                                <a href="#" className="tp-mobile-social-icon tp-mobile-footer-item"><FontAwesomeIcon icon={faLinkedin} /></a>
-                                <a href="#" className="tp-mobile-social-icon tp-mobile-footer-item"><FontAwesomeIcon icon={faFacebook} /></a>
+                                <a href="https://www.instagram.com/thumbeja_publicity?igsh=NGF3OTc1bTM1czds" target="_blank" rel="noopener noreferrer" className="tp-mobile-social-icon tp-mobile-footer-item" aria-label="Instagram"><FontAwesomeIcon icon={faInstagram} /></a>
+                                <a href="https://linkedin.com/in/thumbeja-publicity-267636387" target="_blank" rel="noopener noreferrer" className="tp-mobile-social-icon tp-mobile-footer-item" aria-label="LinkedIn"><FontAwesomeIcon icon={faLinkedin} /></a>
+                                <a href="https://www.facebook.com/share/17UorZadV3/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="tp-mobile-social-icon tp-mobile-footer-item" aria-label="Facebook"><FontAwesomeIcon icon={faFacebook} /></a>
                             </div>
                         </div>
                     </div>

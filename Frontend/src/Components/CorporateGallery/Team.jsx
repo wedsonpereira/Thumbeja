@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import teamData from './teamData.json';
 import './Team.css';
 import gsap from 'gsap';
@@ -168,8 +168,17 @@ const TeamHero = () => {
 const TeamCards = ({ overrideData = [] }) => {
     const trackRef = useRef(null);
     const cardsWrapperRef = useRef(null);
+    const autoScrollStateRef = useRef({
+        rafId: 0,
+        pauseUntil: 0,
+        isDragging: false,
+    });
 
     const activeData = overrideData.length > 0 ? overrideData : teamData.teamMembers;
+    const loopedData = useMemo(() => {
+        if (!activeData.length) return [];
+        return [...activeData, ...activeData, ...activeData];
+    }, [activeData]);
 
     /* ScrollTrigger stagger reveal for each card */
     useGSAP(() => {
@@ -197,25 +206,96 @@ const TeamCards = ({ overrideData = [] }) => {
         });
     }, { scope: cardsWrapperRef, dependencies: [activeData] });
 
+    /* Auto-scroll horizontally */
+    useEffect(() => {
+        const track = trackRef.current;
+        if (!track) return;
+
+        const state = autoScrollStateRef.current;
+        const speedPxPerSecond = 34;
+        let previousTime = performance.now();
+        const getSingleSetWidth = () => track.scrollWidth / 3;
+
+        const normalizeInfinitePosition = () => {
+            const singleSetWidth = getSingleSetWidth();
+            if (!Number.isFinite(singleSetWidth) || singleSetWidth <= 0) return;
+
+            if (track.scrollLeft >= singleSetWidth * 2) {
+                track.scrollLeft -= singleSetWidth;
+            } else if (track.scrollLeft <= 0) {
+                track.scrollLeft += singleSetWidth;
+            }
+        };
+
+        requestAnimationFrame(() => {
+            const singleSetWidth = getSingleSetWidth();
+            if (singleSetWidth > 0) {
+                track.scrollLeft = singleSetWidth;
+            }
+        });
+
+        const step = (now) => {
+            const elapsed = now - previousTime;
+            previousTime = now;
+
+            const isPaused = state.isDragging || now < state.pauseUntil;
+
+            if (!isPaused) {
+                track.scrollLeft += (elapsed * speedPxPerSecond) / 1000;
+                normalizeInfinitePosition();
+            }
+
+            state.rafId = requestAnimationFrame(step);
+        };
+
+        state.rafId = requestAnimationFrame(step);
+        return () => {
+            if (state.rafId) {
+                cancelAnimationFrame(state.rafId);
+            }
+            state.rafId = 0;
+        };
+    }, [activeData]);
+
     /* Drag-to-scroll on desktop */
     useEffect(() => {
         const track = trackRef.current;
         if (!track) return;
 
+        const pauseAutoScroll = (ms = 2200) => {
+            autoScrollStateRef.current.pauseUntil = performance.now() + ms;
+        };
+        const normalizeInfinitePosition = () => {
+            const singleSetWidth = track.scrollWidth / 3;
+            if (!Number.isFinite(singleSetWidth) || singleSetWidth <= 0) return;
+
+            if (track.scrollLeft >= singleSetWidth * 2) {
+                track.scrollLeft -= singleSetWidth;
+            } else if (track.scrollLeft <= 0) {
+                track.scrollLeft += singleSetWidth;
+            }
+        };
+
         let isDown = false;
         let startX = 0;
         let scrollLeft = 0;
+        let normalizeRaf = 0;
 
         const onDown = (e) => {
             isDown = true;
+            autoScrollStateRef.current.isDragging = true;
             startX = e.pageX - track.offsetLeft;
             scrollLeft = track.scrollLeft;
-            track.style.scrollBehavior = 'auto';
         };
-        const onLeave = () => { isDown = false; };
+        const onLeave = () => {
+            isDown = false;
+            autoScrollStateRef.current.isDragging = false;
+            pauseAutoScroll();
+        };
         const onUp = () => {
             isDown = false;
-            track.style.scrollBehavior = 'smooth';
+            autoScrollStateRef.current.isDragging = false;
+            pauseAutoScroll();
         };
         const onMove = (e) => {
             if (!isDown) return;
@@ -223,17 +303,46 @@ const TeamCards = ({ overrideData = [] }) => {
             const x = e.pageX - track.offsetLeft;
             const walk = (x - startX) * 1.8;
             track.scrollLeft = scrollLeft - walk;
+            normalizeInfinitePosition();
+            pauseAutoScroll(1200);
+        };
+        const onWheel = (e) => {
+            if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+                e.preventDefault();
+                track.scrollLeft += e.deltaY;
+                normalizeInfinitePosition();
+            }
+            pauseAutoScroll(1400);
+        };
+        const onScroll = () => {
+            if (normalizeRaf) cancelAnimationFrame(normalizeRaf);
+            normalizeRaf = requestAnimationFrame(normalizeInfinitePosition);
+        };
+        const onTouchStart = () => {
+            pauseAutoScroll(8000);
+        };
+        const onTouchEnd = () => {
+            pauseAutoScroll(1800);
         };
 
         track.addEventListener('mousedown', onDown);
         track.addEventListener('mouseleave', onLeave);
         track.addEventListener('mouseup', onUp);
         track.addEventListener('mousemove', onMove);
+        track.addEventListener('wheel', onWheel, { passive: false });
+        track.addEventListener('scroll', onScroll, { passive: true });
+        track.addEventListener('touchstart', onTouchStart, { passive: true });
+        track.addEventListener('touchend', onTouchEnd, { passive: true });
         return () => {
+            if (normalizeRaf) cancelAnimationFrame(normalizeRaf);
             track.removeEventListener('mousedown', onDown);
             track.removeEventListener('mouseleave', onLeave);
             track.removeEventListener('mouseup', onUp);
             track.removeEventListener('mousemove', onMove);
+            track.removeEventListener('wheel', onWheel);
+            track.removeEventListener('scroll', onScroll);
+            track.removeEventListener('touchstart', onTouchStart);
+            track.removeEventListener('touchend', onTouchEnd);
         };
     }, []);
 
@@ -242,16 +351,17 @@ const TeamCards = ({ overrideData = [] }) => {
     return (
         <div className="team-cards-wrapper" ref={cardsWrapperRef}>
             <div className="team-cards-track" ref={trackRef}>
-                {activeData.map((member, index) => {
+                {loopedData.map((member, index) => {
                     const isLiveApi = overrideData.length > 0;
                     const imgSource = isLiveApi ? `https://lh3.googleusercontent.com/d/${member.id}=w600` : member.image;
                     const imgAlt = isLiveApi ? member.name : member.name;
+                    const visualIndex = activeData.length ? index % activeData.length : index;
 
                     return (
                         <div
                             className="team-card"
-                            key={`${member.id || index}-${index}`}
-                            style={{ '--i': index }}
+                            key={`${member.id || member.name || 'item'}-${index}`}
+                            style={{ '--i': visualIndex }}
                         >
                             <div className="team-card__inner">
                                 <img
@@ -259,6 +369,7 @@ const TeamCards = ({ overrideData = [] }) => {
                                     alt={imgAlt}
                                     className="team-card__img object-cover object-center"
                                     loading="lazy"
+                                    draggable={false}
                                 />
                             </div>
                         </div>

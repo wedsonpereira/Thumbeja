@@ -145,6 +145,12 @@
 .tp-hero-section {
     position: relative;
     overflow: hidden;
+    padding-top: 5rem;
+}
+
+.tp-hero-slider-frame {
+    height: calc(100dvh - 5rem) !important;
+    min-height: 520px;
 }
 
 /* Tagline above title */
@@ -341,6 +347,53 @@
     width: 30px !important;
     border-radius: 5px !important;
     background: #ffffff !important;
+}
+
+/* Tablet/laptop landscape refinements for short-height viewports */
+@media (min-width: 768px) and (orientation: landscape) and (max-height: 900px) {
+    .tp-hero-slider-frame {
+        height: 100svh !important;
+        min-height: 420px;
+    }
+
+    .tp-hero-slide-image {
+        object-position: center 32%;
+        transform: scale(1.02);
+    }
+
+    .tp-hero-title-corporate {
+        font-size: clamp(1.9rem, 4.3vw, 3rem) !important;
+        line-height: 1.05;
+        margin-bottom: 0.65rem;
+    }
+
+    .tp-hero-description {
+        font-size: 0.92rem !important;
+        line-height: 1.4;
+        margin-bottom: 0.75rem;
+    }
+
+    .tp-hero-btn-primary,
+    .tp-hero-btn-ghost {
+        padding: 0.7rem 1.2rem;
+    }
+
+    .tp-hero-btns {
+        margin-bottom: 0.55rem !important;
+    }
+
+    .tp-hero-trust-indicators {
+        display: none !important;
+    }
+
+    .tp-hero-scroll-indicator {
+        display: none;
+    }
+
+    .tp-hero-section .container {
+        padding-top: 0.5rem;
+        padding-bottom: 1rem;
+    }
 }
 
 

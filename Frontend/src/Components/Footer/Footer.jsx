@@ -54,10 +54,12 @@ const Footer = () => {
                     <div className="tp-footer-links">
                         <h4 className="tp-footer-heading">Services</h4>
                         <ul>
-                            <li><Link to="/services-thumbeja-publicity">Digital Marketing</Link></li>
-                            <li><Link to="/services-thumbeja-publicity">Web Development</Link></li>
-                            <li><Link to="/services-thumbeja-publicity">Branding & Design</Link></li>
-                            <li><Link to="/services-thumbeja-publicity">Social Media</Link></li>
+                            <li><Link to="/services/digital-marketing-mangalore">Digital Marketing</Link></li>
+                            <li><Link to="/services/website-development-mangalore">Web Development</Link></li>
+                            <li><Link to="/services/graphic-design-mangalore">Branding & Design</Link></li>
+                            <li><Link to="/services/social-media-marketing-mangalore">Social Media Marketing</Link></li>
+                            <li><Link to="/services/printing-services-mangalore">Printing Services</Link></li>
+                            <li><Link to="/services/outdoor-advertising-mangalore">Outdoor Advertising</Link></li>
                         </ul>
                     </div>
 

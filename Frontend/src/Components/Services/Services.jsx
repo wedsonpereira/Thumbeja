@@ -1,17 +1,17 @@
- import React from 'react';
+import React from 'react';
 import Header from "../header/Header.jsx";
 import Footer from "../Footer/Footer.jsx";
 import "./Services.css";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faArrowRight} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import mountain from "../../assets/Images/Gemini_Generated_Image_su9pixsu9pixsu9p.png";
 
 import servicesData from "../../assets/JsonData/ServicesData.js";
-import {Link, useNavigate} from "react-router-dom";
-import {GetInTouch} from "../GetInTouch/GetInTouch.jsx";
+import { Link, useNavigate } from "react-router-dom";
+import { GetInTouch } from "../GetInTouch/GetInTouch.jsx";
 import gsap from "gsap";
-import {ScrollTrigger} from "gsap/ScrollTrigger";
-import {useGSAP} from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 import SEO from "../SEO/SEO.jsx";
 
 gsap.registerPlugin(ScrollTrigger)
@@ -19,31 +19,33 @@ const Services = () => {
 
     const navigate = useNavigate();
 
-    const handleGetinTouch=()=>{
+    const handleGetinTouch = () => {
         navigate("/contact-thumbeja-publicity");
     }
 
-    useGSAP(()=>{
-        gsap.from(".tp-service-animation-1", {x: -200, opacity: 0})
+    useGSAP(() => {
+        gsap.from(".tp-service-animation-1", { x: -200, opacity: 0 })
 
-        gsap.from(".tp-service-animation-2", {y: -200, opacity: 0,stagger:0.2, delay: 0.4})
+        gsap.from(".tp-service-animation-2", { y: -200, opacity: 0, stagger: 0.2, delay: 0.4 })
 
-        gsap.from(".tp-service-animation-3", {y: -100, opacity: 0,
-            scrollTrigger:{
+        gsap.from(".tp-service-animation-3", {
+            y: -100, opacity: 0,
+            scrollTrigger: {
                 trigger: '.tp-service-animation-3',
                 toggleActions: 'restart none none none',
-                scrub:true,
-                end:'top center-=100px',
-            }})
+                scrub: true,
+                end: 'top center-=100px',
+            }
+        })
 
     })
 
     return (
         <>
-            <SEO 
-                title="Our Services - Digital Marketing, Web Development & Branding"
-                description="Explore our comprehensive digital services: SEO, social media marketing, web development, printing, video marketing, WhatsApp automation, CRM, outdoor advertising, software development and graphic design."
-                keywords="digital marketing services, web development, SEO services, social media marketing, printing services, video marketing, WhatsApp marketing, CRM solutions, outdoor advertising, software development"
+            <SEO
+                title="Digital Marketing Services in Mangalore - SEO, Web Development & Branding | Thumbeja"
+                description="Explore Thumbeja Publicity's comprehensive digital marketing services in Mangalore, Karnataka: SEO, social media marketing, web development, printing, video marketing, WhatsApp automation, CRM, outdoor advertising, and graphic design."
+                keywords="digital marketing services Mangalore, web development Mangalore, SEO services Mangalore, social media marketing Mangalore, printing services Mangalore, video marketing Mangalore, WhatsApp marketing, CRM solutions Mangalore, outdoor advertising Mangalore, software development Mangalore, graphic design Mangalore, branding agency Mangalore, best digital marketing services Karnataka"
                 url="https://thumbeja.com/services-thumbeja-publicity"
             />
             <Header />
@@ -55,13 +57,13 @@ const Services = () => {
                     </div>
                     <div className={"w-[100%] h-max p-4 flex justify-center items-center text-800px tp-service-animation-1"}>
                         <span className={"text-[3rem] text-[#091e42] font-semibold text-center "}>
-                            Introducing Our All-in-One Digital Services
+                            Our Digital Marketing Services in Mangalore
                         </span>
                     </div>
                     <div className={"w-[100%] text-center h-max p-4 text-800px tp-service-animation-1"}>
                         <p className={"text-2xl text-neutral-500 w-[80%] m-auto"}>
-                            We offer printing, 3D,,design, web development, hosting, chatbots, and photo editing.
-                            Our services also include social media marketing to grow your brand.
+                            We offer printing, 3D design, web development, hosting, chatbots, SEO services, video marketing, and photo editing in Mangalore.
+                            Our digital marketing services also include social media marketing to grow your brand across Karnataka.
                         </p>
                     </div>
                 </div>
@@ -80,7 +82,7 @@ const Services = () => {
                                     </div>
                                     <div className={"services-card-container-inner tp-serv-card grid grid-cols-2 grid-rows-[30%_70%] h-[100%] rounded-2xl"}>
                                         <div className="flex items-center h-full justify-center relative z-20">
-                                            <img src={service.svg} alt="Service Image" className={"service-container-inner-img"} />
+                                            <img src={service.svg} alt={`${service.contentH} - Thumbeja Publicity Mangalore`} className={"service-container-inner-img"} />
                                         </div>
                                         <div className="flex items-center h-full justify-center relative z-20">
                                             <Link className={"w-[30%] h-[42%] bg-[#ffffff] rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors"} to={service.path || "/services"}>
@@ -99,14 +101,14 @@ const Services = () => {
                                 </div>
                             )
 
-                            }
+                        }
                         )
                     }
                 </div>
             </div>
-            <GetInTouch onPressGetIntouch={()=>handleGetinTouch()} mountainImage={mountain}/>
+            <GetInTouch onPressGetIntouch={() => handleGetinTouch()} mountainImage={mountain} />
 
-            <Footer/>
+            <Footer />
         </>
     );
 };

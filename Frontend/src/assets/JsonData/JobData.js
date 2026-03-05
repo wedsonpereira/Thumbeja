@@ -1,7 +1,25 @@
-const jobData =[
+import landing from "../CareerImages/landing.jpg"
+
+const careerPage={
+
+    section1:{
+        careertitle:"Careers at Thumbeja Publicity in Mangalore",
+        careerImage:landing,
+        careerSubtitle:"Join our growing team and work on high-impact digital marketing, branding, and software projects for real business outcomes.",
+    },
+
+    section2:{
+        careertitle:"",
+        careerImage:"",
+        careerSubtitle:"",
+    }
+}
+
+
+const careerJobData =[
     {
         id:1,
-        title:"Software developer",
+        title:"Software Developer",
         url:"https://docs.google.com/forms/d/e/1FAIpQLSfDipf6g4igymQMMYoNcc5BfaxGpenQVM1ihpncsgynfuSKfg/viewform?usp=header",
         sections:[
             {
@@ -106,8 +124,8 @@ const jobData =[
             {
                 heading: "Qualifications",
                 points: [
-                    "Bachelor’s or Master’s degree in Computer Science / IT / Software Engineering.",
-                    "2–4 years of relevant experience in API integration and backend development.",
+                    "Bachelor's or Master's degree in Computer Science / IT / Software Engineering.",
+                    "2-4 years of relevant experience in API integration and backend development.",
                     "Prior experience in fintech, digital marketing platforms, or KYC solutions preferred."
                 ]
             }
@@ -175,8 +193,8 @@ const jobData =[
             {
                 heading: "Qualifications",
                 points: [
-                    "Bachelor’s degree in Marketing, Digital Media, or related field.",
-                    "Minimum 2–4 years of experience in digital marketing.",
+                    "Bachelor's degree in Marketing, Digital Media, or related field.",
+                    "Minimum 2-4 years of experience in digital marketing.",
                     "Proven experience in managing multi-channel campaigns for businesses."
                 ]
             }
@@ -257,8 +275,8 @@ const jobData =[
             {
                 heading: "Qualifications",
                 points: [
-                    "Bachelor’s or Master’s degree in Business Administration, Marketing, or related field.",
-                    "3–5 years of experience in business development, sales, or client management.",
+                    "Bachelor's or Master's degree in Business Administration, Marketing, or related field.",
+                    "3-5 years of experience in business development, sales, or client management.",
                     "Experience in the relevant industry sector is preferred."
                 ]
             }
@@ -278,8 +296,6 @@ const jobData =[
                             "Make outbound calls to prospective and existing customers to promote telecom products and services.",
                             "Answer inbound calls, respond to customer queries, and resolve issues efficiently.",
                             "Maintain accurate records of customer interactions, feedback, and transactions in CRM systems.",
-                            "Follow communication scripts and guidelines to ensure consistent service quality.",
-                            "Meet daily/weekly/monthly targets for call volume, lead generation, and conversions.",
                             "Follow communication scripts and guidelines to ensure consistent service quality.",
                             "Meet daily/weekly/monthly targets for call volume, lead generation, and conversions.",
                             "Provide information on pricing, plans, and promotions to customers.",
@@ -331,8 +347,8 @@ const jobData =[
             {
                 heading: "Qualifications",
                 points: [
-                    "Bachelor’s degree in Business, Communications, or a related field.",
-                    "1–2 years of experience in telecalling, customer service, or sales support.",
+                    "Bachelor's degree in Business, Communications, or a related field.",
+                    "1-2 years of experience in telecalling, customer service, or sales support.",
                     "Prior experience in telecom or software sales is a plus.",
                     "Familiarity with MS Office and digital communication tools."
                 ]
@@ -381,7 +397,7 @@ const jobData =[
                             "Develop initial concepts and share drafts for approval.",
                             "Revise designs based on feedback.",
                             "Submit final artwork in required formats (JPEG, PNG, PDF, AI/CDR, print-ready files).",
-                            "Maintain backup of all final designs in company’s server/cloud."
+                            "Maintain backup of all final designs in company's server/cloud."
                         ]
                     }
                 ]
@@ -411,8 +427,8 @@ const jobData =[
             {
                 heading: "Qualifications",
                 points: [
-                    "Bachelor’s degree/Diploma in Graphic Design, Visual Arts, or related field.",
-                    "1–3 years (freshers with strong portfolios can also be considered)."
+                    "Bachelor's degree/Diploma in Graphic Design, Visual Arts, or related field.",
+                    "1-3 years (freshers with strong portfolios can also be considered)."
                 ]
             }
         ]
@@ -422,4 +438,5 @@ const jobData =[
 ]
 
 
-export default jobData;
+export {careerPage,careerJobData};
+
