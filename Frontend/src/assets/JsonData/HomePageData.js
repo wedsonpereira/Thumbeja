@@ -161,15 +161,15 @@ const homepageData4 = [
 const homeherodata = [
     {
         id: 1,
-        text: 'Printing and Branding Solutions in Mangalore',
-        description: 'Comprehensive printing and branding services in Mangalore including custom logos, banners, visiting cards, brochures, and promotional materials to elevate your business identity.',
-        src: img1
-    },
-    {
-        id: 2,
         text: 'Website & Software Development (SEO) in Mangalore',
         description: 'Full-stack web development and SEO services in Mangalore. We build responsive, SEO-optimized websites that rank high on Google and drive organic traffic for businesses in Karnataka.',
         src: img2
+    },
+    {
+        id: 2,
+        text: 'Printing and Branding Solutions in Mangalore',
+        description: 'Comprehensive printing and branding services in Mangalore including custom logos, banners, visiting cards, brochures, and promotional materials to elevate your business identity.',
+        src: img1
     },
     {
         id: 3,

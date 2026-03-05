@@ -1,0 +1,9 @@
+.event-marketing-page {
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Base styles matching other service pages for custom components */
+.event-marketing-page ul li {
+    line-height: 1.6;
+}

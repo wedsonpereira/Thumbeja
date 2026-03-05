@@ -28,7 +28,8 @@ const Header = () => {
         { name: "Social Media Handling", path: "/services/social-media-handling-mangalore" },
         { name: "Graphic Design", path: "/services/graphic-design-mangalore" },
         { name: "Imaging Design", path: "/services/imaging-design-mangalore" },
-        { name: "3D Design", path: "https://zyfox.in" }
+        { name: "3D Design", path: "https://zyfox.in" },
+        { name: "Event Management", path: "/services/event-management-mangalore" }
     ];
 
     const imageClickHandler = () => {

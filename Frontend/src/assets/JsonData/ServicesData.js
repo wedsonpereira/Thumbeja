@@ -1,101 +1,109 @@
-import  svg1 from  "../Svgs/svg1.svg"
-import  svg2 from  "../Svgs/svg2.svg"
-import  svg3 from  "../Svgs/svg3.svg"
-import  svg4 from  "../Svgs/svg4.svg"
-import  svg5 from  "../Svgs/svg5.svg"
-import  svg6 from  "../Svgs/svg6.svg"
-import  svg7 from  "../Svgs/svg7.svg"
-import  svg8 from  "../Svgs/svg8.svg"
-import  svg9 from  "../Svgs/svg9.svg"
-import  svg10 from  "../Svgs/svg10.svg"
-import  svg11 from  "../Svgs/svg11.svg"
-import  svg12 from  "../Svgs/svg12.svg"
+import svg1 from "../Svgs/svg1.svg"
+import svg2 from "../Svgs/svg2.svg"
+import svg3 from "../Svgs/svg3.svg"
+import svg4 from "../Svgs/svg4.svg"
+import svg5 from "../Svgs/svg5.svg"
+import svg6 from "../Svgs/svg6.svg"
+import svg7 from "../Svgs/svg7.svg"
+import svg8 from "../Svgs/svg8.svg"
+import svg9 from "../Svgs/svg9.svg"
+import svg10 from "../Svgs/svg10.svg"
+import svg11 from "../Svgs/svg11.svg"
+import svg12 from "../Svgs/svg12.svg"
+import svg13 from "../Svgs/svg13.svg"
 
 
 const servicesData = [
     {
         id: 1,
-        svg:svg1,
+        svg: svg1,
         contentH: "Digital Marketing",
         contentDesc: "Promote your brand online through Search Engine Marketing (Google Ads & SEO) to appear at the top of search results, drive quality traffic, increase visibility, and boost conversions with targeted strategies.",
-        path:"/services/digital-marketing-mangalore",
+        path: "/services/digital-marketing-mangalore",
     },
     {
         id: 2,
-        svg:svg2,
+        svg: svg2,
         contentH: "Printing",
         contentDesc: "Premium printing solutions for every need — corporate stationery, marketing collaterals, event branding, merchandise, and signage. From business cards to brochures, invitations to mugs, we deliver high-quality prints that elevate your brand and leave a lasting impression.",
-        path:"/services/printing-services-mangalore",
+        path: "/services/printing-services-mangalore",
     },
     {
         id: 3,
-        svg:svg3,
+        svg: svg3,
         contentH: "Social Media Marketing",
         contentDesc: "Grow your audience and engagement with tailored campaigns on platforms like Facebook, Instagram, LinkedIn, Pinterest, and Meta Ads to expand reach, create engaging content, build brand trust, attract followers, and generate leads.",
-        path:"/services/social-media-marketing-mangalore",
+        path: "/services/social-media-marketing-mangalore",
     },
     {
         id: 4,
-        svg:svg4,
+        svg: svg4,
         contentH: "Video Marketing",
         contentDesc: "Create compelling videos including explainers, events, product demos, and reels that capture attention, tell stories effectively, and leave a lasting impression across all digital platforms.",
-        path:"/services/video-marketing-mangalore",
+        path: "/services/video-marketing-mangalore",
     },
     {
         id: 5,
-        svg:svg5,
+        svg: svg5,
         contentH: "Whatsapp & ChatBot",
         contentDesc: "Automate customer interactions with AI-powered WhatsApp Business APIs, bulk SMS, email campaigns, and chatbots for faster, smarter communication, instant engagement, and building strong customer relationships.",
-        path:"/services/whatsapp-chatbot-services",
+        path: "/services/whatsapp-chatbot-services",
     },
     {
         id: 6,
-        svg:svg6,
+        svg: svg6,
         contentH: "Website Software Development",
         contentDesc: "Custom websites and software solutions including responsive, SEO-friendly sites, desktop/mobile apps, e-commerce platforms, workflow automation, and specialized business applications designed for scalability, security, performance, efficiency, and growth.",
-        path:"/services/website-development-mangalore",
+        path: "/services/website-development-mangalore",
     },
     {
         id: 7,
-        svg:svg7,
+        svg: svg7,
         contentH: "Customer Relationship Management",
         contentDesc: "CRM solutions to streamline customer interactions, track sales, manage every interaction with ease, provide deep insights into customer behavior, and measure marketing campaign performance for improved client relationships.",
-        path:"/services/crm-solutions-mangalore",
+        path: "/services/crm-solutions-mangalore",
     },
     {
         id: 8,
-        svg:svg8,
+        svg: svg8,
         contentH: "Outdoor Advertising",
         contentDesc: "Specialize in high-quality outdoor solutions like eye-catching banners, flex prints, shop boards, digital displays, LED boards, and simple text boards to promote your business, attract customers, enhance visibility, and ensure maximum impact.",
-        path:"/services/outdoor-advertising-mangalore",
+        path: "/services/outdoor-advertising-mangalore",
     },
     {
         id: 9,
-        svg:svg9,
+        svg: svg9,
         contentH: "Social Media Handling",
         contentDesc: "Manage social media accounts on Facebook, Instagram, and LinkedIn with regular posts, updates, and responses to followers, ensuring your brand stays active, consistent, impactful, and engaging online.",
-        path:"/services/social-media-handling-mangalore",
+        path: "/services/social-media-handling-mangalore",
     },
     {
         id: 10,
-        svg:svg10,
+        svg: svg10,
         contentH: "Graphic Design",
         contentDesc: "Create cooperative gifts designs, corporate graphics, and creative materials for digital/print needs, ensuring consistency with branding, high quality, and innovation from our Hampankatta and Derlakatte studios.",
-        path:"/services/graphic-design-mangalore",
+        path: "/services/graphic-design-mangalore",
     },
     {
         id: 11,
-        svg:svg11,
+        svg: svg11,
         contentH: "Imaging",
         contentDesc: "Imaging that brings every detail to life with striking clarity Crafted to captivate the eye and elevate your brand’s visual impact.",
-        path:"/services/imaging-design-mangalore",
+        path: "/services/imaging-design-mangalore",
     },
     {
         id: 12,
-        svg:svg12,
+        svg: svg12,
         contentH: "3D",
         contentDesc: "Create cooperative gifts designs, corporate graphics, and creative materials for digital/print needs, ensuring consistency with branding, high quality, and innovation from our Hampankatta and Derlakatte studios.",
-        path:"/services/3d-design-mangalore",
+        path: "/services/3d-design-mangalore",
+    },
+    {
+        id: 13,
+        svg: svg13,
+        contentH: "Event Management",
+        contentDesc: "Organizing unforgettable corporate events, parties, and exhibitions with flawless execution, seamless logistics, amazing artist management, and high-quality stage setups from conceptualization to completion.",
+        path: "/services/event-management-mangalore",
     },
 ]
 

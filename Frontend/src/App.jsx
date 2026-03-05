@@ -1,8 +1,8 @@
 import "./App.css";
 import Home from "./Components/Home/Home.jsx";
 import Contact from "./Components/Contact/Contact.jsx";
-import {Routes, Route, Navigate} from "react-router-dom";
-import {useEffect, useState} from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Services from "./Components/Services/Services.jsx";
 import Career from "./Components/Career/Career.jsx";
 import TermsConditions from "./Components/TermsConditions/Terms&Conditions.jsx";
@@ -10,7 +10,7 @@ import ScrollToTop from "./Components/ScrollToTop.jsx";
 import DigitalMarketing from "./Components/Services/DigitalMarketing/DigitalMarketing.jsx";
 import Printing from "./Components/Services/Printing/Printing.jsx";
 import NotFound from "./Components/NotFound/NotFound.jsx";
-import {snowflakeCursor} from "./Components/MouseHover/SnowFlake.js";
+import { snowflakeCursor } from "./Components/MouseHover/SnowFlake.js";
 import GraphicDesign from "./Components/Services/GraphicDesign/GraphicDesign.jsx";
 import CustomerRelationshipManagement
     from "./Components/Services/CustomerRelationshipManagement/CustomerRelationshipManagement.jsx";
@@ -25,6 +25,7 @@ import ThreeD from "./Components/Services/3d/ThreeD.jsx";
 import ChatWidget from "./Components/ChatWidget/ChatWidget.jsx";
 import About from "./Components/About/About.jsx";
 import CorporateGallery from "./Components/CorporateGallery/CorporateGallery.jsx";
+import EventManagement from "./Components/Services/EventManagement/EventManagement.jsx";
 
 function ProtectedCorporateGalleryRoute() {
     const [isAllowed, setIsAllowed] = useState(null);
@@ -90,28 +91,29 @@ function App() {
 
     return (
         <>
-            <ScrollToTop/>
+            <ScrollToTop />
             <Routes>
-                <Route path="/" element={<Home/>}/>
-                <Route path="/contact-thumbeja-publicity" element={<Contact/>}/>
-                <Route path="/services-thumbeja-publicity" element={<Services/>}/>
-                <Route path="/career-thumbeja-publicity" element={<Career/>}/>
-                <Route path="/terms-conditions-thumbeja-publicity" element={<TermsConditions/>}/>
-                <Route path="/services/digital-marketing-mangalore" element={<DigitalMarketing/>}/>
-                <Route path="/services/printing-services-mangalore" element={<Printing/>}/>
-                <Route path="/services/social-media-marketing-mangalore" element={<SocialMediaMarketing/>}/>
-                <Route path="/services/video-marketing-mangalore" element={<VideoMarketing/>}/>
-                <Route path="/services/whatsapp-chatbot-services" element={<WhatsappChatbot/>}/>
-                <Route path="/services/website-development-mangalore" element={<WebsiteSoftwareDevelopment/>}/>
-                <Route path="/services/crm-solutions-mangalore" element={<CustomerRelationshipManagement/>}/>
-                <Route path="/services/outdoor-advertising-mangalore" element={<OutdoorAdvertising/>}/>
-                <Route path="/services/social-media-handling-mangalore" element={<SocialMediaHandling/>}/>
-                <Route path="/services/graphic-design-mangalore" element={<GraphicDesign/>}/>
-                <Route path="/services/imaging-design-mangalore" element={<Imaging/>}/>
-                <Route path="/services/3d-design-mangalore" element={<ThreeD />}/>
-                <Route path="/about-thumbeja-publicity" element={<About />}/>
-                <Route path="/corporate-gallery" element={<ProtectedCorporateGalleryRoute />}/>
-                <Route path={"*"} element={<NotFound/>}/>
+                <Route path="/" element={<Home />} />
+                <Route path="/contact-thumbeja-publicity" element={<Contact />} />
+                <Route path="/services-thumbeja-publicity" element={<Services />} />
+                <Route path="/career-thumbeja-publicity" element={<Career />} />
+                <Route path="/terms-conditions-thumbeja-publicity" element={<TermsConditions />} />
+                <Route path="/services/digital-marketing-mangalore" element={<DigitalMarketing />} />
+                <Route path="/services/printing-services-mangalore" element={<Printing />} />
+                <Route path="/services/social-media-marketing-mangalore" element={<SocialMediaMarketing />} />
+                <Route path="/services/video-marketing-mangalore" element={<VideoMarketing />} />
+                <Route path="/services/whatsapp-chatbot-services" element={<WhatsappChatbot />} />
+                <Route path="/services/website-development-mangalore" element={<WebsiteSoftwareDevelopment />} />
+                <Route path="/services/crm-solutions-mangalore" element={<CustomerRelationshipManagement />} />
+                <Route path="/services/outdoor-advertising-mangalore" element={<OutdoorAdvertising />} />
+                <Route path="/services/social-media-handling-mangalore" element={<SocialMediaHandling />} />
+                <Route path="/services/graphic-design-mangalore" element={<GraphicDesign />} />
+                <Route path="/services/imaging-design-mangalore" element={<Imaging />} />
+                <Route path="/services/3d-design-mangalore" element={<ThreeD />} />
+                <Route path="/services/event-management-mangalore" element={<EventManagement />} />
+                <Route path="/about-thumbeja-publicity" element={<About />} />
+                <Route path="/corporate-gallery" element={<ProtectedCorporateGalleryRoute />} />
+                <Route path={"*"} element={<NotFound />} />
             </Routes>
             {/*<ChatWidget/>*/}
         </>
