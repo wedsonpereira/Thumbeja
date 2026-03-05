@@ -9,6 +9,7 @@ import SEO from "../../SEO/SEO.jsx";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import kby from "../../../assets/BrandsImages/kby.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -99,20 +100,39 @@ const VideoMarketing = () => {
     }, []);
 
     const services = [
-        "Explainer Videos - Simplify complex concepts",
-        "Product Demonstrations - Showcase features effectively",
-        "Event Coverage - Capture memorable moments",
-        "Social Media Reels - Short-form engaging content",
-        "Corporate Videos - Professional brand storytelling",
-        "Testimonial Videos - Build trust with real stories"
+        "Corporate Video Production - Company profile videos, brand films, and leadership message videos",
+        "Business Promo Videos - Product walkthroughs, service explainers, and sales-focused marketing videos",
+        "Event Videography - Professional coverage for business activities, launches, meetings, and public events",
+        "Reels & Short Video Editing - Instagram Reels, YouTube Shorts, and social media ad creatives",
+        "Ad Video Production - Performance ad videos optimized for paid campaigns and higher conversion rates",
+        "End-to-End Video Marketing - Scripting, shooting, editing, posting strategy, and brand promotion support"
+    ];
+
+    const demoWork = [
+        {
+            title: "Corporate Brand Storytelling Projects",
+            description: "Produced corporate films and company profile videos that communicate brand value, business process, and customer trust in a clear and professional format."
+        },
+        {
+            title: "Social Media Reels & Shorts Production",
+            description: "Planned, shot, and edited short-form content for Instagram Reels and YouTube Shorts to improve engagement, reach, and shareability."
+        },
+        {
+            title: "Business Activity & Event Video Coverage",
+            description: "Captured real-time business activities, client interactions, and event highlights, then delivered polished edits for website, social media, and promotions."
+        },
+        {
+            title: "Performance-Focused Video Ads",
+            description: "Created ad-ready videos with strong hooks, clear messaging, and conversion-driven edits for digital marketing campaigns."
+        }
     ];
 
     return (
         <div className="video-marketing-page bg-[#fefdf7] min-h-screen pt-24">
             <SEO
-                title="Video Marketing Services in Mangalore - Explainer Videos, Reels & Product Demos | Thumbeja"
-                description="Professional video marketing services in Mangalore, Karnataka. Thumbeja Publicity creates explainer videos, product demonstrations, event coverage, social media reels, and corporate videos for engaging brand storytelling."
-                keywords="video marketing Mangalore, explainer videos Mangalore, product demo videos, social media reels Mangalore, corporate videos Mangalore, video production Mangalore, video advertising Karnataka"
+                title="Video Marketing Services in Mangalore - Video Production, Reels Editing & Brand Promotion | Thumbeja"
+                description="Thumbeja Publicity provides video marketing services in Mangalore including corporate video production, event videography, reels editing, ad video creation, and brand promotion content for business growth."
+                keywords="video marketing services in Mangalore, video production company in Mangalore, corporate video production, event videography Mangalore, Instagram reels editing, YouTube shorts editing, business promo videos, brand promotion videos, ad video production, digital marketing video services"
                 url="https://thumbeja.com/services/video-marketing-mangalore"
             />
             <Header />
@@ -121,11 +141,13 @@ const VideoMarketing = () => {
             <div className="max-w-[1200px] m-auto px-8 py-16 video-animation-1">
                 <h1 className="text-5xl font-bold text-[#091e42] mb-6">Video Marketing Services in Mangalore</h1>
                 <p className="text-xl text-gray-600 leading-8 mb-4">
-                    Create compelling videos including explainers, events, product demos, and reels that capture attention,
-                    tell stories effectively, and leave a lasting impression across all digital platforms.
+                    At Thumbeja Publicity, we create high-impact video marketing content for businesses in Mangalore.
+                    Our team handles video production, event videography, reels creation, ad video editing, and brand storytelling
+                    to help businesses get better visibility, engagement, and qualified leads.
                 </p>
                 <p className="text-lg text-gray-600 leading-8">
-                    Video marketing is one of the most powerful tools for engaging audiences and driving conversions in today's digital landscape.
+                    We focus on business-first video strategy: what to shoot, how to edit, and where to publish, so your videos
+                    not only look good but also support real business growth and stronger brand recall.
                 </p>
             </div>
 
@@ -154,7 +176,7 @@ const VideoMarketing = () => {
             <div className="max-w-[1200px] m-auto px-8 mb-16 video-animation-services">
                 <h2 className="text-4xl font-bold text-[#091e42] mb-6">Our Video Services</h2>
                 <p className="text-lg text-gray-700 leading-8 mb-8">
-                    Comprehensive video production services tailored to your marketing needs.
+                    We provide complete video marketing services for companies that want stronger online presence and better content performance.
                 </p>
                 <ul className="space-y-4">
                     {services.map((service, index) => (
@@ -166,15 +188,55 @@ const VideoMarketing = () => {
                 </ul>
             </div>
 
+            {/* Demo Work Section */}
+            <div className="max-w-[1200px] m-auto px-8 mb-16 video-animation-3">
+                <h2 className="text-4xl font-bold text-[#091e42] mb-6">What We Do For Our Clients</h2>
+                <p className="text-lg text-gray-700 leading-8 mb-8">
+                    We support brands from concept to publishing with video content that is practical, professional, and aligned with marketing goals.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {demoWork.map((item, index) => (
+                        <article key={index} className="video-demo-card">
+                            <h3>{item.title}</h3>
+                            <p>{item.description}</p>
+                        </article>
+                    ))}
+                </div>
+            </div>
+
+            {/* KBY Section */}
+            <section className="max-w-[1200px] m-auto px-8 mb-16 video-animation-4">
+                <div className="bg-white border border-[#e5e7eb] rounded-2xl p-6 md:p-10 shadow-sm">
+                    <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+                        <div className="w-[150px] h-[90px] bg-[#f8fafc] border border-[#e5e7eb] rounded-xl p-3 flex items-center justify-center flex-shrink-0">
+                            <img src={kby} alt="KBY Karavali Bizz Yaarta" className="w-full h-full object-contain" />
+                        </div>
+                        <div>
+                            <h2 className="text-3xl md:text-4xl font-bold text-[#091e42] mb-3">KBY - Karavali Bizz Yaarta</h2>
+                            <p className="text-lg text-gray-700 leading-8 mb-4">
+                                KBY (Karavali Bizz Yaarta) is our specialized team focused on business video creation and promotion.
+                                They plan and create videos of businesses, day-to-day activities, and events, then handle post-production
+                                editing and digital promotion to improve brand visibility.
+                            </p>
+                            <p className="text-lg text-gray-700 leading-8">
+                                In short, KBY takes care of shoot, edit, and brand promotion workflow, making it easier for companies
+                                to publish consistent video content across social media and digital marketing channels.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Why Choose Us */}
             <div className="bg-gradient-to-r from-[#5D47AC] to-[#091e42] py-16 mb-16 video-animation-why" style={{ color: 'white' }}>
                 <div className="max-w-[1200px] m-auto px-8">
                     <h2 className="text-4xl font-bold mb-6" style={{ color: 'white' }}>Why Video Marketing?</h2>
                     <p className="text-lg leading-8 mb-4" style={{ color: 'white' }}>
-                        Our team creates visually stunning, strategically crafted videos that tell your brand's story and resonate with your target audience across all digital channels.
+                        Video marketing helps businesses explain faster, build trust quickly, and stay memorable in a crowded digital space.
+                        From brand videos to reels and ad creatives, quality video content improves engagement, click-through rates, and inquiry conversion.
                     </p>
                     <p className="text-lg leading-8" style={{ color: 'white' }}>
-                        From concept to final delivery, we handle every aspect of video production to ensure your message is communicated effectively and memorably.
+                        Our approach combines creative storytelling with performance-focused editing so your content works for both branding and lead generation.
                     </p>
                 </div>
             </div>

@@ -1,1 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap');
+
+/* Theme alignment with Video Marketing page */
+.outdoor-page-theme .heading,
+.outdoor-page-theme .subheading {
+    color: #091e42;
+}
+
+.outdoor-page-theme .paragraph1,
+.outdoor-page-theme .paragraph2,
+.outdoor-page-theme .paragraph3 {
+    color: #4a5568;
+}

@@ -267,7 +267,7 @@ const Printing = () => {
     }, []);
 
     return (
-        <div className="DigitalMarketing max-width-[2000px] min-h-[60rem] pt-24">
+        <div className="DigitalMarketing printing-page-theme max-width-[2000px] min-h-[60rem] pt-24">
             <SEO
                 title="Printing & Branding Services in Mangalore"
                 description="Professional printing and branding services including brochures, business cards, signage, packaging, and promotional materials."

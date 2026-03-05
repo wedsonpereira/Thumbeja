@@ -1,1 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Hegarty&family=Bitcount+Single+Ink:slnt,wght@-3,100..900&family=Carlito:ital,wght@0,400;0,700;1,400;1,700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Passion+One:wght@400;700;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+.social-handling-page {
+    background: linear-gradient(180deg, #f7faff 0%, #ffffff 45%, #f4f8ff 100%);
+    min-height: 100vh;
+}
+
+.social-handling-page h1,
+.social-handling-page h2 {
+    color: #091e42;
+}
+
+.social-handling-page p {
+    color: #334155;
+}
+
+.social-section-card {
+    background: #ffffff;
+    border: 1px solid #dbe5f7;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(9, 30, 66, 0.06);
+    padding-bottom: 1.25rem;
+}
+
+.social-image-frame {
+    border-radius: 0.75rem;
+    overflow: hidden;
+    border: 1px solid #dbe5f7;
+    box-shadow: 0 10px 24px rgba(9, 30, 66, 0.08);
+}
+
+.social-image-frame img {
+    display: block;
+    transform-origin: center center;
+}
+
+.social-handling-page .services-list li {
+    color: #0f172a;
+}
+
+.social-handling-page .services-list svg {
+    color: #2563eb;
+}
+
+@media (max-width: 768px) {
+    .social-section-card {
+        border-radius: 12px;
+        padding-bottom: 0.9rem;
+    }
+}

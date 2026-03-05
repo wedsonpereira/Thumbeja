@@ -11,3 +11,184 @@
 .video-marketing-page p {
     color: #4a5568;
 }
+
+.video-demo-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 1.25rem;
+    box-shadow: 0 8px 28px rgba(15, 23, 42, 0.06);
+}
+
+.video-demo-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #091e42;
+    margin-bottom: 0.65rem;
+}
+
+.video-demo-card p {
+    margin: 0;
+    color: #4b5563;
+    line-height: 1.7;
+}
+
+.video-customers-section {
+    padding: 4.5rem 0;
+    margin-bottom: 4rem;
+    background: linear-gradient(180deg, #fefdf7 0%, #f6f8ff 100%);
+}
+
+.video-customers-title {
+    margin: 0 0 0.75rem;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 800;
+    color: #091e42;
+}
+
+.video-customers-subtitle {
+    margin: 0 0 2rem;
+    max-width: 760px;
+    color: #4b5563;
+    line-height: 1.8;
+    font-size: 1.06rem;
+}
+
+.video-marquee-row-head {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    color: #5d47ac;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.video-marquee-row-head--left {
+    margin-top: 1.25rem;
+}
+
+.video-logo-marquee-wrap {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 18px;
+    padding: 0.25rem 0;
+    isolation: isolate;
+}
+
+.video-logo-marquee-wrap::before,
+.video-logo-marquee-wrap::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 8rem;
+    z-index: 3;
+    pointer-events: none;
+    filter: blur(2px);
+}
+
+.video-logo-marquee-wrap::before {
+    left: 0;
+    background:
+        radial-gradient(70% 55% at 20% 22%, rgba(250, 251, 253, 0.98) 0%, rgba(250, 251, 253, 0) 100%),
+        radial-gradient(65% 48% at 32% 70%, rgba(250, 251, 253, 0.9) 0%, rgba(250, 251, 253, 0) 100%),
+        radial-gradient(50% 42% at 55% 45%, rgba(250, 251, 253, 0.75) 0%, rgba(250, 251, 253, 0) 100%),
+        linear-gradient(90deg, rgba(250, 251, 253, 1) 0%, rgba(250, 251, 253, 0.92) 34%, rgba(250, 251, 253, 0.58) 68%, rgba(250, 251, 253, 0) 100%);
+    transform: translateX(-8%);
+}
+
+.video-logo-marquee-wrap::after {
+    right: 0;
+    background:
+        radial-gradient(70% 55% at 80% 22%, rgba(250, 251, 253, 0.98) 0%, rgba(250, 251, 253, 0) 100%),
+        radial-gradient(65% 48% at 68% 70%, rgba(250, 251, 253, 0.9) 0%, rgba(250, 251, 253, 0) 100%),
+        radial-gradient(50% 42% at 45% 45%, rgba(250, 251, 253, 0.75) 0%, rgba(250, 251, 253, 0) 100%),
+        linear-gradient(270deg, rgba(250, 251, 253, 1) 0%, rgba(250, 251, 253, 0.92) 34%, rgba(250, 251, 253, 0.58) 68%, rgba(250, 251, 253, 0) 100%);
+    transform: translateX(8%);
+}
+
+.video-logo-marquee-track {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: max-content;
+}
+
+.video-logo-marquee-track--right {
+    animation: video-marquee-right 32s linear infinite;
+}
+
+.video-logo-marquee-track--left {
+    animation: video-marquee-left 32s linear infinite;
+}
+
+.video-logo-marquee-wrap:hover .video-logo-marquee-track {
+    animation-play-state: paused;
+}
+
+.video-logo-pill {
+    width: 180px;
+    height: 100px;
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem;
+    flex-shrink: 0;
+}
+
+.video-logo-pill img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@keyframes video-marquee-right {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes video-marquee-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 768px) {
+    .video-customers-section {
+        padding: 3rem 0;
+    }
+
+    .video-customers-subtitle {
+        font-size: 0.96rem;
+        line-height: 1.7;
+    }
+
+    .video-logo-pill {
+        width: 145px;
+        height: 82px;
+    }
+
+    .video-logo-marquee-track--right,
+    .video-logo-marquee-track--left {
+        animation-duration: 24s;
+    }
+
+    .video-logo-marquee-wrap::before,
+    .video-logo-marquee-wrap::after {
+        width: 5rem;
+        filter: blur(1.6px);
+    }
+}

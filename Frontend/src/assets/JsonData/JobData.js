@@ -8,11 +8,6 @@ const careerPage={
         careerSubtitle:"Join our growing team and work on high-impact digital marketing, branding, and software projects for real business outcomes.",
     },
 
-    section2:{
-        careertitle:"",
-        careerImage:"",
-        careerSubtitle:"",
-    }
 }
 
 

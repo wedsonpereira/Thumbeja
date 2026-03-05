@@ -269,7 +269,7 @@ const SocialMediaMarketing = () => {
     }, []);
 
     return (
-        <div className="DigitalMarketing w-full overflow-x-hidden pt-24">
+        <div className="DigitalMarketing social-marketing-page-theme w-full overflow-x-hidden pt-24">
             <SEO
                 title="Social Media Marketing Services in Mangalore"
                 description="Social media marketing services for Instagram, Facebook, LinkedIn, and WhatsApp campaigns to grow reach, engagement, and conversions."
@@ -428,17 +428,17 @@ const SocialMediaMarketing = () => {
            
             <div className="max-w-6xl mx-auto px-6 py-8">
                 <div className="bg-white rounded-2xl shadow-lg p-8 mb-8 border border-gray-100 social-animation-final">
-                    <h1 className="text-3xl font-bold text-gray-800 mb-6 text-center social-animation-final">
+                    <h1 className="text-3xl font-bold text-[#091e42] mb-6 text-center social-animation-final">
                         Branding & Marketing Optimizations and Ongoing Support
                     </h1>
                     <div className="space-y-6">
                         <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 border-l-4 border-blue-500 social-animation-final">
-                            <p className="text-gray-700 leading-relaxed text-lg">
+                            <p className="text-[#4a5568] leading-relaxed text-lg">
                                 At Thumbeja Publicity, we specialize in crafting unique brand identities that resonate with target audiences, driving meaningful connections and long-term growth. Our branding and marketing optimization services leverage cutting-edge strategies to enhance online visibility, refine messaging, and amplify engagement across digital channels, ensuring businesses stand out in competitive markets.
                             </p>
                         </div>
                         <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6 border-l-4 border-purple-500 social-animation-final">
-                            <p className="text-gray-700 leading-relaxed text-lg">
+                            <p className="text-[#4a5568] leading-relaxed text-lg">
                                 We provide comprehensive ongoing support, from continuous performance audits and adaptive campaign tweaks to dedicated relationship management, helping clients evolve their brands without disruption. Whether refreshing an established identity or scaling new initiatives, our tailored approach empowers businesses to thrive, proving that strategic rebrands are about innovation, not just recovery.
                             </p>
                         </div>

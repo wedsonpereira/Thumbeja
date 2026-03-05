@@ -217,7 +217,7 @@ const Home = () => {
             />
             <Header />
             <div className="tp-hero-section w-full">
-                <div className="tp-hero-slider-frame relative w-full h-[100dvh]">
+                <div className="tp-hero-slider-frame relative w-full h-[100vh]">
                     <Swiper
                         modules={[Pagination, Autoplay]}
                         spaceBetween={0}
@@ -241,12 +241,12 @@ const Home = () => {
                                 <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60"></div>
 
                                 {/* Centered Content */}
-                                <div className="absolute inset-0 flex items-center justify-center">
+                                <div className="tp-hero-content-wrap absolute inset-0 flex justify-center">
                                     <div className="container mx-auto px-6 lg:px-12">
-                                        <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
+                                        <div className="tp-hero-content-stack flex flex-col items-center text-center max-w-4xl mx-auto">
 
                                             {/* Tagline */}
-                                            <span className="tp-hero-tagline text-sm md:text-base tracking-[0.3em] uppercase mb-4 tp-hero-title">
+                                            <span className="tp-hero-tagline text-sm md:text-base capitalize mb-4 tp-hero-title">
                                                 Best Digital Marketing Agency in Mangalore
                                             </span>
 
@@ -312,7 +312,7 @@ const Home = () => {
                     <div className="text-center mb-14">
                         <span className="text-lg text-slate-600">Our Products -------------------</span>
                         <h2 className="text-5xl font-semibold text-slate-900 mt-4 tp-products-heading">
-                            Explore Our <span className="text-[#5439a3]">Digital Solutions</span> in Mangalore
+                            Explore Our <span className="text-[#5439a3]">Digital Solutions</span>
                         </h2>
                         <p className="text-lg text-slate-600 max-w-2xl mx-auto mt-4">
                             Innovative digital marketing products and tools designed to transform your business operations and online presence in Mangalore, Karnataka.
@@ -399,8 +399,8 @@ const Home = () => {
                 <div className={"tp-content-header-2 h-max p-2 flex items-center justify-evenly gap-10"}>
                     <div className={"w-[45%] h-[10rem] p-2 flex flex-col  justify-center gap-10 home-animation-3"}>
                         <span className={"text-lg home-animation-3"}>Our Services -------------------</span>
-                        <h2 className={"text-5xl font-semibold home-animation-3"}>Digital Marketing Services for <br /><span
-                            className={"text-[#5439a3]"}>Businesses in Mangalore</span></h2>
+                        <h2 className={"text-5xl font-semibold home-animation-3 tp-products-heading"}>Digital Marketing  <br /><span
+                            className={"text-[#5439a3]"}> Services for Businesses</span></h2>
                     </div>
                     <div className={"w-[30%] flex h-[10rem] items-center justify-evenly home-animation-3"}>
                         <p className={"text-lg"}>
@@ -449,47 +449,13 @@ const Home = () => {
                 </div>
             </div>
 
-            {/*<div*/}
-            {/*    className={"tp-content-features  h-max w-auto flex items-center justify-center text-white select-none home-animation-4 border-1"}>*/}
-            {/*    <div*/}
-            {/*        className={"m-auto w-[77%] h-max bg-[#00001d] rounded-4xl flex items-center justify-evenly tp-home-serv-sect border-1 pt-5 pb-5"}>*/}
-            {/*        <div className={"tp-content-features0 w-[50%] h-max flex flex-col gap-1 "}>*/}
-            {/*            <div*/}
-            {/*                className={"tp-content-features0-text h-[10rem] flex justify-center flex-col gap-6"}>*/}
-            {/*                <span>Features -------</span>*/}
-            {/*                <span className={"text-3xl font-semibold home-animation-4"}>*/}
-            {/*                        The power of  digital marketing*/}
-            {/*                    </span>*/}
-            {/*            </div>*/}
-            {/*            <div className={"flex flex-wrap gap-9 pb-8 w-[100%] items-start home-animation-4"}>*/}
-            {/*                {homepageData2.map((item, index) => {*/}
-            {/*                    return (*/}
-            {/*                        <div key={index} className={"flex flex-col w-[45%] gap-4 h-max home-animation-4"}>*/}
-            {/*                            <span className={"text-2xl"}>0{item.id}</span>*/}
-            {/*                            <hr className={"h-max"}/>*/}
-            {/*                            <span className={"text-2xl"}>*/}
-            {/*                                {item.title}*/}
-            {/*                            </span>*/}
-            {/*                            <p>{item.description}</p>*/}
-            {/*                        </div>*/}
-            {/*                    )*/}
-            {/*                })}*/}
-            {/*            </div>*/}
-            {/*        </div>*/}
-            {/*        <div className={"tp-content-features1 w-[30%] h-[80%] flex items-end home-animation-4"}>*/}
-            {/*            <div className={"tp-home-feature-gradient overflow-hidden home-animation-4"}>*/}
-            {/*                <img src={featureImg} className={"brightness-90 home-animation-4"} alt="yena"/>*/}
-            {/*            </div>*/}
-            {/*        </div>*/}
-            {/*    </div>*/}
-            {/*</div>*/}
             {/*Process container*/}
             <div className={"tp-content-process min-h-[25rem] w-[85%] m-auto mt-30 pb-12 flex flex-col gap-6"}>
                 <div
                     className={"flex flex-col gap-1 w-full h-[11rem] items-center justify-evenly tp-content-process0 text-center home-animation-5"}>
                     <span>------Process-----</span>
-                    <h2 className={"text-5xl font-semibold"}>Our Proven Digital Marketing<span
-                        className={"text-[#5e3bab]"}><br />Process in Mangalore</span></h2>
+                    <h2 className={"text-5xl font-semibold tp-products-heading"}>Our Proven Digital Marketing<span
+                        className={"text-[#5e3bab]"}><br />Process</span></h2>
                 </div>
                 <div className={"flex text-black h-max w-full tp-content-process1"}>
                     <div className={"flex w-[50%] h-full items-center justify-center tp-content-process1-inner"}>
@@ -549,8 +515,8 @@ const Home = () => {
                     <div className={"flex w-[50%] flex-col gap-5 justify-center home-animation-6"}>
                         <span className={"text-lg"}>Why Choose Us?</span>
                         <h2
-                            className={"text-5xl text-[#002221] leading-tight font-semibold "}>Best Digital
-                            <span className={"text-[#5e3bab]"}> Marketing Agency in Mangalore</span></h2>
+                            className={"text-5xl text-[#002221] leading-tight font-semibold tp-products-heading"}>Best Digital
+                            <span className={"text-[#5e3bab]"}> Marketing Agency</span></h2>
                     </div>
                     <div className={"flex w-[50%] flex-col justify-center home-animation-6"}>
                         <span className={"text-lg"}>Choose Thumbeja Publicity for the best digital marketing, SEO, web development, and branding solutions in Mangalore, Karnataka — designed to grow and sustain your business with the highest returns.</span>

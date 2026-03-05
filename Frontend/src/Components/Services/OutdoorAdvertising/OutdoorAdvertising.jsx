@@ -145,7 +145,7 @@ const OutdoorAdvertising = () => {
     }, []);
 
     return (
-        <div className="DigitalMarketing w-full overflow-x-hidden min-h-[60rem] pt-24">
+        <div className="DigitalMarketing outdoor-page-theme w-full overflow-x-hidden min-h-[60rem] pt-24">
             <SEO
                 title="Outdoor Advertising Services in Mangalore"
                 description="Outdoor advertising services including hoardings, banners, LED displays, and strategic media placements to maximize local brand visibility."

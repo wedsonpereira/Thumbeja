@@ -62,3 +62,15 @@
     font-weight: bold;
 }
 
+/* Theme alignment with Video Marketing page */
+.printing-page-theme .heading,
+.printing-page-theme .subheading {
+    color: #091e42;
+}
+
+.printing-page-theme .paragraph1,
+.printing-page-theme .paragraph2,
+.printing-page-theme .paragraph3 {
+    color: #4a5568;
+}
+

@@ -30,6 +30,14 @@ const HEADER_ALIASES = {
     openings: ["openings", "noofopenings", "positions", "vacancies", "vacancy", "vaccency", "openposition"]
 };
 
+const CATEGORY_OPTIONS = [
+    {value: "all", label: "All roles"},
+    {value: "development", label: "Development"},
+    {value: "marketing", label: "Marketing"},
+    {value: "design", label: "Design"},
+    {value: "sales", label: "Sales"}
+];
+
 const normalizeHeader = (value = "") =>
     `${value}`
         .toLowerCase()
@@ -218,6 +226,8 @@ const Career = () => {
     const [jobsError, setJobsError] = useState("");
     const [activeDescriptionKey, setActiveDescriptionKey] = useState(null);
     const [descriptionProgress, setDescriptionProgress] = useState({});
+    const [isCategoryMenuOpen, setIsCategoryMenuOpen] = useState(false);
+    const categoryMenuRef = useRef(null);
 
     const heroSection = careerPage?.section1 || {};
     const heroTitle = heroSection.careertitle || "Careers at Thumbeja Publicity";
@@ -225,6 +235,9 @@ const Career = () => {
         heroSection.careerSubtitle ||
         "Join our team in Mangalore and build meaningful digital marketing and technology solutions.";
     const heroImage = heroSection.careerImage || benefitsPrimaryImage;
+
+    const selectedCategoryLabel =
+        CATEGORY_OPTIONS.find((option) => option.value === category)?.label || "All roles";
 
     useEffect(() => {
         let isMounted = true;
@@ -677,6 +690,32 @@ const Career = () => {
         return () => window.removeEventListener("keydown", handleEscape);
     }, [activeDescriptionKey]);
 
+    useEffect(() => {
+        if (!isCategoryMenuOpen) return;
+
+        const handlePointerDown = (event) => {
+            if (!categoryMenuRef.current?.contains(event.target)) {
+                setIsCategoryMenuOpen(false);
+            }
+        };
+
+        const handleEscape = (event) => {
+            if (event.key === "Escape") {
+                setIsCategoryMenuOpen(false);
+            }
+        };
+
+        document.addEventListener("mousedown", handlePointerDown);
+        document.addEventListener("touchstart", handlePointerDown, {passive: true});
+        window.addEventListener("keydown", handleEscape);
+
+        return () => {
+            document.removeEventListener("mousedown", handlePointerDown);
+            document.removeEventListener("touchstart", handlePointerDown);
+            window.removeEventListener("keydown", handleEscape);
+        };
+    }, [isCategoryMenuOpen]);
+
     return (
         <>
             <SEO
@@ -702,18 +741,39 @@ const Career = () => {
                         <p className="career-hero__subtitle">{heroSubtitle}</p>
                     </div>
                     <form className="career-search" role="search" onSubmit={handleSearch}>
-                        <div className="career-search__field career-search__field--fixed">
-                            <select
-                                aria-label="Job category"
-                                value={category}
-                                onChange={(event) => setCategory(event.target.value)}
-                            >
-                                <option value="all">All roles</option>
-                                <option value="development">Development</option>
-                                <option value="marketing">Marketing</option>
-                                <option value="design">Design</option>
-                                <option value="sales">Sales</option>
-                            </select>
+                        <div className="career-search__field career-search__field--fixed" ref={categoryMenuRef}>
+                            <div className={`career-category-select ${isCategoryMenuOpen ? "is-open" : ""}`}>
+                                <button
+                                    type="button"
+                                    className="career-category-select__trigger"
+                                    aria-haspopup="listbox"
+                                    aria-expanded={isCategoryMenuOpen}
+                                    aria-label="Job category"
+                                    onClick={() => setIsCategoryMenuOpen((prev) => !prev)}
+                                >
+                                    <span>{selectedCategoryLabel}</span>
+                                    <svg className="career-category-select__caret" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                        <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                    </svg>
+                                </button>
+                                <div className="career-category-select__menu" role="listbox" aria-label="Select role category">
+                                    {CATEGORY_OPTIONS.map((option) => (
+                                        <button
+                                            key={option.value}
+                                            type="button"
+                                            role="option"
+                                            aria-selected={category === option.value}
+                                            className={`career-category-select__option ${category === option.value ? "is-active" : ""}`}
+                                            onClick={() => {
+                                                setCategory(option.value);
+                                                setIsCategoryMenuOpen(false);
+                                            }}
+                                        >
+                                            {option.label}
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
                         </div>
                         <div className="career-search__divider"/>
                         <div className="career-search__field career-search__field--grow">

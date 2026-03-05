@@ -1,1 +1,62 @@
 @import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Hegarty&family=Bitcount+Single+Ink:slnt,wght@-3,100..900&family=Carlito:ital,wght@0,400;0,700;1,400;1,700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Passion+One:wght@400;700;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+.graphic-design-page {
+	background-color: #fefdf7;
+	min-height: 100vh;
+}
+
+.graphic-design-page h1,
+.graphic-design-page h2,
+.graphic-design-page h3,
+.graphic-design-page .services-list li {
+	color: #091e42;
+}
+
+.graphic-design-page p {
+	color: #4a5568;
+
+}
+
+.graphic-section-card {
+	border-radius: 16px;
+	padding-bottom: 1.25rem;
+}
+
+.graphic-image-frame {
+	border-radius: 1rem;
+	overflow: hidden;
+	border: none;
+	box-shadow: 0 8px 28px rgba(15, 23, 42, 0.06);
+}
+
+
+
+.graphic-design-page .services-list li {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.75rem;
+	background: #ffffff;
+	border: none;
+	border-radius: 10px;
+	padding: 0.85rem 1rem;
+	box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.graphic-design-page .services-list li:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 12px 26px rgba(15, 23, 42, 0.08);
+}
+
+.graphic-design-page .services-list svg {
+	color: #5D47AC;
+	margin-top: 0.2rem;
+	flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+	.graphic-section-card {
+		border-radius: 12px;
+		padding-bottom: 0.9rem;
+	}
+}
