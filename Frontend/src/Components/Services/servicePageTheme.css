@@ -1,0 +1,58 @@
+:where(.service-page-shell) {
+    color: #091e42;
+}
+
+:where(.service-page-shell) :where(h1, h2, h3, h4, h5, h6, .heading, .subheading, .imaging-main-title) {
+    color: #091e42;
+}
+
+:where(.service-page-shell) :where(p, .paragraph1, .paragraph2, .paragraph3, .imaging-main-description) {
+    color: #4a5568;
+    margin-block: 0;
+}
+
+:where(.service-page-shell) :where(li) {
+    color: #1f2937;
+}
+
+:where(.service-page-shell) :where(h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p) {
+    margin-top: clamp(0.9rem, 1.8vw, 1.35rem);
+}
+
+:where(.service-page-shell) :where(p + p) {
+    margin-top: clamp(0.85rem, 1.7vw, 1.2rem);
+}
+
+:where(.service-page-shell) :where(p + ul, p + ol, h1 + ul, h2 + ul, h3 + ul, h4 + ul, h5 + ul, h6 + ul) {
+    margin-top: clamp(1rem, 2vw, 1.5rem);
+}
+
+:where(.service-page-shell) :where(.DigitalMarketingbox1, .DigitalMarketingbox2, .DigitalMarketingboxN, .Subheadingmain, .graphic-section-card, .social-section-card, #social-marketing-offer, #social-marketing-support, #printing-offer, #printing-solutions, #outdoor-offer, #outdoor-support) {
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+:where(.service-page-shell) :where(.image-gallery, .points, .services-list, .social-icons-container, .imaging-service-categories, .imaging-sub-service-categories, .imaging-image-display-container, .imaging-divider, .video-logo-marquee-wrap, .crm-image-panel, .crm-section-panel, .crm-detail-card-grid) {
+    margin-top: clamp(1.25rem, 2vw, 1.75rem);
+}
+
+:where(.service-page-shell) :where(.services-list) {
+    margin-bottom: 0;
+}
+
+:where(.service-page-shell) :where(.services-list li + li) {
+    margin-top: clamp(0.9rem, 1.6vw, 1.15rem);
+}
+
+:where(.service-page-shell) :where(img) {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    :where(.service-page-shell) :where(.DigitalMarketingbox1, .DigitalMarketingbox2, .DigitalMarketingboxN, .Subheadingmain, .graphic-section-card, .social-section-card, #social-marketing-offer, #social-marketing-support, #printing-offer, #printing-solutions, #outdoor-offer, #outdoor-support) {
+        margin-bottom: 1.75rem;
+    }
+
+    :where(.service-page-shell) :where(h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p) {
+        margin-top: 0.85rem;
+    }
+}
