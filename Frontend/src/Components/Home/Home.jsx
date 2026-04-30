@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import "./home.css"
 import Header from "../header/Header.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight, faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight, faCheck, faStar, faUsers } from "@fortawesome/free-solid-svg-icons";
 import Footer from "../Footer/Footer.jsx";
 import SEO from "../SEO/SEO.jsx";
 import {
@@ -17,16 +17,12 @@ import processImg3 from '../../assets/Images/execution-of-the-project.jpg'
 import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import "swiper/css"
-import 'swiper/css/navigation';
-import 'swiper/css/scrollbar';
-import 'swiper/css/zoom';
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/effect-coverflow";
 import { useGSAP } from "@gsap/react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination"
+import { Pagination, Autoplay, EffectCoverflow } from "swiper/modules";
 import About from "../About/About.jsx";
 import { Link } from "react-router-dom"
 import Brands from "../Brands/Brands.jsx";
@@ -35,16 +31,6 @@ import productsData from "../../assets/JsonData/ProductsData.js";
 gsap.registerPlugin(ScrollTrigger)
 
 const Home = () => {
-
-    const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
-
-    useEffect(() => {
-        const handleResize = () => setWindowWidth(window.innerWidth);
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
-
-    const isMobileOrTablet = windowWidth <= 1024;
 
     const [Index, setIndex] = useState(0);
 
@@ -148,18 +134,35 @@ const Home = () => {
             opacity: 0
         });
 
-        gsap.from(".product-card-animation", {
+        const productsTimeline = gsap.timeline({
             scrollTrigger: {
-                trigger: ".product-card-animation",
-                start: "top bottom-=100",
-                toggleActions: 'restart none none reverse',
-            },
-            y: -30,
-            opacity: 0,
-            duration: 0.3,
-            stagger: 0.1,
-            ease: "power2.out",
-        }, []);
+                trigger: ".tp-products-section",
+                start: "top 72%",
+                toggleActions: "play none none reverse",
+            }
+        });
+
+        productsTimeline
+            .from(".tp-products-intro > *", {
+                y: 34,
+                opacity: 0,
+                duration: 0.75,
+                stagger: 0.12,
+                ease: "power3.out"
+            })
+            .from(".tp-products-coverflow-wrap", {
+                y: 48,
+                opacity: 0,
+                duration: 0.85,
+                ease: "power3.out"
+            }, "-=0.35")
+            .from(".tp-product-cover-card", {
+                opacity: 0,
+                y: 24,
+                duration: 0.65,
+                stagger: 0.06,
+                ease: "power2.out"
+            }, "-=0.45");
 
     }, [])
 
@@ -307,10 +310,10 @@ const Home = () => {
             {/*1st content starting*/}
 
             {/* Our Products Section */}
-            <div className="min-h-max py-20 px-6 tp-products-section">
-                <div className="max-w-7xl mx-auto">
-                    <div className="text-center mb-14">
-                        <span className="text-lg text-slate-600">Our Products -------------------</span>
+            <div className="min-h-max py-20 tp-products-section">
+                <div className="max-w-7xl mx-auto px-6">
+                    <div className="text-center mb-14 tp-products-intro">
+                        <span className="text-lg text-slate-600">Our Products</span>
                         <h2 className="text-5xl font-semibold text-slate-900 mt-4 tp-products-heading">
                             Explore Our <span className="text-[#5439a3]">Digital Solutions</span>
                         </h2>
@@ -318,78 +321,94 @@ const Home = () => {
                             Innovative digital marketing products and tools designed to transform your business operations and online presence in Mangalore, Karnataka.
                         </p>
                     </div>
+                </div>
 
-                    {/* Mobile/Tablet: Compact Horizontal Scroll Grid */}
-                    {isMobileOrTablet ? (
-                        <div className="tp-products-mobile-scroll">
-                            <div className="tp-products-scroll-container">
-                                {productsData.map((product) => (
-                                    <a
-                                        key={product.id}
-                                        href={product.link}
-                                        target={product.type === "external" ? "_blank" : "_self"}
-                                        rel={product.type === "external" ? "noopener noreferrer" : ""}
-                                        className="tp-product-compact-card product-card-animation"
-                                    >
-                                        <div className={`tp-product-compact-icon ${product.colorClass} ${product.shadowClass}`}>
-                                            {product.image ? (
-                                                <img src={product.image} alt={product.title} className="w-full h-full object-cover" />
-                                            ) : (
-                                                product.initials
-                                            )}
-                                        </div>
-                                        <h3 className="tp-product-compact-title">{product.title}</h3>
-                                        <p className="tp-product-compact-desc">
-                                            {product.description.length > 60
-                                                ? product.description.substring(0, 60) + '...'
-                                                : product.description}
-                                        </p>
-                                        <span className={`tp-product-compact-cta ${product.textClass}`}>
-                                            {product.type === "phone" ? "Contact" : "Visit"}
-                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                                <path d="M7 17l9.2-9.2M17 17V7H7" />
-                                            </svg>
-                                        </span>
-                                    </a>
-                                ))}
-                            </div>
-                        </div>
-                    ) : (
-                        /* Desktop: Grid Layout */
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {productsData.map((product) => (
-                                <div key={product.id} className="group bg-white border border-slate-200 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 flex flex-col h-full product-card-animation">
-                                    <div className={`w-12 h-12 mb-6 rounded-lg ${product.colorClass} flex items-center justify-center text-white text-xl font-bold shadow-lg ${product.shadowClass} overflow-hidden`}>
-                                        {product.image ? (
-                                            <img src={product.image} alt={product.title} className="w-full h-full object-cover" />
+                <div className="tp-products-coverflow-wrap">
+                    <Swiper
+                        modules={[EffectCoverflow, Pagination, Autoplay]}
+                        effect="coverflow"
+                        grabCursor
+                        centeredSlides
+                        loop
+                        slidesPerView="auto"
+                        speed={650}
+                        roundLengths
+                        autoplay={{ delay: 3600, disableOnInteraction: false, pauseOnMouseEnter: true, waitForTransition: true }}
+                        pagination={{ clickable: true }}
+                        coverflowEffect={{
+                            rotate: 14,
+                            stretch: "40%",
+                            depth: 170,
+                            modifier: 1,
+                            slideShadows: false,
+                        }}
+                        className="tp-products-coverflow"
+                    >
+                        {productsData.map((item) => {
+                            const isInternal = item.type === "internal";
+                            const cardContent = (
+                                <article className="tp-product-cover-card">
+                                    <img
+                                        src={item.image}
+                                        alt={`${item.title} preview`}
+                                        className="tp-product-cover-image"
+                                        loading="lazy"
+                                        decoding="async"
+                                        sizes="(max-width: 768px) 82vw, (max-width: 1280px) 52vw, 900px"
+                                    />
+                                    <div className={`tp-product-cover-icon rounded-full ${item.icon ? "has-uploaded-icon" : item.colorClass}`}>
+                                        {item.icon ? (
+                                            <img src={item.icon} alt="" aria-hidden="true" />
                                         ) : (
-                                            product.initials
+                                            item.initials
                                         )}
                                     </div>
-                                    <h3 className="text-xl font-bold text-slate-900 mb-3">{product.title}</h3>
-                                    <p className="text-slate-600 mb-6 flex-grow">
-                                        {product.description}
-                                    </p>
-                                    <a
-                                        href={product.link}
-                                        target={product.type === "external" ? "_blank" : "_self"}
-                                        rel={product.type === "external" ? "noopener noreferrer" : ""}
-                                        className={`inline-flex items-center ${product.textClass} font-semibold ${product.hoverTextClass} transition-colors`}
-                                    >
-                                        {product.type === "phone" ? "Contact Us" : "Visit Website"}
-                                        <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            {product.type === "phone" ? (
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                                            ) : (
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                            )}
-                                        </svg>
-                                    </a>
-                                </div>
-                            ))}
-                        </div>
-                    )}
+                                    <div className="tp-product-cover-body">
+                                        <span className="tp-product-cover-kicker">Product</span>
+                                        <h3>{item.title}</h3>
+                                        <div className="tp-product-cover-details">
+                                            <div className="tp-product-cover-stats">
+                                                <span>
+                                                    <FontAwesomeIcon icon={faStar} />
+                                                    {item.rating}
+                                                </span>
+                                                <span>
+                                                    <FontAwesomeIcon icon={faUsers} />
+                                                    {item.totalUsers}
+                                                </span>
+                                            </div>
+                                            <p>{item.description}</p>
+                                            <span className={`tp-product-cover-link ${item.textClass}`}>
+                                                Explore product <FontAwesomeIcon icon={faArrowRight} />
+                                            </span>
+                                        </div>
+                                    </div>
+                                </article>
+                            );
+
+                            return (
+                                <SwiperSlide key={item.id} className="tp-products-cover-slide">
+                                    {isInternal ? (
+                                        <Link to={item.link} className="tp-product-cover-link-wrap" aria-label={`Explore ${item.title}`}>
+                                            {cardContent}
+                                        </Link>
+                                    ) : (
+                                        <a
+                                            href={item.link}
+                                            className="tp-product-cover-link-wrap"
+                                            target={item.type === "external" ? "_blank" : undefined}
+                                            rel={item.type === "external" ? "noopener noreferrer" : undefined}
+                                            aria-label={`Explore ${item.title}`}
+                                        >
+                                            {cardContent}
+                                        </a>
+                                    )}
+                                </SwiperSlide>
+                            );
+                        })}
+                    </Swiper>
                 </div>
+
             </div>
 
             {/*2st content starting*/}

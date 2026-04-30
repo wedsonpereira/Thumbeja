@@ -2,7 +2,7 @@ import React from 'react';
 import './GraphicDesign.css';
 import Header from '../../header/Header.jsx';
 import '../../../index.css'
-import GraphicDesignImg from '../../../assets/Images/GraphicDesign.png';
+import GraphicDesignImg from '../../Home/Products/images/graphicdesign.webp';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCheck} from "@fortawesome/free-solid-svg-icons";
 import Footer from "../../Footer/Footer.jsx";

@@ -209,12 +209,12 @@ const VideoMarketing = () => {
                 <div className="bg-white border border-[#e5e7eb] rounded-2xl p-6 md:p-10 shadow-sm">
                     <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
                         <div className="w-[150px] h-[90px] bg-[#f8fafc] border border-[#e5e7eb] rounded-xl p-3 flex items-center justify-center flex-shrink-0">
-                            <img src={kby} alt="KBY Karavali Bizz Yaarta" className="w-full h-full object-contain" />
+                            <img src={kby} alt="KBY Karavali Bizz Yaatra" className="w-full h-full object-contain" />
                         </div>
                         <div>
-                            <h2 className="text-3xl md:text-4xl font-bold text-[#091e42] mb-3">KBY - Karavali Bizz Yaarta</h2>
+                            <h2 className="text-3xl md:text-4xl font-bold text-[#091e42] mb-3">KBY - Karavali Bizz Yaatra</h2>
                             <p className="text-lg text-gray-700 leading-8 mb-4">
-                                KBY (Karavali Bizz Yaarta) is our specialized team focused on business video creation and promotion.
+                                KBY (Karavali Bizz Yaatra) is our specialized team focused on business video creation and promotion.
                                 They plan and create videos of businesses, day-to-day activities, and events, then handle post-production
                                 editing and digital promotion to improve brand visibility.
                             </p>
