@@ -481,6 +481,8 @@
 /* Gallery card */
 .cg-gallery-card {
     position: relative;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     border-radius: var(--cg-radius);
     cursor: pointer;
@@ -489,8 +491,8 @@
 
 .cg-gallery-card__img {
     width: 100%;
-    height: auto;
-    object-fit: contain;
+    height: 100%;
+    object-fit: cover;
     display: block;
     transition: transform var(--cg-ease), filter var(--cg-ease);
 }

@@ -134,6 +134,17 @@ const Home = () => {
             opacity: 0
         });
 
+        gsap.from(".home-animation-6", {
+            scrollTrigger: {
+                trigger: ".tp-content-whychooseus",
+                toggleActions: 'restart none none reverse',
+            },
+            stagger: 0.2,
+            duration: 0.8,
+            x: -100,
+            opacity: 0
+        });
+
         const productsTimeline = gsap.timeline({
             scrollTrigger: {
                 trigger: ".tp-products-section",
@@ -313,7 +324,7 @@ const Home = () => {
             <div className="min-h-max py-20 tp-products-section">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="text-center mb-14 tp-products-intro">
-                        <span className="text-lg text-slate-600">Our Products</span>
+                        <span className="text-lg text-slate-600">----------Our Products---------</span>
                         <h2 className="text-5xl font-semibold text-slate-900 mt-4 tp-products-heading">
                             Explore Our <span className="text-[#5439a3]">Digital Solutions</span>
                         </h2>

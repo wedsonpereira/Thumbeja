@@ -5,17 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a41b4cc4-7ee7-4327-98cf-089d42916e72" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/public/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/public/sitemap.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/Components/Footer/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/Components/Footer/Footer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/Components/CorporateGallery/Corporate.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/Components/CorporateGallery/Corporate.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/src/Components/Home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/Components/Home/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/Components/Services/DigitalMarketing/DigitalMarketing.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/Components/Services/DigitalMarketing/DigitalMarketing.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/Components/Services/Services.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/Components/Services/Services.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/Components/Services/VideoMarketing/VideoMarketing.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/Components/Services/VideoMarketing/VideoMarketing.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/Components/Services/Website Software Development/WebsiteSoftwareDevelopment.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/Components/Services/Website Software Development/WebsiteSoftwareDevelopment.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/Components/Services/Whatsapp &amp; Chatbot/WhatsappChatbot.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/Components/Services/Whatsapp &amp; Chatbot/WhatsappChatbot.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/Components/header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/Components/header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/assets/JsonData/HomePageData.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/assets/JsonData/HomePageData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/Components/Home/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/Components/Home/home.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +22,7 @@
     </option>
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="279" />
+    <option name="cachedIndexableFilesCount" value="332" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -145,6 +138,8 @@
       <workItem from="1770261005706" duration="172000" />
       <workItem from="1770442768273" duration="1220000" />
       <workItem from="1772600783093" duration="22000" />
+      <workItem from="1777615244296" duration="562000" />
+      <workItem from="1777869835517" duration="12000" />
     </task>
     <task id="LOCAL-00001" summary="nothing">
       <option name="closed" value="true" />

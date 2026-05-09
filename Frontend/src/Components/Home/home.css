@@ -957,44 +957,6 @@
     mask-image: radial-gradient(circle at 64% 30%, #000 0%, rgba(0, 0, 0, 0.72) 44%, transparent 80%);
 }
 
-.tp-products-section .max-w-7xl::before,
-.tp-products-section .max-w-7xl::after {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    pointer-events: none;
-}
-
-.tp-products-section .max-w-7xl::before {
-    left: -2rem;
-    bottom: -4rem;
-    width: min(26rem, 38vw);
-    height: min(20rem, 30vw);
-    background:
-        radial-gradient(circle at 28% 72%, rgba(84, 57, 163, 0.16), rgba(84, 57, 163, 0.06) 38%, transparent 72%),
-        radial-gradient(circle, rgba(84, 57, 163, 0.18) 1px, transparent 1.4px);
-    background-size: 100% 100%, 18px 18px;
-    opacity: 0.58;
-    -webkit-mask-image: radial-gradient(circle at 22% 72%, #000 0%, rgba(0, 0, 0, 0.65) 42%, transparent 78%);
-    mask-image: radial-gradient(circle at 22% 72%, #000 0%, rgba(0, 0, 0, 0.65) 42%, transparent 78%);
-}
-
-.tp-products-section .max-w-7xl::after {
-    right: -2rem;
-    bottom: -4.5rem;
-    width: min(30rem, 42vw);
-    height: min(22rem, 32vw);
-    background:
-        radial-gradient(circle at 76% 70%, rgba(245, 132, 31, 0.16), rgba(245, 132, 31, 0.055) 36%, transparent 72%),
-        linear-gradient(rgba(245, 132, 31, 0.11) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(245, 132, 31, 0.11) 1px, transparent 1px);
-    background-size: 100% 100%, 2rem 2rem, 2rem 2rem;
-    opacity: 0.55;
-    transform: rotate(-5deg);
-    -webkit-mask-image: radial-gradient(circle at 78% 72%, #000 0%, rgba(0, 0, 0, 0.66) 42%, transparent 78%);
-    mask-image: radial-gradient(circle at 78% 72%, #000 0%, rgba(0, 0, 0, 0.66) 42%, transparent 78%);
-}
-
 .tp-products-intro {
     position: relative;
     z-index: 2;
@@ -1008,23 +970,9 @@
     width: fit-content;
     margin-inline: auto;
     padding: 0.5rem 0.9rem;
-    border: 1px solid rgba(84, 57, 163, 0.14);
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.68);
-    box-shadow: 0 10px 28px rgba(84, 57, 163, 0.08);
-    color: #5439a3 !important;
-    font-size: 0.9rem !important;
-    font-weight: 800;
     letter-spacing: 0;
 }
 
-.tp-products-section .tp-products-intro>span:first-child::before,
-.tp-products-section .tp-products-intro>span:first-child::after {
-    content: "";
-    width: 1.25rem;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(84, 57, 163, 0.52));
-}
 
 .tp-products-section .tp-products-intro>span:first-child::after {
     background: linear-gradient(90deg, rgba(245, 132, 31, 0.56), transparent);
@@ -1037,7 +985,7 @@
 }
 
 .tp-products-section .tp-products-heading span {
-    background: linear-gradient(115deg, #5439a3 0%, #7c4ed8 54%, #f5841f 112%);
+    background:  #5439a3;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent !important;
@@ -1101,6 +1049,7 @@
 
 .tp-product-cover-link-wrap {
     display: block;
+    width: 100%;
     height: 100%;
     color: inherit;
     text-decoration: none;
